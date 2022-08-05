@@ -1,0 +1,4 @@
+[[deployment.targets]]
+name = "Stage"
+URL = "s3://reference2.groupdocs.com/?prefix=metadata/&region=us-west-2"
+
