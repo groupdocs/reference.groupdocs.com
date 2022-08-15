@@ -1,4 +1,4 @@
-baseURL = "/home"
+baseURL = "/"
 title = "Groupdocs API References"
 staticdir = 'content/sites/groupdocs/home/static'
 enableRobotsTXT = true
