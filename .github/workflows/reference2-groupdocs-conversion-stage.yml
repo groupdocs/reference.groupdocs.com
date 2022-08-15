@@ -33,7 +33,7 @@ jobs:
       - name: Checkout theme repo
         uses: actions/checkout@main
         with:
-          repository: Aspose/api-theme
+          repository: groupdocs/api-theme
           token: ${{ secrets.REPO_TOKEN }}
           fetch-depth: 0
           path: themes/api-theme      
