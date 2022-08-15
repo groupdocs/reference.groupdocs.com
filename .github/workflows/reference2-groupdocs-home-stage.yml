@@ -53,7 +53,7 @@ jobs:
         run: hugo --configDir config/sites/groupdocs/home --environment staging --minify
         
       - name: Deploy reference2.groupdocs.com(home)(Stage) to S3
-        run: hugo --configDir config/sites/groupdocs/home --environment staging deploy --target "Stage" --maxDeletes -1
+        run: hugo --configDir config/sites/groupdocs/home --environment staging deploy --target "Stage" --maxDeletes 0
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
