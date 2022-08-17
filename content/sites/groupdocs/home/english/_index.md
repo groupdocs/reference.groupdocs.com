@@ -11,7 +11,7 @@ description: API reference and code snippets for working with GroupDocs.Viewer, 
 {{< blocks/product-card title="**GroupDocs.Viewer**" href="/viewer/" >}}
 
 {{< blocks/card-item-text >}}
-Excellent file viewer component that empowers your C#, ASP.NET ?and other .NET-based applications with document viewing features across more than 100+ supported file formats!
+Excellent file viewer component that empowers your C#, ASP.NET and other .NET-based applications with document viewing features across more than 100+ supported file formats!
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/viewer/net/" class="btn-net"  >}}
