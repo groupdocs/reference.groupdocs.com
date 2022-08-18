@@ -38,18 +38,18 @@ defaultContentLang = 'en'
 	languageCode = "en"
     flag = "flag-us"
     weight = 10
-  [languages.ru]
-    contentDir = 'content/sites/groupdocs/redaction/russian'
-    languageName = 'Русский'
-	languageCode = "ru"
-    flag = "flag-ru"
-    weight = 11
-  [languages.zh]
-    contentDir = 'content/sites/groupdocs/redaction/chinese'
-    languageName = "简体中文"
-    languageCode = "zh"
-    flag = "flag-cn"
-    weight = 12
+#  [languages.ru]
+#    contentDir = 'content/sites/groupdocs/redaction/russian'
+#    languageName = 'Русский'
+#	languageCode = "ru"
+#    flag = "flag-ru"
+#    weight = 11
+#  [languages.zh]
+#    contentDir = 'content/sites/groupdocs/redaction/chinese'
+#    languageName = "简体中文"
+#    languageCode = "zh"
+#    flag = "flag-cn"
+#    weight = 12
 
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
