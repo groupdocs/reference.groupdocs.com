@@ -35,7 +35,7 @@ defaultContentLang = 'en'
   [languages.en]
     contentDir = 'content/sites/groupdocs/home/english'
     languageName = 'English'
-	languageCode = "en"
+    languageCode = "en"
     flag = "flag-us"
     weight = 10
 #  [languages.ru]
@@ -158,6 +158,9 @@ footer_about_disable = false
     [minify.tdewolff.xml]
       keepWhitespace = false
 
+[sitemap]
+  filename = 'static-content/sitemap.xml'  
+  
 [deployment]
 [[deployment.matchers]]
 # Set custom content type for /sitemap.xml
