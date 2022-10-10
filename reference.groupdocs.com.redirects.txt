@@ -1,0 +1,2 @@
+rewrite ^/java/(.*?/)(.*?/)(.*?/)([a-zA-Z0-9_]+) https://reference.groupdocs.com/$1java/$2$4 permanent;
+
