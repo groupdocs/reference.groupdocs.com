@@ -34,7 +34,7 @@ rewrite ^/(net|java)/(viewer|annotation|conversion|comparison|signature|assembly
 rewrite ^/java/(.*?/)(.*?/)(.*?/)([a-zA-Z0-9_]+) https://reference.groupdocs.com/$1java/$2$4 permanent;
 rewrite ^/productfamily/([_0-9a-z-]+) https://reference.groupdocs.com/$1 permanent;
 rewrite ^/(.*)/index/?$ https://reference.groupdocs.com/$1 permanent;
-rewrite ^/(.*)/(methods|constructors|properties|fields)/?$ https://reference.groupdocs.com/$1 permanent;
+rewrite ^/(.*)/(methods|constructors|properties|fields|events)/?$ https://reference.groupdocs.com/$1 permanent;
 rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference.groupdocs.com/$1/$2.$3/$4/$5#$5_$6 permanent;
 rewrite ^/net/(.*?)/([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference.groupdocs.com/$1/net/$2.$3/$4/$5#$5_$6 permanent;
 rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference.groupdocs.com/$1/$2.$3.$4/$5/$6#$6_$7 permanent;
