@@ -1,5 +1,6 @@
 rewrite ^/annotation/java/com.groupdocs.annotation.common.exception.class-use/AnnotatorException https://reference.groupdocs.com/annotation/java/com.groupdocs.annotation.exceptions/AnnotatorException permanent;
 rewrite ^/viewer/net/groupdocs.viewer.options/webdocumentoptions(.*) https://reference.groupdocs.com/viewer/net/groupdocs.viewer.options/ permanent;
+rewrite ^/watermark/net/groupdocs.watermark.common.removeonlylistbase/1(.*) https://reference.groupdocs.com/watermark/net/groupdocs.watermark.common/removeonlylistbase-1/ permanent;
 rewrite ^/annotation/java/com.groupdocs.annotation.common.license/package-frame https://reference.groupdocs.com/annotation/java/com.groupdocs.annotation.license/ permanent;
 rewrite ^/annotation/java/com.groupdocs.annotation.domain/PageData https://reference.groupdocs.com/annotation/java permanent;
 rewrite ^/annotation/java/com.groupdocs.annotation.handler/package-frame https://reference.groupdocs.com/annotation/java permanent;
