@@ -52,7 +52,7 @@ rewrite ^/(.*?/net)/(.*?)/(.*?)/(?:constructors)/(main) https://reference.groupd
 rewrite ^/net/(.*?)/(.*?)/(.*?)/(?:constructors)/(main) https://reference.groupdocs.com/$1/net/$2/$3/$3#constructor permanent;
 rewrite ^/(.*?/net)/(.*?)/(.*?)/(?:constructors)/(\d+) https://reference.groupdocs.com/$1/$2/$3/$3#constructor_$4 permanent;
 rewrite ^/net/(.*?)/(.*?)/(.*?)/(?:constructors)/(\d+) https://reference.groupdocs.com/$1/net/$2/$3/$3#constructor_$4 permanent;
-rewrite ^/(.*?/net)/(.*?)/(?:properties|methods|constructors|fields|events)/(.*) https://reference.groupdocs.com/$1/$2/$3 permanent;
-rewrite ^/net/(.*?)/(.*?)/(?:properties|methods|constructors|fields|events)/(.*) https://reference.groupdocs.com/$1/net/$2/$3 permanent;
+rewrite ^/(.*?/net)/(.*?)/(?:properties|methods|constructors|fields|events)/(.*) https://reference.groupdocs.com/$1/$2/$3/ permanent;
+rewrite ^/net/(.*?)/(.*?)/(?:properties|methods|constructors|fields|events)/(.*) https://reference.groupdocs.com/$1/net/$2/$3/ permanent;
 rewrite ^/(.*)/package-summary https://reference.groupdocs.com/$1/ permanent;
 rewrite ^/admin(.*) https://reference3.groupdocs.com/admin$1 permanent;
