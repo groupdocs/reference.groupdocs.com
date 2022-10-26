@@ -50,6 +50,12 @@ defaultContentLang = 'en'
     languageCode = "zh"
     flag = "flag-cn"
     weight = 12
+  [languages.es]
+    contentDir = 'content/sites/groupdocs/metadata/spanish'
+    languageName = "Español"
+    languageCode = "es"
+    flag = "flag-es"
+    weight = 13
 
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
