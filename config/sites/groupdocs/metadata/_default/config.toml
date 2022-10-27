@@ -174,3 +174,4 @@ contentType = "application/xml"
 gzip = true
 force = true
 
+[Taxonomies]
