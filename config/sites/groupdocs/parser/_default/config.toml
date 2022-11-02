@@ -56,7 +56,12 @@ defaultContentLang = 'en'
     languageCode = "es"
     flag = "flag-es"
     weight = 13
-
+  [languages.de]
+    contentDir = 'content/sites/groupdocs/parser/german'
+    languageName = "Deutsch"
+    languageCode = "de"
+    flag = "flag-de"
+    weight = 14
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 ignoreFiles = ["(?i:readme.md)", '\.spin$']
