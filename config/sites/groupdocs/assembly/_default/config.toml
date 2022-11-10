@@ -62,6 +62,12 @@ defaultContentLang = 'en'
     languageCode = "de"
     flag = "flag-de"
     weight = 14
+  [languages.fr]
+    contentDir = 'content/sites/groupdocs/assembly/french'
+    languageName = "Français"
+    languageCode = "fr"
+    flag = "flag-fr"
+    weight = 15
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 ignoreFiles = ["(?i:readme.md)", '\.spin$']
