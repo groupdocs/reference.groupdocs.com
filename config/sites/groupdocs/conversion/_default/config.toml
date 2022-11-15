@@ -68,6 +68,12 @@ defaultContentLang = 'en'
     languageCode = "fr"
     flag = "flag-fr"
     weight = 15
+  [languages.sv]
+    contentDir = 'content/sites/groupdocs/conversion/swedish'
+    languageName = "Svenska"
+    languageCode = "sv"
+    flag = "flag-se"
+    weight = 16
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 ignoreFiles = ["(?i:readme.md)", '\.spin$']
