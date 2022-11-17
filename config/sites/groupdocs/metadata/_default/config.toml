@@ -68,6 +68,30 @@ defaultContentLang = 'en'
     languageCode = "fr"
     flag = "flag-fr"
     weight = 15
+  [languages.sv]
+    contentDir = 'content/sites/groupdocs/metadata/swedish'
+    languageName = "Svenska"
+    languageCode = "sv"
+    flag = "flag-se"
+    weight = 16
+  [languages.ar]
+    contentDir = 'content/sites/groupdocs/metadata/arabic'
+    languageName = "عربي"
+    languageCode = "ar"
+    flag = "flag-sa"
+    weight = 17
+  [languages.it]
+    contentDir = 'content/sites/groupdocs/metadata/italian'
+    languageName = "Italiano"
+    languageCode = "it"
+    flag = "flag-it"
+    weight = 18
+  [languages.tr]
+    contentDir = 'content/sites/groupdocs/metadata/turkish'
+    languageName = "Türkçe"
+    languageCode = "tr"
+    flag = "flag-tr"
+    weight = 19
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 ignoreFiles = ["(?i:readme.md)", '\.spin$']
