@@ -1,5 +1,5 @@
 ---
-title: GroupDocs.Viewer for .NET 22.11
+title: GroupDocs.Viewer for .NET
 type: docs
 weight: 10
 url: /net/
