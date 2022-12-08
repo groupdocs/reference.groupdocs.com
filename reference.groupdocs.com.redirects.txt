@@ -5,7 +5,6 @@ rewrite ^/annotation/java/com.groupdocs.annotation.common.license/package-frame 
 rewrite ^/annotation/java/com.groupdocs.annotation.domain/PageData https://reference.groupdocs.com/annotation/java/ permanent;
 rewrite ^/annotation/java/com.groupdocs.annotation.handler/package-frame https://reference.groupdocs.com/annotation/java/ permanent;
 rewrite ^/annotation/net/groupdocs.annotation.legacy.domain/annotationtype https://reference.groupdocs.com/annotation/net/ permanent;
-rewrite ^/comparison/java/com.groupdocs.comparison https://reference.groupdocs.com/comparison/java/com.groupdocs.comparison/ permanent;
 rewrite ^/comparison/java/com.groupdocs.comparison/metered https://reference.groupdocs.com/comparison/java/ permanent;
 rewrite ^/comparison/java/groupdocs.comparison/metered https://reference.groupdocs.com/comparison/java/ permanent;
 rewrite ^/conversion/net/groupdocs.conversion.options.save/imagesaveoptions/properties/psdoptions https://reference.groupdocs.com/conversion/net/ permanent;
