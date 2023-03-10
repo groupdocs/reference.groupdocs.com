@@ -22,6 +22,7 @@ id = "groupdocs-id"
 it = "groupdocs-it"
 ja = "groupdocs-ja"
 ko = "groupdocs-ko"
+nl = "groupdocs-nl"
 pl = "groupdocs-pl"
 pt = "groupdocs-pt"
 sv = "groupdocs-sv"
@@ -92,6 +93,42 @@ defaultContentLang = 'en'
     languageCode = "tr"
     flag = "flag-tr"
     weight = 19
+  [languages.ja]
+    contentDir = 'content/sites/groupdocs/comparison/japanese'
+    languageName = "日本語"
+    languageCode = "ja"
+    flag = "flag-jp"
+    weight = 20
+  [languages.hi]
+    contentDir = 'content/sites/groupdocs/comparison/indian'
+    languageName = "हिन्दी"
+    languageCode = "hi"
+    flag = "flag-in"
+    weight = 21
+  [languages.ko]
+    contentDir = 'content/sites/groupdocs/comparison/korean'
+    languageName = " 한국인"
+    languageCode = "ko"
+    flag = "flag-kr"
+    weight = 22
+  [languages.el]
+    contentDir = 'content/sites/groupdocs/comparison/greece'
+    languageName = "  Ελληνικά"
+    languageCode = "el"
+    flag = "flag-gr"
+    weight = 23
+  [languages.id]
+    contentDir = 'content/sites/groupdocs/comparison/indonesian'
+    languageName = "Indonesian"
+    languageCode = "id"
+    flag = "flag-id"
+    weight = 24
+  [languages.nl]
+    contentDir = 'content/sites/groupdocs/comparison/netherlands'
+    languageName = "Nederlands"
+    languageCode = "nl"
+    flag = "flag-nl"
+    weight = 25
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 ignoreFiles = ["(?i:readme.md)", '\.spin$']
