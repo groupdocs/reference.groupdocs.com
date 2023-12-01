@@ -1,1 +1,2 @@
 /search/net/groupdocs.search/index/
+/search/net/groupdocs.search/index
