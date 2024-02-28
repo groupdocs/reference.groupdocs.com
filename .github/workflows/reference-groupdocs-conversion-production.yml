@@ -59,7 +59,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
       # Invalidate Cloudfront Home Page
       - name: invalidate
-        uses: chetan/invalidate-cloudfront-action@master
+        uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.AWS_DISTRIBUTION_PROD }}
           PATHS: /conversion/*
