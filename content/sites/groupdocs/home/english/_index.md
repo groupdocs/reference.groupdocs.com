@@ -61,7 +61,7 @@ Outstanding electronic signature API that allows you to esign your documents wit
 
 {{< blocks/product-item title=".NET" href="/signature/net/" class="btn-net" >}}
 {{< blocks/product-item title="JAVA" href="/signature/java/" class="btn-java" >}}
-
+{{< blocks/product-item title="Node.JS" href="/signature/nodejs-java/" class="btn-nodejs" >}}
 {{< /blocks/product-card >}}
 
 
@@ -129,6 +129,7 @@ Modern document editor API that allows you to edit various documents inside your
 
 {{< blocks/product-item title=".NET" href="/editor/net/" class="btn-net" >}}
 {{< blocks/product-item title="JAVA" href="/editor/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.JS" href="/editor/nodejs-java/" class="btn-nodejs" >}}
 
 {{< /blocks/product-card >}}
 
