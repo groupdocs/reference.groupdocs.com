@@ -15,9 +15,9 @@ Excellent file viewer component that empowers your C#, ASP.NET and other .NET-ba
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/viewer/net/" class="btn-net"  >}}
-{{< blocks/product-item title="JAVA" href="/viewer/java/" class="btn-java" >}}
-{{< blocks/product-item title="Node.JS" href="/viewer/nodejs-java/" class="btn-nodejs" >}}
-{{< blocks/product-item title="Python.NET" href="/viewer/python-net/" class="btn-python" >}}
+{{< blocks/product-item title="Java" href="/viewer/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/viewer/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/viewer/python-net/" class="btn-python" >}}
 
 {{< /blocks/product-card >}}
 
@@ -28,7 +28,7 @@ Powerful document annotator component that helps you to boost your applications 
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/annotation/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/annotation/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/annotation/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -39,8 +39,8 @@ Huge conversion API that supports over 7400 document conversion pairs. With innu
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/conversion/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/conversion/java/" class="btn-java" >}}
-{{< blocks/product-item title="Node.JS" href="/conversion/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Java" href="/conversion/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/conversion/nodejs-java/" class="btn-nodejs" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Comparison**" href="comparison" >}}
@@ -50,7 +50,7 @@ Document comparison API that detects document text, styling and formating change
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/comparison/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/comparison/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/comparison/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -61,8 +61,8 @@ Outstanding electronic signature API that allows you to esign your documents wit
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/signature/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/signature/java/" class="btn-java" >}}
-{{< blocks/product-item title="Node.JS" href="/signature/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Java" href="/signature/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/signature/nodejs-java/" class="btn-nodejs" >}}
 {{< /blocks/product-card >}}
 
 
@@ -73,7 +73,7 @@ Automate your document generation process with cross platform automation assembl
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/assembly/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/assembly/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/assembly/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -84,7 +84,7 @@ Native .NET API to dynamically read, write, edit and remove meta information fro
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/metadata/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/metadata/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/metadata/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -95,7 +95,7 @@ Transform your document search process with this API for advance full text searc
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/search/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/search/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/search/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -107,7 +107,7 @@ Parse, extract images, raw & formatted text with metadata and perform a lot of o
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/parser/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/parser/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/parser/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -118,7 +118,7 @@ Watermark manipulation APIs for creating, removing, smart searching, edit lockin
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/watermark/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/watermark/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/watermark/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -129,8 +129,8 @@ Modern document editor API that allows you to edit various documents inside your
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/editor/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/editor/java/" class="btn-java" >}}
-{{< blocks/product-item title="Node.JS" href="/editor/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Java" href="/editor/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/editor/nodejs-java/" class="btn-nodejs" >}}
 
 {{< /blocks/product-card >}}
 
@@ -142,7 +142,7 @@ Powerful API to merge PDF, Word, Excel, PowerPoint documents and many other form
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/merger/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/merger/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/merger/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
@@ -153,7 +153,7 @@ Build cross-platform applications that perform operations, such as, redacting, h
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/redaction/net/" class="btn-net" >}}
-{{< blocks/product-item title="JAVA" href="/redaction/java/" class="btn-java" >}}
+{{< blocks/product-item title="Java" href="/redaction/java/" class="btn-java" >}}
 
 {{< /blocks/product-card >}}
 
