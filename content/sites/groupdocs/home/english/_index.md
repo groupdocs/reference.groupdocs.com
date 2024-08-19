@@ -17,6 +17,7 @@ Excellent file viewer component that empowers your C#, ASP.NET and other .NET-ba
 {{< blocks/product-item title=".NET" href="/viewer/net/" class="btn-net"  >}}
 {{< blocks/product-item title="JAVA" href="/viewer/java/" class="btn-java" >}}
 {{< blocks/product-item title="Node.JS" href="/viewer/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python.NET" href="/viewer/python-net/" class="btn-python" >}}
 
 {{< /blocks/product-card >}}
 
