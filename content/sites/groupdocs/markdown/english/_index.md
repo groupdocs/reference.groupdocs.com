@@ -18,7 +18,7 @@ This page serves as the entry point to the **GroupDocs.Markdown API references**
 
 ## Available Products
 
-Select your target platform below to access detailed API documentation and usage examples.
+Select your target platform below to access detailed API code documentation.
 
 <div style="display: flex;flex-wrap: wrap;justify-content: left;gap: 10px;padding: 10px;">
     <a href="/markdown/net/"
@@ -36,4 +36,4 @@ Discover more about **GroupDocs.Markdown**:
 
 - [Product Overview](https://products.groupdocs.com/markdown/)  
 - [Developer Documentation](https://docs.groupdocs.com/markdown/)  
-- [Code Examples on GitHub](https://github.com/groupdocs-markdown/GroupDocs.Markdown-for-.NET)  
+- [Releases & Downloads](https://releases.groupdocs.com/markdown/)  
