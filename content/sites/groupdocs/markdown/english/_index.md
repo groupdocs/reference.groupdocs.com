@@ -12,8 +12,6 @@ categories: ["Document APIs"]
 tags: ["groupdocs", "markdown", "export"]
 ---
 
-# GroupDocs.Markdown API References
-
 This page serves as the entry point to the **GroupDocs.Markdown API references**. 
 
 **GroupDocs.Markdown** is a set of APIs that enables you to export and convert popular document formats such as **PDF, Word, Excel, and more** into clean and structured **Markdown** files.  
