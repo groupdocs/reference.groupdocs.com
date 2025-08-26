@@ -6,6 +6,10 @@ url: /net/
 description: GroupDocs.Markdown for .NET API References contain examples, code snippets, and API documentation. It provides namespaces, classes, interfaces, and other API details.
 is_root: true
 version: "25.9"
+date: "2025-08-26"
+lastmod: "2025-08-26"
+categories: ["Document APIs"]
+tags: ["groupdocs", "markdown", "export", ".net"]
 ---
 
 🚧 Coming Soon!
