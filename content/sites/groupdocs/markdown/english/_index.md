@@ -6,8 +6,8 @@ weight: 10
 description: "Explore GroupDocs.Markdown API references to export and convert popular document formats (PDF, Word, Excel, and more) to Markdown with ease."
 keywords: "GroupDocs.Markdown, Markdown API, .NET Markdown export, document to markdown, convert PDF to markdown, export Word to markdown, export Excel to markdown"
 url: /
-date: "2025-08-25"
-lastmod: "2025-08-25"
+date: "2025-08-26"
+lastmod: "2025-08-26"
 categories: ["Document APIs"]
 tags: ["groupdocs", "markdown", "export"]
 ---
