@@ -35,3 +35,19 @@ Native Java API for the Desktop, Web & other Java SE or EE based applications.
 These are links to some useful resources:
 
 - [GroupDocs.Comparison for Java API Reference](/comparison/java/)
+
+
+## GroupDocs.Comparison for Python via .NET
+
+{{% alert color="primary" %}}
+
+![GroupDocs.Comparison for Python via .NET Product Logo](gdocs_python.png)
+
+GroupDocs.Comparsion for Python via .NET is powerful .NET document processing API that supports comparing of PDF formats, Words, HTML, and different Text formats.
+
+{{% /alert %}}
+
+These are links to some useful resources:
+
+- [GroupDocs.Comparison for Python via .NET API Reference](/comparison/python-net/)
+

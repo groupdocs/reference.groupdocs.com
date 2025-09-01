@@ -12,7 +12,7 @@ weight: 40
 ### Modules
 | Module | Description |
 | :- | :- |
-| [`groupdocs.merger`](/merger/python-net/groupdocs.merger) | The namespace provides classes which allow you to merge documents and manipulate document structure (split single document to multiple documents, reorder or replace document pages, change page orientation, manage document password and perform other manipulations) across wide range of supported document types - PDF, DOCX/DOC, PPTX/PPT, XLSX/XLS, VSDX/VSD, ODT, ODS, ODP, HTML, EPUB and many others.<br/><br/><br/><br/><br/><br/><br/><br/>The main classes in this namespace are:<br/>\|<br/>\|<br/> \|<br/> \| |
+| [`groupdocs.merger`](/merger/python-net/groupdocs.merger) | The namespace provides classes which allow you to merge documents and manipulate document structure (split single document to multiple documents, reorder or replace document pages, change page orientation, manage document password and perform other manipulations) across wide range of supported document types - PDF, DOCX/DOC, PPTX/PPT, XLSX/XLS, VSDX/VSD, ODT, ODS, ODP, HTML, EPUB and many others.|
 | [`groupdocs.merger.domain`](/merger/python-net/groupdocs.merger.domain) | The namespace provides classes for working with document structure. |
 | [`groupdocs.merger.domain.builders`](/merger/python-net/groupdocs.merger.domain.builders) | The namespace provides builders. |
 | [`groupdocs.merger.domain.options`](/merger/python-net/groupdocs.merger.domain.options) | The namespace provides classes to specify additional options when loading, joining, splitting, previewing and saving documents. |

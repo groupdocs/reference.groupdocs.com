@@ -12,8 +12,6 @@ weight: 100
 
 Represents main class that controls document signing process.
 
-
-
 The Signature type exposes the following members:
 
 ### Constructors
@@ -48,11 +46,14 @@ The Signature type exposes the following members:
 | [update](/signature/python-net/groupdocs.signature/signature/update/#System.Collections.Generic.List<GroupDocs.Signature.Domain.BaseSignature>) |  |
 | [delete](/signature/python-net/groupdocs.signature/signature/delete/#groupdocs.signature.domain.BaseSignature) | Deletes passed signature [`BaseSignature`](/signature/python-net/groupdocs.signature.domain/basesignature) from the document. |
 | [delete](/signature/python-net/groupdocs.signature/signature/delete/#System.Collections.Generic.List<GroupDocs.Signature.Domain.BaseSignature>) |  |
-| [delete](/signature/python-net/groupdocs.signature/signature/delete/#groupdocs.signature.domain.SignatureType) | Deletes signatures of the certain type [`SignatureType`](/signature/python-net/groupdocs.signature.domain/signaturetype) from the document.<br/>Only signatures that were added by Sign method and marked as Signatures [`BaseSignature.is_signature`](/signature/python-net/groupdocs.signature.domain/basesignature#is_signature)  will be removed.<br/>Following signature types are supported: Text, Image, Digital, Barcode, QR-Code |
+| [delete](/signature/python-net/groupdocs.signature/signature/delete/#groupdocs.signature.domain.SignatureType) | Deletes signatures of the certain type [`SignatureType`](/signature/python-net/groupdocs.signature.domain/signaturetype) from the document.
+<br/>Only signatures that were added by Sign method and marked as Signatures [`BaseSignature.is_signature`](/signature/python-net/groupdocs.signature.domain/basesignature#is_signature)  will be removed.
+<br/>Following signature types are supported: Text, Image, Digital, Barcode, QR-Code |
 | [delete](/signature/python-net/groupdocs.signature/signature/delete/#System.Collections.Generic.List<GroupDocs.Signature.Domain.SignatureType>) |  |
 | [delete](/signature/python-net/groupdocs.signature/signature/delete/#str) | Deletes signature by its specific signature Id from the document. |
 | [delete](/signature/python-net/groupdocs.signature/signature/delete/#System.Collections.Generic.List<string>) |  |
-| [get_document_info](/signature/python-net/groupdocs.signature/signature/get_document_info/#) | Gets information about document pages: their sizes,<br/>maximum page height, the width of a page with the maximum height. |
+| [get_document_info](/signature/python-net/groupdocs.signature/signature/get_document_info/#) | Gets information about document pages: their sizes,
+<br/>maximum page height, the width of a page with the maximum height. |
 | [generate_preview](/signature/python-net/groupdocs.signature/signature/generate_preview/#groupdocs.signature.options.PreviewOptions) | Generates document pages preview. |
 | [generate_signature_preview](/signature/python-net/groupdocs.signature/signature/generate_signature_preview/#groupdocs.signature.options.PreviewSignatureOptions) | Generates Signature preview based on given SignOptions. [`SignOptions`](/signature/python-net/groupdocs.signature.options/signoptions) |
 

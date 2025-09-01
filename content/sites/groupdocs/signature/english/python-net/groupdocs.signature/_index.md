@@ -10,18 +10,6 @@ weight: 10
 
 The namespace provides classes for signing documents of different formats with stamps, barcodes, QR-codes, text, image, metadata, form field and digital signatures.
 
-
-
-
-
-
-
-The main classes in this namespace are:
-|
-|
- |
- |
-
 ### Classes
 | Class | Description |
 | :- | :- |

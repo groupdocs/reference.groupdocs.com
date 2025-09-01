@@ -12,7 +12,7 @@ weight: 40
 ### Modules
 | Module | Description |
 | :- | :- |
-| [`groupdocs.comparison`](/comparison/python-net/groupdocs.comparison) | The namespace provides classes to compare documents for all popular document formats.<br/><br/>The Main classes in this namespace are:<br/><br/>\|<br/>\|<br/>\|  is the entry point for comparing documents. \|<br/>\|  provides details about a document. \|<br/>\|  defines settings for customizing logging behaviour. \| |
+| [`groupdocs.comparison`](/comparison/python-net/groupdocs.comparison) | The namespace provides classes to compare documents for all popular document formats.|
 | [`groupdocs.comparison.cells`](/comparison/python-net/groupdocs.comparison.cells) |  |
 | [`groupdocs.comparison.cells.style`](/comparison/python-net/groupdocs.comparison.cells.style) | The namespace provides classes for working with component styles in Cells format file. |
 | [`groupdocs.comparison.common`](/comparison/python-net/groupdocs.comparison.common) | The namespace provides helpers classes. |

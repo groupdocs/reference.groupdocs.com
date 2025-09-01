@@ -10,16 +10,6 @@ weight: 10
 
 The namespace provides classes for working with watermarks in a document of any supported type.
 
-
-
-
-The main classes in this namespace are:
-|
-|
-|  is the entry point for watermarking process. |
-|  provides an easy way to customize caching, loging behaviour etc. |
-|  represents a watermark to be added to the content. |
-
 ### Classes
 | Class | Description |
 | :- | :- |
