@@ -44,6 +44,8 @@ Document comparison API that detects document text, styling and formating change
 
 {{< blocks/product-item title=".NET" href="/comparison/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/comparison/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/comparison/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/comparison/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Watermark**" href="watermark" >}}
@@ -53,6 +55,8 @@ Watermark manipulation APIs for creating, removing, smart searching, edit lockin
 
 {{< blocks/product-item title=".NET" href="/watermark/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/watermark/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/watermark/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/watermark/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Merger**" href="merger" >}}
@@ -62,6 +66,8 @@ Powerful API to merge PDF, Word, Excel, PowerPoint documents and many other form
 
 {{< blocks/product-item title=".NET" href="/merger/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/merger/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/merger/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/merger/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Metadata**" href="metadata" >}}
@@ -71,6 +77,8 @@ Native .NET API to dynamically read, write, edit and remove meta information fro
 
 {{< blocks/product-item title=".NET" href="/metadata/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/metadata/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/metadata/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/metadata/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Assembly**" href="assembly" >}}
@@ -80,6 +88,7 @@ Automate your document generation process with cross platform automation assembl
 
 {{< blocks/product-item title=".NET" href="/assembly/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/assembly/java/" class="btn-java" >}}
+{{< blocks/product-item title="Python" href="/assembly/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Search**" href="search" >}}
@@ -89,6 +98,7 @@ Transform your document search process with this API for advance full text searc
 
 {{< blocks/product-item title=".NET" href="/search/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/search/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/search/nodejs-java/" class="btn-nodejs" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Parser**" href="parser" >}}
@@ -127,6 +137,7 @@ Outstanding electronic signature API that allows you to esign your documents wit
 {{< blocks/product-item title=".NET" href="/signature/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/signature/java/" class="btn-java" >}}
 {{< blocks/product-item title="Node.js" href="/signature/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/signature/python-net/" class="btn-python" >}}
  {{< /blocks/product-card >}}
 
  {{< blocks/product-card title="**GroupDocs.Redaction**" href="redaction" >}}
@@ -136,6 +147,7 @@ Outstanding electronic signature API that allows you to esign your documents wit
 
 {{< blocks/product-item title=".NET" href="/redaction/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/redaction/java/" class="btn-java" >}}
+{{< blocks/product-item title="Python" href="/redaction/python-net/" class="btn-python" >}}
  {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Classification**" href="classification" >}}
