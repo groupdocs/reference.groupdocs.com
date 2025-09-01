@@ -136,7 +136,7 @@ using (var converter = new MarkdownConverter("document.docx", streamInfo))
 
 ### See Also
 
-* class [LoadOptions](../../../groupdocs.markdown.options/loadoptions)
+* class [LoadOptions](../../loadoptions)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)
@@ -187,7 +187,7 @@ using (var converter = new MarkdownConverter(fileStream, streamInfo))
 
 ### See Also
 
-* class [LoadOptions](../../../groupdocs.markdown.options/loadoptions)
+* class [LoadOptions](../../loadoptions)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)

@@ -3,7 +3,7 @@ title: MarkdownConverter
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Converts various document formats to Markdown format.
 type: docs
-weight: 150
+weight: 160
 url: /net/groupdocs.markdown/markdownconverter/
 ---
 ## MarkdownConverter class

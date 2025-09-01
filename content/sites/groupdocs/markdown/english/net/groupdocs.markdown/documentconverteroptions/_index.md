@@ -24,11 +24,11 @@ public class DocumentConverterOptions : LoadOptions
 
 | Name | Description |
 | --- | --- |
-| [Extension](../../groupdocs.markdown.options/loadoptions/extension) { get; set; } | Gets or sets the file extension of the stream. |
-| [FileFormat](../../groupdocs.markdown.options/loadoptions/fileformat) { get; } | Gets the exact type of the file that is to be loaded. The default value is Unknown which means that the type should be detected automatically. |
+| [Extension](../../groupdocs.markdown/loadoptions/extension) { get; set; } | Gets or sets the file extension of the stream. |
+| [FileFormat](../../groupdocs.markdown/loadoptions/fileformat) { get; } | Gets the exact type of the file that is to be loaded. The default value is Unknown which means that the type should be detected automatically. |
 | [ImageExportStrategy](../../groupdocs.markdown/documentconverteroptions/imageexportstrategy) { get; set; } | Gets or sets the strategy for handling image export during document conversion. |
-| [MimeType](../../groupdocs.markdown.options/loadoptions/mimetype) { get; set; } | Gets or sets the MIME type of the stream. |
-| [Password](../../groupdocs.markdown.options/loadoptions/password) { get; set; } | Gets or sets the password for opening an encrypted document. |
+| [MimeType](../../groupdocs.markdown/loadoptions/mimetype) { get; set; } | Gets or sets the MIME type of the stream. |
+| [Password](../../groupdocs.markdown/loadoptions/password) { get; set; } | Gets or sets the password for opening an encrypted document. |
 
 ### Remarks
 
@@ -67,7 +67,7 @@ var customOptions = new DocumentConverterOptions
 
 ### See Also
 
-* class [LoadOptions](../../groupdocs.markdown.options/loadoptions)
+* class [LoadOptions](../loadoptions)
 * namespace [GroupDocs.Markdown](../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../)
 

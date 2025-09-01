@@ -24,6 +24,7 @@ The namespace contains some specific exceptions that are thrown by the library d
 | [ImageExportContext](./imageexportcontext) | Represents the context for image handling during document conversion to Markdown. This context is provided by the library during conversion and contains information about the image being processed. |
 | [InvalidFormatException](./invalidformatexception) | The exception that is thrown when a file has an invalid format. |
 | [License](./license) | Provides methods for applying license to the GroupDocs.Markdown library. |
+| [LoadOptions](./loadoptions) | Allows a developer to specify additional options (such as a password) when loading a file. |
 | [MarkdownConverter](./markdownconverter) | Converts various document formats to Markdown format. |
 | [Metered](./metered) | Provides methods to set a metered key. |
 | [SkipImagesStrategy](./skipimagesstrategy) | Implements an image export strategy that skips saving images during document conversion. |

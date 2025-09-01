@@ -3,7 +3,7 @@ title: Metered
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Provides methods to set a metered key.
 type: docs
-weight: 160
+weight: 170
 url: /net/groupdocs.markdown/metered/
 ---
 ## Metered class
