@@ -9,6 +9,7 @@ date: "2025-01-02"
 lastmod: "2025-01-02"
 categories: ["API Documentation"]
 tags: ["watermark-api", "net-development", "java-development", "document-processing"]
+type: docs
 ---
 
 # Complete Watermark API for .NET and Java Developers
