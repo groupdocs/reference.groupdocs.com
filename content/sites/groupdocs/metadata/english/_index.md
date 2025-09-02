@@ -96,6 +96,50 @@ These are links to some useful resources:
 - [GroupDocs.Metadata for Java API Reference](/metadata/java/)
 - [GroupDocs.Metadata for Java API Tutorials](https://tutorials.groupdocs.com/metadata/java/)
 
+## GroupDocs.Metadata for Node.js via Java
+
+{{% alert color="primary" %}}  
+![GroupDocs.Metadata for Node.js via Java Product Logo](gdocs_nodejs.png)  
+On-premise APIs for Node.js applications to read, write, edit, and remove metadata from Microsoft Office, PDF, multimedia, images, drawings, and many other file formats.  
+{{% /alert %}}  
+
+GroupDocs.Metadata brings powerful metadata management features to the Node.js ecosystem through a Java bridge. Developers can easily extract properties like author, creation date, or custom fields, update existing metadata, or completely remove sensitive information from documents and media files.  
+
+### Key Advantages
+- Works across platforms (Windows, Linux, macOS) with Node.js  
+- Easy integration with Node.js frameworks (Express.js, NestJS, Koa)  
+- Handles format-specific quirks automatically (e.g., Office vs. PDF)  
+- Optimized for performance in both standalone apps and microservices  
+- Helps ensure compliance and security by cleaning hidden metadata  
+
+### Enterprise Integration
+The Node.js version is designed to fit modern workflows, from web applications to serverless functions. It’s particularly useful for organizations that rely on Node.js for backend services and need enterprise-grade metadata control without switching technology stacks.  
+
+### Useful resources
+- [GroupDocs.Metadata for Node.js via Java API Reference](/metadata/nodejs-java/)  
+
+## GroupDocs.Metadata for Python via .NET
+
+{{% alert color="primary" %}}  
+![GroupDocs.Metadata for Python via .NET Product Logo](gdocs_python.png)  
+On-premise APIs for Python applications to read, write, edit, and remove metadata from Microsoft Office, PDF, multimedia, images, drawings, and many other file formats.  
+{{% /alert %}}  
+
+GroupDocs.Metadata brings enterprise-grade metadata management features to the Python ecosystem through a .NET bridge. Developers can easily extract properties like author, creation date, or custom fields, update existing metadata, or completely remove sensitive information from documents and media files.  
+
+### Key Advantages
+- Cross-platform support (Windows, Linux, macOS) with Python  
+- Simple integration with Python frameworks (Django, Flask, FastAPI)  
+- Automatically handles format-specific metadata (Office, PDF, images, etc.)  
+- Memory-efficient and optimized for large-scale document processing  
+- Helps maintain compliance and security by cleaning hidden metadata  
+
+### Enterprise Integration
+The Python version is ideal for document workflows, automation scripts, and backend services. It integrates smoothly into REST APIs, cloud deployments, or local apps, making it a strong choice for teams already building in Python who need robust metadata control.  
+
+### Useful resources
+- [GroupDocs.Metadata for Python via .NET API Reference](/metadata/python-net/)  
+
 ## Getting Started Tips
 
 **Start with Read-Only Operations**: Before implementing metadata modification features, explore the extraction capabilities to understand what metadata exists in your target file formats.

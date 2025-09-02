@@ -93,6 +93,56 @@ These are links to some useful resources:
 - [GroupDocs.Signature for Java API Reference](/signature/java/)
 - [GroupDocs.Signature for Java API Tutorials](https://tutorials.groupdocs.com/signature/java/)
 
+## GroupDocs.Signature for Node.js via Java
+
+{{% alert color="primary" %}}  
+![GroupDocs.Signature for Node.js via Java Product Logo](gdocs_nodejs.png)  
+On-premise APIs for Node.js applications to add, search, and verify digital signatures in Microsoft Office, PDF, images, and many other document formats.  
+{{% /alert %}}  
+
+GroupDocs.Signature brings enterprise-level digital signing capabilities to the Node.js ecosystem through a Java bridge. Developers can embed signatures of different types — text, image, barcode, QR code, metadata, and digital certificates — directly into Node.js applications.  
+
+### Why Node.js Developers Use This API
+- **Cross-Platform**: Works seamlessly on Windows, Linux, and macOS  
+- **Framework Ready**: Integrates easily with Express.js, NestJS, Koa, and other Node.js frameworks  
+- **Signature Variety**: Supports text, image, digital certificates, barcodes, and QR codes  
+- **Automation Friendly**: Ideal for REST APIs, cloud-native deployments, and microservices  
+- **Secure Processing**: Ensures compliance with enterprise-grade security standards  
+
+### Common Use Cases
+- Web applications that handle contract signing  
+- Collaboration platforms with audit-ready document workflows  
+- Financial systems requiring digital certificates and verification  
+- Healthcare and legal services ensuring compliance and authenticity  
+
+### Useful resources
+- [GroupDocs.Signature for Node.js via Java API Reference](/signature/nodejs-java/)  
+ 
+## GroupDocs.Signature for Python via .NET
+
+{{% alert color="primary" %}}  
+![GroupDocs.Signature for Python via .NET Product Logo](gdocs_python.png)  
+On-premise APIs for Python applications to add, search, and verify digital signatures in Microsoft Office, PDF, images, and many other document formats.  
+{{% /alert %}}  
+
+GroupDocs.Signature brings advanced digital signature capabilities to Python applications through a .NET bridge. Developers can embed and validate a wide range of signatures, including text, image, barcode, QR code, metadata, and digital certificates, directly within their Python workflows.  
+
+### Why Python Developers Use This API
+- **Cross-Platform**: Works on Windows, Linux, and macOS with Python  
+- **Flexible Integration**: Compatible with Django, Flask, FastAPI, and automation scripts  
+- **Signature Diversity**: Text, image, barcode, QR code, metadata, and digital certificates  
+- **Optimized for Workflows**: Perfect for automation, backend processing, or REST APIs  
+- **Secure**: Helps maintain compliance in regulated industries with verifiable signatures  
+
+### Common Use Cases
+- HR systems automating employee contract signing  
+- Financial apps with secure audit trails and document verification  
+- Legal document workflows requiring authenticity checks  
+- Healthcare systems ensuring HIPAA and compliance standards  
+
+### Useful resources
+- [GroupDocs.Signature for Python via .NET API Reference](/signature/python-net/)  
+
 ## Common Implementation Scenarios
 
 Understanding when and how to implement digital signature functionality helps you make better architectural decisions:

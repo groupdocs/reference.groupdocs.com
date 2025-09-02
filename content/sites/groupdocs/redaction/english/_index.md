@@ -107,6 +107,24 @@ The Java implementation provides the same robust **metadata removal API** functi
 - [GroupDocs.Redaction for Java API Tutorials](https://tutorials.groupdocs.com/redaction/java/)
 
 
+## GroupDocs.Redaction for Python via .NET
+
+{{% alert color="primary" %}}  
+![GroupDocs.Redaction for Python via .NET Product Logo](gdocs_python.png)  
+On-premise Python API to hide or remove sensitive content and metadata from your documents.  
+{{% /alert %}}  
+
+**Perfect for Python Developers Who Need:**  
+- Easy integration into Python applications and workflows  
+- High-performance redaction for large document sets  
+- Full control over redaction rules and execution  
+- Cross-platform support on Windows, Linux, and macOS  
+
+The Python version provides everything you need to implement **PDF redaction tools** and manage sensitive information across a wide range of document formats within your Python solutions.  
+
+**Key Resources:**  
+- [GroupDocs.Redaction for Python via .NET API Reference](/redaction/python-net/)  
+
 ## Getting Started: Your Next Steps
 
 **1. Evaluate Your Requirements**

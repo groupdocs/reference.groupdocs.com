@@ -35,3 +35,18 @@ Empower Java applications with document automation capabilities to quickly creat
 These are links to some useful resources:
 
 - [GroupDocs.Assembly for Java API Reference](/assembly/java/)
+
+
+## GroupDocs.Assembly for Python via .NET
+
+{{% alert color="primary" %}}  
+
+![GroupDocs.Assembly for Python via .NET Product Logo](gdocs_python.png)  
+
+Empower Python applications with document automation capabilities to quickly create custom reports in PDF, Office, HTML, and other popular formats.  
+
+{{% /alert %}}  
+
+These are links to some useful resources:  
+
+- [GroupDocs.Assembly for Python via .NET API Reference](/assembly/python-net/)  

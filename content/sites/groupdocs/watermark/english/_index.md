@@ -9,7 +9,6 @@ date: "2025-01-02"
 lastmod: "2025-01-02"
 categories: ["API Documentation"]
 tags: ["watermark-api", "net-development", "java-development", "document-processing"]
-type: docs
 ---
 
 # Complete Watermark API for .NET and Java Developers
@@ -85,6 +84,52 @@ Both versions offer identical functionality, so your choice typically depends on
 - Building applications for Linux/Unix environments
 - Need integration with existing Java enterprise systems
 - Working with containerized or microservices architectures
+
+## GroupDocs.Watermark for Node.js via Java
+
+{{% alert color="primary" %}}  
+![GroupDocs.Watermark for Node.js via Java Product Logo](gdocs_nodejs.png)  
+On-premise APIs for Node.js applications to add, search, update, or remove watermarks in Microsoft Office, OpenOffice, PDF, images, drawings, and many other document formats.  
+{{% /alert %}}  
+
+GroupDocs.Watermark brings the same powerful watermarking features to the Node.js ecosystem through a Java bridge. It works seamlessly with Node.js applications, enabling developers to manipulate watermarks while keeping their existing Java-based processing engine under the hood.  
+
+### When to Choose the Node.js via Java Version
+- Developing document processing features in Node.js applications  
+- Need cross-platform deployment on Windows, Linux, or macOS  
+- Integrating with Node.js-based web servers and frameworks (Express.js, NestJS, Koa)  
+- Building cloud-native apps or containerized services with Node.js  
+- Require watermarking in existing Node.js document management workflows  
+
+### Enterprise Integration
+The Node.js version works well in both standalone apps and microservices, and can be easily integrated into REST APIs or serverless functions. It provides an ideal option if you’re already using Node.js for backend services and want to add enterprise-grade watermarking without switching platforms.  
+
+### Useful resources
+- [GroupDocs.Watermark for Node.js via Java API Reference](/watermark/nodejs-java/)  
+
+
+## GroupDocs.Comparison for Python via .NET
+
+{{% alert color="primary" %}}  
+![GroupDocs.Comparison for Python via .NET Product Logo](gdocs_python.png)  
+On-premise APIs for Python applications to compare documents across Microsoft Office, OpenOffice, PDF, HTML, images, and many other formats.  
+{{% /alert %}}  
+
+GroupDocs.Comparison brings advanced document comparison features to the Python ecosystem through a .NET bridge. Developers can integrate precise content comparison into their Python workflows while leveraging the powerful .NET comparison engine in the background.  
+
+### When to Choose the Python via .NET Version
+- Building document comparison features in Python applications  
+- Need cross-platform deployment on Windows, Linux, or macOS  
+- Integrating with Python frameworks (Django, Flask, FastAPI)  
+- Automating document review or validation workflows in Python  
+- Require advanced comparison of text, images, charts, and formatting  
+
+### Enterprise Integration
+The Python version works seamlessly in desktop apps, web backends, and automation scripts. It can be easily used within REST APIs or cloud services, making it ideal if you’re already building in Python and want to add enterprise-grade comparison without switching technologies.  
+
+### Useful resources
+- [GroupDocs.Comparison for Python via .NET API Reference](/comparison/python-net/)  
+
 
 ## Getting Started: What You Need to Know
 
