@@ -108,28 +108,27 @@ The Node.js version works well in both standalone apps and microservices, and ca
 - [GroupDocs.Watermark for Node.js via Java API Reference](/watermark/nodejs-java/)  
 
 
-## GroupDocs.Comparison for Python via .NET
+## GroupDocs.Watermark for Python via .NET
 
 {{% alert color="primary" %}}  
-![GroupDocs.Comparison for Python via .NET Product Logo](gdocs_python.png)  
-On-premise APIs for Python applications to compare documents across Microsoft Office, OpenOffice, PDF, HTML, images, and many other formats.  
+![GroupDocs.Watermark for Python via .NET Product Logo](gdocs_python.png)  
+On-premise APIs for Python applications to add, search, update, or remove watermarks in Microsoft Office, OpenOffice, PDF, images, drawings, and many other document formats.  
 {{% /alert %}}  
 
-GroupDocs.Comparison brings advanced document comparison features to the Python ecosystem through a .NET bridge. Developers can integrate precise content comparison into their Python workflows while leveraging the powerful .NET comparison engine in the background.  
+GroupDocs.Watermark brings powerful watermarking features to the Python ecosystem through a .NET bridge. It works seamlessly with Python applications, enabling developers to manipulate watermarks while relying on the advanced .NET watermarking engine in the background.  
 
 ### When to Choose the Python via .NET Version
-- Building document comparison features in Python applications  
+- Building document processing features in Python applications  
 - Need cross-platform deployment on Windows, Linux, or macOS  
 - Integrating with Python frameworks (Django, Flask, FastAPI)  
-- Automating document review or validation workflows in Python  
-- Require advanced comparison of text, images, charts, and formatting  
+- Automating workflows for document protection and branding  
+- Require watermarking in existing Python-based document management systems  
 
 ### Enterprise Integration
-The Python version works seamlessly in desktop apps, web backends, and automation scripts. It can be easily used within REST APIs or cloud services, making it ideal if you’re already building in Python and want to add enterprise-grade comparison without switching technologies.  
+The Python version works well in both desktop and server environments. It can be easily used within REST APIs, automation scripts, or cloud-native services, making it a great fit for teams already building in Python who want to add enterprise-grade watermarking.  
 
 ### Useful resources
-- [GroupDocs.Comparison for Python via .NET API Reference](/comparison/python-net/)  
-
+- [GroupDocs.Watermark for Python via .NET API Reference](/watermark/python-net/)  
 
 ## Getting Started: What You Need to Know
 

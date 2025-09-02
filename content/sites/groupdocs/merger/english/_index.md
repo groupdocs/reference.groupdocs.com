@@ -84,26 +84,6 @@ These are links to some useful resources:
 
 ## GroupDocs.Merger for Node.js via Java
 
-{{% alert color="primary" %}}
-![GroupDocs.Merger for Node.js via Java Product Logo](gdocs_net.png)
-Node.js APIs to quickly merge multiple documents or split any document into pages within your applications based on Node.js and Java.
-{{% /alert %}}
-
-This is where things get really interesting for modern web developers. The Node.js implementation bridges the gap between JavaScript's ease of use and Java's robust document processing capabilities. It's perfect for developers who want to stay in the JavaScript ecosystem while leveraging powerful document manipulation features.
-
-**Node.js Benefits**:
-- **JavaScript Simplicity**: Familiar syntax and async/await patterns
-- **NPM Integration**: Standard package management for Node.js projects
-- **Microservices Ready**: Perfect for containerized applications and serverless functions
-- **Full-Stack JavaScript**: Keep your entire stack in one language
-
-**Best Use Cases**: RESTful document services, serverless document processing, modern web applications, and JavaScript-based document workflows.
-
-These are links to some useful resources:
-- [GroupDocs.Merger for Node.js via Java API Reference](/merger/nodejs-java/)
-
-## GroupDocs.Merger for Node.js via Java
-
 {{% alert color="primary" %}}  
 ![GroupDocs.Merger for Node.js via Java Product Logo](gdocs_nodejs.png)  
 On-premise APIs that enable developers to merge, split, reorder, or extract pages from documents directly in Node.js applications.  
