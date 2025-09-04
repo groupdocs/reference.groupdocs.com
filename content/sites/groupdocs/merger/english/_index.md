@@ -84,47 +84,23 @@ These are links to some useful resources:
 
 ## GroupDocs.Merger for Node.js via Java
 
-{{% alert color="primary" %}}  
-![GroupDocs.Merger for Node.js via Java Product Logo](gdocs_nodejs.png)  
-On-premise APIs that enable developers to merge, split, reorder, or extract pages from documents directly in Node.js applications.  
-{{% /alert %}}  
+{{% alert color="primary" %}}
+![GroupDocs.Merger for Node.js via Java Product Logo](gdocs_net.png)
+Node.js APIs to quickly merge multiple documents or split any document into pages within your applications based on Node.js and Java.
+{{% /alert %}}
 
-GroupDocs.Merger brings powerful document manipulation features to the Node.js ecosystem through a Java bridge. It makes it easy to combine files, split large documents into smaller parts, or reorganize pages — all without relying on external software.  
+This is where things get really interesting for modern web developers. The Node.js implementation bridges the gap between JavaScript's ease of use and Java's robust document processing capabilities. It's perfect for developers who want to stay in the JavaScript ecosystem while leveraging powerful document manipulation features.
 
-### Why Node.js Developers Love This API
-- **Cross-Platform**: Works on Windows, Linux, and macOS with Node.js  
-- **Framework Friendly**: Integrates smoothly with Express.js, NestJS, Koa, and other Node.js frameworks  
-- **Performance Optimized**: Handles large documents efficiently in both apps and microservices  
-- **Flexible**: Supports merge and split operations for Word, Excel, PowerPoint, PDF, images, and more  
-- **Automation Ready**: Perfect for REST APIs, serverless functions, and backend workflows  
+**Node.js Benefits**:
+- **JavaScript Simplicity**: Familiar syntax and async/await patterns
+- **NPM Integration**: Standard package management for Node.js projects
+- **Microservices Ready**: Perfect for containerized applications and serverless functions
+- **Full-Stack JavaScript**: Keep your entire stack in one language
 
-### Perfect For
-Web applications, document management systems, collaborative platforms, and any Node.js service that requires robust document splitting and merging.  
+**Best Use Cases**: RESTful document services, serverless document processing, modern web applications, and JavaScript-based document workflows.
 
-### Useful resources
-- [GroupDocs.Merger for Node.js via Java API Reference](/merger/nodejs-java/)  
-
-## GroupDocs.Merger for Python via .NET
-
-{{% alert color="primary" %}}  
-![GroupDocs.Merger for Python via .NET Product Logo](gdocs_python.png)  
-On-premise APIs for Python applications to merge, split, reorder, or extract pages from Microsoft Office, PDF, and many other document formats.  
-{{% /alert %}}  
-
-GroupDocs.Merger brings advanced document manipulation features to Python through a .NET bridge. Developers can combine multiple files, split large documents, rearrange pages, or extract specific sections — all within their Python workflows.  
-
-### Why Python Developers Love This API
-- **Cross-Platform**: Runs on Windows, Linux, and macOS with Python  
-- **Framework Integration**: Works well with Django, Flask, FastAPI, and automation scripts  
-- **Optimized for Large Files**: Efficient memory use when processing big documents  
-- **Rich Format Support**: Merge and split Word, Excel, PowerPoint, PDF, images, and more  
-- **Scalable**: Suitable for local apps, REST APIs, or cloud-native deployments  
-
-### Perfect For
-Document automation, content management systems, reporting solutions, and Python-based services that require reliable document merging and splitting.  
-
-### Useful resources
-- [GroupDocs.Merger for Python via .NET API Reference](/merger/python-net/)  
+These are links to some useful resources:
+- [GroupDocs.Merger for Node.js via Java API Reference](/merger/nodejs-java/)
 
 ## Getting Started: Which Platform Should You Choose?
 
@@ -135,5 +111,3 @@ The choice often comes down to your existing technology stack:
 **Choose Java if**: You need maximum cross-platform compatibility, are building Android applications, or work in enterprise environments that standardize on Java.
 
 **Choose Node.js if**: You're building modern web applications, need rapid development cycles, or prefer keeping your entire stack in JavaScript.
-
-**Choose Python if**: You want to integrate document merging and splitting into data science workflows, automation scripts, or backend services, and prefer the simplicity and flexibility of the Python ecosystem.  

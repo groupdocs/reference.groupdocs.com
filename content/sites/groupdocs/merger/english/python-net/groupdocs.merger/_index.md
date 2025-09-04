@@ -10,6 +10,18 @@ weight: 10
 
 The namespace provides classes which allow you to merge documents and manipulate document structure (split single document to multiple documents, reorder or replace document pages, change page orientation, manage document password and perform other manipulations) across wide range of supported document types - PDF, DOCX/DOC, PPTX/PPT, XLSX/XLS, VSDX/VSD, ODT, ODS, ODP, HTML, EPUB and many others.
 
+
+
+
+
+
+
+The main classes in this namespace are:
+|
+|
+ |
+ |
+
 ### Classes
 | Class | Description |
 | :- | :- |
