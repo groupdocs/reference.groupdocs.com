@@ -30,15 +30,6 @@ public class LoadOptions
 | [MimeType](../../groupdocs.markdown/loadoptions/mimetype) { get; set; } | Gets or sets the MIME type of the stream. |
 | [Password](../../groupdocs.markdown/loadoptions/password) { get; set; } | Gets or sets the password for opening an encrypted document. |
 
-### Remarks
-
-**Learn more**
-
-* [Load from a local disk](https://docs.groupdocs.com/display/markdownnet/Load+from+a+local+disk)
-* [Load from a stream](https://docs.groupdocs.com/display/markdownnet/Load+from+a+stream)
-* [Load a file of a specific format](https://docs.groupdocs.com/display/markdownnet/Load+a+file+of+a+specific+format)
-* [Load a password-protected document](https://docs.groupdocs.com/display/markdownnet/Load+a+password-protected+document)
-
 ### Examples
 
 The following example shows how to create a StreamInfo instance with file extension:
