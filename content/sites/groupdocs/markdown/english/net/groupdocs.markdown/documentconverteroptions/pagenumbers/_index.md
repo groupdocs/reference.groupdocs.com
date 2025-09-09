@@ -1,14 +1,14 @@
 ---
 title: PageNumbers
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets or sets an array of page numbers to convert. Start by 0.
+description: Gets or sets an array of page or worksheet numbers to convert. Numbering starts from 1.
 type: docs
 weight: 30
 url: /net/groupdocs.markdown/documentconverteroptions/pagenumbers/
 ---
 ## DocumentConverterOptions.PageNumbers property
 
-Gets or sets an array of page numbers to convert. Start by 0.
+Gets or sets an array of page or worksheet numbers to convert. Numbering starts from 1.
 
 ```csharp
 public int[] PageNumbers { get; set; }

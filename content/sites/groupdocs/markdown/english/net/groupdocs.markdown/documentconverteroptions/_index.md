@@ -28,9 +28,8 @@ public class DocumentConverterOptions : LoadOptions
 | [FileFormat](../../groupdocs.markdown/loadoptions/fileformat) { get; } | Gets the exact type of the file that is to be loaded. The default value is Unknown which means that the type should be detected automatically. |
 | [ImageExportStrategy](../../groupdocs.markdown/documentconverteroptions/imageexportstrategy) { get; set; } | Gets or sets the strategy for handling image export during document conversion. |
 | [MimeType](../../groupdocs.markdown/loadoptions/mimetype) { get; set; } | Gets or sets the MIME type of the stream. |
-| [PageNumbers](../../groupdocs.markdown/documentconverteroptions/pagenumbers) { get; set; } | Gets or sets an array of page numbers to convert. Start by 0. |
+| [PageNumbers](../../groupdocs.markdown/documentconverteroptions/pagenumbers) { get; set; } | Gets or sets an array of page or worksheet numbers to convert. Numbering starts from 1. |
 | [Password](../../groupdocs.markdown/loadoptions/password) { get; set; } | Gets or sets the password for opening an encrypted document. |
-| [WorksheetNumbers](../../groupdocs.markdown/documentconverteroptions/worksheetnumbers) { get; set; } | Gets or sets an array of worksheet numbers to convert. Start by 0. |
 
 ### Remarks
 
