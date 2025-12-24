@@ -10,6 +10,14 @@ weight: 10
 
 The namespace provides classes to compare documents for all popular document formats.
 
+The Main classes in this namespace are:
+
+|
+|
+|  is the entry point for comparing documents. |
+|  provides details about a document. |
+|  defines settings for customizing logging behaviour. |
+
 ### Classes
 | Class | Description |
 | :- | :- |
