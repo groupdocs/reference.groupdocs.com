@@ -12,7 +12,7 @@ weight: 40
 ### Modules
 | Module | Description |
 | :- | :- |
-| [`groupdocs.redaction`](/redaction/python-net/groupdocs.redaction) | The GroupDocs namespace provides classes for redacting sensitive information from documents in PDF, raster image and office document formats.|
+| [`groupdocs.redaction`](/redaction/python-net/groupdocs.redaction) | The GroupDocs namespace provides classes for redacting sensitive information from documents in PDF, raster image and office document formats.<br/>The main classes in this namespace are:<br/>\|<br/>\|<br/> \|<br/> \|<br/> \|<br/> \| |
 | [`groupdocs.redaction.configuration`](/redaction/python-net/groupdocs.redaction.configuration) | The GroupDocs.Redaction namespace provides document format configuration classes. |
 | [`groupdocs.redaction.exceptions`](/redaction/python-net/groupdocs.redaction.exceptions) | The GroupDocs.Redaction namespace provides different exceptions classes. |
 | [`groupdocs.redaction.integration`](/redaction/python-net/groupdocs.redaction.integration) | The GroupDocs.Redaction namespace provides interfaces and classes, used to integrate documents of different formats with GroupDocs.Redaction. |

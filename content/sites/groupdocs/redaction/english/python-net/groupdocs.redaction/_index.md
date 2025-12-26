@@ -10,6 +10,12 @@ weight: 10
 
 The GroupDocs namespace provides classes for redacting sensitive information from documents in PDF, raster image and office document formats.
 The main classes in this namespace are:
+|
+|
+ |
+ |
+ |
+ |
 
 ### Classes
 | Class | Description |
@@ -18,8 +24,7 @@ The main classes in this namespace are:
 | [`FileType`](/redaction/python-net/groupdocs.redaction/filetype) | Represents a file type. Provides methods to obtain a list of all file types supported by GroupDocs.Redaction, detect file type by extension, etc. |
 | [`IDocumentInfo`](/redaction/python-net/groupdocs.redaction/idocumentinfo) | Defines methods that are required for getting basic document information. |
 | [`License`](/redaction/python-net/groupdocs.redaction/license) | Provides methods for applying license. |
-| [`Metered`](/redaction/python-net/groupdocs.redaction/metered) | Provides methods which allow to activate product with Metered license and retrieve amount of MBs processed.
-<br/>Learn more about Metered licenses [here](https://purchase.groupdocs.com/faqs/licensing/metered). |
+| [`Metered`](/redaction/python-net/groupdocs.redaction/metered) | Provides methods which allow to activate product with Metered license and retrieve amount of MBs processed.<br/>Learn more about Metered licenses [here](https://purchase.groupdocs.com/faqs/licensing/metered). |
 | [`PageInfo`](/redaction/python-net/groupdocs.redaction/pageinfo) | Represents a brief page information. |
 | [`Redaction`](/redaction/python-net/groupdocs.redaction/redaction) | Represents a base abstract class for all redaction types. |
 | [`RedactionPolicy`](/redaction/python-net/groupdocs.redaction/redactionpolicy) | Represents a sanitization policy, containing a set of specific redactions to apply. |
