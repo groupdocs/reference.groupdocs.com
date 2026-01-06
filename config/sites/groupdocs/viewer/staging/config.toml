@@ -1,3 +1,3 @@
 [[deployment.targets]]
 name = "Stage"
-URL = "s3://reference2.groupdocs.com/?prefix=viewer/&region=us-west-2"
+URL = "s3://qa-reference.groupdocs.com/?prefix=viewer/&region=us-west-2"
