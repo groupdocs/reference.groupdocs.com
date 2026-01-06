@@ -1,0 +1,110 @@
+# Master workflow to trigger all staging workflows
+
+name: All Staging Workflows
+
+# Controls when the action will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  trigger-all-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger home-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-home-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger annotation-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-annotation-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger assembly-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-assembly-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger classification-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-classification-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger comparison-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-comparison-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger conversion-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-conversion-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger editor-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-editor-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger markdown-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-markdown-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger merger-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-merger-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger metadata-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-metadata-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger parser-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-parser-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger redaction-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-redaction-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger search-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-search-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger signature-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-signature-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger viewer-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-viewer-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger watermark-staging
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference2-groupdocs-watermark-stage.yml
+          token: ${{ secrets.REPO_TOKEN }}
