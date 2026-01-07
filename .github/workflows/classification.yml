@@ -1,0 +1,56 @@
+name: reference.groupdocs.com(classification)
+
+on:
+  push:
+    branches: [ main, production ]
+    paths:
+      - 'content/sites/groupdocs/classification/**'
+  pull_request:
+    branches: [ main, production ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: false
+        type: choice
+        default: staging
+        options:
+          - staging
+          - production
+
+jobs:
+  determine-environment:
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.set-env.outputs.environment }}
+      branch: ${{ steps.set-env.outputs.branch }}
+      deployment_target: ${{ steps.set-env.outputs.deployment_target }}
+      cloudfront_secret: ${{ steps.set-env.outputs.cloudfront_secret }}
+    steps:
+      - name: Set environment variables
+        id: set-env
+        run: |
+          BRANCH="${{ github.base_ref || github.ref_name }}"
+          if [ "$BRANCH" == "production" ] || [ "${{ github.event.inputs.environment }}" == "production" ]; then
+            echo "environment=production" >> $GITHUB_OUTPUT
+            echo "branch=production" >> $GITHUB_OUTPUT
+            echo "deployment_target=Production" >> $GITHUB_OUTPUT
+            echo "cloudfront_secret=AWS_DISTRIBUTION_PROD" >> $GITHUB_OUTPUT
+          else
+            echo "environment=staging" >> $GITHUB_OUTPUT
+            echo "branch=main" >> $GITHUB_OUTPUT
+            echo "deployment_target=Stage" >> $GITHUB_OUTPUT
+            echo "cloudfront_secret=AWS_DISTRIBUTION" >> $GITHUB_OUTPUT
+          fi
+
+  build:
+    needs: determine-environment
+    uses: ./.github/workflows/deploy_product.yml
+    with:
+      product: classification
+      environment: ${{ needs.determine-environment.outputs.environment }}
+      branch: ${{ needs.determine-environment.outputs.branch }}
+      deployment_target: ${{ needs.determine-environment.outputs.deployment_target }}
+      cloudfront_distribution_secret: ${{ needs.determine-environment.outputs.cloudfront_secret }}
+      max_deletes: '-1'
+      invalidate_paths: '/classification/*'

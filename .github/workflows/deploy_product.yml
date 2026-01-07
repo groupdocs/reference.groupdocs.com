@@ -1,0 +1,95 @@
+name: Reusable Deploy Product Workflow
+
+on:
+  workflow_call:
+    inputs:
+      product:
+        required: true
+        type: string
+        description: 'Product name (e.g., markdown, annotation, viewer)'
+      environment:
+        required: true
+        type: string
+        description: 'staging or production'
+      branch:
+        required: true
+        type: string
+        description: 'Branch name (main or production)'
+      deployment_target:
+        required: true
+        type: string
+        description: 'Stage or Production'
+      cloudfront_distribution_secret:
+        required: true
+        type: string
+        description: 'Secret name for CloudFront distribution (AWS_DISTRIBUTION or AWS_DISTRIBUTION_PROD)'
+      max_deletes:
+        required: false
+        type: string
+        default: '-1'
+        description: 'Max deletes parameter for Hugo deploy'
+      invalidate_paths:
+        required: true
+        type: string
+        description: 'CloudFront invalidation paths (e.g., /markdown/* or "/index.html")'
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      
+      - name: Checkout theme repo
+        uses: actions/checkout@main
+        with:
+          repository: groupdocs/api-theme
+          token: ${{ secrets.REPO_TOKEN }}
+          fetch-depth: 0
+          path: themes/api-theme
+      
+      # Step 2 - Sets up the latest version of Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.97.3'
+          extended: true
+      
+      - name: Install Dependencies
+        run: |
+          npm install -D --save autoprefixer
+          npm install -D --save postcss-cli
+      
+      # Also specifies the theme we want to use
+      - name: Build
+        run: hugo --configDir config/sites/groupdocs/${{ inputs.product }} --environment ${{ inputs.environment }} --minify
+      
+      - name: Deploy to S3
+        run: hugo --configDir config/sites/groupdocs/${{ inputs.product }} --environment ${{ inputs.environment }} deploy --target "${{ inputs.deployment_target }}" --maxDeletes ${{ inputs.max_deletes }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+      
+      # Set CloudFront distribution ID based on environment
+      - name: Set CloudFront Distribution
+        id: set-distribution
+        run: |
+          if [ "${{ inputs.cloudfront_distribution_secret }}" == "AWS_DISTRIBUTION" ]; then
+            echo "distribution=${{ secrets.AWS_DISTRIBUTION }}" >> $GITHUB_OUTPUT
+          else
+            echo "distribution=${{ secrets.AWS_DISTRIBUTION_PROD }}" >> $GITHUB_OUTPUT
+          fi
+      
+      # Invalidate Cloudfront
+      - name: invalidate
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ steps.set-distribution.outputs.distribution }}
+          PATHS: ${{ inputs.invalidate_paths }}
+          AWS_REGION: 'us-west-2'
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
