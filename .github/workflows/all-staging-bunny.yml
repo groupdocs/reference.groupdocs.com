@@ -1,0 +1,110 @@
+# Master workflow to trigger all staging BunnyCDN workflows
+
+name: All Staging Workflows (BunnyCDN)
+
+# Controls when the action will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  trigger-all-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger home-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-home-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger annotation-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-annotation-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger assembly-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-assembly-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger classification-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-classification-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger comparison-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-comparison-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger conversion-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-conversion-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger editor-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-editor-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger markdown-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-markdown-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger merger-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-merger-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger metadata-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-metadata-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger parser-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-parser-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger redaction-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-redaction-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger search-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-search-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger signature-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-signature-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger viewer-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-viewer-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger watermark-stage-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: qa-reference-groupdocs-watermark-stage-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}

@@ -1,0 +1,110 @@
+# Master workflow to trigger all production BunnyCDN workflows
+
+name: All Production Workflows (BunnyCDN)
+
+# Controls when the action will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  trigger-all-production:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger home-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-home-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger annotation-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-annotation-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger assembly-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-assembly-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger classification-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-classification-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger comparison-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-comparison-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger conversion-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-conversion-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger editor-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-editor-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger markdown-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-markdown-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger merger-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-merger-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger metadata-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-metadata-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger parser-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-parser-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger redaction-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-redaction-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger search-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-search-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger signature-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-signature-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger viewer-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-viewer-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - name: Trigger watermark-production-bunny
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: reference-groupdocs-watermark-production-bunny.yml
+          token: ${{ secrets.REPO_TOKEN }}
