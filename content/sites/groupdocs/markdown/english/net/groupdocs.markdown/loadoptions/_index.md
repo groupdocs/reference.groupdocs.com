@@ -3,7 +3,7 @@ title: LoadOptions
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Allows a developer to specify additional options such as a password when loading a file.
 type: docs
-weight: 150
+weight: 200
 url: /net/groupdocs.markdown/loadoptions/
 ---
 ## LoadOptions class

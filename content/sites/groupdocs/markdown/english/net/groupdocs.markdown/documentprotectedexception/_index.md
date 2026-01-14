@@ -3,7 +3,7 @@ title: DocumentProtectedException
 second_title: GroupDocs.Markdown for .NET API Reference
 description: The exception that is thrown when document is protected by password.
 type: docs
-weight: 60
+weight: 100
 url: /net/groupdocs.markdown/documentprotectedexception/
 ---
 ## DocumentProtectedException class

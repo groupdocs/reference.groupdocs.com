@@ -3,7 +3,7 @@ title: SkipImagesStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Implements an image export strategy that skips saving images during document conversion.
 type: docs
-weight: 180
+weight: 230
 url: /net/groupdocs.markdown/skipimagesstrategy/
 ---
 ## SkipImagesStrategy class

@@ -3,7 +3,7 @@ title: ExportImagesAsBase64Strategy
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Implements an image export strategy that embeds images as Base64 strings directly in the Markdown.
 type: docs
-weight: 70
+weight: 110
 url: /net/groupdocs.markdown/exportimagesasbase64strategy/
 ---
 ## ExportImagesAsBase64Strategy class

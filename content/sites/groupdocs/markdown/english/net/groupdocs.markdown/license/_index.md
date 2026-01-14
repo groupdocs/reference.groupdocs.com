@@ -3,7 +3,7 @@ title: License
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Provides methods for applying license to the GroupDocs.Markdown library.
 type: docs
-weight: 140
+weight: 190
 url: /net/groupdocs.markdown/license/
 ---
 ## License class

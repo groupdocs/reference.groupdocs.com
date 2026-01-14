@@ -16,7 +16,7 @@ public DocumentConverterOptions()
 
 ### Remarks
 
-By default, the [`ImageExportStrategy`](../imageexportstrategy) is set to [`ExportImagesAsBase64Strategy`](../../exportimagesasbase64strategy), which embeds images as Base64 strings directly in the Markdown output.
+By default, the [`ExportStrategy`](../exportstrategy) is set to [`ExportImagesAsBase64Strategy`](../../exportimagesasbase64strategy), which embeds images as Base64 strings directly in the Markdown output.
 
 ### See Also
 

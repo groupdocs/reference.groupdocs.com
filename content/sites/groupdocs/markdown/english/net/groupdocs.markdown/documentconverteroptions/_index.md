@@ -3,7 +3,7 @@ title: DocumentConverterOptions
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Provides options for customizing the document conversion process to Markdown format.
 type: docs
-weight: 40
+weight: 80
 url: /net/groupdocs.markdown/documentconverteroptions/
 ---
 ## DocumentConverterOptions class
@@ -24,9 +24,9 @@ public class DocumentConverterOptions : LoadOptions
 
 | Name | Description |
 | --- | --- |
+| [ExportStrategy](../../groupdocs.markdown/documentconverteroptions/exportstrategy) { get; set; } | Gets or sets the strategy for customizing resource written to the Markdown output. |
 | [Extension](../../groupdocs.markdown/loadoptions/extension) { get; set; } | Gets or sets the file extension of the stream. |
 | [FileFormat](../../groupdocs.markdown/loadoptions/fileformat) { get; } | Gets the exact type of the file that is to be loaded. The default value is Unknown which means that the type should be detected automatically. |
-| [ImageExportStrategy](../../groupdocs.markdown/documentconverteroptions/imageexportstrategy) { get; set; } | Gets or sets the strategy for handling image export during document conversion. |
 | [MimeType](../../groupdocs.markdown/loadoptions/mimetype) { get; set; } | Gets or sets the MIME type of the stream. |
 | [PageNumbers](../../groupdocs.markdown/documentconverteroptions/pagenumbers) { get; set; } | Gets or sets an array of page or worksheet numbers to convert. Numbering starts from 1. |
 | [Password](../../groupdocs.markdown/loadoptions/password) { get; set; } | Gets or sets the password for opening an encrypted document. |
