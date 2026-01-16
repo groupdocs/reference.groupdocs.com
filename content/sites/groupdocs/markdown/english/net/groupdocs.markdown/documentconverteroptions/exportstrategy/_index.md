@@ -1,20 +1,22 @@
 ---
-title: ImageExportStrategy
+title: ExportStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets or sets the strategy for handling image export during document conversion.
+description: Gets or sets the strategy for customizing resource written to the Markdown output.
 type: docs
 weight: 20
-url: /net/groupdocs.markdown/documentconverteroptions/imageexportstrategy/
+url: /net/groupdocs.markdown/documentconverteroptions/exportstrategy/
 ---
-## DocumentConverterOptions.ImageExportStrategy property
+## DocumentConverterOptions.ExportStrategy property
 
-Gets or sets the strategy for handling image export during document conversion.
+Gets or sets the strategy for customizing resource written to the Markdown output.
 
 ```csharp
-public IImageExportStrategy ImageExportStrategy { get; set; }
+public IExportStrategy ExportStrategy { get; set; }
 ```
 
 ### Property Value
+
+The URI export strategy that determines how resource links are produced. Default is `null`, which keeps the Aspose-generated URIs unchanged.
 
 The image export strategy that determines how images are processed during conversion. Default is [`ExportImagesAsBase64Strategy`](../../exportimagesasbase64strategy).
 
@@ -31,7 +33,7 @@ Or implement your own strategy by creating a class that implements [`IImageExpor
 
 ### See Also
 
-* interface [IImageExportStrategy](../../iimageexportstrategy)
+* interface [IExportStrategy](../../../groupdocs.markdown.documentconversion/iexportstrategy)
 * class [DocumentConverterOptions](../../documentconverteroptions)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)

@@ -3,7 +3,7 @@ title: InvalidFormatException
 second_title: GroupDocs.Markdown for .NET API Reference
 description: The exception that is thrown when a file has an invalid format.
 type: docs
-weight: 130
+weight: 180
 url: /net/groupdocs.markdown/invalidformatexception/
 ---
 ## InvalidFormatException class

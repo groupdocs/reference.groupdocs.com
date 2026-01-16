@@ -3,7 +3,7 @@ title: IImageExportStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Defines the interface for handling image export during document conversion to Markdown. Implement this interface to customize how images are exported from source documents.
 type: docs
-weight: 110
+weight: 150
 url: /net/groupdocs.markdown/iimageexportstrategy/
 ---
 ## IImageExportStrategy interface
@@ -11,7 +11,7 @@ url: /net/groupdocs.markdown/iimageexportstrategy/
 Defines the interface for handling image export during document conversion to Markdown. Implement this interface to customize how images are exported from source documents.
 
 ```csharp
-public interface IImageExportStrategy
+public interface IImageExportStrategy : IExportStrategy
 ```
 
 ## Properties
@@ -52,6 +52,7 @@ public class CustomImageExportStrategy : IImageExportStrategy
 
 ### See Also
 
+* interface [IExportStrategy](../../groupdocs.markdown.documentconversion/iexportstrategy)
 * namespace [GroupDocs.Markdown](../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../)
 

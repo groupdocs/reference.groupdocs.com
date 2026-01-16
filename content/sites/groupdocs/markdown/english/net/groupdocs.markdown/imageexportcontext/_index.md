@@ -3,7 +3,7 @@ title: ImageExportContext
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Represents the context for image handling during document conversion to Markdown. This context is provided by the library during conversion and contains information about the image being processed.
 type: docs
-weight: 120
+weight: 170
 url: /net/groupdocs.markdown/imageexportcontext/
 ---
 ## ImageExportContext class

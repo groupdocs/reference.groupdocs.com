@@ -3,7 +3,7 @@ title: FileFormat
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Represents the recognized format of a loaded file.
 type: docs
-weight: 90
+weight: 130
 url: /net/groupdocs.markdown/fileformat/
 ---
 ## FileFormat enumeration

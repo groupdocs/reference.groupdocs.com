@@ -3,7 +3,7 @@ title: ExportImagesToFileSystemStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Implements an image export strategy that saves images to the file system during document conversion.
 type: docs
-weight: 80
+weight: 120
 url: /net/groupdocs.markdown/exportimagestofilesystemstrategy/
 ---
 ## ExportImagesToFileSystemStrategy class
