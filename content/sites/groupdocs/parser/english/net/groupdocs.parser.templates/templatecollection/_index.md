@@ -3,7 +3,7 @@ title: TemplateCollection
 second_title: GroupDocs.Parser for .NET API Reference
 description: Represents a collection of document parsing templates.
 type: docs
-weight: 830
+weight: 840
 url: /net/groupdocs.parser.templates/templatecollection/
 ---
 ## TemplateCollection class

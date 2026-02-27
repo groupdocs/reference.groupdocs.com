@@ -3,7 +3,7 @@ title: Parser
 second_title: GroupDocs.Parser for .NET API Reference
 description: Represents the main class that controls text images container extraction and parsing functionality.
 type: docs
-weight: 790
+weight: 800
 url: /net/groupdocs.parser/parser/
 ---
 ## Parser class

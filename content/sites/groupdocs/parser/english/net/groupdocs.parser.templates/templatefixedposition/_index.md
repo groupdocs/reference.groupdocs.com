@@ -3,7 +3,7 @@ title: TemplateFixedPosition
 second_title: GroupDocs.Parser for .NET API Reference
 description: Provides a template field position which is defined by the rectangular area.
 type: docs
-weight: 850
+weight: 860
 url: /net/groupdocs.parser.templates/templatefixedposition/
 ---
 ## TemplateFixedPosition class
