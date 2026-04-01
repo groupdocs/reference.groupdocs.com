@@ -1,28 +1,45 @@
 ---
 title: IUriExportStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Defines the interface for handling resource URI export during document conversion to Markdown.
+description: Defines a strategy for customizing resource URIs that are written into the Markdown output during conversion.
 type: docs
 weight: 160
 url: /net/groupdocs.markdown/iuriexportstrategy/
 ---
 ## IUriExportStrategy interface
 
-Defines the interface for handling resource URI export during document conversion to Markdown.
+Defines a strategy for customizing resource URIs that are written into the Markdown output during conversion.
 
 ```csharp
-public interface IUriExportStrategy : IExportStrategy
+public interface IUriExportStrategy
 ```
 
 ## Methods
 
 | Name | Description |
 | --- | --- |
-| [UpdateResourceUri](../../groupdocs.markdown/iuriexportstrategy/updateresourceuri)(UriExportContext) | Updates the URI information for a resource that will be written to the Markdown output. |
+| [UpdateResourceUri](../../groupdocs.markdown/iuriexportstrategy/updateresourceuri)(UriExportContext) | Called for each resource URI that will be written to the Markdown output. Modify properties on *context* to customize the resulting URI. |
+
+### Remarks
+
+Implement this interface to rewrite or transform the URIs that reference images or other external resources in the generated Markdown. For example, you can prepend a CDN base URL or change relative paths to absolute URLs.
+
+### Examples
+
+Prepend a CDN base URL to every resource URI:
+
+```csharp
+public class CdnUriExportStrategy : IUriExportStrategy
+{
+    public void UpdateResourceUri(UriExportContext context)
+    {
+        context.ResourceFileUri = "https://cdn.example.com/assets/" + context.ResourceFileName;
+    }
+}
+```
 
 ### See Also
 
-* interface [IExportStrategy](../../groupdocs.markdown.documentconversion/iexportstrategy)
 * namespace [GroupDocs.Markdown](../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../)
 

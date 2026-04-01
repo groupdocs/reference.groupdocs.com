@@ -1,22 +1,32 @@
 ---
 title: GetConsumptionCredit
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the consumption credit.
+description: Retrieves count of credits consumed.
 type: docs
 weight: 30
 url: /net/groupdocs.markdown/metered/getconsumptioncredit/
 ---
 ## Metered.GetConsumptionCredit method
 
-Gets the consumption credit.
+Retrieves count of credits consumed.
 
 ```csharp
 public static decimal GetConsumptionCredit()
 ```
 
-### Return Value
+### Examples
 
-The consumption credit.
+Following example demonstrates how to retrieve count of credits consumed.
+
+```csharp
+string publicKey = "Public Key";
+string privateKey = "Private Key";
+
+Metered metered = new Metered();
+metered.SetMeteredKey(publicKey, privateKey);
+
+decimal creditsConsumed = Metered.GetConsumptionCredit();
+```
 
 ### See Also
 

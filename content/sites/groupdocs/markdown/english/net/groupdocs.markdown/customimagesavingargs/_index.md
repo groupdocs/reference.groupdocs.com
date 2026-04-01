@@ -1,14 +1,14 @@
 ---
 title: CustomImageSavingArgs
 second_title: GroupDocs.Markdown for .NET API Reference
-description: User arguments for saving item.
+description: Provides information and controls for saving a single image during documenttoMarkdown conversion. An instance of this class is passed to the callback registered with CustomImagesStrategy./customimagesstrategy for each image found in the source document.
 type: docs
-weight: 10
+weight: 30
 url: /net/groupdocs.markdown/customimagesavingargs/
 ---
 ## CustomImageSavingArgs class
 
-User arguments for saving item.
+Provides information and controls for saving a single image during document-to-Markdown conversion. An instance of this class is passed to the callback registered with [`CustomImagesStrategy`](../customimagesstrategy) for each image found in the source document.
 
 ```csharp
 public class CustomImageSavingArgs
@@ -18,18 +18,38 @@ public class CustomImageSavingArgs
 
 | Name | Description |
 | --- | --- |
-| [ImageFileName](../../groupdocs.markdown/customimagesavingargs/imagefilename) { get; } | Gets the file name (without path) where the image will be saved to. |
-| [ImageFileNameOutput](../../groupdocs.markdown/customimagesavingargs/imagefilenameoutput) { get; } | Gets the override file name (without path) where the image will be saved to. |
-| [OutputDirectory](../../groupdocs.markdown/customimagesavingargs/outputdirectory) { get; } | Get the Output Directory |
-| [OutputStream](../../groupdocs.markdown/customimagesavingargs/outputstream) { get; } | Gets the Output Stream |
-| [ShapeType](../../groupdocs.markdown/customimagesavingargs/shapetype) { get; } | Gets the shape type. |
+| [ImageFileName](../../groupdocs.markdown/customimagesavingargs/imagefilename) { get; } | Gets the default file name (without path) suggested by the library for this image. |
+| [ImageFileNameOutput](../../groupdocs.markdown/customimagesavingargs/imagefilenameoutput) { get; } | Gets the overridden file name set by [`SetOutputImageFileName`](./setoutputimagefilename), or `null` if no override was specified. |
+| [OutputDirectory](../../groupdocs.markdown/customimagesavingargs/outputdirectory) { get; } | Gets the output directory where images are being saved. |
+| [OutputStream](../../groupdocs.markdown/customimagesavingargs/outputstream) { get; } | Gets the custom output stream set by [`SetOutputStream`](./setoutputstream), or `null` if no custom stream was specified. |
+| [ReplacementImageStream](../../groupdocs.markdown/customimagesavingargs/replacementimagestream) { get; } | Gets the replacement image stream set by [`SetReplacementImage`](./setreplacementimage), or `null` if no replacement was specified. |
+| [ShapeType](../../groupdocs.markdown/customimagesavingargs/shapetype) { get; } | Gets the type of the shape that contains the image in the source document (for example, "Picture" or "Shape"). |
 
 ## Methods
 
 | Name | Description |
 | --- | --- |
-| [SetOutputImageFileName](../../groupdocs.markdown/customimagesavingargs/setoutputimagefilename)(string) | Set the file name (without path) where the image will be saved to. |
-| [SetOutputStream](../../groupdocs.markdown/customimagesavingargs/setoutputstream)(Stream) | Set the Output Stream |
+| [SetOutputImageFileName](../../groupdocs.markdown/customimagesavingargs/setoutputimagefilename)(string) | Overrides the default file name for this image. The image will be saved under the specified name instead of the library-generated [`ImageFileName`](./imagefilename). |
+| [SetOutputStream](../../groupdocs.markdown/customimagesavingargs/setoutputstream)(Stream) | Redirects the image data to a custom writable stream instead of the default file output. The library will write the image bytes to this stream during conversion. |
+| [SetReplacementImage](../../groupdocs.markdown/customimagesavingargs/setreplacementimage)(Stream) | Provides a replacement image to use instead of the original image from the source document. The stream must contain the complete replacement image data (e.g. PNG or JPEG bytes). When set, the library writes this data to the output instead of the original image. |
+
+### Remarks
+
+Use [`SetOutputImageFileName`](./setoutputimagefilename) to change the file name the image is saved under, or [`SetOutputStream`](./setoutputstream) to redirect the image data to a custom stream. If neither method is called, the library uses the defaults provided by [`ImageFileName`](./imagefilename) and [`OutputDirectory`](./outputdirectory).
+
+### Examples
+
+Renaming images in a custom callback:
+
+```csharp
+var strategy = new CustomImagesStrategy(args =>
+{
+    // Change the output file name
+    args.SetOutputImageFileName("thumb-" + args.ImageFileName);
+});
+
+var options = new ConvertOptions { ImageExportStrategy = strategy };
+```
 
 ### See Also
 

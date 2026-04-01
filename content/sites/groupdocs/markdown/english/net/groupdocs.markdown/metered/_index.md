@@ -1,14 +1,14 @@
 ---
 title: Metered
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Provides methods to set a metered key.
+description: Provides methods for applying Meteredhttps//purchase.groupdocs.com/faqs/licensing/metered license.
 type: docs
-weight: 220
+weight: 240
 url: /net/groupdocs.markdown/metered/
 ---
 ## Metered class
 
-Provides methods to set a metered key.
+Provides methods for applying [Metered](https://purchase.groupdocs.com/faqs/licensing/metered) license.
 
 ```csharp
 public class Metered
@@ -24,9 +24,16 @@ public class Metered
 
 | Name | Description |
 | --- | --- |
-| [SetMeteredKey](../../groupdocs.markdown/metered/setmeteredkey)(string, string) | Sets metered public and private key |
-| static [GetConsumptionCredit](../../groupdocs.markdown/metered/getconsumptioncredit)() | Gets the consumption credit. |
-| static [GetConsumptionQuantity](../../groupdocs.markdown/metered/getconsumptionquantity)() | Gets the consumption file size. |
+| [SetMeteredKey](../../groupdocs.markdown/metered/setmeteredkey)(string, string) | Activates product with Metered keys. |
+| static [GetConsumptionCredit](../../groupdocs.markdown/metered/getconsumptioncredit)() | Retrieves count of credits consumed. |
+| static [GetConsumptionQuantity](../../groupdocs.markdown/metered/getconsumptionquantity)() | Retrieves amount of MBs processed. |
+
+### Remarks
+
+**Learn more**
+
+* More about Metered licensing: [Metered Licensing FAQ](https://purchase.groupdocs.com/faqs/licensing/metered)
+* More about GroupDocs.Markdown licensing: [Evaluation Limitations and Licensing](https://docs.groupdocs.com/markdown/net/licensing-and-subscription/)
 
 ### See Also
 

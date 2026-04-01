@@ -3,7 +3,7 @@ title: GetImageStream
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Gets a stream for writing the exported image to the file system.
 type: docs
-weight: 30
+weight: 40
 url: /net/groupdocs.markdown/customimagesstrategy/getimagestream/
 ---
 ## CustomImagesStrategy.GetImageStream method
@@ -21,10 +21,6 @@ public Stream GetImageStream(ImageExportContext context)
 ### Return Value
 
 A stream for writing the image data to the file system.
-
-### Remarks
-
-If the images folder does not exist, it will be created automatically. The image will be saved with the filename specified in the *context*.
 
 ### See Also
 

@@ -1,18 +1,39 @@
 ---
 title: DocumentProtectedException
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Initializes a new instance of the DocumentProtectedExceptiongroupdocs.markdown/documentprotectedexception class.
+description: Initializes a new instance of the DocumentProtectedExceptiongroupdocs.markdown/documentprotectedexception class with the default message.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/documentprotectedexception/documentprotectedexception/
 ---
-## DocumentProtectedException constructor
+## DocumentProtectedException() {#constructor}
 
-Initializes a new instance of the [`DocumentProtectedException`](../../documentprotectedexception) class.
+Initializes a new instance of the [`DocumentProtectedException`](../../documentprotectedexception) class with the default message.
 
 ```csharp
 public DocumentProtectedException()
 ```
+
+### See Also
+
+* class [DocumentProtectedException](../../documentprotectedexception)
+* namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
+* assembly [GroupDocs.Markdown](../../../)
+
+---
+
+## DocumentProtectedException(string, Exception) {#constructor_1}
+
+Initializes a new instance of the [`DocumentProtectedException`](../../documentprotectedexception) class.
+
+```csharp
+public DocumentProtectedException(string message, Exception innerException)
+```
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| message | String | The error message. |
+| innerException | Exception | The exception that caused this error. |
 
 ### See Also
 

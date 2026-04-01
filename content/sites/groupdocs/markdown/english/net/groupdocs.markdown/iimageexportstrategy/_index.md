@@ -1,58 +1,64 @@
 ---
 title: IImageExportStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Defines the interface for handling image export during document conversion to Markdown. Implement this interface to customize how images are exported from source documents.
+description: Defines a strategy for handling image export during documenttoMarkdown conversion. Implement this interface to control where and how images extracted from the source document are stored.
 type: docs
-weight: 150
+weight: 140
 url: /net/groupdocs.markdown/iimageexportstrategy/
 ---
 ## IImageExportStrategy interface
 
-Defines the interface for handling image export during document conversion to Markdown. Implement this interface to customize how images are exported from source documents.
+Defines a strategy for handling image export during document-to-Markdown conversion. Implement this interface to control where and how images extracted from the source document are stored.
 
 ```csharp
-public interface IImageExportStrategy : IExportStrategy
+public interface IImageExportStrategy
 ```
 
 ## Properties
 
 | Name | Description |
 | --- | --- |
-| [ImagesFolder](../../groupdocs.markdown/iimageexportstrategy/imagesfolder) { get; } | Gets the folder where exported images will be stored. |
+| [ImagesFolder](../../groupdocs.markdown/iimageexportstrategy/imagesfolder) { get; } | Gets the folder path where exported images will be stored. |
 
 ## Methods
 
 | Name | Description |
 | --- | --- |
-| [GetImageStream](../../groupdocs.markdown/iimageexportstrategy/getimagestream)(ImageExportContext) | Gets a stream for writing the exported image. |
+| [GetImageStream](../../groupdocs.markdown/iimageexportstrategy/getimagestream)(ImageExportContext) | Returns a writable stream for the image described by *context*. The library writes the image bytes to this stream during conversion. |
 
 ### Remarks
 
-This interface provides methods to control the image export process during document conversion. You can implement this interface to customize where images are stored and how they are processed.
+The library ships with several built-in strategies:
+
+* [`ExportImagesAsBase64Strategy`](../exportimagesasbase64strategy) -- embeds images inline as Base64 (the default).
+* [`ExportImagesToFileSystemStrategy`](../exportimagestofilesystemstrategy) -- writes images to a folder on disk.
+* [`SkipImagesStrategy`](../skipimagesstrategy) -- omits images entirely.
+* [`CustomImagesStrategy`](../customimagesstrategy) -- delegates to a callback you supply.
+
+Implement this interface directly when none of the built-in strategies meet your needs.
 
 ### Examples
 
-The following example shows how to implement a custom image export strategy:
+Custom strategy that uploads images to cloud storage:
 
 ```csharp
-public class CustomImageExportStrategy : IImageExportStrategy
+public class CloudImageExportStrategy : IImageExportStrategy
 {
-    public string ImagesFolder => "images";
+    public string ImagesFolder => "cloud-images";
 
     public Stream GetImageStream(ImageExportContext context)
     {
-        // Optionally customize the image filename
-        context.ImageFileName = "custom-" + context.ImageFileName;
-        
-        // Create and return a stream for the image
-        return File.Create(ImagesFolder + "/" + context.ImageFileName);
+        // Rename the image file if needed
+        context.ImageFileName = "doc-" + context.ImageFileName;
+
+        // Return a stream that the library will write image bytes to
+        return new MemoryStream(); // replace with your cloud upload stream
     }
 }
 ```
 
 ### See Also
 
-* interface [IExportStrategy](../../groupdocs.markdown.documentconversion/iexportstrategy)
 * namespace [GroupDocs.Markdown](../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../)
 

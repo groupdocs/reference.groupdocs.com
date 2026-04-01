@@ -1,14 +1,14 @@
 ---
 title: CustomImagesStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Implements an image export strategy that user control how images are saved when a document is saved to Markdown format.
+description: Implements an image export strategy that gives you full control over how images are saved during conversion.
 type: docs
-weight: 20
+weight: 40
 url: /net/groupdocs.markdown/customimagesstrategy/
 ---
 ## CustomImagesStrategy class
 
-Implements an image export strategy that user control how images are saved when a document is saved to Markdown format.
+Implements an image export strategy that gives you full control over how images are saved during conversion.
 
 ```csharp
 public class CustomImagesStrategy : IImageExportStrategy
@@ -18,13 +18,14 @@ public class CustomImagesStrategy : IImageExportStrategy
 
 | Name | Description |
 | --- | --- |
-| [CustomImagesStrategy](customimagesstrategy)(string, CustomImageSavingHandler) | Initializes a new instance of the [`ExportImagesToFileSystemStrategy`](../exportimagestofilesystemstrategy) class. |
+| [CustomImagesStrategy](customimagesstrategy)(string, IImageSavingHandler) | Initializes a new instance of the [`CustomImagesStrategy`](../customimagesstrategy) class. |
 
 ## Properties
 
 | Name | Description |
 | --- | --- |
-| [ImagesFolder](../../groupdocs.markdown/customimagesstrategy/imagesfolder) { get; } | Gets the folder where images will be exported. |
+| [ImagesFolder](../../groupdocs.markdown/customimagesstrategy/imagesfolder) { get; } | Gets the physical folder where images will be saved on disk. |
+| [ImagesRelativePath](../../groupdocs.markdown/customimagesstrategy/imagesrelativepath) { get; set; } | Gets or sets the path used in the Markdown image references. When `null` or empty, the full [`ImagesFolder`](./imagesfolder) path is used. Set this to a relative path (e.g. `"images"`) for portable Markdown output. |
 
 ## Methods
 
@@ -32,37 +33,21 @@ public class CustomImagesStrategy : IImageExportStrategy
 | --- | --- |
 | [GetImageStream](../../groupdocs.markdown/customimagesstrategy/getimagestream)(ImageExportContext) | Gets a stream for writing the exported image to the file system. |
 
-## Other Members
+### Remarks
 
-| Name | Description |
-| --- | --- |
-| delegate [CustomImageSavingHandler](customimagesstrategy.customimagesavinghandler) | Delegate through which you can define the mechanism for saving images when creating a .md file |
+Supply an [`IImageSavingHandler`](../iimagesavinghandler) implementation to rename images, redirect them to a custom stream, or apply any other custom logic when each image is encountered.
 
 ### Examples
 
-The following example shows how to use CustomImagesStrategy when converting a document:
+Rename every image with a sequential prefix:
 
 ```csharp
-// Set options
-var options = new DocumentConverterOptions
+var handler = new RenameHandler();
+var options = new ConvertOptions
 {
-    ImageExportStrategy = new CustomImagesStrategy(imageFolder, SetStreamHandler)
+    ImageExportStrategy = new CustomImagesStrategy("images", handler)
 };
-
-// Convert document without saving images
-var markdown = MarkdownConverter.Convert("document.pdf", options);
-// The markdown will contain image references like "file_0_originalName",
-// but the actual image files won't be saved
-
-// Set index
-private int index = 0;
-
-// Renaming function
-private void RenameImageHandler(CustomImageSavingArgs args)
-{
-   args.SetOutputFileName($"file_{index}_{args.SuggestedFileName}");
-   index++;
-}
+string markdown = MarkdownConverter.ToMarkdown("document.docx", options);
 ```
 
 ### See Also

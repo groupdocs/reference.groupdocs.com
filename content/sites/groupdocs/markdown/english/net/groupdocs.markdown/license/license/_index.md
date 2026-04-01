@@ -1,14 +1,14 @@
 ---
 title: License
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Initializes a new instance of the Licensegroupdocs.markdown/license class.
+description: The default constructor.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/license/license/
 ---
 ## License constructor
 
-Initializes a new instance of the [`License`](../../license) class.
+The default constructor.
 
 ```csharp
 public License()

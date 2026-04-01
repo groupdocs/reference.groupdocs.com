@@ -1,14 +1,14 @@
 ---
 title: SetResourceFileUri
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Sets the URI that will be written to the Markdown output.
+description: Overrides the URI that will be written to the Markdown output for this resource.
 type: docs
 weight: 50
 url: /net/groupdocs.markdown/urisavingargs/setresourcefileuri/
 ---
 ## UriSavingArgs.SetResourceFileUri method
 
-Sets the URI that will be written to the Markdown output.
+Overrides the URI that will be written to the Markdown output for this resource.
 
 ```csharp
 public void SetResourceFileUri(string resourceFileUri)
@@ -16,7 +16,7 @@ public void SetResourceFileUri(string resourceFileUri)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| resourceFileUri | String | Target resource URI. |
+| resourceFileUri | String | The new URI to use (for example, a CDN URL or an absolute path). |
 
 ### See Also
 

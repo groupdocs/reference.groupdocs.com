@@ -3,7 +3,7 @@ title: SkipImagesStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Implements an image export strategy that skips saving images during document conversion.
 type: docs
-weight: 230
+weight: 250
 url: /net/groupdocs.markdown/skipimagesstrategy/
 ---
 ## SkipImagesStrategy class
@@ -41,13 +41,12 @@ This strategy is useful when you want to convert a document to Markdown without 
 The following example shows how to use SkipImagesStrategy when converting a document:
 
 ```csharp
-var options = new MarkdownConversionOptions();
-options.ImageExportStrategy = new SkipImagesStrategy();
-
-// Convert document without saving images
-var markdown = MarkdownConverter.Convert("document.docx", options);
-// The markdown will contain image references like ![](img-001.png),
-// but the actual image files won't be saved
+var options = new ConvertOptions
+{
+    ImageExportStrategy = new SkipImagesStrategy()
+};
+string markdown = MarkdownConverter.ToMarkdown("document.docx", options);
+// Image references remain in the markdown but no files are written
 ```
 
 ### See Also

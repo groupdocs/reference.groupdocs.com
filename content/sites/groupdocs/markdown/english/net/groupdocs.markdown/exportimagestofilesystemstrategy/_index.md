@@ -1,14 +1,14 @@
 ---
 title: ExportImagesToFileSystemStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Implements an image export strategy that saves images to the file system during document conversion.
+description: Saves images to a folder on disk during conversion.
 type: docs
-weight: 120
+weight: 100
 url: /net/groupdocs.markdown/exportimagestofilesystemstrategy/
 ---
 ## ExportImagesToFileSystemStrategy class
 
-Implements an image export strategy that saves images to the file system during document conversion.
+Saves images to a folder on disk during conversion.
 
 ```csharp
 public class ExportImagesToFileSystemStrategy : IImageExportStrategy
@@ -24,7 +24,8 @@ public class ExportImagesToFileSystemStrategy : IImageExportStrategy
 
 | Name | Description |
 | --- | --- |
-| [ImagesFolder](../../groupdocs.markdown/exportimagestofilesystemstrategy/imagesfolder) { get; } | Gets the folder where images will be exported. |
+| [ImagesFolder](../../groupdocs.markdown/exportimagestofilesystemstrategy/imagesfolder) { get; } | Gets the physical folder where images will be saved on disk. |
+| [ImagesRelativePath](../../groupdocs.markdown/exportimagestofilesystemstrategy/imagesrelativepath) { get; set; } | Gets or sets the path used in the Markdown image references. When `null` or empty, the full [`ImagesFolder`](./imagesfolder) path is used (which may be absolute). Set this to a relative path (e.g. `"images"`) so the Markdown output contains portable references. |
 
 ## Methods
 
@@ -34,20 +35,21 @@ public class ExportImagesToFileSystemStrategy : IImageExportStrategy
 
 ### Remarks
 
-This strategy saves all images from the source document to a specified folder on the file system. The images are saved with their original filenames as provided by the [`ImageExportContext`](../imageexportcontext). If the specified images folder does not exist, it will be created automatically.
+By default, the Markdown output references images using the full [`ImagesFolder`](./imagesfolder) path. Set [`ImagesRelativePath`](./imagesrelativepath) to control the path that appears in the Markdown image links — typically a path relative to the output `.md` file.
 
 ### Examples
 
-The following example shows how to use ExportImagesToFileSystemStrategy when converting a document:
+Save images next to the output file and reference them with a relative path:
 
 ```csharp
-var options = new MarkdownConversionOptions();
-options.ImageExportStrategy = new ExportImagesToFileSystemStrategy("output/images");
-
-// Convert document and save images to the specified folder
-var markdown = MarkdownConverter.Convert("document.docx", options);
-// Images will be saved to the "output/images" folder
-// and referenced in the markdown as ![](images/img-001.png)
+var strategy = new ExportImagesToFileSystemStrategy("c:/output/images")
+{
+    ImagesRelativePath = "images"
+};
+var options = new ConvertOptions { ImageExportStrategy = strategy };
+MarkdownConverter.ToFile("document.docx", "c:/output/doc.md", options);
+// Markdown contains: ![](images/img-001.png)
+// Image file at:     c:/output/images/img-001.png
 ```
 
 ### See Also

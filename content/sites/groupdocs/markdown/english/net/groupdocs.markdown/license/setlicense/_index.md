@@ -1,33 +1,39 @@
 ---
 title: SetLicense
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Sets the license from a file path.
+description: Licenses the component.
 type: docs
 weight: 20
 url: /net/groupdocs.markdown/license/setlicense/
 ---
-## SetLicense(string) {#setlicense_1}
+## SetLicense(Stream) {#setlicense}
 
-Sets the license from a file path.
+Licenses the component.
 
 ```csharp
-public void SetLicense(string filePath)
+public void SetLicense(Stream licenseStream)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| filePath | String | The path to the license file. |
+| licenseStream | Stream | The license stream. |
+
+### Exceptions
+
+| exception | condition |
+| --- | --- |
+| ArgumentNullException | Thrown when *licenseStream* is null. |
 
 ### Examples
 
-///
+The following example demonstrates how to set a license passing Stream of the license file.
 
 ```csharp
-// initialize License class
-License license = new License();
-
-// set path to .lic file
-license.SetLicense(@"C:\\GroupDocs.Markdown.lic");    
+using (FileStream licenseStream = File.OpenRead("GroupDocs.Markdown.lic"))
+{
+    License license = new License();
+    license.SetLicense(licenseStream);
+}
 ```
 
 ### See Also
@@ -38,25 +44,32 @@ license.SetLicense(@"C:\\GroupDocs.Markdown.lic");
 
 ---
 
-## SetLicense(Stream) {#setlicense}
+## SetLicense(string) {#setlicense_1}
 
-Sets the license from a stream.
+Licenses the component.
 
 ```csharp
-public void SetLicense(Stream stream)
+public void SetLicense(string licensePath)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| stream | Stream | The stream that contains the license. |
+| licensePath | String | The license file path. |
+
+### Exceptions
+
+| exception | condition |
+| --- | --- |
+| ArgumentException | Thrown when *licensePath* is null or empty string. |
 
 ### Examples
 
+The following example demonstrates how to set a license passing a path to the license file.
+
 ```csharp
-using (FileStream stream = new FileStream("C:\\GroupDocs.Markdown.lic", FileMode.Open))
-{
-    License.SetLicense(stream);
-}
+string licensePath = "GroupDocs.Markdown.lic";
+License license = new License();
+license.SetLicense(licensePath);
 ```
 
 ### See Also

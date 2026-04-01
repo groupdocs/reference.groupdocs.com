@@ -11,16 +11,16 @@ url: /net/groupdocs.markdown/customuriexportstrategy/customuriexportstrategy/
 Initializes a new instance of the [`CustomUriExportStrategy`](../../customuriexportstrategy) class.
 
 ```csharp
-public CustomUriExportStrategy(UriSavingHandler handler)
+public CustomUriExportStrategy(IUriSavingHandler handler)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| handler | UriSavingHandler | The custom handler used to override the URI that will be written to Markdown. |
+| handler | IUriSavingHandler | The handler that is called for each resource URI during conversion. |
 
 ### See Also
 
-* delegate [UriSavingHandler](../../customuriexportstrategy.urisavinghandler)
+* interface [IUriSavingHandler](../../iurisavinghandler)
 * class [CustomUriExportStrategy](../../customuriexportstrategy)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)

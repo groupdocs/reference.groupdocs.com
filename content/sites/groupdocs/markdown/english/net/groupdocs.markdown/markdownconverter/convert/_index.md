@@ -1,46 +1,35 @@
 ---
 title: Convert
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Converts the source document to Markdown format and returns the result as a string.
+description: Converts the loaded document to Markdown using default options and returns the result with the Markdown content in Contentgroupdocs.markdown/convertresult/content.
 type: docs
 weight: 20
 url: /net/groupdocs.markdown/markdownconverter/convert/
 ---
 ## Convert() {#convert}
 
-Converts the source document to Markdown format and returns the result as a string.
+Converts the loaded document to Markdown using default options and returns the result with the Markdown content in [`Content`](../../convertresult/content).
 
 ```csharp
-public DocumentConverterResult Convert()
+public ConvertResult Convert()
 ```
 
 ### Return Value
 
-A [`DocumentConverterResult`](../../documentconverterresult) containing the converted Markdown content or error information.
+A [`ConvertResult`](../../convertresult) whose [`IsSuccess`](../../convertresult/issuccess) indicates whether the conversion succeeded. On success, [`Content`](../../convertresult/content) contains the Markdown string.
 
 ### Examples
 
-The following example shows how to convert a document to Markdown and get the result as a string:
-
 ```csharp
-using (var converter = new MarkdownConverter("document.docx"))
-{
-    var result = converter.Convert();
-    if (result.IsSuccess)
-    {
-        string markdown = result.Content;
-        Console.WriteLine(markdown);
-    }
-    else
-    {
-        Console.WriteLine($"Conversion failed: {result.ErrorMessage}");
-    }
-}
+using var converter = new MarkdownConverter("report.pdf");
+ConvertResult result = converter.Convert();
+if (result.IsSuccess)
+    File.WriteAllText("report.md", result.Content);
 ```
 
 ### See Also
 
-* class [DocumentConverterResult](../../documentconverterresult)
+* class [ConvertResult](../../convertresult)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)
@@ -49,45 +38,23 @@ using (var converter = new MarkdownConverter("document.docx"))
 
 ## Convert(Stream) {#convert_2}
 
-Converts the source document to Markdown format and writes the result to the specified output stream.
+Converts the loaded document to Markdown and writes the output to the specified stream. The [`Content`](../../convertresult/content) property will be `null`; the Markdown bytes are written directly to *outputStream*.
 
 ```csharp
-public DocumentConverterResult Convert(Stream outputStream)
+public ConvertResult Convert(Stream outputStream)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| outputStream | Stream | The stream to write the converted Markdown content to. |
+| outputStream | Stream | A writable stream that will receive the UTF-8 encoded Markdown output. |
 
 ### Return Value
 
-A [`DocumentConverterResult`](../../documentconverterresult) indicating success or failure of the conversion.
-
-### Exceptions
-
-| exception | condition |
-| --- | --- |
-| ArgumentNullException | Thrown when outputStream is null. |
-
-### Examples
-
-The following example shows how to convert a document to Markdown and write to a stream:
-
-```csharp
-using (var converter = new MarkdownConverter("document.docx"))
-using (var outputStream = new MemoryStream())
-{
-    var result = converter.Convert(outputStream);
-    if (result.IsSuccess)
-    {
-        // Process the output stream
-    }
-}
-```
+A [`ConvertResult`](../../convertresult) indicating success or failure. On success, [`Content`](../../convertresult/content) is `null` because the output was written to the stream.
 
 ### See Also
 
-* class [DocumentConverterResult](../../documentconverterresult)
+* class [ConvertResult](../../convertresult)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)
@@ -96,208 +63,126 @@ using (var outputStream = new MemoryStream())
 
 ## Convert(string) {#convert_4}
 
-Converts the source document to Markdown format and saves it to the specified file path.
+Converts the loaded document to Markdown and saves the result to a file. The file is created (or overwritten) at *outputFilePath*.
 
 ```csharp
-public DocumentConverterResult Convert(string outputFilePath)
+public ConvertResult Convert(string outputFilePath)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| outputFilePath | String | The path where the converted Markdown file will be saved. |
+| outputFilePath | String | The path where the Markdown file will be written. |
 
 ### Return Value
 
-A [`DocumentConverterResult`](../../documentconverterresult) indicating success or failure of the conversion.
-
-### Exceptions
-
-| exception | condition |
-| --- | --- |
-| ArgumentNullException | Thrown when outputFilePath is null or empty. |
-| IOException | Thrown when there is an error writing to the output file. |
-
-### Examples
-
-The following example shows how to convert a document to Markdown and save to a file:
-
-```csharp
-using (var converter = new MarkdownConverter("document.docx"))
-{
-    var result = converter.Convert("output.md");
-    if (result.IsSuccess)
-    {
-        Console.WriteLine("Conversion completed successfully");
-    }
-}
-```
+A [`ConvertResult`](../../convertresult) indicating success or failure. On success, [`Content`](../../convertresult/content) is `null` because the output was written to the file.
 
 ### See Also
 
-* class [DocumentConverterResult](../../documentconverterresult)
+* class [ConvertResult](../../convertresult)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)
 
 ---
 
-## Convert(DocumentConverterOptions) {#convert_1}
+## Convert(ConvertOptions) {#convert_1}
 
-Converts the source document to Markdown format using the specified conversion options and returns the result as a string.
+Converts the loaded document to Markdown with the specified options and returns the result with the Markdown content in [`Content`](../../convertresult/content).
 
 ```csharp
-public DocumentConverterResult Convert(DocumentConverterOptions converterOptions)
+public ConvertResult Convert(ConvertOptions convertOptions)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| converterOptions | DocumentConverterOptions | The options to use for the conversion process. |
+| convertOptions | ConvertOptions | Options that control the conversion, such as [`HeadingLevelOffset`](../../convertoptions/headingleveloffset), [`ImageExportStrategy`](../../convertoptions/imageexportstrategy), and [`PageNumbers`](../../convertoptions/pagenumbers). Pass `null` to use defaults. |
 
 ### Return Value
 
-A [`DocumentConverterResult`](../../documentconverterresult) containing the converted Markdown content or error information.
-
-### Exceptions
-
-| exception | condition |
-| --- | --- |
-| ArgumentNullException | Thrown when converterOptions is null. |
+A [`ConvertResult`](../../convertresult) whose [`Content`](../../convertresult/content) contains the Markdown string on success.
 
 ### Examples
 
-The following example shows how to convert a document to Markdown with custom options:
-
 ```csharp
-var options = new DocumentConverterOptions
+using var converter = new MarkdownConverter("document.docx");
+var options = new ConvertOptions
 {
-    // Configure conversion options
+    HeadingLevelOffset = 1,
+    PageNumbers = new[] { 1, 2, 3 }
 };
-
-using (var converter = new MarkdownConverter("document.docx"))
-{
-    var result = converter.Convert(options);
-    if (result.IsSuccess)
-    {
-        string markdown = result.Content;
-        Console.WriteLine(markdown);
-    }
-}
+ConvertResult result = converter.Convert(options);
 ```
 
 ### See Also
 
-* class [DocumentConverterResult](../../documentconverterresult)
-* class [DocumentConverterOptions](../../documentconverteroptions)
+* class [ConvertResult](../../convertresult)
+* class [ConvertOptions](../../convertoptions)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)
 
 ---
 
-## Convert(Stream, DocumentConverterOptions) {#convert_3}
+## Convert(Stream, ConvertOptions) {#convert_3}
 
-Converts the source document to Markdown format using the specified conversion options and writes the result to the specified output stream.
+Converts the loaded document to Markdown with the specified options, writing the output to a stream.
 
 ```csharp
-public DocumentConverterResult Convert(Stream outputStream, 
-    DocumentConverterOptions converterOptions)
+public ConvertResult Convert(Stream outputStream, ConvertOptions convertOptions)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| outputStream | Stream | The stream to write the converted Markdown content to. |
-| converterOptions | DocumentConverterOptions | The options to use for the conversion process. |
+| outputStream | Stream | A writable stream that will receive the UTF-8 encoded Markdown output. |
+| convertOptions | ConvertOptions | Options that control the conversion. Pass `null` to use defaults. |
 
 ### Return Value
 
-A [`DocumentConverterResult`](../../documentconverterresult) indicating success or failure of the conversion.
-
-### Exceptions
-
-| exception | condition |
-| --- | --- |
-| ArgumentNullException | Thrown when outputStream or converterOptions is null. |
-
-### Examples
-
-The following example shows how to convert a document to Markdown with custom options and write to a stream:
-
-```csharp
-var options = new DocumentConverterOptions
-{
-    // Configure conversion options
-};
-
-using (var converter = new MarkdownConverter("document.docx"))
-using (var outputStream = new MemoryStream())
-{
-    var result = converter.Convert(outputStream, options);
-    if (result.IsSuccess)
-    {
-        // Process the output stream
-    }
-}
-```
+A [`ConvertResult`](../../convertresult) indicating success or failure. [`Content`](../../convertresult/content) is `null` because the output was written to the stream.
 
 ### See Also
 
-* class [DocumentConverterResult](../../documentconverterresult)
-* class [DocumentConverterOptions](../../documentconverteroptions)
+* class [ConvertResult](../../convertresult)
+* class [ConvertOptions](../../convertoptions)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)
 
 ---
 
-## Convert(string, DocumentConverterOptions) {#convert_5}
+## Convert(string, ConvertOptions) {#convert_5}
 
-Converts the source document to Markdown format using the specified conversion options and saves it to the specified file path.
+Converts the loaded document to Markdown with the specified options and saves the result to a file. The file is created (or overwritten) at *outputFilePath*.
 
 ```csharp
-public DocumentConverterResult Convert(string outputFilePath, 
-    DocumentConverterOptions converterOptions)
+public ConvertResult Convert(string outputFilePath, ConvertOptions convertOptions)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| outputFilePath | String | The path where the converted Markdown file will be saved. |
-| converterOptions | DocumentConverterOptions | The options to use for the conversion process. |
+| outputFilePath | String | The path where the Markdown file will be written. |
+| convertOptions | ConvertOptions | Options that control the conversion. Pass `null` to use defaults. |
 
 ### Return Value
 
-A [`DocumentConverterResult`](../../documentconverterresult) indicating success or failure of the conversion.
-
-### Exceptions
-
-| exception | condition |
-| --- | --- |
-| ArgumentNullException | Thrown when outputFilePath is null or empty, or converterOptions is null. |
-| IOException | Thrown when there is an error writing to the output file. |
+A [`ConvertResult`](../../convertresult) indicating success or failure. [`Content`](../../convertresult/content) is `null` because the output was written to the file.
 
 ### Examples
 
-The following example shows how to convert a document to Markdown with custom options and save to a file:
-
 ```csharp
-var options = new DocumentConverterOptions
+using var converter = new MarkdownConverter("spreadsheet.xlsx");
+var options = new ConvertOptions
 {
-    // Configure conversion options
+    ImageExportStrategy = new ExportImagesToFileSystemStrategy("images")
 };
-
-using (var converter = new MarkdownConverter("document.docx"))
-{
-    var result = converter.Convert("output.md", options);
-    if (result.IsSuccess)
-    {
-        Console.WriteLine("Conversion completed successfully");
-    }
-}
+converter.Convert("output.md", options);
 ```
 
 ### See Also
 
-* class [DocumentConverterResult](../../documentconverterresult)
-* class [DocumentConverterOptions](../../documentconverteroptions)
+* class [ConvertResult](../../convertresult)
+* class [ConvertOptions](../../convertoptions)
 * class [MarkdownConverter](../../markdownconverter)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)

@@ -1,14 +1,14 @@
 ---
 title: ImageFileName
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the file name without path where the image will be saved to.
+description: Gets the default file name without path suggested by the library for this image.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/customimagesavingargs/imagefilename/
 ---
 ## CustomImageSavingArgs.ImageFileName property
 
-Gets the file name (without path) where the image will be saved to.
+Gets the default file name (without path) suggested by the library for this image.
 
 ```csharp
 public string ImageFileName { get; }

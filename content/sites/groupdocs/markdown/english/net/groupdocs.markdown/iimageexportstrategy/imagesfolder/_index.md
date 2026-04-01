@@ -1,14 +1,14 @@
 ---
 title: ImagesFolder
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the folder where exported images will be stored.
+description: Gets the folder path where exported images will be stored.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/iimageexportstrategy/imagesfolder/
 ---
 ## IImageExportStrategy.ImagesFolder property
 
-Gets the folder where exported images will be stored.
+Gets the folder path where exported images will be stored.
 
 ```csharp
 public string ImagesFolder { get; }
@@ -16,7 +16,7 @@ public string ImagesFolder { get; }
 
 ### Property Value
 
-The path to the folder where images will be exported.
+A relative or absolute folder path. This value is used to construct image URIs in the Markdown output.
 
 ### See Also
 

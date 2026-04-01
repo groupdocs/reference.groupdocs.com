@@ -1,51 +1,40 @@
 ---
 title: License
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Provides methods for applying license to the GroupDocs.Markdown library.
+description: Provides methods to license the component. Learn more about licensing herehttps//purchase.groupdocs.com/faqs/licensing.
 type: docs
-weight: 190
+weight: 200
 url: /net/groupdocs.markdown/license/
 ---
 ## License class
 
-Provides methods for applying license to the GroupDocs.Markdown library.
+Provides methods to license the component. Learn more about licensing [here](https://purchase.groupdocs.com/faqs/licensing).
 
 ```csharp
-public sealed class License
+public class License
 ```
 
 ## Constructors
 
 | Name | Description |
 | --- | --- |
-| [License](license)() | Initializes a new instance of the [`License`](../license) class. |
+| [License](license)() | The default constructor. |
 
 ## Methods
 
 | Name | Description |
 | --- | --- |
-| [SetLicense](../../groupdocs.markdown/license/setlicense#setlicense)(Stream) | Sets the license from a stream. |
-| [SetLicense](../../groupdocs.markdown/license/setlicense#setlicense_1)(string) | Sets the license from a file path. |
+| [SetLicense](../../groupdocs.markdown/license/setlicense#setlicense)(Stream) | Licenses the component. |
+| [SetLicense](../../groupdocs.markdown/license/setlicense#setlicense_1)(string) | Licenses the component. |
 | static [Set](../../groupdocs.markdown/license/set#set)(Stream) | Sets the license from a stream. |
 | static [Set](../../groupdocs.markdown/license/set#set_1)(string) | Sets the license from a file path. |
 
-### Examples
+### Remarks
 
-The following example demonstrates how to set license from a file:
+**Learn more**
 
-```csharp
-// Set license from file
-License.SetLicense("C:\\GroupDocs.Markdown.lic");
-```
-
-The following example demonstrates how to set license from a stream:
-
-```csharp
-using (FileStream stream = new FileStream("C:\\GroupDocs.Markdown.lic", FileMode.Open))
-{
-    License.SetLicense(stream);
-}
-```
+* More about licensing: [GroupDocs Licensing FAQ](https://purchase.groupdocs.com/faqs/licensing)
+* More about GroupDocs.Markdown licensing: [Evaluation Limitations and Licensing](https://docs.groupdocs.com/markdown/net/licensing-and-subscription/)
 
 ### See Also
 

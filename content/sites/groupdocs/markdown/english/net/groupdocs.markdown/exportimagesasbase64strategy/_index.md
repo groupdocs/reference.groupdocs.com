@@ -3,7 +3,7 @@ title: ExportImagesAsBase64Strategy
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Implements an image export strategy that embeds images as Base64 strings directly in the Markdown.
 type: docs
-weight: 110
+weight: 90
 url: /net/groupdocs.markdown/exportimagesasbase64strategy/
 ---
 ## ExportImagesAsBase64Strategy class
@@ -41,13 +41,12 @@ This strategy converts all images to Base64 format and embeds them directly in t
 The following example shows how to use ExportImagesAsBase64Strategy when converting a document:
 
 ```csharp
-var options = new MarkdownConversionOptions();
-options.ImageExportStrategy = new ExportImagesAsBase64Strategy();
-
-// Convert document with embedded Base64 images
-var markdown = MarkdownConverter.Convert("document.docx", options);
-// The markdown will contain embedded images like:
-// ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...)
+// Base64 is the default, but can be set explicitly:
+var options = new ConvertOptions
+{
+    ImageExportStrategy = new ExportImagesAsBase64Strategy()
+};
+string markdown = MarkdownConverter.ToMarkdown("document.docx", options);
 ```
 
 ### See Also

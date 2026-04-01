@@ -1,14 +1,14 @@
 ---
 title: SetMeteredKey
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Sets metered public and private key
+description: Activates product with Metered keys.
 type: docs
 weight: 20
 url: /net/groupdocs.markdown/metered/setmeteredkey/
 ---
 ## Metered.SetMeteredKey method
 
-Sets metered public and private key
+Activates product with Metered keys.
 
 ```csharp
 public void SetMeteredKey(string publicKey, string privateKey)
@@ -16,8 +16,20 @@ public void SetMeteredKey(string publicKey, string privateKey)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| publicKey | String | public key |
-| privateKey | String | private key |
+| publicKey | String | The public key. |
+| privateKey | String | The private key. |
+
+### Examples
+
+Following example demonstrates how to activate product with Metered keys.
+
+```csharp
+string publicKey = "Public Key";
+string privateKey = "Private Key";
+
+Metered metered = new Metered();
+metered.SetMeteredKey(publicKey, privateKey);
+```
 
 ### See Also
 

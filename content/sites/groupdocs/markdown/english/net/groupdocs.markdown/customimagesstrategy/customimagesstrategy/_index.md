@@ -1,23 +1,23 @@
 ---
 title: CustomImagesStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Initializes a new instance of the ExportImagesToFileSystemStrategygroupdocs.markdown/exportimagestofilesystemstrategy class.
+description: Initializes a new instance of the CustomImagesStrategygroupdocs.markdown/customimagesstrategy class.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/customimagesstrategy/customimagesstrategy/
 ---
 ## CustomImagesStrategy constructor
 
-Initializes a new instance of the [`ExportImagesToFileSystemStrategy`](../../exportimagestofilesystemstrategy) class.
+Initializes a new instance of the [`CustomImagesStrategy`](../../customimagesstrategy) class.
 
 ```csharp
-public CustomImagesStrategy(string imagesFolder, CustomImageSavingHandler customHandler)
+public CustomImagesStrategy(string imagesFolder, IImageSavingHandler handler)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
 | imagesFolder | String | The folder where images will be exported. |
-| customHandler | CustomImageSavingHandler | The custom handler for define the mechanism for saving images. |
+| handler | IImageSavingHandler | The handler that is called for each image during conversion. |
 
 ### Exceptions
 
@@ -27,7 +27,7 @@ public CustomImagesStrategy(string imagesFolder, CustomImageSavingHandler custom
 
 ### See Also
 
-* delegate [CustomImageSavingHandler](../../customimagesstrategy.customimagesavinghandler)
+* interface [IImageSavingHandler](../../iimagesavinghandler)
 * class [CustomImagesStrategy](../../customimagesstrategy)
 * namespace [GroupDocs.Markdown](../../../groupdocs.markdown)
 * assembly [GroupDocs.Markdown](../../../)

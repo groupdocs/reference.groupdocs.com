@@ -1,14 +1,14 @@
 ---
 title: ShapeType
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the shape type.
+description: Gets the type of the shape that contains the image in the source document for example Picture or Shape.
 type: docs
-weight: 50
+weight: 60
 url: /net/groupdocs.markdown/customimagesavingargs/shapetype/
 ---
 ## CustomImageSavingArgs.ShapeType property
 
-Gets the shape type.
+Gets the type of the shape that contains the image in the source document (for example, "Picture" or "Shape").
 
 ```csharp
 public string ShapeType { get; }

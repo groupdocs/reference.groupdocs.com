@@ -1,14 +1,14 @@
 ---
 title: OutputStream
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the Output Stream
+description: Gets the custom output stream set by SetOutputStreamgroupdocs.markdown/customimagesavingargs/setoutputstream or null if no custom stream was specified.
 type: docs
 weight: 40
 url: /net/groupdocs.markdown/customimagesavingargs/outputstream/
 ---
 ## CustomImageSavingArgs.OutputStream property
 
-Gets the Output Stream
+Gets the custom output stream set by [`SetOutputStream`](../setoutputstream), or `null` if no custom stream was specified.
 
 ```csharp
 public Stream OutputStream { get; }

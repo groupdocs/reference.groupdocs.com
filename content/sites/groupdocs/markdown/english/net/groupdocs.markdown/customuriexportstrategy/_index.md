@@ -1,14 +1,14 @@
 ---
 title: CustomUriExportStrategy
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Implements a URI export strategy that lets users customize how resource URIs are written to Markdown.
+description: Implements a URI export strategy that lets you customize how resource URIs are written to Markdown.
 type: docs
-weight: 40
+weight: 50
 url: /net/groupdocs.markdown/customuriexportstrategy/
 ---
 ## CustomUriExportStrategy class
 
-Implements a URI export strategy that lets users customize how resource URIs are written to Markdown.
+Implements a URI export strategy that lets you customize how resource URIs are written to Markdown.
 
 ```csharp
 public class CustomUriExportStrategy : IUriExportStrategy
@@ -18,7 +18,7 @@ public class CustomUriExportStrategy : IUriExportStrategy
 
 | Name | Description |
 | --- | --- |
-| [CustomUriExportStrategy](customuriexportstrategy)(UriSavingHandler) | Initializes a new instance of the [`CustomUriExportStrategy`](../customuriexportstrategy) class. |
+| [CustomUriExportStrategy](customuriexportstrategy)(IUriSavingHandler) | Initializes a new instance of the [`CustomUriExportStrategy`](../customuriexportstrategy) class. |
 
 ## Methods
 
@@ -26,11 +26,20 @@ public class CustomUriExportStrategy : IUriExportStrategy
 | --- | --- |
 | [UpdateResourceUri](../../groupdocs.markdown/customuriexportstrategy/updateresourceuri)(UriExportContext) |  |
 
-## Other Members
+### Remarks
 
-| Name | Description |
-| --- | --- |
-| delegate [UriSavingHandler](customuriexportstrategy.urisavinghandler) | Delegate through which you can define the URI generation logic when creating a .md file. |
+Supply an [`IUriSavingHandler`](../iurisavinghandler) implementation to rewrite resource URIs (for example, to prepend a CDN base URL).
+
+### Examples
+
+```csharp
+var handler = new CdnUriHandler();
+var options = new ConvertOptions
+{
+    UriExportStrategy = new CustomUriExportStrategy(handler)
+};
+string markdown = MarkdownConverter.ToMarkdown("document.docx", options);
+```
 
 ### See Also
 

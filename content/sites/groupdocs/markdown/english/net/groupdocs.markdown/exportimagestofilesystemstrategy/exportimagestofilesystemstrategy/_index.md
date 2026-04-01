@@ -16,7 +16,7 @@ public ExportImagesToFileSystemStrategy(string imagesFolder)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| imagesFolder | String | The folder where images will be exported. |
+| imagesFolder | String | The physical folder where images will be saved. |
 
 ### Exceptions
 

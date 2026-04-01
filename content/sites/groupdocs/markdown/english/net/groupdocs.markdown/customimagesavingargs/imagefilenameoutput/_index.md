@@ -1,14 +1,14 @@
 ---
 title: ImageFileNameOutput
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the override file name without path where the image will be saved to.
+description: Gets the overridden file name set by SetOutputImageFileNamegroupdocs.markdown/customimagesavingargs/setoutputimagefilename or null if no override was specified.
 type: docs
 weight: 20
 url: /net/groupdocs.markdown/customimagesavingargs/imagefilenameoutput/
 ---
 ## CustomImageSavingArgs.ImageFileNameOutput property
 
-Gets the override file name (without path) where the image will be saved to.
+Gets the overridden file name set by [`SetOutputImageFileName`](../setoutputimagefilename), or `null` if no override was specified.
 
 ```csharp
 public string ImageFileNameOutput { get; }
