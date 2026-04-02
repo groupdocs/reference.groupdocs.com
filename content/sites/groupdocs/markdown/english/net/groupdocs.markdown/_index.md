@@ -1,12 +1,12 @@
 ---
 title: GroupDocs.Markdown
 second_title: GroupDocs.Markdown for .NET API Reference
-description: 
+description: The GroupDocs.Markdown namespace provides classes for converting documents to Markdown format and exporting Markdown to other document formats.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/
 ---
-
+The **GroupDocs.Markdown** namespace provides classes for converting documents to Markdown format and exporting Markdown to other document formats.
 
 ## Classes
 
