@@ -27,6 +27,13 @@ Select your target platform below to access detailed API code documentation.
             alt="GroupDocs.Markdown for .NET Icon" style="width: 70px; height: 70px; object-fit: contain;">
         <h3 style="font-size: 16px; color: #333; margin: 10px 0; text-align: center;">GroupDocs.Markdown for .NET</h3>
         <p style="font-size: 12px; color: #666; text-align: center;">Access full API references for .NET developers</p>
+    </a>
+    <a href="/markdown/python-net/"
+        style="width: 190px; height: 220px;background-color: #f7f7f7;border: 1px solid #ccc;border-radius: 8px;display: flex;flex-direction: column;align-items: center;justify-content: space-around;padding: 20px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);transition: transform 0.3s ease;text-decoration: none;color: inherit;">
+        <img src="gdocs_python.png"
+            alt="GroupDocs.Markdown Icon" style="width: 70px; height: 70px; object-fit: contain;">
+        <h3 style="font-size: 16px; color: #333; margin: 10px 0; text-align: center;">GroupDocs.Markdown for Python via .NET</h3>
+        <p style="font-size: 12px; color: #666; text-align: center;">GroupDocs.Markdown API for Python applications</p>
     </a>    
 </div>
 
