@@ -3,7 +3,7 @@ title: error_message property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertresult/error_message/
+url: /python-net/groupdocs.markdown/convertresult/error_message/
 is_root: false
 weight: 2020
 ---

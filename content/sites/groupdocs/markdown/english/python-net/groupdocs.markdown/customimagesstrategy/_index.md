@@ -3,7 +3,7 @@ title: CustomImagesStrategy class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesstrategy/
+url: /python-net/groupdocs.markdown/customimagesstrategy/
 is_root: false
 weight: 40
 ---

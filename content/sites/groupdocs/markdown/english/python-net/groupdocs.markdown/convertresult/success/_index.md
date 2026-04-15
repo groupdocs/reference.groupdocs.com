@@ -3,7 +3,7 @@ title: success method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertresult/success/
+url: /python-net/groupdocs.markdown/convertresult/success/
 is_root: false
 weight: 1020
 ---

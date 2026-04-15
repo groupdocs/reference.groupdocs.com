@@ -3,7 +3,7 @@ title: warnings property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertresult/warnings/
+url: /python-net/groupdocs.markdown/convertresult/warnings/
 is_root: false
 weight: 2050
 ---

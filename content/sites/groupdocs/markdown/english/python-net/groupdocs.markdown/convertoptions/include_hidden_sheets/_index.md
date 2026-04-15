@@ -3,7 +3,7 @@ title: include_hidden_sheets property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertoptions/include_hidden_sheets/
+url: /python-net/groupdocs.markdown/convertoptions/include_hidden_sheets/
 is_root: false
 weight: 2050
 ---

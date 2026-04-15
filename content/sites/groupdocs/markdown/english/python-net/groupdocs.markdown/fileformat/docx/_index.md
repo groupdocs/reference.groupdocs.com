@@ -3,7 +3,7 @@ title: Docx field
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/fileformat/docx/
+url: /python-net/groupdocs.markdown/fileformat/docx/
 is_root: false
 weight: 3030
 ---

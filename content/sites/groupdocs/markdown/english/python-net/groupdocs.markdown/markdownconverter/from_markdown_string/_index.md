@@ -3,7 +3,7 @@ title: from_markdown_string method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/markdownconverter/from_markdown_string/
+url: /python-net/groupdocs.markdown/markdownconverter/from_markdown_string/
 is_root: false
 weight: 1040
 ---

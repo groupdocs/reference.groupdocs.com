@@ -3,7 +3,7 @@ title: replacement_image_stream property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesavingargs/replacement_image_stream/
+url: /python-net/groupdocs.markdown/customimagesavingargs/replacement_image_stream/
 is_root: false
 weight: 2050
 ---

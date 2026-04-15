@@ -3,7 +3,7 @@ title: ImageExportContext class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/imageexportcontext/
+url: /python-net/groupdocs.markdown/imageexportcontext/
 is_root: false
 weight: 180
 ---

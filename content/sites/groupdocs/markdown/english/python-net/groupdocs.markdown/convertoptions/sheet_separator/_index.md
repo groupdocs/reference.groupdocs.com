@@ -3,7 +3,7 @@ title: sheet_separator property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertoptions/sheet_separator/
+url: /python-net/groupdocs.markdown/convertoptions/sheet_separator/
 is_root: false
 weight: 2090
 ---

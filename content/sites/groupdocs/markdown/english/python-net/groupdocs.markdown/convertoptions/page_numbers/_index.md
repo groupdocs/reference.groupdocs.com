@@ -3,7 +3,7 @@ title: page_numbers property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertoptions/page_numbers/
+url: /python-net/groupdocs.markdown/convertoptions/page_numbers/
 is_root: false
 weight: 2080
 ---

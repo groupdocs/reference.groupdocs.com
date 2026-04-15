@@ -3,7 +3,7 @@ title: UriSavingArgs class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/urisavingargs/
+url: /python-net/groupdocs.markdown/urisavingargs/
 is_root: false
 weight: 270
 ---

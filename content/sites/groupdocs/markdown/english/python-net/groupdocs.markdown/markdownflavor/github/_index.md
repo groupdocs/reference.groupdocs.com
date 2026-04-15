@@ -3,7 +3,7 @@ title: GitHub field
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/markdownflavor/github/
+url: /python-net/groupdocs.markdown/markdownflavor/github/
 is_root: false
 weight: 3010
 ---

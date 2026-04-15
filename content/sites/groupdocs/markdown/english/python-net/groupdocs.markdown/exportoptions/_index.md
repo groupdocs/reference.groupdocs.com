@@ -3,7 +3,7 @@ title: ExportOptions class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/exportoptions/
+url: /python-net/groupdocs.markdown/exportoptions/
 is_root: false
 weight: 110
 ---

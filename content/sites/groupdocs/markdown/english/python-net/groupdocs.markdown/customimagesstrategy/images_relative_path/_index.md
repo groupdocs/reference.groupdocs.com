@@ -3,7 +3,7 @@ title: images_relative_path property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesstrategy/images_relative_path/
+url: /python-net/groupdocs.markdown/customimagesstrategy/images_relative_path/
 is_root: false
 weight: 2020
 ---

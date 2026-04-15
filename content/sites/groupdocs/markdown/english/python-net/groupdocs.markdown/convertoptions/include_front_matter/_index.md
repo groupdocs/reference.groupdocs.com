@@ -3,7 +3,7 @@ title: include_front_matter property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertoptions/include_front_matter/
+url: /python-net/groupdocs.markdown/convertoptions/include_front_matter/
 is_root: false
 weight: 2040
 ---

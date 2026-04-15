@@ -3,7 +3,7 @@ title: InvalidFormatException class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/invalidformatexception/
+url: /python-net/groupdocs.markdown/invalidformatexception/
 is_root: false
 weight: 190
 ---

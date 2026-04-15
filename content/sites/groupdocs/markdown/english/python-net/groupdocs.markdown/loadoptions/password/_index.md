@@ -3,7 +3,7 @@ title: password property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/loadoptions/password/
+url: /python-net/groupdocs.markdown/loadoptions/password/
 is_root: false
 weight: 2020
 ---

@@ -3,7 +3,7 @@ title: max_columns property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertoptions/max_columns/
+url: /python-net/groupdocs.markdown/convertoptions/max_columns/
 is_root: false
 weight: 2060
 ---

@@ -3,7 +3,7 @@ title: IUriExportStrategy class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/iuriexportstrategy/
+url: /python-net/groupdocs.markdown/iuriexportstrategy/
 is_root: false
 weight: 160
 ---
