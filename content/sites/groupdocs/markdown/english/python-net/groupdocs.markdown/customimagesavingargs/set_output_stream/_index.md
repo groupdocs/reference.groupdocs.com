@@ -3,7 +3,7 @@ title: set_output_stream method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesavingargs/set_output_stream/
+url: /python-net/groupdocs.markdown/customimagesavingargs/set_output_stream/
 is_root: false
 weight: 1020
 ---

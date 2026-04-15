@@ -3,7 +3,7 @@ title: get_supported_formats method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/markdownconverter/get_supported_formats/
+url: /python-net/groupdocs.markdown/markdownconverter/get_supported_formats/
 is_root: false
 weight: 1090
 ---

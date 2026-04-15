@@ -3,7 +3,7 @@ title: Metered class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/metered/
+url: /python-net/groupdocs.markdown/metered/
 is_root: false
 weight: 240
 ---

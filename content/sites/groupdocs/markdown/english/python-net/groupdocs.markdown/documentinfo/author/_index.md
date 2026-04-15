@@ -3,7 +3,7 @@ title: author property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/documentinfo/author/
+url: /python-net/groupdocs.markdown/documentinfo/author/
 is_root: false
 weight: 2010
 ---

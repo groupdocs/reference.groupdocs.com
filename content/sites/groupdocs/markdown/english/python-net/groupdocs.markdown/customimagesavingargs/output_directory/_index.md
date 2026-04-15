@@ -3,7 +3,7 @@ title: output_directory property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesavingargs/output_directory/
+url: /python-net/groupdocs.markdown/customimagesavingargs/output_directory/
 is_root: false
 weight: 2030
 ---

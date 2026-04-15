@@ -3,7 +3,7 @@ title: resource_file_uri_output property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/uriexportcontext/resource_file_uri_output/
+url: /python-net/groupdocs.markdown/uriexportcontext/resource_file_uri_output/
 is_root: false
 weight: 2040
 ---

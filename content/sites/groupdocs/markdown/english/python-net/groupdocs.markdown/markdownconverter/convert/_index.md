@@ -3,7 +3,7 @@ title: convert method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/markdownconverter/convert/
+url: /python-net/groupdocs.markdown/markdownconverter/convert/
 is_root: false
 weight: 1010
 ---

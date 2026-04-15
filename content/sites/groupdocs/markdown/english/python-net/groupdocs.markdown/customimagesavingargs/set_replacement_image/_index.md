@@ -3,7 +3,7 @@ title: set_replacement_image method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesavingargs/set_replacement_image/
+url: /python-net/groupdocs.markdown/customimagesavingargs/set_replacement_image/
 is_root: false
 weight: 1030
 ---

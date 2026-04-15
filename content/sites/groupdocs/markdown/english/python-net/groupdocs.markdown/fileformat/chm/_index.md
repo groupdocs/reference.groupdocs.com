@@ -3,7 +3,7 @@ title: Chm field
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/fileformat/chm/
+url: /python-net/groupdocs.markdown/fileformat/chm/
 is_root: false
 weight: 3240
 ---

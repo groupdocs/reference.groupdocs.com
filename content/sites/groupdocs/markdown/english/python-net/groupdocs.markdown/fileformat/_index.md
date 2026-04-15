@@ -3,7 +3,7 @@ title: FileFormat class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/fileformat/
+url: /python-net/groupdocs.markdown/fileformat/
 is_root: false
 weight: 120
 ---

@@ -3,7 +3,7 @@ title: set_license method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/license/set_license/
+url: /python-net/groupdocs.markdown/license/set_license/
 is_root: false
 weight: 1020
 ---

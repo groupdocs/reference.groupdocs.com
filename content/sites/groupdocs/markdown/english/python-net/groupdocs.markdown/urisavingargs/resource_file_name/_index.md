@@ -3,7 +3,7 @@ title: resource_file_name property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/urisavingargs/resource_file_name/
+url: /python-net/groupdocs.markdown/urisavingargs/resource_file_name/
 is_root: false
 weight: 2010
 ---

@@ -3,7 +3,7 @@ title: image_file_name_output property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesavingargs/image_file_name_output/
+url: /python-net/groupdocs.markdown/customimagesavingargs/image_file_name_output/
 is_root: false
 weight: 2020
 ---

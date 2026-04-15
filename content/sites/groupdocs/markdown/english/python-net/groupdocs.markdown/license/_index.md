@@ -3,7 +3,7 @@ title: License class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/license/
+url: /python-net/groupdocs.markdown/license/
 is_root: false
 weight: 200
 ---

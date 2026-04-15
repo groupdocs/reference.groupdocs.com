@@ -3,11 +3,13 @@ title: groupdocs.markdown
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/
+url: /python-net/groupdocs.markdown/
 is_root: false
 weight: 10
 ---
 
+
+Main GroupDocs.Markdown namespace with top-level API classes.
 
 ### Classes
 | Class | Description |

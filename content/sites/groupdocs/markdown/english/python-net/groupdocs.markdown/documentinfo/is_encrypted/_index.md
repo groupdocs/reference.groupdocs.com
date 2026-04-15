@@ -3,7 +3,7 @@ title: is_encrypted property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/documentinfo/is_encrypted/
+url: /python-net/groupdocs.markdown/documentinfo/is_encrypted/
 is_root: false
 weight: 2030
 ---

@@ -3,7 +3,7 @@ title: get_info_async method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/markdownconverter/get_info_async/
+url: /python-net/groupdocs.markdown/markdownconverter/get_info_async/
 is_root: false
 weight: 1080
 ---

@@ -3,7 +3,7 @@ title: ConvertResult class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertresult/
+url: /python-net/groupdocs.markdown/convertresult/
 is_root: false
 weight: 20
 ---

@@ -3,7 +3,7 @@ title: __init__ constructor
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/customimagesstrategy/__init__/
+url: /python-net/groupdocs.markdown/customimagesstrategy/__init__/
 is_root: false
 weight: 10
 ---

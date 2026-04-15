@@ -3,7 +3,7 @@ title: heading_level_offset property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertoptions/heading_level_offset/
+url: /python-net/groupdocs.markdown/convertoptions/heading_level_offset/
 is_root: false
 weight: 2020
 ---

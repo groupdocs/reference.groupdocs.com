@@ -3,7 +3,7 @@ title: MarkdownFlavor class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/markdownflavor/
+url: /python-net/groupdocs.markdown/markdownflavor/
 is_root: false
 weight: 230
 ---

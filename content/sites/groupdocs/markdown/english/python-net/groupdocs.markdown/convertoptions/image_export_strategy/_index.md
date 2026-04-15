@@ -3,7 +3,7 @@ title: image_export_strategy property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/convertoptions/image_export_strategy/
+url: /python-net/groupdocs.markdown/convertoptions/image_export_strategy/
 is_root: false
 weight: 2030
 ---

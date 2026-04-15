@@ -3,7 +3,7 @@ title: Epub field
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /markdown/python-net/groupdocs.markdown/fileformat/epub/
+url: /python-net/groupdocs.markdown/fileformat/epub/
 is_root: false
 weight: 3200
 ---
