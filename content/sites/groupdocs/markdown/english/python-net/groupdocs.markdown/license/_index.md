@@ -3,9 +3,9 @@ title: License class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/license/
+url: /markdown/python-net/groupdocs.markdown/license/
 is_root: false
-weight: 160
+weight: 200
 ---
 
 
@@ -22,8 +22,8 @@ The License type exposes the following members:
 ### Methods
 | Method | Description |
 | :- | :- |
-| [set_](/python-net/groupdocs.markdown/license/set_/#license_source) | Apply a license without instantiating ``License``. |
-| [set_license](/python-net/groupdocs.markdown/license/set_license/#license_source) | Apply a license to the current process. |
+| [set_](/markdown/python-net/groupdocs.markdown/license/set_/#license_source) | Apply a license without instantiating ``License``. |
+| [set_license](/markdown/python-net/groupdocs.markdown/license/set_license/#license_source) | Apply a license to the current process. |
 
 ### See Also
-* module [`groupdocs.markdown`](/python-net/groupdocs.markdown/)
+* module [`groupdocs.markdown`](/markdown/python-net/groupdocs.markdown/)

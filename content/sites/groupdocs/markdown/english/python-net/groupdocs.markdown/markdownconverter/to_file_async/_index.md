@@ -3,7 +3,7 @@ title: to_file_async method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/markdownconverter/to_file_async/
+url: /markdown/python-net/groupdocs.markdown/markdownconverter/to_file_async/
 is_root: false
 weight: 1110
 ---
@@ -12,6 +12,8 @@ weight: 1110
 ## to_file_async {#source_path-output_path-convert_options}
 
 Asynchronously converts the document and saves the result to a file.
+
+Both source reading and output writing are performed asynchronously.
 
 ```python
 def to_file_async(cls, source_path, output_path, convert_options):
@@ -29,4 +31,4 @@ def to_file_async(cls, source_path, output_path, convert_options):
 | `GroupDocsMarkdownException` | Thrown when conversion fails. |
 
 ### See Also
-* class [`MarkdownConverter`](/python-net/groupdocs.markdown/markdownconverter/)
+* class [`MarkdownConverter`](/markdown/python-net/groupdocs.markdown/markdownconverter/)

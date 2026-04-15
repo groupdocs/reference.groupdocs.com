@@ -3,7 +3,7 @@ title: to_markdown_async method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/markdownconverter/to_markdown_async/
+url: /markdown/python-net/groupdocs.markdown/markdownconverter/to_markdown_async/
 is_root: false
 weight: 1130
 ---
@@ -47,7 +47,7 @@ def to_markdown_async(cls, source_path, load_options, convert_options):
 
 | Raises | Description |
 | :- | :- |
-| `GroupDocsMarkdownException` | When conversion fails. |
+| `GroupDocsMarkdownException` | Thrown when conversion fails. |
 
 ### See Also
-* class [`MarkdownConverter`](/python-net/groupdocs.markdown/markdownconverter/)
+* class [`MarkdownConverter`](/markdown/python-net/groupdocs.markdown/markdownconverter/)

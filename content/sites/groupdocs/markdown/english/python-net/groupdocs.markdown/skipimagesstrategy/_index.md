@@ -3,9 +3,9 @@ title: SkipImagesStrategy class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/skipimagesstrategy/
+url: /markdown/python-net/groupdocs.markdown/skipimagesstrategy/
 is_root: false
-weight: 210
+weight: 250
 ---
 
 
@@ -21,17 +21,17 @@ The SkipImagesStrategy type exposes the following members:
 ### Constructors
 | Constructor | Description |
 | :- | :- |
-| [__init__](/python-net/groupdocs.markdown/skipimagesstrategy/__init__/) |  |
+| [__init__](/markdown/python-net/groupdocs.markdown/skipimagesstrategy/__init__/) |  |
 
 ### Methods
 | Method | Description |
 | :- | :- |
-| [get_image_stream](/python-net/groupdocs.markdown/skipimagesstrategy/get_image_stream/#context) | Returns None to indicate that the image should be skipped. |
+| [get_image_stream](/markdown/python-net/groupdocs.markdown/skipimagesstrategy/get_image_stream/#context) | Returns None to indicate that the image should be skipped. |
 
 ### Properties
 | Property | Description |
 | :- | :- |
-| [images_folder](/python-net/groupdocs.markdown/skipimagesstrategy/images_folder/) | The images folder path, which is an empty string because this strategy does not use an images folder. |
+| [images_folder](/markdown/python-net/groupdocs.markdown/skipimagesstrategy/images_folder/) | The images folder is an empty string because this strategy does not use an images folder. |
 
 ### See Also
-* module [`groupdocs.markdown`](/python-net/groupdocs.markdown/)
+* module [`groupdocs.markdown`](/markdown/python-net/groupdocs.markdown/)

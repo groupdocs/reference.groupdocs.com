@@ -3,7 +3,7 @@ title: file_format property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/documentinfo/file_format/
+url: /markdown/python-net/groupdocs.markdown/documentinfo/file_format/
 is_root: false
 weight: 2020
 ---
@@ -13,7 +13,7 @@ weight: 2020
 
 The detected file format of the document.
 
-A [`FileFormat`](/python-net/groupdocs.markdown/fileformat/) value indicating the document type (e.g., [`FileFormat.docx`](/python-net/groupdocs.markdown/fileformat/docx/), [`FileFormat.pdf`](/python-net/groupdocs.markdown/fileformat/pdf/)).
+A [`FileFormat`](/markdown/python-net/groupdocs.markdown/fileformat/) value indicating the document type (e.g., [`FileFormat.docx`](/markdown/python-net/groupdocs.markdown/fileformat/docx/), [`FileFormat.pdf`](/markdown/python-net/groupdocs.markdown/fileformat/pdf/)).
 
 ### Definition:
 ```python
@@ -23,4 +23,4 @@ def file_format(self):
 ```
 
 ### See Also
-* class [`DocumentInfo`](/python-net/groupdocs.markdown/documentinfo/)
+* class [`DocumentInfo`](/markdown/python-net/groupdocs.markdown/documentinfo/)

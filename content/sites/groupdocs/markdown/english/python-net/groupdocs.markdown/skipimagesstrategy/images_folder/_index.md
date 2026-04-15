@@ -3,7 +3,7 @@ title: images_folder property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/skipimagesstrategy/images_folder/
+url: /markdown/python-net/groupdocs.markdown/skipimagesstrategy/images_folder/
 is_root: false
 weight: 2010
 ---
@@ -11,7 +11,9 @@ weight: 2010
 
 ## images_folder property
 
-The images folder path, which is an empty string because this strategy does not use an images folder.
+The images folder is an empty string because this strategy does not use an images folder.
+
+An empty string since no images are exported.
 
 ### Definition:
 ```python
@@ -21,4 +23,4 @@ def images_folder(self):
 ```
 
 ### See Also
-* class [`SkipImagesStrategy`](/python-net/groupdocs.markdown/skipimagesstrategy/)
+* class [`SkipImagesStrategy`](/markdown/python-net/groupdocs.markdown/skipimagesstrategy/)

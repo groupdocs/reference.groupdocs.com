@@ -3,7 +3,7 @@ title: __init__ constructor
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/customimagesstrategy/__init__/
+url: /markdown/python-net/groupdocs.markdown/customimagesstrategy/__init__/
 is_root: false
 weight: 10
 ---
@@ -11,7 +11,7 @@ weight: 10
 
 ## __init__ {#images_folder-handler}
 
-Initializes a new instance of the [`CustomImagesStrategy`](/python-net/groupdocs.markdown/customimagesstrategy/) class.
+Initializes a new instance of the CustomImagesStrategy class.
 
 ```python
 def __init__(self, images_folder, handler):
@@ -25,7 +25,7 @@ def __init__(self, images_folder, handler):
 
 | Raises | Description |
 | :- | :- |
-| `ValueError` | When `images_folder` is None. |
+| `ValueError` | Thrown when `images_folder` is None. |
 
 ### See Also
-* class [`CustomImagesStrategy`](/python-net/groupdocs.markdown/customimagesstrategy/)
+* class [`CustomImagesStrategy`](/markdown/python-net/groupdocs.markdown/customimagesstrategy/)

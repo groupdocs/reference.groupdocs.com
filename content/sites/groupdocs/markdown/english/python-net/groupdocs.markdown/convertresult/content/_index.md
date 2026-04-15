@@ -3,7 +3,7 @@ title: content property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/convertresult/content/
+url: /markdown/python-net/groupdocs.markdown/convertresult/content/
 is_root: false
 weight: 2010
 ---
@@ -23,4 +23,4 @@ def content(self):
 ```
 
 ### See Also
-* class [`ConvertResult`](/python-net/groupdocs.markdown/convertresult/)
+* class [`ConvertResult`](/markdown/python-net/groupdocs.markdown/convertresult/)

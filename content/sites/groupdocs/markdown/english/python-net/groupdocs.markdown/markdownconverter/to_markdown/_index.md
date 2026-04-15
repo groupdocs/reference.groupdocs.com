@@ -3,7 +3,7 @@ title: to_markdown method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/markdownconverter/to_markdown/
+url: /markdown/python-net/groupdocs.markdown/markdownconverter/to_markdown/
 is_root: false
 weight: 1120
 ---
@@ -11,9 +11,7 @@ weight: 1120
 
 ## to_markdown {#source_path}
 
-Converts a document to Markdown in a single call, automatically detecting the format, and returns the Markdown string.
-
-This is the simplest way to convert a file.
+Converts a document to Markdown in a single call and returns the Markdown string.
 
 ```python
 def to_markdown(cls, source_path):
@@ -22,7 +20,7 @@ def to_markdown(cls, source_path):
 
 | Parameter | Type | Description |
 | :- | :- | :- |
-| source_path | `str` | The path to the source document (e.g. "report.docx"). |
+| source_path | `str` | The path to the source document (e.g. `"report.docx"`). |
 
 **Returns:** str: The converted Markdown content as a UTF-8 string.
 
@@ -69,7 +67,7 @@ def to_markdown(cls, source_path, convert_options):
 | Parameter | Type | Description |
 | :- | :- | :- |
 | source_path | `str` | The path to the source document. |
-| convert_options | `ConvertOptions` | Options that customize the conversion (image strategy, heading offset, page numbers). May be `None`. |
+| convert_options | `ConvertOptions` | Options that customize the conversion (image strategy, heading offset, page numbers). May be None. |
 
 **Returns:** str: The converted Markdown content as a UTF-8 string.
 
@@ -82,8 +80,6 @@ def to_markdown(cls, source_path, convert_options):
 
 Converts a document to Markdown using the specified load and conversion options, and returns the Markdown string.
 
-This overload provides the most flexibility, allowing format and password control together with full conversion customization.
-
 ```python
 def to_markdown(cls, source_path, load_options, convert_options):
     ...
@@ -92,15 +88,14 @@ def to_markdown(cls, source_path, load_options, convert_options):
 | Parameter | Type | Description |
 | :- | :- | :- |
 | source_path | `str` | The path to the source document. |
-| load_options | `LoadOptions` | Options for loading the document (password, format hint). May be `None`. |
-| convert_options | `ConvertOptions` | Options that customize the conversion. May be `None`. |
+| load_options | `LoadOptions` | Options for loading the document (password, format hint). May be None. |
+| convert_options | `ConvertOptions` | Options that customize the conversion. May be None. |
 
 **Returns:** str: The converted Markdown content as a UTF-8 string.
 
 | Raises | Description |
 | :- | :- |
-| `GroupDocsMarkdownException` | Thrown when the conversion fails. |
 | `NotImplementedError` | Thrown when the file format is not supported. |
 
 ### See Also
-* class [`MarkdownConverter`](/python-net/groupdocs.markdown/markdownconverter/)
+* class [`MarkdownConverter`](/markdown/python-net/groupdocs.markdown/markdownconverter/)

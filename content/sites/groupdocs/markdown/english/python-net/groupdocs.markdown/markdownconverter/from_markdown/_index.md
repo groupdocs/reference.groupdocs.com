@@ -3,7 +3,7 @@ title: from_markdown method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/markdownconverter/from_markdown/
+url: /markdown/python-net/groupdocs.markdown/markdownconverter/from_markdown/
 is_root: false
 weight: 1030
 ---
@@ -11,7 +11,7 @@ weight: 1030
 
 ## from_markdown {#markdown_path-output_path}
 
-Converts a Markdown file to a document format, inferring the output format from the file extension of `output_path` (e.g. `.docx`, `.pdf`).
+Converts a Markdown file to a document format, inferring the output format from the file extension of `output_path` (e.g., `.docx`, `.pdf`).
 
 ```python
 def from_markdown(cls, markdown_path, output_path):
@@ -49,4 +49,4 @@ def from_markdown(cls, markdown_path, output_path, options):
 | `NotImplementedError` | Thrown when the output format is not supported. |
 
 ### See Also
-* class [`MarkdownConverter`](/python-net/groupdocs.markdown/markdownconverter/)
+* class [`MarkdownConverter`](/markdown/python-net/groupdocs.markdown/markdownconverter/)

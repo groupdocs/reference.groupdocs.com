@@ -3,7 +3,7 @@ title: success method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/convertresult/success/
+url: /markdown/python-net/groupdocs.markdown/convertresult/success/
 is_root: false
 weight: 1020
 ---
@@ -11,16 +11,14 @@ weight: 1020
 
 ## success
 
-Creates a successful result without content.
-
-Used when the output was written to a stream or file.
+Creates a successful result without content. Used when the output was written to a stream or file.
 
 ```python
 def success(cls):
     ...
 ```
 
-**Returns:** ConvertResult: A `ConvertResult` with `ConvertResult.is_success` set to `True` and `ConvertResult.content` set to `None`.
+**Returns:** ConvertResult: A result with `IsSuccess` set to `True` and `Content` set to `None`.
 
 ## success {#content}
 
@@ -35,7 +33,7 @@ def success(cls, content):
 | :- | :- | :- |
 | content | `str` | The Markdown content produced by the conversion. |
 
-**Returns:** ConvertResult: A result with `ConvertResult.is_success` set to `True` and the specified content.
+**Returns:** ConvertResult: A result with `IsSuccess` set to True and the specified content.
 
 ### See Also
-* class [`ConvertResult`](/python-net/groupdocs.markdown/convertresult/)
+* class [`ConvertResult`](/markdown/python-net/groupdocs.markdown/convertresult/)

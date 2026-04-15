@@ -3,7 +3,7 @@ title: get_consumption_credit method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/metered/get_consumption_credit/
+url: /markdown/python-net/groupdocs.markdown/metered/get_consumption_credit/
 is_root: false
 weight: 1010
 ---
@@ -22,4 +22,4 @@ def get_consumption_credit():
 server.
 
 ### See Also
-* class [`Metered`](/python-net/groupdocs.markdown/metered/)
+* class [`Metered`](/markdown/python-net/groupdocs.markdown/metered/)

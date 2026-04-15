@@ -3,9 +3,9 @@ title: LoadOptions class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/loadoptions/
+url: /markdown/python-net/groupdocs.markdown/loadoptions/
 is_root: false
-weight: 170
+weight: 210
 ---
 
 
@@ -20,14 +20,14 @@ The LoadOptions type exposes the following members:
 ### Constructors
 | Constructor | Description |
 | :- | :- |
-| [__init__](/python-net/groupdocs.markdown/loadoptions/__init__/) | Initializes a new instance of the LoadOptions class with automatic format detection. |
-| [__init__](/python-net/groupdocs.markdown/loadoptions/__init__/#file_format) | Initializes a new instance of the LoadOptions class with an explicit file format. |
+| [__init__](/markdown/python-net/groupdocs.markdown/loadoptions/__init__/) | Initializes a new instance of the [`LoadOptions`](/markdown/python-net/groupdocs.markdown/loadoptions/) class with automatic format detection. |
+| [__init__](/markdown/python-net/groupdocs.markdown/loadoptions/__init__/#file_format) | Initializes a new instance of the [`LoadOptions`](/markdown/python-net/groupdocs.markdown/loadoptions/) class with an explicit file format. |
 
 ### Properties
 | Property | Description |
 | :- | :- |
-| [file_format](/python-net/groupdocs.markdown/loadoptions/file_format/) | The file format of the document to load. |
-| [password](/python-net/groupdocs.markdown/loadoptions/password/) | The password used to open an encrypted document. |
+| [file_format](/markdown/python-net/groupdocs.markdown/loadoptions/file_format/) | The file format of the document to load. |
+| [password](/markdown/python-net/groupdocs.markdown/loadoptions/password/) | The password used to open an encrypted document. |
 
 ### See Also
-* module [`groupdocs.markdown`](/python-net/groupdocs.markdown/)
+* module [`groupdocs.markdown`](/markdown/python-net/groupdocs.markdown/)

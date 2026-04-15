@@ -3,7 +3,7 @@ title: get_document_info method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/markdownconverter/get_document_info/
+url: /markdown/python-net/groupdocs.markdown/markdownconverter/get_document_info/
 is_root: false
 weight: 1050
 ---
@@ -13,14 +13,12 @@ weight: 1050
 
 Retrieves metadata about the loaded document without performing a full conversion.
 
-Use this to inspect properties such as page count, title, author, and whether the document is encrypted before deciding how to convert.
-
 ```python
 def get_document_info(self):
     ...
 ```
 
-**Returns:** DocumentInfo: A DocumentInfo containing the detected FileFormat, PageCount, Title, Author, and IsEncrypted flag.
+**Returns:** DocumentInfo: A DocumentInfo containing the detected `FileFormat`, `PageCount`, `Title`, `Author`, and `IsEncrypted` flag.
 
 ### See Also
-* class [`MarkdownConverter`](/python-net/groupdocs.markdown/markdownconverter/)
+* class [`MarkdownConverter`](/markdown/python-net/groupdocs.markdown/markdownconverter/)

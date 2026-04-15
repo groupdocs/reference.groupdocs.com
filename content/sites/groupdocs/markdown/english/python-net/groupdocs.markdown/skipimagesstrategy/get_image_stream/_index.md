@@ -3,7 +3,7 @@ title: get_image_stream method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/skipimagesstrategy/get_image_stream/
+url: /markdown/python-net/groupdocs.markdown/skipimagesstrategy/get_image_stream/
 is_root: false
 weight: 1010
 ---
@@ -22,7 +22,7 @@ def get_image_stream(self, context):
 | :- | :- | :- |
 | context | `ImageExportContext` | The image export context (not used in this implementation). |
 
-**Returns:** None: Always returns None to skip the image.
+**Returns:** Always returns None to skip the image.
 
 ### See Also
-* class [`SkipImagesStrategy`](/python-net/groupdocs.markdown/skipimagesstrategy/)
+* class [`SkipImagesStrategy`](/markdown/python-net/groupdocs.markdown/skipimagesstrategy/)

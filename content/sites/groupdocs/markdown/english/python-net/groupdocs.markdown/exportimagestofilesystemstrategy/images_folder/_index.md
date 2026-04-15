@@ -3,7 +3,7 @@ title: images_folder property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/exportimagestofilesystemstrategy/images_folder/
+url: /markdown/python-net/groupdocs.markdown/exportimagestofilesystemstrategy/images_folder/
 is_root: false
 weight: 2010
 ---
@@ -21,4 +21,4 @@ def images_folder(self):
 ```
 
 ### See Also
-* class [`ExportImagesToFileSystemStrategy`](/python-net/groupdocs.markdown/exportimagestofilesystemstrategy/)
+* class [`ExportImagesToFileSystemStrategy`](/markdown/python-net/groupdocs.markdown/exportimagestofilesystemstrategy/)

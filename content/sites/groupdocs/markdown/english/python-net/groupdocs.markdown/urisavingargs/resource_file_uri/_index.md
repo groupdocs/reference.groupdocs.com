@@ -3,7 +3,7 @@ title: resource_file_uri property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/urisavingargs/resource_file_uri/
+url: /markdown/python-net/groupdocs.markdown/urisavingargs/resource_file_uri/
 is_root: false
 weight: 2030
 ---
@@ -21,4 +21,4 @@ def resource_file_uri(self):
 ```
 
 ### See Also
-* class [`UriSavingArgs`](/python-net/groupdocs.markdown/urisavingargs/)
+* class [`UriSavingArgs`](/markdown/python-net/groupdocs.markdown/urisavingargs/)

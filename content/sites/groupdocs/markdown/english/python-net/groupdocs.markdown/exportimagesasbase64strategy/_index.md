@@ -3,7 +3,7 @@ title: ExportImagesAsBase64Strategy class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/exportimagesasbase64strategy/
+url: /markdown/python-net/groupdocs.markdown/exportimagesasbase64strategy/
 is_root: false
 weight: 90
 ---
@@ -20,17 +20,17 @@ The ExportImagesAsBase64Strategy type exposes the following members:
 ### Constructors
 | Constructor | Description |
 | :- | :- |
-| [__init__](/python-net/groupdocs.markdown/exportimagesasbase64strategy/__init__/) |  |
+| [__init__](/markdown/python-net/groupdocs.markdown/exportimagesasbase64strategy/__init__/) |  |
 
 ### Methods
 | Method | Description |
 | :- | :- |
-| [get_image_stream](/python-net/groupdocs.markdown/exportimagesasbase64strategy/get_image_stream/#context) | Returns None to indicate that the image should be embedded as Base64. |
+| [get_image_stream](/markdown/python-net/groupdocs.markdown/exportimagesasbase64strategy/get_image_stream/#context) | Returns None to indicate that the image should be embedded as Base64. |
 
 ### Properties
 | Property | Description |
 | :- | :- |
-| [images_folder](/python-net/groupdocs.markdown/exportimagesasbase64strategy/images_folder/) | The images folder is an empty string because this strategy embeds images directly in the Markdown. |
+| [images_folder](/markdown/python-net/groupdocs.markdown/exportimagesasbase64strategy/images_folder/) | The images folder path is always an empty string because this strategy embeds images directly in the Markdown. |
 
 ### See Also
-* module [`groupdocs.markdown`](/python-net/groupdocs.markdown/)
+* module [`groupdocs.markdown`](/markdown/python-net/groupdocs.markdown/)

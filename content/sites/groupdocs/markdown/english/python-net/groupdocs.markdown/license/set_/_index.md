@@ -3,7 +3,7 @@ title: set_ method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/license/set_/
+url: /markdown/python-net/groupdocs.markdown/license/set_/
 is_root: false
 weight: 1010
 ---
@@ -26,4 +26,4 @@ def set_(license_source):
 | license_source |  | A file path (``str``) or a readable file-like object containing license data. |
 
 ### See Also
-* class [`License`](/python-net/groupdocs.markdown/license/)
+* class [`License`](/markdown/python-net/groupdocs.markdown/license/)

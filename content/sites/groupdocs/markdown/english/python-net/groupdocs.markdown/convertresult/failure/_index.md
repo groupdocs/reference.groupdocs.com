@@ -3,7 +3,7 @@ title: failure method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/convertresult/failure/
+url: /markdown/python-net/groupdocs.markdown/convertresult/failure/
 is_root: false
 weight: 1010
 ---
@@ -23,7 +23,7 @@ def failure(cls, error_message, exception):
 | error_message | `str` | A human-readable description of the error. |
 | exception | `Exception` | The exception that caused the failure. |
 
-**Returns:** ConvertResult: A `ConvertResult` with `ConvertResult.is_success` set to `False`.
+**Returns:** ConvertResult: A ConvertResult with `IsSuccess` set to `False`.
 
 ### See Also
-* class [`ConvertResult`](/python-net/groupdocs.markdown/convertresult/)
+* class [`ConvertResult`](/markdown/python-net/groupdocs.markdown/convertresult/)

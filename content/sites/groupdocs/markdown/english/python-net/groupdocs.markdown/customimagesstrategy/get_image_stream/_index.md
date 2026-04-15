@@ -3,7 +3,7 @@ title: get_image_stream method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/customimagesstrategy/get_image_stream/
+url: /markdown/python-net/groupdocs.markdown/customimagesstrategy/get_image_stream/
 is_root: false
 weight: 1010
 ---
@@ -25,4 +25,4 @@ def get_image_stream(self, context):
 **Returns:** io.RawIOBase: A stream for writing the image data to the file system.
 
 ### See Also
-* class [`CustomImagesStrategy`](/python-net/groupdocs.markdown/customimagesstrategy/)
+* class [`CustomImagesStrategy`](/markdown/python-net/groupdocs.markdown/customimagesstrategy/)

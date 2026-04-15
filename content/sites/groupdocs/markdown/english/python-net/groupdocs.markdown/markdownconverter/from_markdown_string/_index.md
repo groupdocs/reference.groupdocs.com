@@ -3,7 +3,7 @@ title: from_markdown_string method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/markdownconverter/from_markdown_string/
+url: /markdown/python-net/groupdocs.markdown/markdownconverter/from_markdown_string/
 is_root: false
 weight: 1040
 ---
@@ -50,4 +50,4 @@ def from_markdown_string(cls, markdown_content, output_stream, options):
 | `ValueError` | Thrown when `options` is None or `ExportOptions.format` is `FileFormat.unknown`. |
 
 ### See Also
-* class [`MarkdownConverter`](/python-net/groupdocs.markdown/markdownconverter/)
+* class [`MarkdownConverter`](/markdown/python-net/groupdocs.markdown/markdownconverter/)

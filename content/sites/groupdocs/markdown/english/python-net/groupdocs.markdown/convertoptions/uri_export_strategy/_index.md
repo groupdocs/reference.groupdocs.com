@@ -3,7 +3,7 @@ title: uri_export_strategy property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/convertoptions/uri_export_strategy/
+url: /markdown/python-net/groupdocs.markdown/convertoptions/uri_export_strategy/
 is_root: false
 weight: 2100
 ---
@@ -26,4 +26,4 @@ def uri_export_strategy(self, value):
 ```
 
 ### See Also
-* class [`ConvertOptions`](/python-net/groupdocs.markdown/convertoptions/)
+* class [`ConvertOptions`](/markdown/python-net/groupdocs.markdown/convertoptions/)

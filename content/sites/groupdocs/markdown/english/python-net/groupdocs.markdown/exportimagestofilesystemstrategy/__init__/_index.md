@@ -3,7 +3,7 @@ title: __init__ constructor
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/exportimagestofilesystemstrategy/__init__/
+url: /markdown/python-net/groupdocs.markdown/exportimagestofilesystemstrategy/__init__/
 is_root: false
 weight: 10
 ---
@@ -11,7 +11,7 @@ weight: 10
 
 ## __init__ {#images_folder}
 
-Initializes a new instance of the ExportImagesToFileSystemStrategy class.
+Initializes a new instance of the [`ExportImagesToFileSystemStrategy`](/markdown/python-net/groupdocs.markdown/exportimagestofilesystemstrategy/) class.
 
 ```python
 def __init__(self, images_folder):
@@ -24,7 +24,7 @@ def __init__(self, images_folder):
 
 | Raises | Description |
 | :- | :- |
-| `ValueError` | Thrown when `images_folder` is None. |
+| `ValueError` | When `images_folder` is None. |
 
 ### See Also
-* class [`ExportImagesToFileSystemStrategy`](/python-net/groupdocs.markdown/exportimagestofilesystemstrategy/)
+* class [`ExportImagesToFileSystemStrategy`](/markdown/python-net/groupdocs.markdown/exportimagestofilesystemstrategy/)

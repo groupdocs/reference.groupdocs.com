@@ -3,7 +3,7 @@ title: Csv field
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/fileformat/csv/
+url: /markdown/python-net/groupdocs.markdown/fileformat/csv/
 is_root: false
 weight: 3150
 ---
@@ -17,4 +17,4 @@ Comma-Separated Values (.csv).
 `14`
 
 ### See Also
-* class [`FileFormat`](/python-net/groupdocs.markdown/fileformat/)
+* class [`FileFormat`](/markdown/python-net/groupdocs.markdown/fileformat/)

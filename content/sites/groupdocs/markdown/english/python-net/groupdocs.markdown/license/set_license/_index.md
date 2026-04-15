@@ -3,7 +3,7 @@ title: set_license method
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/license/set_license/
+url: /markdown/python-net/groupdocs.markdown/license/set_license/
 is_root: false
 weight: 1020
 ---
@@ -27,4 +27,4 @@ def set_license(self, license_source):
 | `TypeError` | If ``license_source`` is neither a string path nor a readable file-like object. |
 
 ### See Also
-* class [`License`](/python-net/groupdocs.markdown/license/)
+* class [`License`](/markdown/python-net/groupdocs.markdown/license/)

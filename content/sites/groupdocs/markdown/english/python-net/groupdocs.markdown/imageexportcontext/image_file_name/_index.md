@@ -3,7 +3,7 @@ title: image_file_name property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/imageexportcontext/image_file_name/
+url: /markdown/python-net/groupdocs.markdown/imageexportcontext/image_file_name/
 is_root: false
 weight: 2010
 ---
@@ -23,4 +23,4 @@ def image_file_name(self):
 ```
 
 ### See Also
-* class [`ImageExportContext`](/python-net/groupdocs.markdown/imageexportcontext/)
+* class [`ImageExportContext`](/markdown/python-net/groupdocs.markdown/imageexportcontext/)

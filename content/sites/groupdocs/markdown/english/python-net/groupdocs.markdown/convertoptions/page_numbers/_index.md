@@ -3,7 +3,7 @@ title: page_numbers property
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/convertoptions/page_numbers/
+url: /markdown/python-net/groupdocs.markdown/convertoptions/page_numbers/
 is_root: false
 weight: 2080
 ---
@@ -11,9 +11,9 @@ weight: 2080
 
 ## page_numbers property
 
-The array of 1-based page or worksheet numbers to convert; set to None to convert all pages.
+The page numbers to convert, as a list of 1‑based page or worksheet numbers.
 
-Numbering starts from 1.
+If set to None, all pages are converted. The default is None.
 
 ### Definition:
 ```python
@@ -26,4 +26,4 @@ def page_numbers(self, value):
 ```
 
 ### See Also
-* class [`ConvertOptions`](/python-net/groupdocs.markdown/convertoptions/)
+* class [`ConvertOptions`](/markdown/python-net/groupdocs.markdown/convertoptions/)

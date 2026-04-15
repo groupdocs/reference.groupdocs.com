@@ -3,9 +3,9 @@ title: Metered class
 second_title: GroupDocs.Markdown for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.markdown/metered/
+url: /markdown/python-net/groupdocs.markdown/metered/
 is_root: false
-weight: 200
+weight: 240
 ---
 
 
@@ -23,9 +23,9 @@ The Metered type exposes the following members:
 ### Methods
 | Method | Description |
 | :- | :- |
-| [get_consumption_credit](/python-net/groupdocs.markdown/metered/get_consumption_credit/) | Return the remaining metered credit for the current key. |
-| [get_consumption_quantity](/python-net/groupdocs.markdown/metered/get_consumption_quantity/) | Return the total metered quantity consumed so far. |
-| [set_metered_key](/python-net/groupdocs.markdown/metered/set_metered_key/#public_key-private_key) | Activate metered billing with the given public/private key pair. |
+| [get_consumption_credit](/markdown/python-net/groupdocs.markdown/metered/get_consumption_credit/) | Return the remaining metered credit for the current key. |
+| [get_consumption_quantity](/markdown/python-net/groupdocs.markdown/metered/get_consumption_quantity/) | Return the total metered quantity consumed so far. |
+| [set_metered_key](/markdown/python-net/groupdocs.markdown/metered/set_metered_key/#public_key-private_key) | Activate metered billing with the given public/private key pair. |
 
 ### See Also
-* module [`groupdocs.markdown`](/python-net/groupdocs.markdown/)
+* module [`groupdocs.markdown`](/markdown/python-net/groupdocs.markdown/)
