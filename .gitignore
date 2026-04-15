@@ -110,3 +110,4 @@ typings/
 .tern-port
 # package-lock.json
 .hugo_build.lock
+package-lock.json

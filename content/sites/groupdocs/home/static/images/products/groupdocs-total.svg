@@ -1,0 +1,11 @@
+<svg version="1.1" id="NET" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" xml:space="preserve">
+<style type="text/css">
+	.st1{fill:#2865E0;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#2865E0;}
+</style>
+
+<path class="st2" d="M256,151.9l-98.2,49.1L256,250l98.2-49.1L256,151.9z M256,274.4l-146.8-73.4L256,127.5l146.8,73.4L256,274.4z
+	 M256,300l117.5-58.7l29.4,14.7L256,329.4L109.2,256l29.4-14.7L256,300z M138.5,296.4L256,355.1l117.5-58.7l29.4,14.7L256,384.5
+	l-146.8-73.4L138.5,296.4z"/>
+</svg>
