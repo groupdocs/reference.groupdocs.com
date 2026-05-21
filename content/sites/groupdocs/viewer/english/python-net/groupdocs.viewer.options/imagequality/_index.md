@@ -1,29 +1,24 @@
-﻿---
-title: ImageQuality enumeration
+---
+title: ImageQuality class
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
 url: /python-net/groupdocs.viewer.options/imagequality/
 is_root: false
-weight: 310
+weight: 90
 ---
 
-## ImageQuality enumeration
 
-The quality of images in the output HTML contained by the PDF documents.
-
-
+## ImageQuality class
 
 The ImageQuality type exposes the following members:
 
 ### Fields
 | Field | Description |
 | :- | :- |
-| LOW | The acceptable quality and best performance. |
-| MEDIUM | Better quality and slower performance. |
-| HIGH | The best quality but slow performance. |
-
-
+| [LOW](/viewer/python-net/groupdocs.viewer.options/imagequality/low/) |  |
+| [MEDIUM](/viewer/python-net/groupdocs.viewer.options/imagequality/medium/) |  |
+| [HIGH](/viewer/python-net/groupdocs.viewer.options/imagequality/high/) |  |
 
 ### See Also
-* module [`groupdocs.viewer.options`](..)
+* module [`groupdocs.viewer.options`](/viewer/python-net/groupdocs.viewer.options/)

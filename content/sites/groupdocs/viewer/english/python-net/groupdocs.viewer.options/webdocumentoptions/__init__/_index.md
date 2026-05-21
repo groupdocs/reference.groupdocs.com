@@ -1,5 +1,5 @@
-﻿---
-title: WebDocumentOptions constructor
+---
+title: __init__ constructor
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
@@ -8,21 +8,13 @@ is_root: false
 weight: 10
 ---
 
-## __init__ {#}
 
-Initializes an instance of the [`WebDocumentOptions`](/viewer/python-net/groupdocs.viewer.options/webdocumentoptions) class.
-
-
+## __init__
 
 ```python
 def __init__(self):
     ...
 ```
 
-
-
-
-
 ### See Also
-* module [`groupdocs.viewer.options`](../../)
-* class [`WebDocumentOptions`](/viewer/python-net/groupdocs.viewer.options/webdocumentoptions)
+* class [`WebDocumentOptions`](/viewer/python-net/groupdocs.viewer.options/webdocumentoptions/)

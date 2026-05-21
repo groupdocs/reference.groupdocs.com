@@ -1,20 +1,28 @@
-﻿---
+---
 title: groupdocs.viewer.drawing
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
 url: /python-net/groupdocs.viewer.drawing/
 is_root: false
-weight: 10
+weight: 30
 ---
 
-The namespace provides types that replaces platform-specific graphics types like Color.
+
+Types under `groupdocs.viewer.drawing`.
 
 ### Classes
 | Class | Description |
 | :- | :- |
-| [`Argb32Color`](/viewer/python-net/groupdocs.viewer.drawing/argb32color) | Represents 32-bit color in ARGB format, with 8 bits per every channel (Alpha, Red, Green, Blue). Supports transparency. |
-| [`Image2DFormat`](/viewer/python-net/groupdocs.viewer.drawing/image2dformat) | Represents most common 2D image formats, supports both raster and vector formats |
-| [`Rgb24Color`](/viewer/python-net/groupdocs.viewer.drawing/rgb24color) | Represents 24-bit color in RGB format, with 8 bits per every channel (Red, Green, Blue). Does not support transparency. |
+| [`Argb32Color`](/viewer/python-net/groupdocs.viewer.drawing/argb32color/) |  |
+| [`Image2DFormat`](/viewer/python-net/groupdocs.viewer.drawing/image2dformat/) |  |
+| [`KnownColors`](/viewer/python-net/groupdocs.viewer.drawing/knowncolors/) |  |
+| [`Rgb24Color`](/viewer/python-net/groupdocs.viewer.drawing/rgb24color/) |  |
 
-
+### Enumerations
+| Enum | Description |
+| :- | :- |
+| [`CssLevel1`](/viewer/python-net/groupdocs.viewer.drawing/csslevel1/) |  |
+| [`CssLevel2`](/viewer/python-net/groupdocs.viewer.drawing/csslevel2/) |  |
+| [`CssLevel3`](/viewer/python-net/groupdocs.viewer.drawing/csslevel3/) |  |
+| [`CssLevel4`](/viewer/python-net/groupdocs.viewer.drawing/csslevel4/) |  |

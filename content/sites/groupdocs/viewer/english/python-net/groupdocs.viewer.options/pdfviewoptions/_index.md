@@ -1,74 +1,62 @@
-﻿---
+---
 title: PdfViewOptions class
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
 url: /python-net/groupdocs.viewer.options/pdfviewoptions/
 is_root: false
-weight: 150
+weight: 170
 ---
 
+
 ## PdfViewOptions class
-
-Contains options for rendering documents into PDF format.
-For details, see the [documentation](https://docs.groupdocs.com/viewer/net/rendering-to-pdf/).
-
-
-
-**Inheritance:** [`PdfViewOptions`](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions) → 
-[`ViewOptions`](/viewer/python-net/groupdocs.viewer.options/viewoptions) → 
-[`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions)
-
-
 
 The PdfViewOptions type exposes the following members:
 
 ### Constructors
 | Constructor | Description |
 | :- | :- |
-| [__init__](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/__init__/#groupdocs.viewer.interfaces.IFileStreamFactory) | Initializes an instance of [`PdfViewOptions`](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions) class. |
-| [__init__](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/__init__/#) | Initializes an instance of [`PdfViewOptions`](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions) class. |
-| [__init__](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/__init__/#System.String) | Initializes an instance of [`PdfViewOptions`](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions) class. |
-
-
-### Properties
-| Property | Description |
-| :- | :- |
-| [render_comments](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/render_comments) | Enables rendering comments. |
-| [render_notes](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/render_notes) | Enables rendering notes. |
-| [render_hidden_pages](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/render_hidden_pages) | Enables rendering of hidden pages. |
-| [default_font_name](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/default_font_name) | Sets the default font for a document. |
-| [archive_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/archive_options) | The archive files view options. |
-| [cad_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/cad_options) | The CAD drawing view options. |
-| [email_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/email_options) | The email messages view options. |
-| [outlook_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/outlook_options) | The Microsoft Outlook data files view options. |
-| [mail_storage_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/mail_storage_options) | Mail storage data files view options. |
-| [pdf_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/pdf_options) | The PDF document view options. |
-| [project_management_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/project_management_options) | The project management files view options. |
-| [spreadsheet_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/spreadsheet_options) | The spreadsheet files view options. |
-| [word_processing_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/word_processing_options) | The Word processing files view options. |
-| [visio_rendering_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/visio_rendering_options) | The Visio files view options. |
-| [text_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/text_options) | Text files view options. |
-| [presentation_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/presentation_options) | The presentation files view options. |
-| [web_document_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/web_document_options) | The Web files view options. |
-| [watermark](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/watermark) | The text watermark to be applied to each page. |
-| [security](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/security) | Sets the output PDF document security options. |
-| [pdf_optimization_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/pdf_optimization_options) | Reduces output PDF file size by applying optimization techniques with different options. |
-| [image_max_width](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_max_width) | Sets the maximum width of an output image (in pixels). |
-| [image_max_height](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_max_height) | Sets the maximum height of an output image (in pixels). |
-| [image_width](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_width) | Sets the width of an output image (in pixels). |
-| [image_height](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_height) | Sets the height of an output image (in pixels). |
-
+| [__init__](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/__init__/) |  |
 
 ### Methods
 | Method | Description |
 | :- | :- |
-| [rotate_page](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/rotate_page/#int-groupdocs.viewer.options.Rotation) | Applies the clockwise rotation to a page. |
+| [_init_create_file_stream](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/_init_create_file_stream/#create_file_stream) |  |
+| [_init_create_file_stream_release_file_stream](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/_init_create_file_stream_release_file_stream/#create_file_stream-release_file_stream) |  |
+| [_init_ifile_stream_factory](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/_init_ifile_stream_factory/#file_stream_factory) |  |
+| [_init_noargs](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/_init_noargs/) |  |
+| [_init_string](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/_init_string/#output_file_path) |  |
+| [_rotate_page_int32_rotation](/viewer/python-net/groupdocs.viewer.options/viewoptions/_rotate_page_int32_rotation/) |  (inherited from [`ViewOptions`](/viewer/python-net/groupdocs.viewer.options/viewoptions/)) |
+| [rotate_page](/viewer/python-net/groupdocs.viewer.options/viewoptions/rotate_page/) |  (inherited from [`ViewOptions`](/viewer/python-net/groupdocs.viewer.options/viewoptions/)) |
+| [rotate_page_int32](/viewer/python-net/groupdocs.viewer.options/viewoptions/rotate_page_int32/) |  (inherited from [`ViewOptions`](/viewer/python-net/groupdocs.viewer.options/viewoptions/)) |
 
-
+### Properties
+| Property | Description |
+| :- | :- |
+| [image_height](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_height/) |  |
+| [image_max_height](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_max_height/) |  |
+| [image_max_width](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_max_width/) |  |
+| [image_width](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/image_width/) |  |
+| [pdf_optimization_options](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/pdf_optimization_options/) |  |
+| [security](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions/security/) |  |
+| [archive_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/archive_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [cad_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/cad_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [default_font_name](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/default_font_name/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [email_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/email_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [mail_storage_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/mail_storage_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [outlook_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/outlook_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [pdf_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/pdf_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [presentation_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/presentation_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [remove_comments](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/remove_comments/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [render_comments](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/render_comments/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [render_hidden_pages](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/render_hidden_pages/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [render_notes](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/render_notes/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [spreadsheet_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/spreadsheet_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [text_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/text_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [visio_rendering_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/visio_rendering_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [watermark](/viewer/python-net/groupdocs.viewer.options/viewoptions/watermark/) |  (inherited from [`ViewOptions`](/viewer/python-net/groupdocs.viewer.options/viewoptions/)) |
+| [web_document_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/web_document_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
+| [word_processing_options](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/word_processing_options/) |  (inherited from [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions/)) |
 
 ### See Also
-* module [`groupdocs.viewer.options`](..)
-* class [`BaseViewOptions`](/viewer/python-net/groupdocs.viewer.options/baseviewoptions)
-* class [`PdfViewOptions`](/viewer/python-net/groupdocs.viewer.options/pdfviewoptions)
-* class [`ViewOptions`](/viewer/python-net/groupdocs.viewer.options/viewoptions)
+* module [`groupdocs.viewer.options`](/viewer/python-net/groupdocs.viewer.options/)

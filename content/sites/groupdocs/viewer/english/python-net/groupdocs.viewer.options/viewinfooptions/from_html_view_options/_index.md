@@ -1,43 +1,26 @@
-﻿---
+---
 title: from_html_view_options method
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
 url: /python-net/groupdocs.viewer.options/viewinfooptions/from_html_view_options/
 is_root: false
-weight: 60
+weight: 1140
 ---
 
-## from_html_view_options {#groupdocs.viewer.options.HtmlViewOptions}
 
-Initializes an instance of the [`ViewInfoOptions`](/viewer/python-net/groupdocs.viewer.options/viewinfooptions) class based on the [`HtmlViewOptions`](/viewer/python-net/groupdocs.viewer.options/htmlviewoptions) object.
-
-
-### Returns 
-
-
-New instance of the [`ViewInfoOptions`](/viewer/python-net/groupdocs.viewer.options/viewinfooptions) class.
-
+## from_html_view_options {#options}
 
 ```python
-def from_html_view_options(self, options):
+def from_html_view_options(cls, options):
     ...
 ```
 
-
 | Parameter | Type | Description |
 | :- | :- | :- |
-| options | groupdocs.viewer.options.HtmlViewOptions | The HTML view options. |
-### Exceptions
-| Exception | Description |
-| :- | :- |
-| ArgumentNullException | Thrown when `options` is null. |
+| options | `HtmlViewOptions` |  |
 
-
-
-
+**Returns:** ViewInfoOptions
 
 ### See Also
-* module [`groupdocs.viewer.options`](../../)
-* class [`HtmlViewOptions`](/viewer/python-net/groupdocs.viewer.options/htmlviewoptions)
-* class [`ViewInfoOptions`](/viewer/python-net/groupdocs.viewer.options/viewinfooptions)
+* class [`ViewInfoOptions`](/viewer/python-net/groupdocs.viewer.options/viewinfooptions/)

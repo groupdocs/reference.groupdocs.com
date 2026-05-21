@@ -1,17 +1,16 @@
-﻿---
+---
 title: file_name property
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
 url: /python-net/groupdocs.viewer.results/resource/file_name/
 is_root: false
-weight: 30
+weight: 2010
 ---
+
 
 ## file_name property
 
-
-The resource file name.
 ### Definition:
 ```python
 @property
@@ -23,5 +22,4 @@ def file_name(self, value):
 ```
 
 ### See Also
-* module [`groupdocs.viewer.results`](../../)
-* class [`Resource`](/viewer/python-net/groupdocs.viewer.results/resource)
+* class [`Resource`](/viewer/python-net/groupdocs.viewer.results/resource/)

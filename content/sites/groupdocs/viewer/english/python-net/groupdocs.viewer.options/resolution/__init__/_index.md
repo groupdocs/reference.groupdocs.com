@@ -1,5 +1,5 @@
-﻿---
-title: Resolution constructor
+---
+title: __init__ constructor
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
@@ -8,24 +8,13 @@ is_root: false
 weight: 10
 ---
 
-## __init__ {#int}
 
-Sets resolution in DPI.
-
-
+## __init__
 
 ```python
-def __init__(self, value):
+def __init__(self):
     ...
 ```
 
-
-| Parameter | Type | Description |
-| :- | :- | :- |
-| value | int | Resolution in DPI. |
-
-
-
 ### See Also
-* module [`groupdocs.viewer.options`](../../)
-* class [`Resolution`](/viewer/python-net/groupdocs.viewer.options/resolution)
+* class [`Resolution`](/viewer/python-net/groupdocs.viewer.options/resolution/)

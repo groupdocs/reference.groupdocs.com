@@ -1,5 +1,5 @@
-﻿---
-title: PdfOptimizationOptions constructor
+---
+title: __init__ constructor
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
@@ -8,21 +8,13 @@ is_root: false
 weight: 10
 ---
 
-## __init__ {#}
 
-Sets up default values of MaxResolution option to 300 and ImageQuality option to 100
-
-
+## __init__
 
 ```python
 def __init__(self):
     ...
 ```
 
-
-
-
-
 ### See Also
-* module [`groupdocs.viewer.options`](../../)
-* class [`PdfOptimizationOptions`](/viewer/python-net/groupdocs.viewer.options/pdfoptimizationoptions)
+* class [`PdfOptimizationOptions`](/viewer/python-net/groupdocs.viewer.options/pdfoptimizationoptions/)

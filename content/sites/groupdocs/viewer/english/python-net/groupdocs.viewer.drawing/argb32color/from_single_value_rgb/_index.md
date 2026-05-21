@@ -1,36 +1,26 @@
-﻿---
+---
 title: from_single_value_rgb method
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
 url: /python-net/groupdocs.viewer.drawing/argb32color/from_single_value_rgb/
 is_root: false
-weight: 70
+weight: 1260
 ---
 
-## from_single_value_rgb {#int}
 
-Creates a fully opaque (A=255) color from single value, which will be applied to all channels
-
-
-### Returns 
-
-
-New [`Argb32Color`](/viewer/python-net/groupdocs.viewer.drawing/argb32color) instance
-
+## from_single_value_rgb {#value}
 
 ```python
-def from_single_value_rgb(self, value):
+def from_single_value_rgb(cls, value):
     ...
 ```
 
-
 | Parameter | Type | Description |
 | :- | :- | :- |
-| value | int | A byte value, same for Red, Green, and Blue channels |
+| value | `int` |  |
 
-
+**Returns:** Argb32Color
 
 ### See Also
-* module [`groupdocs.viewer.drawing`](../../)
-* class [`Argb32Color`](/viewer/python-net/groupdocs.viewer.drawing/argb32color)
+* class [`Argb32Color`](/viewer/python-net/groupdocs.viewer.drawing/argb32color/)

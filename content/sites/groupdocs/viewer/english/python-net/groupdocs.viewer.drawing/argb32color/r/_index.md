@@ -1,17 +1,16 @@
-﻿---
+---
 title: r property
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
 url: /python-net/groupdocs.viewer.drawing/argb32color/r/
 is_root: false
-weight: 250
+weight: 2100
 ---
+
 
 ## r property
 
-
-Gets the red part of the color as 8-bit unsigned integer [0..255]
 ### Definition:
 ```python
 @property
@@ -20,5 +19,4 @@ def r(self):
 ```
 
 ### See Also
-* module [`groupdocs.viewer.drawing`](../../)
-* class [`Argb32Color`](/viewer/python-net/groupdocs.viewer.drawing/argb32color)
+* class [`Argb32Color`](/viewer/python-net/groupdocs.viewer.drawing/argb32color/)

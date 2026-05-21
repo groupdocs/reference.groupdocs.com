@@ -1,5 +1,5 @@
-﻿---
-title: OutlookViewInfo constructor
+---
+title: __init__ constructor
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
@@ -8,40 +8,13 @@ is_root: false
 weight: 10
 ---
 
-## __init__ {#}
 
-Initializes new instance of [`OutlookViewInfo`](/viewer/python-net/groupdocs.viewer.results/outlookviewinfo) class.
-
-
+## __init__
 
 ```python
 def __init__(self):
     ...
 ```
 
-
-
-
-## __init__ {#groupdocs.viewer.FileType-System.Collections.Generic.List`1[[GroupDocs.Viewer.Results.Page]]-System.Collections.Generic.List`1[[System.String]]}
-
-Constructs a new instance of OutlookViewInfo
-
-
-
-```python
-def __init__(self, file_type, pages, folders):
-    ...
-```
-
-
-| Parameter | Type | Description |
-| :- | :- | :- |
-| file_type | groupdocs.viewer.FileType |  |
-| pages | System.Collections.Generic.List`1[[GroupDocs.Viewer.Results.Page]] |  |
-| folders | System.Collections.Generic.List`1[[System.String]] |  |
-
-
-
 ### See Also
-* module [`groupdocs.viewer.results`](../../)
-* class [`OutlookViewInfo`](/viewer/python-net/groupdocs.viewer.results/outlookviewinfo)
+* class [`OutlookViewInfo`](/viewer/python-net/groupdocs.viewer.results/outlookviewinfo/)
