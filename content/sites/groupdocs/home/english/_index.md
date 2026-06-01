@@ -116,6 +116,7 @@ Edit Word, Excel, PowerPoint, and other document formats by converting them to H
 {{< blocks/product-item title=".NET" href="/editor/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/editor/java/" class="btn-java" >}}
 {{< blocks/product-item title="Node.js" href="/editor/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/editor/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Annotation**" href="/annotation/" icon="/images/products/groupdocs-annotation.svg" >}}
