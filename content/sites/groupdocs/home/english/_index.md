@@ -43,6 +43,7 @@ Compare and merge documents across formats. Detect differences in text, styles, 
 
 {{< blocks/product-item title=".NET" href="/comparison/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/comparison/java/" class="btn-java" >}}
+{{< blocks/product-item title="Python" href="/comparison/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Markdown**" href="markdown" icon="/images/products/groupdocs-markdown.svg" >}}
@@ -61,6 +62,7 @@ Add, remove, search, and manage watermarks in PDF, Word, Excel, images, and othe
 
 {{< blocks/product-item title=".NET" href="/watermark/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/watermark/java/" class="btn-java" >}}
+{{< blocks/product-item title="Python" href="/watermark/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Merger**" href="merger" icon="/images/products/groupdocs-merger.svg" >}}
@@ -70,6 +72,8 @@ Merge, split, reorder, swap, and remove pages from PDF, Word, Excel, PowerPoint,
 
 {{< blocks/product-item title=".NET" href="/merger/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/merger/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/merger/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/merger/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Metadata**" href="metadata" icon="/images/products/groupdocs-metadata.svg" >}}
@@ -79,6 +83,8 @@ Read, edit, remove, and export metadata from documents, images, audio, and video
 
 {{< blocks/product-item title=".NET" href="/metadata/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/metadata/java/" class="btn-java" >}}
+{{< blocks/product-item title="Node.js" href="/metadata/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/metadata/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Assembly**" href="assembly" icon="/images/products/groupdocs-assembly.svg" >}}
@@ -88,6 +94,7 @@ Generate documents and reports from templates by populating them with data from 
 
 {{< blocks/product-item title=".NET" href="/assembly/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/assembly/java/" class="btn-java" >}}
+{{< blocks/product-item title="Python" href="/assembly/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Search**" href="search" icon="/images/products/groupdocs-search.svg" >}}
@@ -106,6 +113,7 @@ Extract text, images, and metadata from PDF, Word, Excel, and other document for
 
 {{< blocks/product-item title=".NET" href="/parser/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/parser/java/" class="btn-java" >}}
+{{< blocks/product-item title="Python" href="/parser/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Editor**" href="editor" icon="/images/products/groupdocs-editor.svg" >}}
@@ -136,6 +144,7 @@ Add digital, barcode, QR code, text, image, and stamp signatures to documents. V
 {{< blocks/product-item title=".NET" href="/signature/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/signature/java/" class="btn-java" >}}
 {{< blocks/product-item title="Node.js" href="/signature/nodejs-java/" class="btn-nodejs" >}}
+{{< blocks/product-item title="Python" href="/signature/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Redaction**" href="redaction" icon="/images/products/groupdocs-redaction.svg" >}}
@@ -145,6 +154,7 @@ Redact sensitive text, metadata, annotations, and images from PDF, Word, Excel, 
 
 {{< blocks/product-item title=".NET" href="/redaction/net/" class="btn-net" >}}
 {{< blocks/product-item title="Java" href="/redaction/java/" class="btn-java" >}}
+{{< blocks/product-item title="Python" href="/redaction/python-net/" class="btn-python" >}}
 {{< /blocks/product-card >}}
 
 {{< blocks/product-card title="**GroupDocs.Classification**" href="classification" icon="/images/products/groupdocs-classification.svg" >}}
@@ -153,6 +163,7 @@ Classify documents and text using IAB-2, Document, and Sentiment taxonomies. Aut
 {{< /blocks/card-item-text >}}
 
 {{< blocks/product-item title=".NET" href="/classification/net/" class="btn-net" >}}
+{{< blocks/product-item title="Java" href="/classification/java/" class="btn-java" >}}
 {{< /blocks/product-card >}}
 
 {{% /blocks/product-row %}}
