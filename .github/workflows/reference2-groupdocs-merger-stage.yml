@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-            submodules: true  # Fetch Hugo themes
+            submodules: false  # Theme is a private repo, fetched explicitly below with REPO_TOKEN
             fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
       - name: Checkout theme repo
         uses: actions/checkout@main
