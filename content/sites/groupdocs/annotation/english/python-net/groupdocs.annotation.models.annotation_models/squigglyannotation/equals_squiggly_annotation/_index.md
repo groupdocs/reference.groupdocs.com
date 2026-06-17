@@ -1,0 +1,20 @@
+---
+title: equals_squiggly_annotation method
+second_title: GroupDocs.Annotation for Python via .NET API References
+description: 
+type: docs
+url: /python-net/groupdocs.annotation.models.annotation_models/squigglyannotation/equals_squiggly_annotation/
+is_root: false
+weight: 1040
+---
+
+
+## equals_squiggly_annotation
+
+```python
+def equals_squiggly_annotation(self):
+    ...
+```
+
+### See Also
+* class [`SquigglyAnnotation`](/annotation/python-net/groupdocs.annotation.models.annotation_models/squigglyannotation/)
