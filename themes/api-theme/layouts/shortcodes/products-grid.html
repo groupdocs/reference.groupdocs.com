@@ -1,0 +1,42 @@
+{{- /* products-grid: render the home page product cards from data/products.toml.
+       Single source of truth — add a product by appending a [[product]] block there.
+       Reproduces the markup of blocks/product-section > product-row > product-card. */ -}}
+{{- $labels  := dict "net" ".NET" "java" "Java" "nodejs-java" "Node.js" "python-net" "Python" -}}
+{{- $classes := dict "net" "btn-net" "java" "btn-java" "nodejs-java" "btn-nodejs" "python-net" "btn-python" -}}
+{{- $color := .Get "color" | default "white" -}}
+<a id="td-block-{{ .Ordinal }}" class="td-offset-anchor"></a>
+<section class="row product-section td-box td-box--{{ $color }} td-box--gradient td-box--height-auto">
+  <div class="col">
+    <div class="row product-row">
+    {{- range sort .Site.Data.products.product "weight" }}
+      {{- $productName := .title -}}
+      {{- $brand := "" -}}
+      {{- $parts := split .title "." -}}
+      {{- if gt (len $parts) 1 -}}
+        {{- $brand = index $parts 0 -}}
+        {{- $productName = index $parts 1 -}}
+      {{- end -}}
+      {{- $url := .url -}}
+      <div class="card-element col-lg-4 col-sm-12 col-md-6 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-heading">
+              <div class="card-heading-text">
+                {{- with $brand }}<span class="card-brand">{{ . }}</span>{{ end }}
+                <a class="card-title" href="{{ $url }}">{{ $productName }}</a>
+              </div>
+              <img src="/images/products/groupdocs-{{ .icon }}.svg" alt="{{ .title }} icon" class="card-icon" />
+            </div>
+            <div class="card-text mb-0">
+              <p>{{ .description | markdownify }}</p>
+              {{- range .platforms }}
+              <a class="product-item {{ index $classes . }}" href="{{ $url }}/{{ . }}/">{{ index $labels . }}</a>
+              {{- end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{- end }}
+    </div>
+  </div>
+</section>
