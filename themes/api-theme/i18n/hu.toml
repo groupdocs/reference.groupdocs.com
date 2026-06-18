@@ -1,0 +1,19 @@
+[contents]
+  other = 'tartalmat'
+
+[hide]
+  other = 'elrejt'
+  
+[back]
+  other = 'vissza'  
+
+[breadcrumb]
+  reference = 'API hivatkozás'
+  family = 'Család'  
+
+
+[version]
+  other = 'Változat'
+  
+[ui_search]  
+	other = 'Keresés' 

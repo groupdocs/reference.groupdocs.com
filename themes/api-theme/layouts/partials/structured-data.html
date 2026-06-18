@@ -1,0 +1,172 @@
+
+{{ $languages := delimit (.Site.Languages) " "}}
+{{ $dot := . }}
+{{ $dot.Scratch.Set "path" "" }}
+{{ $dot.Scratch.Set "breadcrumb" slice }}
+{{ $url := .RelPermalink }}
+{{ $index := 0 }}	
+
+{{ $.Scratch.Add "breadcrumb" (slice (dict "url" "/" "name" "home" "position" 1 )) }}
+  {{ range $element := split $url "/" }}
+    {{ $dot.Scratch.Add "path" $element }}
+    {{ $.Scratch.Add "path" "/" }}
+    {{ if and (ne $element "") (not (in $languages $element)) }}
+		{{ $index = (add $index 1) }}	
+    	{{ $.Scratch.Add "breadcrumb" (slice (dict "url" ($.Scratch.Get "path") "name" . "position" (add $index 1))) }}
+  {{ end }}
+{{ end }}
+
+
+{{ if not $.Page.IsHome}}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{{ range $.Scratch.Get "breadcrumb" }}{{ if ne .position 1 }},{{ end }}{
+        "@type": "ListItem",
+        "position": {{ .position }},
+        "item": {
+          "@id": "{{ .url | absURL }}",
+          "name": "{{ if eq .name "home" }}{{i18n "breadcrumb.reference"}}{{ else if eq .name "net" }}.NET{{ else if eq .name "cpp" }}C++{{ else if eq .name "sharepoint" }}SharePoint{{ else if eq .name "reporting-services" }}Reporting Services{{ else if eq .name "jasperreports" }}JasperReports{{ else }}{{ title .name }}{{ end }}"
+        }
+    }{{ end }}]
+}
+</script>
+{{ end }}
+
+{{ $firstUrlElement := "" }}
+{{ $secondUrlElement := "" }}
+{{ if in $.Page.Language "en"}}
+  {{ $firstUrlElement = index (split .RelPermalink "/") 1 }}
+  {{ $secondUrlElement = index (split .RelPermalink "/") 2 }}
+{{ else }}
+  {{ $firstUrlElement = index (split .RelPermalink "/") 1 }}
+  {{ $secondUrlElement = index (split .RelPermalink "/") 3 }}
+{{ end }}
+
+
+<script type = "application/ld+json" >
+{
+  "@context": "http://schema.org/",
+  "@type": "SoftwareApplication",
+  "name": "GroupDocs.{{title $firstUrlElement}}{{ if ne $secondUrlElement ""}} for {{title $secondUrlElement}}{{end}}",
+  "applicationCategory": "DeveloperApplication",
+  "image": [
+    "https://www.groupdocs.cloud/templates/groupdocs/img/products/viewer/border/groupdocs-{{ $firstUrlElement}}-{{ $secondUrlElement}}.svg"
+  ],
+  "description": "{{ .Page.Params.description }}",
+  "downloadUrl": "https://releases.groupdocs.com/{{ $firstUrlElement }}/{{ if ne $secondUrlElement ""}}{{ $secondUrlElement }}/{{ end}}",
+  "releaseNotes": "https://docs.groupdocs.com/{{ $firstUrlElement }}/{{ if ne $secondUrlElement ""}}{{ $secondUrlElement }}/release-notes/{{end}}",
+  "operatingSystem": [
+    "Windows",
+    "Linux",
+    "macOS"
+  ]
+}
+
+{{ if eq $secondUrlElement "" }}
+  {{ $secondUrlElement = "net" }}
+{{ end }}
+</script> 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Page.Permalink }}"
+  },
+  "headline": "{{ .Page.Params.title }}",
+  "description": "{{ .Page.Params.description }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.groupdocs.cloud/templates/groupdocs/img/products/viewer/border/groupdocs-{{ $firstUrlElement}}-{{ if ne $secondUrlElement "net" }}net{{ else }}{{ $secondUrlElement }}{{ end }}.svg",
+    "width": "",
+    "height": ""
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Aspose Pty Ltd"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aspose Pty Ltd",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.groupdocs.com/templates/groupdocs/img/svg/groupdocs-logo.svg",
+      "width": "",
+      "height": ""
+    }
+  },
+  "datePublished": "{{now.Format "2006-01-02"}}",
+  "wordCount":"{{.WordCount}}",
+  "articleBody":"{{.PlainWords}}"
+}
+</script> 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aspose Pty. Ltd.",
+  "url": "https://www.aspose.com",
+  "logo": "https://about.aspose.com/templates/aspose/img/svg/aspose-logo.svg",
+  "alternateName": "Aspose",
+  "sameAs": [
+    "https://www.facebook.com/Aspose/",
+    "https://twitter.com/Aspose",
+    "https://www.youtube.com/user/AsposeVideo",
+    "https://www.linkedin.com/company/aspose",
+    "https://stackoverflow.com/questions/tagged/aspose",
+    "https://aspose.quora.com/",
+    "https://aspose.github.io/"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1 903 306 1676",
+      "contactType": "sales",
+      "areaServed": "US",
+      "availableLanguage": "en"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+44 141 628 8900",
+      "contactType": "sales",
+      "areaServed": "GB",
+      "availableLanguage": "en"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+61 2 8006 6987",
+      "contactType": "sales",
+      "areaServed": "AU",
+      "availableLanguage": "en"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.groupdocs.com",
+  "sameAs": [
+    "https://search.groupdocs.com",
+    "https://docs.groupdocs.com",
+    "https://blog.groupdocs.com",
+    "https://forum.groupdocs.com",
+    "https://products.groupdocs.com",
+    "https://about.groupdocs.com",
+    "https://purchase.groupdocs.com",
+    "https://reference.groupdocs.com"
+  ],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://search.groupdocs.com/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>

@@ -1,0 +1,18 @@
+[contents]
+  other = 'zawartość'
+
+[hide]
+  other = 'ukryć'
+  
+[back]
+  other = 'plecy'  
+ 
+[version]
+  other = 'Wersja'
+  
+[breadcrumb]
+  reference = 'Odniesienie do interfejsu API'
+  family = 'Rodzina'  
+
+[ui_search]  
+	other = 'Szukaj' 

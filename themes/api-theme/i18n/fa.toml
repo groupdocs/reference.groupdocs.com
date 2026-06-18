@@ -1,0 +1,18 @@
+[contents]
+  other = 'فهرست'
+
+[hide]
+  other = 'پنهان شدن'
+  
+[back]
+  other = 'بازگشت'  
+
+[version]
+  other = 'نسخه'
+  
+[breadcrumb]
+  reference = 'مرجع API'
+  family = 'خانواده'  
+
+[ui_search]  
+	other = 'جستجو کردن'  

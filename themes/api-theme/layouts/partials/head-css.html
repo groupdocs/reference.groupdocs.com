@@ -1,0 +1,18 @@
+{{ $scssMain := "scss/main.scss"}}
+{{ $scssCodeBlock := "scss/_code-block.scss"}}
+{{ $cssRTL := "css/rtl-lang.css"}}
+{{ $csslocale := "css/locale.css"}}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | resources.Minify | fingerprint }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+<link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+{{ $cssCodeBlockSyntax := resources.Get $scssCodeBlock | toCSS (dict "enableSourceMap" false) | postCSS | resources.Minify | fingerprint }}
+<link href="{{ $cssCodeBlockSyntax.RelPermalink }}" rel="stylesheet" integrity="{{ $cssCodeBlockSyntax.Data.integrity }}">
+
+{{ if .Site.IsMultiLingual }}
+    {{ $localecss := resources.Get $csslocale | resources.Minify }}
+    <link href="{{ $localecss.RelPermalink }}" rel="stylesheet">
+    {{ if or (in .Site.LanguageCode "ar") (in .Site.LanguageCode "fa")}}
+        {{ $rtlcss := resources.Get $cssRTL | resources.Minify }}
+        <link href="{{ $rtlcss.RelPermalink }}" rel="stylesheet">
+    {{ end }}
+{{ end }}

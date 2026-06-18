@@ -1,0 +1,58 @@
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+{{- $sidebarSearchDisable := .sidebar_search_disable }}
+{{- $caretDown := resources.Get "icons/caret-down.svg" -}}
+
+<div id="td-sidebar-menu" class="add-scroll td-sidebar__inner">
+  {{- if not $sidebarSearchDisable -}}
+  <form class="td-sidebar__search d-flex align-items-center td-menu-test">
+    {{- partial "search-input.html" . -}}
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fa fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  {{- else -}}
+  <div class="d-flex align-items-center ">
+	<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fa fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+	</button>
+  </div>
+  {{- end -}}
+ <nav class="td-sidebar-nav pt-2 pl-4 collapse" id="td-section-nav">
+  <ul class="td-sidebar-nav__section">
+	<li class="td-sidebar-nav__section-title">
+		<img src='{{- $caretDown.RelPermalink -}}' alt="caret" class="icon open-icon" width="10px" height="10px" />
+		<a href="{{- $page.RelPermalink -}}" class="align-left pl-0 pr-2 activetd-sidebar-link td-sidebar-link__section">
+		{{- $page.LinkTitle -}}
+		</a>
+	</li>			
+{{- with index site.Menus $menuID }}
+    <ul class="td-sidebar-nav__section">
+      {{- partial "inline/menu/items.html" (dict "page" $page "menuEntries" .) }}
+    </ul>
+{{- end }}
+
+{{- define "partials/inline/menu/items.html" }}
+{{- $caretDown := resources.Get "icons/caret-down.svg" -}}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    <li class="td-sidebar-nav__section-title">
+	<img src='{{- $caretDown.RelPermalink -}}' alt="caret" class="icon closed-icon" width="10px" height="10px" />
+      <a
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">{{ or (T .Identifier) .Name | safeHTML }}</a>
+      {{- with .Children }}
+        <ul>
+          {{- partial "inline/menu/items.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      {{- end }}
+    </li>
+  {{- end }}
+{{- end }}
+</ul>
+</nav>
+<div id="sidebar-resizer" class="ui-resizable-handle ui-resizable-e"></div>
+</div>

@@ -1,0 +1,18 @@
+[contents]
+  other = '内容'
+
+[hide]
+  other = '隐藏'
+
+[back]
+  other = '后退'
+
+[version]
+  other = '版本'
+
+[breadcrumb]
+  reference = 'API参考'
+  family = '家庭'  
+  
+[ui_search]  
+	other = '搜索' 

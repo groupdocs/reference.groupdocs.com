@@ -1,0 +1,18 @@
+[contents]
+  other = 'περιεχόμενα'
+
+[hide]
+  other = 'κρύβω'
+  
+[back]
+  other = 'πίσω' 
+
+[version]
+  other = 'Εκδοχή'
+  
+[breadcrumb]
+  reference = 'Αναφορά API'
+  family = 'Οικογένεια'    
+
+[ui_search]  
+	other = 'Αναζήτηση'  

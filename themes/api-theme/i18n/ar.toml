@@ -1,0 +1,18 @@
+[contents]
+  other = 'محتويات'
+
+[hide]
+  other = 'يخفي'
+
+[back]
+  other = 'خلف'
+
+[version]
+  other = 'إصدار'      
+
+[breadcrumb]
+  reference = 'مرجع API'
+  family = 'عائلة'  
+  
+[ui_search]  
+	other = 'يبحث'  

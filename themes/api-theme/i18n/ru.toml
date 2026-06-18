@@ -1,0 +1,18 @@
+[contents]
+  other = 'Содержание'
+
+[hide]
+  other = 'Скрывать'
+
+[back]
+  other = 'Назад'
+
+[version]
+  other = 'Версия'
+
+[breadcrumb]
+  reference = 'Справочник по API'
+  family = 'Семья'  
+  
+[ui_search]  
+	other = 'Поиск' 

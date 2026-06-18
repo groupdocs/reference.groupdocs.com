@@ -7,30 +7,6 @@ enableRobotsTXT = true
 theme = ["api-theme"]
 
 
-[params.menu]
-zh = "groupdocs-zh"
-ru = "groupdocs-ru"
-ar = "groupdocs-ar"
-cs = "groupdocs-cs"
-de = "groupdocs-de"
-el = "groupdocs-el"
-es = "groupdocs-es"
-fr = "groupdocs-fr"
-hi = "groupdocs-hi"
-hu = "groupdocs-hu"
-id = "groupdocs-id"
-it = "groupdocs-it"
-ja = "groupdocs-ja"
-ko = "groupdocs-ko"
-nl = "groupdocs-nl"
-pl = "groupdocs-pl"
-pt = "groupdocs-pt"
-sv = "groupdocs-sv"
-th = "groupdocs-th"
-tr = "groupdocs-tr"
-vi = "groupdocs-vi"
-zh-hant = "groupdocs-zht"
-
 defaultContentLang = 'en'
 [languages]
   [languages.en]
@@ -39,97 +15,6 @@ defaultContentLang = 'en'
 	languageCode = "en"
     flag = "flag-us"
     weight = 10
-  [languages.ru]
-    contentDir = 'content/sites/groupdocs/metadata/russian'
-    languageName = 'Русский'
-    languageCode = "ru"
-    flag = "flag-ru"
-    weight = 11
-  [languages.zh]
-    contentDir = 'content/sites/groupdocs/metadata/chinese'
-    languageName = "简体中文"
-    languageCode = "zh"
-    flag = "flag-cn"
-    weight = 12
-  [languages.es]
-    contentDir = 'content/sites/groupdocs/metadata/spanish'
-    languageName = "Español"
-    languageCode = "es"
-    flag = "flag-es"
-    weight = 13
-  [languages.de]
-    contentDir = 'content/sites/groupdocs/metadata/german'
-    languageName = "Deutsch"
-    languageCode = "de"
-    flag = "flag-de"
-    weight = 14
-  [languages.fr]
-    contentDir = 'content/sites/groupdocs/metadata/french'
-    languageName = "Français"
-    languageCode = "fr"
-    flag = "flag-fr"
-    weight = 15
-  [languages.sv]
-    contentDir = 'content/sites/groupdocs/metadata/swedish'
-    languageName = "Svenska"
-    languageCode = "sv"
-    flag = "flag-se"
-    weight = 16
-  [languages.ar]
-    contentDir = 'content/sites/groupdocs/metadata/arabic'
-    languageName = "عربي"
-    languageCode = "ar"
-    flag = "flag-sa"
-    weight = 17
-  [languages.it]
-    contentDir = 'content/sites/groupdocs/metadata/italian'
-    languageName = "Italiano"
-    languageCode = "it"
-    flag = "flag-it"
-    weight = 18
-  [languages.tr]
-    contentDir = 'content/sites/groupdocs/metadata/turkish'
-    languageName = "Türkçe"
-    languageCode = "tr"
-    flag = "flag-tr"
-    weight = 19
-  [languages.ja]
-    contentDir = 'content/sites/groupdocs/metadata/japanese'
-    languageName = "日本語"
-    languageCode = "ja"
-    flag = "flag-jp"
-    weight = 20
-  [languages.hi]
-    contentDir = 'content/sites/groupdocs/metadata/indian'
-    languageName = "हिन्दी"
-    languageCode = "hi"
-    flag = "flag-in"
-    weight = 21
-  [languages.ko]
-    contentDir = 'content/sites/groupdocs/metadata/korean'
-    languageName = " 한국인"
-    languageCode = "ko"
-    flag = "flag-kr"
-    weight = 22
-  [languages.el]
-    contentDir = 'content/sites/groupdocs/metadata/greece'
-    languageName = "  Ελληνικά"
-    languageCode = "el"
-    flag = "flag-gr"
-    weight = 23
-  [languages.id]
-    contentDir = 'content/sites/groupdocs/metadata/indonesian'
-    languageName = "Indonesian"
-    languageCode = "id"
-    flag = "flag-id"
-    weight = 24
-  [languages.nl]
-    contentDir = 'content/sites/groupdocs/metadata/netherlands'
-    languageName = "Nederlands"
-    languageCode = "nl"
-    flag = "flag-nl"
-    weight = 25
-
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 ignoreFiles = ["(?i:readme.md)", '\.spin$']
 

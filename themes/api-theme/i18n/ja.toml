@@ -1,0 +1,18 @@
+[contents]
+  other = 'コンテンツ'
+
+[hide]
+  other = '隠れる'
+  
+[back]
+  other = '戻る'  
+
+[breadcrumb]
+  reference = 'API リファレンス'
+  family = '家族'  
+  
+[version]
+  other = 'バージョン'
+  
+[ui_search]  
+	other = '検索' 

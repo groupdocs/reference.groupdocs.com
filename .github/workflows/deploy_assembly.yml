@@ -1,0 +1,27 @@
+name: Deploy Assembly
+
+# Deploys the assembly product family. Push to `production` -> production,
+# push to `main` -> staging. Manual runs choose the environment.
+on:
+  push:
+    branches: [ production, main ]
+    paths:
+      - 'content/sites/groupdocs/assembly/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: production
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy_product.yml
+    with:
+      product_family: assembly
+      environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+    secrets: inherit

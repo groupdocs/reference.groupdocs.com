@@ -1,0 +1,63 @@
+name: Deploy Product
+
+# Reusable build+deploy for a single product family of reference.groupdocs.com.
+# Builds with Hugo (theme is vendored in themes/api-theme — no separate checkout),
+# deploys to S3 via `hugo deploy`, and invalidates CloudFront.
+on:
+  workflow_call:
+    inputs:
+      product_family:
+        description: 'Product family (e.g. annotation, viewer). Matches config/sites/groupdocs/<product_family>.'
+        required: true
+        type: string
+      environment:
+        description: "Target environment: 'production' or 'staging'."
+        required: true
+        type: string
+      invalidate_paths:
+        description: 'CloudFront paths to invalidate. Defaults to /<product_family>/*.'
+        required: false
+        type: string
+        default: ''
+      max_deletes:
+        description: 'hugo deploy --maxDeletes value (-1 = unlimited).'
+        required: false
+        type: string
+        default: '-1'
+
+jobs:
+  deploy:
+    name: Deploy ${{ inputs.product_family }} (${{ inputs.environment }})
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # full history for .GitInfo / .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.101.0'
+          extended: true
+
+      - name: Install PostCSS dependencies
+        run: npm install -D autoprefixer postcss-cli
+
+      - name: Build
+        run: hugo --configDir config/sites/groupdocs/${{ inputs.product_family }} --environment ${{ inputs.environment }} --minify
+
+      - name: Deploy to S3
+        run: hugo --configDir config/sites/groupdocs/${{ inputs.product_family }} --environment ${{ inputs.environment }} deploy --target "${{ inputs.environment == 'production' && 'Production' || 'Stage' }}" --maxDeletes ${{ inputs.max_deletes }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ inputs.environment == 'production' && secrets.AWS_DISTRIBUTION_PROD || secrets.AWS_DISTRIBUTION }}
+          PATHS: ${{ inputs.invalidate_paths != '' && inputs.invalidate_paths || format('/{0}/*', inputs.product_family) }}
+          AWS_REGION: 'us-west-2'
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}

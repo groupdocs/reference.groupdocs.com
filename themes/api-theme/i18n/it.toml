@@ -1,0 +1,18 @@
+[contents]
+  other = 'Contenuti'
+
+[hide]
+  other = 'Nascondere'
+
+[back]
+  other = 'Di ritorno'
+
+[version]
+  other = 'Versione'
+
+[breadcrumb]
+  reference = 'Riferimento API'
+  family = 'Famiglia'  
+  
+[ui_search]  
+	other = 'Ricerca' 

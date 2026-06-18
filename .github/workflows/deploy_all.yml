@@ -1,0 +1,57 @@
+name: Deploy All
+
+# Site-wide deploy. Runs on demand, and automatically when the shared theme changes
+# (themes/** affects every product). Branch mapping for pushes: production -> production,
+# main -> staging. Home publishes to the bucket root and runs first.
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: production
+        type: choice
+        options:
+          - staging
+          - production
+  push:
+    branches: [ production, main ]
+    paths:
+      - 'themes/**'
+
+jobs:
+  home:
+    uses: ./.github/workflows/deploy_product.yml
+    with:
+      product_family: home
+      environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+      invalidate_paths: '/index.html'
+      max_deletes: '0'
+    secrets: inherit
+
+  products:
+    needs: [home]
+    strategy:
+      fail-fast: false
+      matrix:
+        product_family:
+          - annotation
+          - assembly
+          - classification
+          - comparison
+          - conversion
+          - editor
+          - markdown
+          - merger
+          - metadata
+          - parser
+          - redaction
+          - search
+          - signature
+          - viewer
+          - watermark
+    uses: ./.github/workflows/deploy_product.yml
+    with:
+      product_family: ${{ matrix.product_family }}
+      environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+    secrets: inherit

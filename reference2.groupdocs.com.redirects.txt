@@ -1,0 +1,31 @@
+# Redirect rules for reference2.groupdocs.com (staging) — nginx-style, consumed by the edge layer.
+#
+# [2026-06-18] Site consolidated to English-only. Every product was previously built
+# per-locale and served at /<product>/<locale>/... (English at /<product>/...).
+# Strip the locale segment that sits AFTER the product so old localized URLs land on
+# their English equivalent, e.g.  /annotation/ru/net/  ->  /annotation/net/
+#
+# Note: unlike products.groupdocs.com (where the locale is the first path segment),
+# reference URLs carry the locale as the SECOND segment, after the product family.
+rewrite ^/([^/]+)/ar(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/cs(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/de(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/el(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/es(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/fr(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/hi(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/hu(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/id(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/it(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/ja(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/ko(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/nl(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/pl(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/pt(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/ru(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/sv(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/th(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/tr(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/vi(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/zh-hant(/.*)?$ /$1$2 permanent;
+rewrite ^/([^/]+)/zh(/.*)?$ /$1$2 permanent;

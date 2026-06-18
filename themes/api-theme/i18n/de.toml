@@ -1,0 +1,18 @@
+[contents]
+  other = 'Inhalt'
+
+[hide]
+  other = 'Ausblenden'
+
+[back]
+  other = 'Der Rücken'
+
+[version]
+  other = 'Versie'        
+
+[breadcrumb]
+  reference = 'API-Referenz'
+  family = 'Familie'  
+
+[ui_search]  
+	other = 'Suchen'  
