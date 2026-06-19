@@ -1,23 +1,18 @@
 ---
-title: time_unit property
+title: _init_noargs method
 second_title: GroupDocs.Viewer for Python via .NET API References
 description: 
 type: docs
-url: /python-net/groupdocs.viewer.options/projectmanagementoptions/time_unit/
+url: /python-net/groupdocs.viewer.options/projectmanagementoptions/_init_noargs/
 is_root: false
-weight: 2040
+weight: 1010
 ---
 
 
-## time_unit property
+## _init_noargs
 
-### Definition:
 ```python
-@property
-def time_unit(self):
-    ...
-@time_unit.setter
-def time_unit(self, value):
+def _init_noargs(self):
     ...
 ```
 

@@ -1,28 +1,24 @@
-﻿---
-title: GroupDocsViewerException class
-second_title: GroupDocs.Viewer for Python via .NET API References
+---
+title: GroupDocsViewerException
+second_title: GroupDocs.Viewer for Python via .NET API Reference
 description: 
 type: docs
-url: /python-net/groupdocs.viewer.exceptions/groupdocsviewerexception/
-is_root: false
 weight: 10
+url: /python-net/groupdocs.viewer.exceptions/groupdocsviewerexception/
 ---
 
 ## GroupDocsViewerException class
 
 Represents the generic errors that occur during document processing.
 
-
-
 The GroupDocsViewerException type exposes the following members:
-
-### Constructors
-| Constructor | Description |
+## Constructors
+| Name | Description |
 | :- | :- |
-| [__init__](/viewer/python-net/groupdocs.viewer.exceptions/groupdocsviewerexception/__init__/#System.String) | Initializes a new instance of the [`GroupDocsViewerException`](/viewer/python-net/groupdocs.viewer.exceptions/groupdocsviewerexception) class with a specified error message. |
-
-
+|GroupDocsViewerException(message)|Initializes a new instance of the GroupDocsViewerException class|
 
 ### See Also
-* module [`groupdocs.viewer.exceptions`](..)
-* class [`GroupDocsViewerException`](/viewer/python-net/groupdocs.viewer.exceptions/groupdocsviewerexception)
+
+* namespace [groupdocs.viewer.exceptions](/viewer/python-net/groupdocs.viewer.exceptions/)
+* assembly [GroupDocs.Viewer](/viewer/python-net/)
+
