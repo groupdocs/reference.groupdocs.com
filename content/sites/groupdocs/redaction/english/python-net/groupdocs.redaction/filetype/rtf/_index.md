@@ -3,15 +3,21 @@ title: rtf property
 second_title: GroupDocs.Redaction for Python via .NET API References
 description: 
 type: docs
+weight: 330
 url: /python-net/groupdocs.redaction/filetype/rtf/
 is_root: false
-weight: 330
 ---
 
 ## rtf property
 
 
 Rich Text Format File (.rtf)
+### Definition:
+```python
+@property
+def rtf(self):
+    ...
+```
 
 ### See Also
 * module [`groupdocs.redaction`](../../)

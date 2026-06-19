@@ -3,15 +3,21 @@ title: bmp property
 second_title: GroupDocs.Redaction for Python via .NET API References
 description: 
 type: docs
+weight: 60
 url: /python-net/groupdocs.redaction/filetype/bmp/
 is_root: false
-weight: 60
 ---
 
 ## bmp property
 
 
 Bitmap Image File (.bmp)
+### Definition:
+```python
+@property
+def bmp(self):
+    ...
+```
 
 ### See Also
 * module [`groupdocs.redaction`](../../)
