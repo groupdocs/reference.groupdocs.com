@@ -3,7 +3,7 @@ title: XML
 second_title: GroupDocs.Search for .NET API Reference
 description: XML stands for Extensible Markup Language that is similar to HTML but different in using tags for defining objects. Learn more about this file format herehttps//wiki.fileformat.com/web/xml/.
 type: docs
-weight: 820
+weight: 810
 url: /net/groupdocs.search.results/filetype/xml/
 ---
 ## FileType.XML field

@@ -3,7 +3,7 @@ title: OST
 second_title: GroupDocs.Search for .NET API Reference
 description: OST or Offline Storage Files represent users mailbox data in offline mode on local machine upon registration with Exchange Server using Microsoft Outlook. Learn more about this file format herehttps//wiki.fileformat.com/email/ost/.
 type: docs
-weight: 430
+weight: 420
 url: /net/groupdocs.search.results/filetype/ost/
 ---
 ## FileType.OST field

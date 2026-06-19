@@ -3,7 +3,7 @@ title: FormatFamily
 second_title: GroupDocs.Search for .NET API Reference
 description: Gets the format family.
 type: docs
-weight: 860
+weight: 850
 url: /net/groupdocs.search.results/filetype/formatfamily/
 ---
 ## FileType.FormatFamily property

@@ -25,7 +25,8 @@ public class SynonymDictionary : DictionaryBase, IEnumerable<string>
 
 | Name | Description |
 | --- | --- |
-| [AddRange](../../groupdocs.search.dictionaries/synonymdictionary/addrange)(IEnumerable&lt;string[]&gt;) | Adds the specified collection of synonym groups to this instance of the [`SynonymDictionary`](../synonymdictionary). |
+| [AddRange](../../groupdocs.search.dictionaries/synonymdictionary/addrange#addrange)(IEnumerable&lt;string[]&gt;) | Adds the specified collection of synonym groups to this instance of the [`SynonymDictionary`](../synonymdictionary). |
+| [AddRange](../../groupdocs.search.dictionaries/synonymdictionary/addrange#addrange_1)(string[][]) | Adds the specified collection of synonym groups to this instance of the [`SynonymDictionary`](../synonymdictionary). |
 | override [Clear](../../groupdocs.search.dictionaries/synonymdictionary/clear)() | Removes all words from this [`SynonymDictionary`](../synonymdictionary) object. |
 | [ExportDictionary](../../groupdocs.search.dictionaries/dictionarybase/exportdictionary)(string) | Exports the dictionary to a file with the specified name. |
 | [GetAllSynonymGroups](../../groupdocs.search.dictionaries/synonymdictionary/getallsynonymgroups)() | Gets all groups of synonyms contained in this dictionary. |

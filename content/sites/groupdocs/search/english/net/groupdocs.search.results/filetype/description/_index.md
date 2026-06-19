@@ -3,7 +3,7 @@ title: Description
 second_title: GroupDocs.Search for .NET API Reference
 description: Gets the file type description.
 type: docs
-weight: 840
+weight: 830
 url: /net/groupdocs.search.results/filetype/description/
 ---
 ## FileType.Description property

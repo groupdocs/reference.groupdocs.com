@@ -3,7 +3,7 @@ title: PPSM
 second_title: GroupDocs.Search for .NET API Reference
 description: Files with PPSM extension represent Macroenabled Slide Show file format created with Microsoft PowerPoint 2007 or higher. Learn more about this file format herehttps//wiki.fileformat.com/presentation/ppsm/.
 type: docs
-weight: 520
+weight: 510
 url: /net/groupdocs.search.results/filetype/ppsm/
 ---
 ## FileType.PPSM field

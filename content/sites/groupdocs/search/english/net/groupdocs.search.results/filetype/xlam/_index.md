@@ -3,7 +3,7 @@ title: XLAM
 second_title: GroupDocs.Search for .NET API Reference
 description: Represents XLAM file type.
 type: docs
-weight: 740
+weight: 730
 url: /net/groupdocs.search.results/filetype/xlam/
 ---
 ## FileType.XLAM field

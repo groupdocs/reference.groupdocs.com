@@ -3,7 +3,7 @@ title: MHTML
 second_title: GroupDocs.Search for .NET API Reference
 description: Files with MHTML extension represent a web page archive format that can be created by a number of different applications. Learn more about this file format herehttps//wiki.fileformat.com/web/mhtml/.
 type: docs
-weight: 340
+weight: 330
 url: /net/groupdocs.search.results/filetype/mhtml/
 ---
 ## FileType.MHTML field
