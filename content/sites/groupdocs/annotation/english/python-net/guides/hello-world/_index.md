@@ -1,6 +1,5 @@
 ---
 title: Hello, World!
-linkTitle: "Hello, World!"
 second_title: GroupDocs.Annotation for Python via .NET API References
 description: 
 type: docs

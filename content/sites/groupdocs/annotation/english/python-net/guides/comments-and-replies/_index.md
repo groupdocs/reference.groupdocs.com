@@ -1,6 +1,5 @@
 ---
 title: Comments and replies
-linkTitle: "Comments & replies"
 second_title: GroupDocs.Annotation for Python via .NET API References
 description: 
 type: docs
