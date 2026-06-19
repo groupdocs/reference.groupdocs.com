@@ -1,0 +1,40 @@
+<div class="gdoc-list-sites mg-top-3">
+    {{ range .Params.products }}
+    <div class="gdoc-list-site">
+        {{with .image }}
+        <img class="gdoc-site-site__icon" src="{{ . }}" width="44" height="44">
+        {{ end }}
+        
+        <div class="gdoc-list-app__content">
+            <a class="gdoc-list-site__link" rel="nofollow" href="{{ .url }}">
+                <h2>{{ .name }}</h2>
+            </a>
+
+            <ul class="site-list">
+                {{ range $index, $item := .list }}
+                {{ if lt $index 5 }}
+                <li>
+                    <a href="{{ $item.link }}">{{ $item.text }}</a>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+
+            {{ if gt (len .list) 5 }}
+            <details>
+                <summary>Show More</summary>
+                <ul class="site-list">
+                    {{ range $index, $item := .list }}
+                    {{ if ge $index 5 }}
+                    <li>
+                        <a href="{{ $item.link }}">{{ $item.text }}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </details>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</div>

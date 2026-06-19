@@ -4,7 +4,11 @@ staticdir = 'content/sites/groupdocs/assembly/static'
 enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["api-theme"]
+theme = ["docs"]
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+pluralizeListTitles = false
 
 
 defaultContentLang = 'en'
@@ -15,7 +19,7 @@ defaultContentLang = 'en'
 	languageCode = "en"
     flag = "flag-us"
     weight = 10
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "term", "RSS"]
 ignoreFiles = ["(?i:readme.md)", '\.spin$']
 
 # Image processing configuration.
@@ -31,8 +35,8 @@ anchor = "smart"
 
 [markup]
 	[markup.tableOfContents]
-		endLevel = 2
-		ordered = true
+		endLevel = 4
+		ordered = false
 		startLevel = 2
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -52,6 +56,12 @@ anchor = "smart"
 # Everything below this are Site Params
 
 [params]
+showFeedbackForm = true
+defaultTheme = "light"
+geekdocDarkModeToggle = false
+GeekdocCollapseAllSections = true
+GeekdocSearch = false
+showSearchInput = true
 copyright = "The groupdocs Authors"
 privacy_policy = "https://policies.google.com/privacy"
 topbar_search_active = false
@@ -132,3 +142,49 @@ gzip = true
 force = true
 
 [Taxonomies]
+
+# Per-page Markdown (.md) + llms.txt + llms-full.txt — matches docs.groupdocs.* .
+# Rendered by the theme's _default/single.md|list.md and *.llmstxt.txt|*.llmsfull.txt layouts.
+# Deploy renames pretty .md (…/x/index.md) to ugly (…/x.md) via move_md_to_ugly_urls.sh.
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
+
+[outputFormats.MD]
+  mediaType = "text/markdown"
+  isPlainText = true
+  isHTML = false
+  notAlternative = true
+  permalinkable = false
+
+[outputFormats.LLMSTXT]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+[outputFormats.LLMSFULL]
+  mediaType = "text/plain"
+  baseName = "llms-full"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  # llms-full only at the build home: content is all section bundles, so LLMSFULL on
+  # `section` would emit a (mostly redundant) llms-full.txt for all pages.
+  home = ["HTML", "MD", "LLMSTXT", "LLMSFULL"]
+  section = ["HTML", "MD"]
+  page = ["HTML", "MD"]
+
+# UTF-8 charset for text outputs served from S3 (matches docs/products deploy).
+[[deployment.matchers]]
+pattern = "^.+[.]md$"
+contentType = "text/markdown; charset=utf-8"
+gzip = true
+[[deployment.matchers]]
+pattern = "^.+[.]html$"
+contentType = "text/html; charset=utf-8"
+gzip = true
+[[deployment.matchers]]
+pattern = "^.+[.]txt$"
+contentType = "text/plain; charset=utf-8"
+gzip = true

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+  lang="{{ .Site.Language.Lang }}"
+  class="color-toggle-hidden"
+  {{ if default false .Site.Params.GeekdocDarkModeCode }}code-theme="dark"{{ end }}
+>
+  <head>
+    {{ partial "consent-setup.html" . }}
+    {{- partial "gtag.html" . }}
+    {{ partial "head/meta" . }}
+    <title>
+      {{- if eq .Kind "home" -}}
+        {{ .Site.Title }}
+      {{- else -}}
+        {{- with .Params.second_title -}}{{ . }}{{- else -}}{{ printf "%s | %s" (partial "utils/title" $) $.Site.Title }}{{- end -}}
+      {{- end -}}
+    </title>
+
+    {{ if in .Site.BaseURL "qa" }}
+    <meta name="robots" content="noindex, nofollow">
+    {{ end }}
+
+    {{ partial "favicons" . }}
+    {{ partial "head/microformats" . }}
+    {{ partial "head/others" . }}
+    {{ partial "gtm-head" . }}
+  </head>
+
+  {{ $navEnabled := default true .Page.Params.GeekdocNav }}
+  <body itemscope itemtype="https://schema.org/WebPage">
+    {{ partial "consent-script" . }}
+    {{ partial "gtm-body" . }}
+    {{ partial "svg-icon-symbols" . }}
+
+    <div
+      class="wrapper wrapper-space-top {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }} {{ if  not $navEnabled }}wrapper-bg{{ end }}"
+    >
+      <input type="checkbox" class="hidden" id="menu-control" />
+      <input type="checkbox" class="hidden" id="menu-header-control" />
+     
+      {{ $aiSearchEnabled := false }}
+      {{ $url := $.RelPermalink }}      
+      {{ $slittedUrl := split $url "/" }}
+      {{ $aiSearchScope := (printf "%s_%s" (index $slittedUrl 1)  (index $slittedUrl 2)) }}            
+      {{ if in .Site.Params.aiSearchScopes $aiSearchScope }}
+        {{ $aiSearchEnabled = true }}        
+      {{ end }}
+
+      <main class="container flex flex-even">
+        {{ if $navEnabled }}
+          <aside class="gdoc-nav">
+             {{- if $aiSearchEnabled -}}
+             {{- partial "ai-search-input" . -}}  
+             {{- end -}}             
+            {{ partial "menu" . }}
+          </aside>
+        {{ end }}
+
+        <div class="gdoc-page">
+          {{ template "main" . }}
+          <div class="gdoc-page__footer flex flex-wrap justify-between">
+            {{ partial "menu-nextprev" . }}
+          </div>
+        </div>
+      </main>
+
+      {{ partial "go-top" . }}
+    </div>
+    {{ partial "foot" . }}
+  </body>
+</html>

@@ -1,7 +1,7 @@
 name: Deploy Product
 
 # Reusable build+deploy for a single product family of reference.groupdocs.com.
-# Builds with Hugo (theme is vendored in themes/api-theme — no separate checkout),
+# Builds with Hugo (theme is vendored in themes/docs — no separate checkout),
 # deploys to S3 via `hugo deploy`, and invalidates CloudFront.
 on:
   workflow_call:
@@ -41,11 +41,13 @@ jobs:
           hugo-version: '0.101.0'
           extended: true
 
-      - name: Install PostCSS dependencies
-        run: npm install -D autoprefixer postcss-cli
-
       - name: Build
         run: hugo --configDir config/sites/groupdocs/${{ inputs.product_family }} --environment ${{ inputs.environment }} --minify
+
+      - name: Convert .md pretty URLs to ugly (…/x/index.md -> …/x.md)
+        run: |
+          chmod +x ./move_md_to_ugly_urls.sh
+          ./move_md_to_ugly_urls.sh public
 
       - name: Deploy to S3
         run: hugo --configDir config/sites/groupdocs/${{ inputs.product_family }} --environment ${{ inputs.environment }} deploy --target "${{ inputs.environment == 'production' && 'Production' || 'Stage' }}" --maxDeletes ${{ inputs.max_deletes }}

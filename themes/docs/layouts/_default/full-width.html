@@ -1,0 +1,17 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+{{/* Full-width landing layout (e.g. the home/index page): no right-rail TOC. */}}
+<div class="gdoc-content-cols" style="display: block;">
+  <article
+    class="gdoc-markdown gdoc-markdown__align--{{ default "left" (.Page.Params.GeekdocAlign | lower) }}"
+  >
+    <h1 class="pd-top-5">
+      {{ partial "utils/title" . }}
+    </h1>
+
+    {{ partial "utils/content" . }}
+
+  </article>
+</div>
+{{ end }}

@@ -1,0 +1,76 @@
+{{ if not .IsHome }}
+  {{/* Get the site context */}}
+  {{ $s := .Site | default site }}
+
+  {{/* Extract host (without port) from BaseURL, e.g. "kb.aspose.net" */}}
+  {{ $host := replaceRE "^https?://([^:/]+).*" "$1" $s.BaseURL }}
+
+  {{/* Get current language code, defaulting to "en" */}}
+  {{ $lang := .Site.Language.Lang | default "en" }}
+
+  {{/* Extract protocol from BaseURL */}}
+  {{ $protocol := replaceRE "^(https?)://.*" "$1" $s.BaseURL }}
+
+  {{/* Build the lookup path for the homepage file, e.g. "content/kb.aspose.net/home/en/_index.md" */}}
+  {{ $homepageFile := printf "content/%s/home/%s/_index.md" $host $lang }}
+
+  {{/* Try to read the homepage file from disk */}}
+  {{ $fileContent := readFile $homepageFile | default "" }}
+
+  {{/* Default title fallback */}}
+  {{ $homeTitle := "Aspose.PDF Plugins for .NET Knowledge Base" }}
+
+  {{/* If the file was read, extract the YAML front matter to get the title */}}
+  {{ if gt (len $fileContent) 0 }}
+    {{ $frontMatter := replaceRE `(?s)^---\n(.*?)\n---.*` "$1" $fileContent }}
+    {{ $data := transform.Unmarshal $frontMatter }}
+    {{ with $data.title }}
+      {{ $homeTitle = . }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Build the localized root URL, including the language slug, e.g. "https://kb.aspose.net/it/" */}}
+  {{ $localizedRootURL := "" }}
+    {{ if eq $lang "en" }}
+        {{ $localizedRootURL = printf "%s://%s/" $protocol $host }}
+    {{ else }}
+        {{ $localizedRootURL = printf "%s://%s/%s/" $protocol $host $lang }}
+    {{ end }}
+
+
+  {{/* Initialize breadcrumbs with the homepage item using the localized URL and title */}}
+  {{ $breadcrumbs := slice (dict "url" $localizedRootURL "name" $homeTitle "position" 1) }}
+  {{ $pos := 1 }}
+
+  {{/* Append any ancestors in order (oldest first) */}}
+  {{ range .Ancestors.Reverse }}
+    {{ $pos = add $pos 1 }}
+    {{ $breadcrumbs = $breadcrumbs | append (dict "url" .RelPermalink "name" .Title "position" $pos) }}
+  {{ end }}
+
+  {{/* Finally, append the current page */}}
+  {{ $pos = add $pos 1 }}
+  {{ $breadcrumbs = $breadcrumbs | append (dict "url" .RelPermalink "name" .Title "position" $pos) }}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "name": "Breadcrumbs",
+    "itemListElement": [
+      {{ range $idx, $item := $breadcrumbs }}
+        {{ if gt $idx 0 }},{{ end }}
+        {
+          "@type": "ListItem",
+          "position": {{ $item.position }},
+          "item": {
+            "@id": "{{ $item.url | absURL }}",
+            "@type": "WebPage",
+            "name": "{{ $item.name }}"
+          }
+        }
+      {{ end }}
+    ]
+  }
+  </script>
+{{ end }}

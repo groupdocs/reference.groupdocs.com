@@ -1,0 +1,353 @@
+/* You can add custom styles here. */
+
+.gdoc-icon-large {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+}
+
+.home-resource-link {
+    color: var(--body-font-color) !important;
+}
+
+.gdoc-icon.windows {
+    color: #028cda !important;
+}
+.gdoc-icon.java {
+    color: #ba3e5b !important;
+}
+
+a > svg.gdoc-icon { margin-right: 5px; }
+li > svg.gdoc-icon { margin-right: 5px; }
+h1 > svg.gdoc-icon { margin-right: 5px; }
+h2 > svg.gdoc-icon { margin-right: 5px; }
+h3 > svg.gdoc-icon { margin-right: 5px; }
+h4 > svg.gdoc-icon { margin-right: 5px; }
+h5 > svg.gdoc-icon { margin-right: 5px; }
+
+/* img shortcode image container margins  */
+
+.gdoc-post__figure {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+/* main page */
+.gdocs-main-icons {padding: 0 2rem; gap:0; margin-bottom: 2rem;}
+.gdocs-main-icons .gdoc-columns__content {min-width: 6rem;}
+.gdocs-main-icons svg.gdoc-icon { margin-right: 0; margin-bottom: 0.8rem; }
+.gdocs-main-app {margin: 1rem 0;}
+.gdocs-main-app__first {justify-content: center; }
+.gdocs-main-app__first .gdoc-columns__content {flex:0.5;}
+
+@media print {
+    #DynabicMenuInnerDiv{ display:none; }
+    #dvMenuFooter{ display:none; }
+}
+
+/* tab-text shortcode */
+
+.gdoc-tab-text {
+    padding: 1rem;
+}
+
+/* two columns */
+
+.gdoc-two-columns {
+    display: flex;
+    margin-bottom: 0px;
+    justify-content: flex-start;
+}
+
+.gdoc-two-columns__column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+}
+
+ul.gdoc-two-columns__column__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding-left: 0;
+}
+
+ul.gdoc-two-columns__column__list > li {
+    text-align: left;
+    padding-left: 1rem;
+    padding-top: 0 !important;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.gdoc-two-columns__column__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--body-font-color);
+    margin-right: 1rem;
+}
+
+a.gdoc-two-columns__column__link {
+    color:var(--body-font-color);
+    border-bottom: none !important;
+}
+
+.gdoc-two-columns__column__descr {
+    color:var(--body-text-font-color);
+    font-size: 0.875rem;
+}
+
+/* table-search shortcode */
+
+.gdoc_search_abs {
+    position: absolute !important;
+    left: .5rem;
+    color: var(--control-icons);
+}
+
+/* full-width index page */
+
+.pd-top-5 {
+    padding-top: 5rem;
+}
+
+.mg-top-3 {
+    margin-top: 3rem;
+}
+
+.mg-top-0 {
+    margin-top: 0 !important;
+}
+
+.gdoc-list-app {
+    margin-bottom: 3rem;
+}
+
+.no-margin-top-bottom {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.products-list-single {
+    font-size: smaller;
+}
+
+.products-list {
+    font-size: smaller;
+    text-align: left;
+}
+
+.gdoc-content-cols-block {
+    display: block;
+}
+
+.gdoc-list-app summary {
+    font-size: smaller;
+}
+
+
+/* List Sites */
+.gdoc-list-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gdoc-list-site {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+}
+
+.gdoc-list-site__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.gdoc-list-site__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.gdoc-list-site__link {
+  text-decoration: none;
+  color: #0078d4;
+}
+
+.gdoc-list-site__link:hover {
+  text-decoration: underline;
+}
+
+.gdoc-list-site h2 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.25rem;
+  justify-content: flex-start;
+}
+
+.site-list {
+  margin: 0;
+  padding-left: 1.25rem !important;
+  font-size: smaller;
+}
+
+.site-list li {
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+.site-list a {
+  color: #333;
+  text-decoration: none;
+}
+
+.site-list a:hover {
+  text-decoration: underline;
+}
+
+.gdoc-list-app__content summary {
+    font-size: smaller;
+}
+
+/* Version badge — sits on its own line directly under the page title. */
+.gdoc-version-badge {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.2em 0.65em;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    color: var(--link-color, #558FFF);
+    background: var(--accent-color-lite, #edf0f1);
+}
+.gd-page-version {
+    clear: both;
+    margin: -0.5rem 0 1.5rem;
+}
+
+/* Compact the home/index layout. Theme defaults (e.g. gdoc-list-descr margin-bottom:15rem)
+   are tuned for a sparse single-product landing and leave huge gaps on a dense grid. */
+.gdoc-list-descr { margin-bottom: 2rem; }
+.gdoc-list-title { margin-top: 3.5rem !important; margin-bottom: 1.25rem; }
+.gdoc-list-apps { margin-bottom: 2.5rem; }
+.gdoc-list-app { margin-bottom: 2.25rem; }
+
+/* ============ Family (product landing) page ============ */
+.gd-family__lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--body-text-font-color, rgba(15,23,39,.7));
+    max-width: 64ch;
+    margin: .25rem 0 0;
+}
+.gd-family__h2 {
+    font-size: 1.2rem;
+    margin: 2.25rem 0 1rem;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid var(--border-color, #EBEBEC);
+}
+/* Platform cards */
+.gd-platforms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+.gd-platform {
+    --accent: var(--link-color, #558FFF);
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border-color, #EBEBEC);
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 1rem 1.1rem 1.15rem;
+    box-shadow: 0 1px 2px rgba(18,18,23,.05);
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+.gd-platform:hover { box-shadow: 0 6px 18px rgba(18,18,23,.08); transform: translateY(-2px); }
+.gd-platform--net    { --accent: #512BD4; }
+.gd-platform--java   { --accent: #E76F00; }
+.gd-platform--python { --accent: #3776AB; }
+.gd-platform--nodejs { --accent: #539E43; }
+.gd-platform__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: .85rem; }
+.gd-platform__name { font-weight: 700; font-size: 1.05rem; color: var(--body-font-color); }
+.gd-platform__ver {
+    font-family: "Roboto Mono", monospace;
+    font-size: .75rem;
+    color: var(--accent);
+    background: var(--accent-color-lite, #edf0f1);
+    padding: .15em .55em;
+    border-radius: 1rem;
+}
+a.gd-platform__ver {
+    text-decoration: none;
+    transition: background-color .15s ease, color .15s ease;
+}
+a.gd-platform__ver:hover,
+a.gd-platform__ver:focus-visible {
+    background: var(--accent);
+    color: #fff;
+}
+.gd-install {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--code-accent-color, #e3e7eb);
+    border-radius: 6px;
+    background: var(--code-background, #F9FBFC);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+/* selector beats theme's `.gdoc-markdown code` so the inner code shows no box/radius */
+.gd-install code.gd-install__cmd {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: .5rem .6rem;
+    font-family: "Roboto Mono", monospace;
+    font-size: .78rem;
+    color: var(--code-font-color, #5f5f5f);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+.gd-install__cmd::-webkit-scrollbar { height: 4px; }
+.gd-install__copy {
+    flex: 0 0 auto;
+    border: 0;
+    border-left: 1px solid var(--code-accent-color, #e3e7eb);
+    background: transparent;
+    padding: 0 .8rem;
+    font: 600 .76rem/1 "Inter", sans-serif;
+    color: var(--link-color, #558FFF);
+    cursor: pointer;
+}
+.gd-install__copy.is-copied { color: var(--code-copy-success-color, #00c853); }
+.gd-platform__cta { margin-top: auto; font-weight: 600; color: var(--link-color, #558FFF); text-decoration: none; }
+.gd-platform__cta:hover { text-decoration: underline; }
+/* Capabilities + formats */
+.gd-family__split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; }
+@media (max-width: 768px) { .gd-family__split { grid-template-columns: 1fr; gap: 1rem; } }
+.gd-caps { list-style: none; padding: 0; margin: 0; }
+.gd-caps li { position: relative; padding-left: 1.5rem; margin-bottom: .55rem; color: var(--body-text-font-color, rgba(15,23,39,.75)); }
+.gd-caps li::before { content: "✓"; position: absolute; left: 0; color: var(--tip-color, #43bb50); font-weight: 700; }
+.gd-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.gd-chip {
+    font-size: .8rem;
+    padding: .28em .75em;
+    border-radius: 1rem;
+    background: var(--accent-color-lite, #edf0f1);
+    color: var(--body-font-color);
+}
+.gd-family__prose { margin-top: 2.25rem; }
+.gd-family__resources { margin-top: 1rem; }

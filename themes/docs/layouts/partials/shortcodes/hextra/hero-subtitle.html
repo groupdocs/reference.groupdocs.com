@@ -1,0 +1,9 @@
+{{- $style := .Get "style" -}}
+
+<div class="hx-mb-12" >
+<h2 style="text-align: center!important;"
+  class="not-prose hx-text-xl hx-text-gray-600 dark:hx-text-gray-400 sm:hx-text-xl"
+  {{ with $style }}style="{{ . | safeCSS }}"{{ end }}>
+  {{ .Inner | markdownify }}
+</h2>
+</div>

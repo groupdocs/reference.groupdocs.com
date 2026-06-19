@@ -1,0 +1,64 @@
+{{- $families := site.Data.families -}}
+{{- $pathParts := split site.BaseURL "/" -}}
+{{- $familyKey := index $pathParts 3 -}}
+{{- $familyName := index $families $familyKey | default "Aspose" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ .Title | htmlEscape }}",
+  "description": "{{ .Params.description | default .Description | htmlEscape }}",
+  "datePublished": "{{ .Date | dateFormat "2006-01-02" }}",
+  "dateModified": "{{ .Params.lastmod | default .Date | dateFormat "2006-01-02" }}",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "99"
+  },
+  "image": "https://cms.admin.containerize.com/templates/aspose/img/products/{{$familyKey}}/aspose_{{$familyKey}}-for-net.svg",
+  "totalTime": "PT30M",
+  "performTime": "PT25M",
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "{{ $familyName }} for .NET"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "License key"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Development Environment (e.g., Visual Studio)"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToSection",
+      "name": "Steps",
+      "position": "1",
+      "itemListElement": [
+        {{- $steps := slice -}}
+        {{- range $i := seq 1 10 }}
+          {{- $stepValue := index $.Params (print "step" $i) -}}
+          {{- if $stepValue -}}
+            {{- $stepText := index $.Params (print "step" $i "Text") | default $stepValue -}}
+            {{- $steps = $steps | append (dict "position" $i "name" $stepValue "text" $stepText) -}}
+          {{- end -}}
+        {{- end -}}
+        {{- range $index, $step := $steps -}}
+          {{- if gt $index 0 }},{{ end }}
+          {
+            "@type": "HowToStep",
+            "position": {{ $step.position }},
+            "name": "{{ $step.name | htmlEscape }}",
+            "text": "{{ $step.text | htmlEscape }}"
+          }
+        {{- end -}}
+      ]
+    }
+  ]
+}
+</script>

@@ -1,52 +1,59 @@
 ---
-title: GroupDocs.Assembly Product Family
-additionalTitle: GroupDocs API References
+title: "GroupDocs.Assembly"
+linktitle: "GroupDocs.Assembly"
+description: "GroupDocs.Assembly API reference for .NET, Java, Node.js, and Python — Generate documents and reports from templates and data using LINQ syntax."
+keywords: "GroupDocs.Assembly, assembly API, API reference, .NET, Java, Python, document processing"
+additionalTitle: "GroupDocs API References"
 type: docs
+layout: family
 weight: 10
-description: "Automate your document generation process with cross platform automation assembly APIs to boost productivity and accuracy"
 url: /
+lead: "Generate documents and reports from templates and data using LINQ syntax."
+
+platforms:
+  - name: ".NET"
+    version: "25.12.0"
+    versionUrl: "https://www.nuget.org/packages/groupdocs.assembly/25.12.0"
+    key: net
+    ref: "/net/"
+    install: "dotnet add package GroupDocs.Assembly"
+  - name: "Java"
+    version: "26.1"
+    versionUrl: "https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-assembly/26.1/"
+    key: java
+    ref: "/java/"
+    install: "com.groupdocs:groupdocs-assembly"
+  - name: "Python via .NET"
+    version: "25.5.1"
+    versionUrl: "https://pypi.org/project/groupdocs-assembly-net/25.5.1/"
+    key: python
+    ref: "/python-net/"
+    install: "pip install groupdocs-assembly-net"
+
+formats: ["Word", "Excel", "PowerPoint", "Email", "PDF", "HTML"]
+
+capabilities:
+  - "Template-based document generation"
+  - "LINQ reporting syntax"
+  - "Data from DB, XML, JSON & objects"
+  - "Charts, tables & lists"
+  - "Mail merge"
+  - "Cross-format output"
+
+resources:
+  - name: "Documentation"
+    url: "https://docs.groupdocs.com/assembly/"
+    icon: "api"
+  - name: "Code examples"
+    url: "https://github.com/groupdocs-assembly"
+    icon: "code"
+  - name: "Releases & changelog"
+    url: "https://releases.groupdocs.com/assembly/"
+    icon: "demos"
+  - name: "Support forum"
+    url: "https://forum.groupdocs.com/c/assembly/"
+    icon: "free-support"
+  - name: "Product page"
+    url: "https://products.groupdocs.com/assembly/"
+    icon: "total"
 ---
-
-## GroupDocs.Assembly for .NET
-
-{{% alert color="primary" %}} 
-
-![GroupDocs.Assembly for .NET Product Logo](gdocs_net.png)
-
-Native .NET API to automate popular document formats and generate high quality reports using custom templates and data within .NET applications.
-
-{{% /alert %}} 
-
-These are links to some useful resources:
-
-- [GroupDocs.Assembly for .NET API Reference](/assembly/net/)
-
-
-## GroupDocs.Assembly for Java
-
-{{% alert color="primary" %}}
-
-![GroupDocs.Assembly for Java Product Logo](gdocs_java.png)
-
-Empower Java applications with document automation capabilities to quickly create custom reports in PDF, Office, HTML etc.
-
-{{% /alert %}}
-
-These are links to some useful resources:
-
-- [GroupDocs.Assembly for Java API Reference](/assembly/java/)
-
-
-## GroupDocs.Assembly for Python via .NET
-
-{{% alert color="primary" %}}  
-
-![GroupDocs.Assembly for Python via .NET Product Logo](gdocs_python.png)  
-
-Empower Python applications with document automation capabilities to quickly create custom reports in PDF, Office, HTML, and other popular formats.  
-
-{{% /alert %}}  
-
-These are links to some useful resources:  
-
-- [GroupDocs.Assembly for Python via .NET API Reference](/assembly/python-net/)  

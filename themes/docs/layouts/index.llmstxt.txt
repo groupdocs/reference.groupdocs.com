@@ -1,0 +1,29 @@
+{{- /* llms.txt for a build's home page.
+       reference.groupdocs.com builds each product independently, so:
+       - a PRODUCT build's home is the family page -> list its platforms (.Site.Sections) and
+         each platform's namespaces (.Sections), since all content is section bundles;
+       - the SITE-ROOT build's home has no sections -> list products from data/products.toml. */ -}}
+# {{ .Site.Title }}
+{{ with (.Site.Params.description | default .Description) }}
+> {{ . }}
+{{ end }}
+{{- if .Site.Sections }}
+## Contents
+{{ range .Sections.ByWeight }}
+### [{{ .Title }}]({{ .Permalink }}) ([md]({{ strings.TrimRight "/" .Permalink }}.md){{ with .OutputFormats.Get "llmsfull" }}, [llms-full.txt]({{ .Permalink }}){{ end }})
+{{ with .Description }}{{ . }}
+{{ end -}}
+{{ range .Sections.ByWeight }}
+- [{{ .Title }}]({{ .Permalink }}) ([md]({{ strings.TrimRight "/" .Permalink }}.md))
+{{- end }}
+{{ end -}}
+{{- else if .Site.Data.products }}
+## Products
+{{ range sort .Site.Data.products.product "weight" }}
+- [{{ .title }}]({{ .url | absURL }}/): {{ .description }}
+{{- end }}
+{{- end }}
+## Full documentation
+{{ with .OutputFormats.Get "llmsfull" }}
+- [Complete documentation in one file]({{ .Permalink }})
+{{ end -}}

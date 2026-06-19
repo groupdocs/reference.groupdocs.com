@@ -1,0 +1,17 @@
+<div class="gdoc-list-apps mg-top-3">
+    {{ range .Params.products }}
+    <div class="gdoc-list-app">
+        {{with .image }}
+        <img class="gdoc-list-app__icon" src="{{ . }}" width="44" height="44">
+        {{ end }}
+
+        <a class="gdoc-list-app__link" rel="nofollow" href="{{ .url }}">
+            <h2 class="no-margin-top-bottom">{{ .name }}</h2>
+        </a>
+        
+        {{ range $index, $item := .list }}
+            <span class="products-list-single">{{ $item.text }}</span>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>

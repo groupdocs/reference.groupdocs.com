@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ $navEnabled := default true .Page.Params.GeekdocNav }}
+{{ $showFeedbackForm := default .Site.Params.showFeedbackForm .Page.Params.showFeedbackForm }}
+{{/* TOC on by default; opt out per-page or per-site with `toc = false`. Only render it
+     when there are actual entries — otherwise an "On this page" box shows up empty. */}}
+{{ $showToc := and (ne .Site.Params.toc false) (ne .Params.toc false) (findRE "<li" .TableOfContents 1) }}
+
+{{ $fullWidthClass := default "" }}
+
+{{- if eq true .Page.Params.FullWidth }}
+  {{- $fullWidthClass = "gdoc-markdown__full-width" }}
+{{- end }}
+
+{{ if $navEnabled }}
+  {{ partial "page-header" . }}
+{{ else }}
+  <div class="gdoc-list-header">
+  {{ partial "page-header" . }}
+  </div>
+{{ end }}
+
+<div class="gdoc-content-cols">
+  <article
+    class="gdoc-markdown  gdoc-markdown__align--{{ default "left" (.Page.Params.GeekdocAlign | lower) }} {{$fullWidthClass}}"
+  >
+
+    <h1>{{ partial "utils/title" . }}
+      {{- if $showFeedbackForm }}
+        <a class="gdoc-feedback-link" href="#feedback">
+          <svg  class="gdoc-feedback-link__icon">
+            <use xlink:href="/img/groupdocs-stack.svg#thumb_up"></use>
+          </svg>
+          <span class="gdoc-feedback-link__label">Leave&nbsp;feedback</span>
+        </a>
+      {{ end }}
+    </h1>
+    {{- with .Params.Version }}<p class="gd-page-version"><span class="gdoc-version-badge">v{{ . }}</span></p>{{ end }}
+
+    {{- if $showToc }}{{ partial "toc-mobile" . }}{{ end }}
+    {{ partial "utils/content" . }}
+    {{/* Auto child-page list is off by default — reference content lists its own
+         members in tables. Opt in per page with `showChildPages: true`. */}}
+    {{- if .Params.showChildPages }}{{ partial "children" . }}{{ end }}
+    {{ partial "feedback-form" . }}
+  </article>
+
+  {{- if $showToc }}{{ partial "toc" . }}{{ end }}
+</div>
+{{ end }}

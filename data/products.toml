@@ -1,5 +1,5 @@
 # Home page product grid — single source of truth.
-# Rendered by themes/api-theme/layouts/shortcodes/products-grid.html via {{< products-grid >}}
+# Rendered by themes/docs/layouts/shortcodes/products-grid.html via {{< products-grid >}}
 # in content/sites/groupdocs/home/english/_index.md.
 # To add a product: append a [[product]] block. Order on the page follows `weight` ascending.
 #
@@ -18,7 +18,7 @@ title       = "GroupDocs.Conversion"
 url         = "/conversion"
 icon        = "conversion"
 weight      = 1
-description = "Enhance productivity and streamline workflows with fast batch document conversion APIs in any cross platform application."
+description = "Convert between 170+ document and image formats — PDF, Office, CAD, email, and more."
 platforms   = ["net", "java", "nodejs-java", "python-net"]
 
 [[product]]
@@ -27,7 +27,7 @@ title       = "GroupDocs.Viewer"
 url         = "/viewer"
 icon        = "viewer"
 weight      = 2
-description = "Accelerate and simplify document or image viewing in any cross-platform application with native document viewer APIs."
+description = "Render documents and images to HTML, image, or PDF across 170+ formats."
 platforms   = ["net", "java", "nodejs-java", "python-net"]
 
 [[product]]
@@ -36,7 +36,7 @@ title       = "GroupDocs.Comparison"
 url         = "/comparison"
 icon        = "comparison"
 weight      = 3
-description = "Compare and merge documents across formats. Detect differences in text, styles, and formatting with high accuracy."
+description = "Detect and merge changes in text, style, and formatting across documents."
 platforms   = ["net", "java", "python-net"]
 
 [[product]]
@@ -45,7 +45,7 @@ title       = "GroupDocs.Markdown"
 url         = "/markdown"
 icon        = "markdown"
 weight      = 4
-description = "Document processing SDK to export PDF, Word, Excel, and other formats to Markdown for seamless integration with the gen AI ecosystem."
+description = "Export PDF, Word, Excel, and other formats to clean Markdown."
 platforms   = ["net", "python-net"]
 
 [[product]]
@@ -54,7 +54,7 @@ title       = "GroupDocs.Watermark"
 url         = "/watermark"
 icon        = "watermark"
 weight      = 5
-description = "Add, remove, search, and manage watermarks in PDF, Word, Excel, images, and other document formats programmatically."
+description = "Add, find, edit, and remove watermarks in documents, images, and PDFs."
 platforms   = ["net", "java", "python-net"]
 
 [[product]]
@@ -63,7 +63,7 @@ title       = "GroupDocs.Merger"
 url         = "/merger"
 icon        = "merger"
 weight      = 6
-description = "Merge, split, reorder, swap, and remove pages from PDF, Word, Excel, PowerPoint, and other document formats."
+description = "Merge, split, reorder, rotate, and manage pages across document formats."
 platforms   = ["net", "java", "nodejs-java", "python-net"]
 
 [[product]]
@@ -72,7 +72,7 @@ title       = "GroupDocs.Metadata"
 url         = "/metadata"
 icon        = "metadata"
 weight      = 7
-description = "Read, edit, remove, and export metadata from documents, images, audio, and video files in your applications."
+description = "Read, edit, and remove metadata in documents, images, audio, and video."
 platforms   = ["net", "java", "nodejs-java", "python-net"]
 
 [[product]]
@@ -81,7 +81,7 @@ title       = "GroupDocs.Assembly"
 url         = "/assembly"
 icon        = "assembly"
 weight      = 8
-description = "Generate documents and reports from templates by populating them with data from various sources including databases, XML, and JSON."
+description = "Generate documents and reports from templates and data using LINQ syntax."
 platforms   = ["net", "java", "python-net"]
 
 [[product]]
@@ -90,7 +90,7 @@ title       = "GroupDocs.Search"
 url         = "/search"
 icon        = "search"
 weight      = 9
-description = "Advanced full-text search across documents with support for indexing, fuzzy search, synonyms, and faceted search."
+description = "Index and full-text search with fuzzy, synonym, regex, and faceted queries."
 platforms   = ["net", "java"]
 
 [[product]]
@@ -99,7 +99,7 @@ title       = "GroupDocs.Parser"
 url         = "/parser"
 icon        = "parser"
 weight      = 10
-description = "Extract text, images, and metadata from PDF, Word, Excel, and other document formats. Parse templates and structured data."
+description = "Extract text, images, metadata, and structured data from documents."
 platforms   = ["net", "java", "python-net"]
 
 [[product]]
@@ -108,7 +108,7 @@ title       = "GroupDocs.Editor"
 url         = "/editor"
 icon        = "editor"
 weight      = 11
-description = "Edit Word, Excel, PowerPoint, and other document formats by converting them to HTML, modifying, and saving back."
+description = "Load, edit, and save documents through an HTML round-trip."
 platforms   = ["net", "java", "nodejs-java", "python-net"]
 
 [[product]]
@@ -117,7 +117,7 @@ title       = "GroupDocs.Annotation"
 url         = "/annotation"
 icon        = "annotation"
 weight      = 12
-description = "Add, edit, and remove annotations such as comments, highlights, drawings, and stamps from documents and images."
+description = "Add, edit, and remove annotations — comments, highlights, shapes, and stamps."
 platforms   = ["net", "java", "python-net"]
 
 [[product]]
@@ -126,7 +126,7 @@ title       = "GroupDocs.Signature"
 url         = "/signature"
 icon        = "signature"
 weight      = 13
-description = "Add digital, barcode, QR code, text, image, and stamp signatures to documents. Verify and search existing signatures."
+description = "Sign and verify with digital, barcode, QR-code, text, image, and stamp signatures."
 platforms   = ["net", "java", "nodejs-java", "python-net"]
 
 [[product]]
@@ -135,7 +135,7 @@ title       = "GroupDocs.Redaction"
 url         = "/redaction"
 icon        = "redaction"
 weight      = 14
-description = "Redact sensitive text, metadata, annotations, and images from PDF, Word, Excel, and PowerPoint documents."
+description = "Remove sensitive text, metadata, and annotations from documents."
 platforms   = ["net", "java", "python-net"]
 
 [[product]]
@@ -144,5 +144,5 @@ title       = "GroupDocs.Classification"
 url         = "/classification"
 icon        = "classification"
 weight      = 15
-description = "Classify documents and text using IAB-2, Document, and Sentiment taxonomies. Automate content categorization."
+description = "Classify documents and text with IAB-2, Documents, and Sentiment taxonomies."
 platforms   = ["net", "java"]

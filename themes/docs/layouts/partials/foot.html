@@ -1,0 +1,38 @@
+<!-- JS scripts -->
+<script defer src="{{ index (index .Site.Data.assets "groupdocs.js") "src" | relURL }}"></script>
+
+{{ partial "containerize-menu" . }}
+
+{{ if default false .Params.LiveChatScript }}
+<script>
+   function openLiveChat() {
+    window.open("https://chat.containerize.com/livechat?mode=popout", "Live Chat", "width=500,height=600")
+   }
+</script>
+{{ end }}
+
+{{ if default false .Params.LiveChatIcon }}
+<script type=text/javascript>
+        (function(e, t, n, s) {
+            e.RocketChat = function(t) {
+                e.RocketChat._.push(t)
+            }
+            ,
+            e.RocketChat._ = [],
+            e.RocketChat.url = s;
+            var i = t.getElementsByTagName(n)[0]
+              , o = t.createElement(n);
+            o.async = !0,
+            o.src = "https://chat.containerize.com/livechat/rocketchat-livechat.min.js?_=201903270000",
+            i.parentNode.insertBefore(o, i)
+        }
+        )(window, document, "script", "https://chat.containerize.com/livechat"),
+        RocketChat(function() {
+            this.setDepartment("2pqwFMQKg3tA6J7GZ");
+            var e = this;
+            this.onPrechatFormSubmit(function() {
+                e.setCustomField("departmentName", "Aspose")
+            })
+        })
+    </script>
+{{ end }}

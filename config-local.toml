@@ -1,0 +1,59 @@
+# Local-only config for the home (main index) page — for quick live preview:
+#   hugo server --config config-local.toml --port 1313
+# For a combined preview that also includes product trees (home + annotation under
+# /annotation/, matching production's path-prefix layout), use ./build-local.sh instead.
+baseURL = "http://localhost:1313/"
+title = "GroupDocs API References"
+theme = "docs"
+contentDir = "content/sites/groupdocs/home/english"
+staticDir = "content/sites/groupdocs/home/static"
+defaultContentLanguage = "en"
+languageCode = "en"
+enableRobotsTXT = true
+disablePathToLower = true
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pluralizeListTitles = false
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+  [markup.highlight]
+    style = "github"
+
+[params]
+  GeekdocCollapseAllSections = true
+  GeekdocSearch = false
+  showSearchInput = true
+  showFeedbackForm = true
+  defaultTheme = "light"
+  geekdocDarkModeToggle = false
+  toc = true
+
+# Per-page Markdown (.md) + llms.txt + llms-full.txt (matches the product builds).
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
+[outputFormats.MD]
+  mediaType = "text/markdown"
+  isPlainText = true
+  isHTML = false
+  notAlternative = true
+  permalinkable = false
+[outputFormats.LLMSTXT]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+[outputFormats.LLMSFULL]
+  mediaType = "text/plain"
+  baseName = "llms-full"
+  isPlainText = true
+  notAlternative = true
+[outputs]
+  home = ["HTML", "MD", "LLMSTXT", "LLMSFULL"]
+  section = ["HTML", "MD"]
+  page = ["HTML", "MD"]

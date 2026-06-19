@@ -1,0 +1,6 @@
+<iframe 
+    src="{{ .Get "src" }}" 
+    width="{{ with .Get "width" }}{{ . }}{{ else }}100%{{ end }}" 
+    height="{{ with .Get "height" }}{{ . }}{{ else }}500px{{ end }}" 
+    frameborder="{{ with .Get "frameborder" }}{{ . }}{{ else }}0{{ end }}">
+</iframe>

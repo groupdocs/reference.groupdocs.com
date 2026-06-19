@@ -1,0 +1,12 @@
+{{ if and (not .Params.hideChildren) (not .Params.showAllChildrenTable)}}      
+<ul class="contents">
+  {{/* List children directly (not via .Paginator) — pagination would emit a
+       redundant .../page/1/ alias for every section across a 37k-page API tree. */}}
+  {{ $pages := .RegularPages | append .Sections }}
+  {{ range sort $pages.ByWeight }}
+      <li>
+          <a href="{{ .RelPermalink }}">{{ partial "utils/short-title" . }}</a>
+      </li>
+  {{ end }}        
+</ul> 
+{{ end }}   

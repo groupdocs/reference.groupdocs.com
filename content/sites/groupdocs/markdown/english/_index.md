@@ -1,46 +1,52 @@
 ---
-title: "GroupDocs.Markdown API References"
+title: "GroupDocs.Markdown"
+linktitle: "GroupDocs.Markdown"
+description: "GroupDocs.Markdown API reference for .NET, Java, Node.js, and Python — Export PDF, Word, Excel, and other formats to clean Markdown."
+keywords: "GroupDocs.Markdown, markdown API, API reference, .NET, Java, Python, document processing"
 additionalTitle: "GroupDocs API References"
 type: docs
+layout: family
 weight: 10
-description: "Explore GroupDocs.Markdown API references to export and convert popular document formats (PDF, Word, Excel, and more) to Markdown with ease."
-keywords: "GroupDocs.Markdown, Markdown API, .NET Markdown export, document to markdown, convert PDF to markdown, export Word to markdown, export Excel to markdown"
 url: /
-date: "2025-08-26"
-lastmod: "2025-08-26"
-categories: ["Document APIs"]
-tags: ["groupdocs", "markdown", "export"]
+lead: "Export PDF, Word, Excel, and other formats to clean Markdown."
+
+platforms:
+  - name: ".NET"
+    version: "26.3.0"
+    versionUrl: "https://www.nuget.org/packages/groupdocs.markdown/26.3.0"
+    key: net
+    ref: "/net/"
+    install: "dotnet add package GroupDocs.Markdown"
+  - name: "Python via .NET"
+    version: "26.3.0"
+    versionUrl: "https://pypi.org/project/groupdocs-markdown-net/26.3.0/"
+    key: python
+    ref: "/python-net/"
+    install: "pip install groupdocs-markdown-net"
+
+formats: ["PDF", "Word", "Excel", "PowerPoint", "HTML"]
+
+capabilities:
+  - "Export to clean Markdown"
+  - "RAG-ready, gen-AI friendly output"
+  - "Preserve structure & tables"
+  - "Export embedded images"
+  - "Convert from PDF, Word, Excel"
+
+resources:
+  - name: "Documentation"
+    url: "https://docs.groupdocs.com/markdown/"
+    icon: "api"
+  - name: "Code examples"
+    url: "https://github.com/groupdocs-markdown"
+    icon: "code"
+  - name: "Releases & changelog"
+    url: "https://releases.groupdocs.com/markdown/"
+    icon: "demos"
+  - name: "Support forum"
+    url: "https://forum.groupdocs.com/c/markdown/"
+    icon: "free-support"
+  - name: "Product page"
+    url: "https://products.groupdocs.com/markdown/"
+    icon: "total"
 ---
-
-This page serves as the entry point to the **GroupDocs.Markdown API references**. 
-
-**GroupDocs.Markdown** is a set of APIs that enables you to export and convert popular document formats such as **PDF, Word, Excel, and more** into clean and structured **Markdown** files.  
-
-## Available Products
-
-Select your target platform below to access detailed API code documentation.
-
-<div style="display: flex;flex-wrap: wrap;justify-content: left;gap: 10px;padding: 10px;">
-    <a href="/markdown/net/"
-        style="width: 190px; height: 220px;background-color: #f7f7f7;border: 1px solid #ccc;border-radius: 8px;display: flex;flex-direction: column;align-items: center;justify-content: space-around;padding: 20px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);transition: transform 0.3s ease;text-decoration: none;color: inherit;">
-        <img src="gdocs_net.png"
-            alt="GroupDocs.Markdown for .NET Icon" style="width: 70px; height: 70px; object-fit: contain;">
-        <h3 style="font-size: 16px; color: #333; margin: 10px 0; text-align: center;">GroupDocs.Markdown for .NET</h3>
-        <p style="font-size: 12px; color: #666; text-align: center;">Access full API references for .NET developers</p>
-    </a>
-    <a href="/markdown/python-net/"
-        style="width: 190px; height: 220px;background-color: #f7f7f7;border: 1px solid #ccc;border-radius: 8px;display: flex;flex-direction: column;align-items: center;justify-content: space-around;padding: 20px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);transition: transform 0.3s ease;text-decoration: none;color: inherit;">
-        <img src="gdocs_python.png"
-            alt="GroupDocs.Markdown Icon" style="width: 70px; height: 70px; object-fit: contain;">
-        <h3 style="font-size: 16px; color: #333; margin: 10px 0; text-align: center;">GroupDocs.Markdown for Python via .NET</h3>
-        <p style="font-size: 12px; color: #666; text-align: center;">GroupDocs.Markdown API for Python applications</p>
-    </a>    
-</div>
-
-## Additional Resources
-
-Discover more about **GroupDocs.Markdown**:
-
-- [Product Overview](https://products.groupdocs.com/markdown/)  
-- [Developer Documentation](https://docs.groupdocs.com/markdown/)  
-- [Releases & Downloads](https://releases.groupdocs.com/markdown/)  

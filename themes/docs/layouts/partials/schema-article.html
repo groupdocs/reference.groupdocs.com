@@ -1,0 +1,36 @@
+
+{{- $families := site.Data.families -}}
+{{- $pathParts := split site.BaseURL "/" -}}
+{{- $familyKey := index $pathParts 3 -}}
+{{- $familyName := index $families $familyKey | default "Aspose" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title | htmlEscape }}",
+  "description": "{{ .Params.description | default .Description | htmlEscape }}",
+  "inLanguage": "{{ .Site.Language }}",
+  "isFamilyFriendly": "true",
+  "copyrightYear": "{{ now.Format "2006" }}",
+  "datePublished": "{{ .Date | dateFormat "2006-01-02T15:04:05+08:00" }}",
+  "dateModified": "{{ .Params.lastmod | default .Date | dateFormat "2006-01-02T15:04:05+08:00" }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Aspose Pty Ltd",
+    "url": "https://www.aspose.com"
+  },
+  "image": "https://cms.admin.containerize.com/templates/aspose/img/products/{{$familyKey}}/aspose_{{$familyKey}}-for-net.svg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aspose",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cms.admin.containerize.com/templates/aspose/img/svg/aspose-logo.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+}
+</script>

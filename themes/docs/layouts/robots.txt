@@ -1,0 +1,8 @@
+User-agent: *
+
+Sitemap: {{ "sitemap.xml" | absURL }}
+
+{{/* llms.txt is emitted as the LLMSTXT output of the home page (see [outputs]/[outputFormats]). */}}
+{{- with .OutputFormats.Get "llmstxt" }}
+# llms-txt: {{ .Permalink }}
+{{- end -}}

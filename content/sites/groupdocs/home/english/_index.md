@@ -1,40 +1,89 @@
 ---
+id: home
+layout: "full-width"
 title: GroupDocs API References
-weight: 10
-description: API reference and code snippets for working with GroupDocs.Conversion, GroupDocs.Viewer, and other GroupDocs products. References are available for .NET, Java, Node.js and Python. 
+linkTitle: "Home"
+description: "API reference and code snippets for GroupDocs document processing products — .NET, Java, Node.js and Python. Browse classes, methods, and examples for every supported product."
+geekdocSkip: true
+geekdocNav: false
+geekdocAlign: center
+geekdocAnchor: false
+geekdocBreadcrumb: false
+hideChildren: true
+showFeedbackForm: false
 ---
 
-{{< blocks/product-section color="white">}}
-<div class="col-12 hero-section">
-<h1 class="hero-title">GroupDocs API References</h1>
-<p class="hero-subtitle">Complete API documentation for GroupDocs document processing libraries across .NET, Java, Node.js, and Python. Browse classes, methods, and code examples for every supported product.</p>
+<div class="gdoc-list-descr">
+Class library and REST API reference for GroupDocs document-processing SDKs — namespaces, classes, methods, and code examples for .NET, Java, Node.js, and Python.
 </div>
-{{< /blocks/product-section >}}
 
 {{< products-grid >}}
 
-{{< blocks/product-section color="white">}}
-<div class="col-12 info-section">
-<h2 class="section-title">AI Agents &amp; LLM Friendly</h2>
-<p class="section-lead">GroupDocs products are designed for seamless integration with AI agents, LLMs, and automated pipelines.</p>
-<ul class="ai-features">
-<li><strong>MCP Server</strong><span>LLMs query GroupDocs documentation on-demand via <a href="https://docs.groupdocs.com/mcp">Model Context Protocol</a>, reducing token usage and improving accuracy.</span></li>
-<li><strong>AGENTS.md</strong><span>Machine-readable documentation bundled in packages for automatic discovery by AI coding assistants like Claude, Copilot, and Cursor.</span></li>
-<li><strong>Markdown Export</strong><span>Convert PDF, Word, Excel to clean Markdown optimized for RAG pipelines and text chunking with <a href="/markdown/">GroupDocs.Markdown</a>.</span></li>
-<li><strong>Machine-Readable Docs</strong><span>Full documentation as <a href="https://docs.groupdocs.com/llms.txt">llms.txt</a> and <a href="https://docs.groupdocs.com/llms-full.txt">llms-full.txt</a> for direct LLM consumption. Also available per product.</span></li>
-</ul>
-</div>
-{{< /blocks/product-section >}}
+<h2 class="gdoc-list-title">AI Agents &amp; LLM Friendly</h2>
 
-{{< blocks/product-section color="white">}}
-<div class="col-12 info-section">
-<h2 class="section-title">Documentation &amp; Resources</h2>
-<ul class="resource-links">
-<li><a href="https://docs.groupdocs.com/"><strong>Developer Documentation</strong><span>Guides, tutorials, and conceptual articles for every GroupDocs product.</span></a></li>
-<li><a href="https://releases.groupdocs.com/"><strong>Releases &amp; Downloads</strong><span>Every public release with changelogs and binary packages.</span></a></li>
-<li><a href="https://products.groupdocs.com/"><strong>Product Site</strong><span>Features, pricing, and licensing information.</span></a></li>
-<li><a href="https://blog.groupdocs.com/"><strong>Blog</strong><span>Announcements, product updates, and technical articles.</span></a></li>
-<li><a href="https://forum.groupdocs.com/"><strong>Support Forum</strong><span>Free community and team support.</span></a></li>
-</ul>
+<div class="gdoc-list-descr">
+GroupDocs products plug straight into AI agents, LLMs, and automated document pipelines.
 </div>
-{{< /blocks/product-section >}}
+
+<div class="gdoc-list-apps">
+
+<div class="gdoc-list-app">
+  <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#api"></use></svg>
+  <a class="gdoc-list-app__link" href="https://docs.groupdocs.com/mcp">MCP Server</a>
+  <div class="gdoc-list-app__descr">LLMs query GroupDocs documentation on demand via the Model Context Protocol, reducing token usage and improving accuracy.</div>
+</div>
+
+<div class="gdoc-list-app">
+  <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#code"></use></svg>
+  <a class="gdoc-list-app__link" href="https://docs.groupdocs.com/">AGENTS.md</a>
+  <div class="gdoc-list-app__descr">Machine-readable docs bundled into Python packages for automatic discovery by AI coding assistants like Claude, Copilot, and Cursor.</div>
+</div>
+
+<div class="gdoc-list-app">
+  <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#demos"></use></svg>
+  <a class="gdoc-list-app__link" href="https://docs.groupdocs.com/llms.txt">llms.txt</a>
+  <div class="gdoc-list-app__descr">Full documentation as llms.txt and llms-full.txt for direct LLM consumption &mdash; also available per product.</div>
+</div>
+
+</div>
+
+<h2 class="gdoc-list-title">Developer Resources</h2>
+
+<div class="gdoc-resources">
+
+<a class="gdoc-resource" href="https://docs.groupdocs.com/" rel="nofollow" target="_blank">
+  <div class="gdoc-resource__icon-box">
+    <svg class="gdoc-resource__icon"><use xlink:href="/img/groupdocs-stack.svg#api"></use></svg>
+  </div>
+  <div class="gdoc-resource__link">Documentation</div>
+</a>
+
+<a class="gdoc-resource" href="https://releases.groupdocs.com/" rel="nofollow" target="_blank">
+  <div class="gdoc-resource__icon-box">
+    <svg class="gdoc-resource__icon"><use xlink:href="/img/groupdocs-stack.svg#code"></use></svg>
+  </div>
+  <div class="gdoc-resource__link">Releases &amp; Downloads</div>
+</a>
+
+<a class="gdoc-resource" href="https://products.groupdocs.com/" rel="nofollow" target="_blank">
+  <div class="gdoc-resource__icon-box">
+    <svg class="gdoc-resource__icon"><use xlink:href="/img/groupdocs-stack.svg#total"></use></svg>
+  </div>
+  <div class="gdoc-resource__link">Product Site</div>
+</a>
+
+<a class="gdoc-resource" href="https://blog.groupdocs.com/" rel="nofollow" target="_blank">
+  <div class="gdoc-resource__icon-box">
+    <svg class="gdoc-resource__icon"><use xlink:href="/img/groupdocs-stack.svg#editor"></use></svg>
+  </div>
+  <div class="gdoc-resource__link">Blog</div>
+</a>
+
+<a class="gdoc-resource" href="https://forum.groupdocs.com/" rel="nofollow" target="_blank">
+  <div class="gdoc-resource__icon-box">
+    <svg class="gdoc-resource__icon"><use xlink:href="/img/groupdocs-stack.svg#free-support"></use></svg>
+  </div>
+  <div class="gdoc-resource__link">Support Forum</div>
+</a>
+
+</div>

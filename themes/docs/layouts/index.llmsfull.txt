@@ -1,0 +1,16 @@
+{{- /* llms-full.txt: complete documentation for this build in one file.
+       This site's content is entirely section bundles (_index.md), so range pages+sections
+       (not .Site.RegularPages, which is empty here). */ -}}
+# {{ .Site.Title }} — Complete Documentation
+
+> {{ .Site.Params.description | default .Description }}
+
+{{ range (where .Site.Pages "Kind" "in" (slice "page" "section")) -}}
+---
+
+## {{ .Title }}
+
+Path: {{ .Permalink }}
+
+{{ partial "md/abs-content.txt" . }}
+{{ end -}}

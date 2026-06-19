@@ -1,0 +1,106 @@
+{{- /*
+  SCOPED file-tree nav (reference.groupdocs.com customization).
+
+  The stock Geekdoc menu-filetree recurses into EVERY section, embedding the whole
+  navigation tree (thousands of links) into every page — ~480 KB/page on this site.
+  This variant renders only the CURRENT BRANCH: top-level sections always, and a
+  section's children only when that section is the current page or an ancestor of it.
+  Off-path parent sections render as links (clicking navigates and re-scopes the tree).
+  Net effect: per-page nav stays small (tens of links) while keeping the same markup,
+  styling and expand/collapse chrome. Data source and gdoc-* classes are unchanged.
+*/ -}}
+{{ $current := . }}
+{{ $pages := .Site.Home.Sections }}
+
+{{ template "tree-nav" dict "sect" $pages "current" $current }}
+
+<!-- templates -->
+{{ define "tree-nav" }}
+  {{ $current := .current }}
+
+  <ul class="gdoc-nav__list">
+    {{ $sortBy := (default "title" .current.Site.Params.GeekdocFileTreeSortBy | lower) }}
+    {{ range .sect.GroupBy "Weight" }}
+      {{ $rangeBy := .ByTitle }}
+
+      {{ if eq $sortBy "title" }}
+        {{ $rangeBy = .ByTitle }}
+      {{ else if eq $sortBy "linktitle" }}
+        {{ $rangeBy = .ByLinkTitle }}
+      {{ else if eq $sortBy "date" }}
+        {{ $rangeBy = .ByDate }}
+      {{ else if eq $sortBy "publishdate" }}
+        {{ $rangeBy = .ByPublishDate }}
+      {{ else if eq $sortBy "expirydate" }}
+        {{ $rangeBy = .ByExpiryDate }}
+      {{ else if eq $sortBy "lastmod" }}
+        {{ $rangeBy = .ByLastmod }}
+      {{ else if eq $sortBy "title_reverse" }}
+        {{ $rangeBy = .ByTitle.Reverse }}
+      {{ else if eq $sortBy "linktitle_reverse" }}
+        {{ $rangeBy = .ByLinkTitle.Reverse }}
+      {{ else if eq $sortBy "date_reverse" }}
+        {{ $rangeBy = .ByDate.Reverse }}
+      {{ else if eq $sortBy "publishdate_reverse" }}
+        {{ $rangeBy = .ByPublishDate.Reverse }}
+      {{ else if eq $sortBy "expirydate_reverse" }}
+        {{ $rangeBy = .ByExpiryDate.Reverse }}
+      {{ else if eq $sortBy "lastmod_reverse" }}
+        {{ $rangeBy = .ByLastmod.Reverse }}
+      {{ end }}
+
+      {{ range $rangeBy }}
+        {{ if not .Params.GeekdocHidden }}
+          {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+          {{ $isParent := and (ne $numberOfPages 0) (not .Params.GeekdocFlatSection) }}
+          {{ $isCurrent := eq $current . }}
+          {{ $isAncestor := .IsAncestor $current }}
+          {{ $onPath := or $isCurrent $isAncestor }}
+          {{ $id := substr (sha1 .Permalink) 0 8 }}
+
+          <li>
+            {{ if and $isParent $onPath }}
+              {{- /* expanded section on the current path */ -}}
+              <input type="checkbox" class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}" checked />
+              <label for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center">
+                <span class="flex truncate-text" title="{{ partial "utils/short-title" . }}">
+                  <a href="{{ .RelPermalink }}" class="gdoc-nav__entry{{ if $isCurrent }} is-active{{ end }}">
+                    {{ partial "utils/short-title" . }}
+                  </a>
+                </span>
+                <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
+                  <use xlink:href="#gdoc_keyboard_arrow_left"></use>
+                </svg>
+                <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
+                  <use xlink:href="#gdoc_keyboard_arrow_down"></use>
+                </svg>
+              </label>
+              {{ template "tree-nav" dict "sect" .Pages "current" $current }}
+            {{ else if $isParent }}
+              {{- /* off-path parent: link only; navigating re-scopes the tree there */ -}}
+              <label class="flex justify-between align-center">
+                <span class="flex truncate-text" title="{{ partial "utils/short-title" . }}">
+                  <a href="{{ .RelPermalink }}" class="gdoc-nav__entry{{ if $isCurrent }} is-active{{ end }}">
+                    {{ partial "utils/short-title" . }}
+                  </a>
+                </span>
+                <svg class="gdoc-icon gdoc_keyboard_arrow_left">
+                  <use xlink:href="#gdoc_keyboard_arrow_left"></use>
+                </svg>
+              </label>
+            {{ else }}
+              {{- /* leaf page */ -}}
+              <label>
+                <span class="flex truncate-text" title="{{ partial "utils/short-title" . }}">
+                  <a href="{{ .RelPermalink }}" class="gdoc-nav__entry{{ if $isCurrent }} is-active{{ end }}">
+                    {{ partial "utils/short-title" . }}
+                  </a>
+                </span>
+              </label>
+            {{ end }}
+          </li>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ end }}

@@ -1,0 +1,30 @@
+{{- $families := site.Data.families -}}
+{{- $pathParts := split site.BaseURL "/" -}}
+{{- $familyKey := index $pathParts 3 -}}
+{{- $familyName := index $families $familyKey | default "Aspose" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "name": "{{$familyName}} {{.Page.Params.plugin_name}} {{T "for"}} .NET",
+  "description": "{{.Page.Params.plugin_description}}",
+  "url": "{{ .Permalink }}",
+  "price": 99,
+  "priceCurrency": "USD",
+  "priceValidUntil": "2025-12-31",
+  "validFrom": "{{ .Date }}",
+  "availability": "https://schema.org/InStock",
+  "itemCondition": "https://schema.org/NewCondition",
+  "seller": {
+    "@type": "Organization",
+    "name": "Aspose",
+    "url": "https://www.aspose.com"
+  },
+  "itemOffered": {
+    "@type": "Product",
+    "name": "{{.Page.Params.plugin_name}}",
+    "image": "https://www.aspose.com/templates/aspose/img/products/{{ $familyKey }}/aspose_{{ $familyKey }}-for-net.svg",
+    "category": "Software"
+  }
+}
+</script>

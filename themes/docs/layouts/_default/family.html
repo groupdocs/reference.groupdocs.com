@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{ partial "page-header" . }}
+
+<article class="gdoc-markdown gd-family">
+
+  {{/* 1. Header: product name + latest-version badge + one-line description */}}
+  <h1 class="gd-family__title">{{ .Title }}
+    <a class="gdoc-feedback-link" href="#feedback">
+      <svg class="gdoc-feedback-link__icon"><use xlink:href="/img/groupdocs-stack.svg#thumb_up"></use></svg>
+      <span class="gdoc-feedback-link__label">Leave&nbsp;feedback</span>
+    </a>
+  </h1>
+  {{ with (or .Params.lead .Params.summary) }}<p class="gd-family__lead">{{ . | safeHTML }}</p>{{ end }}
+
+  {{/* 2. Platform cards: version + install + reference link */}}
+  {{ with .Params.platforms }}
+  <h2 class="gd-family__h2">Choose your platform</h2>
+  <div class="gd-platforms">
+    {{ range . }}
+    <div class="gd-platform gd-platform--{{ .key }}">
+      <div class="gd-platform__top">
+        <span class="gd-platform__name">{{ .name }}</span>
+        {{ if .version }}{{ if .versionUrl }}<a class="gd-platform__ver" href="{{ .versionUrl }}" rel="nofollow" target="_blank">v{{ .version }}</a>{{ else }}<span class="gd-platform__ver">v{{ .version }}</span>{{ end }}{{ end }}
+      </div>
+      {{ with .install }}
+      <div class="gd-install">
+        <code class="gd-install__cmd">{{ . }}</code>
+        <button type="button" class="gd-install__copy" data-clip="{{ . }}" aria-label="Copy install command">Copy</button>
+      </div>
+      {{ end }}
+      <a class="gd-platform__cta" href="{{ .ref }}">Browse API reference <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* 3 + 4. Capabilities and supported formats, side by side */}}
+  {{ if or .Params.capabilities .Params.formats }}
+  <div class="gd-family__split">
+    {{ with .Params.capabilities }}
+    <section>
+      <h2 class="gd-family__h2">Key capabilities</h2>
+      <ul class="gd-caps">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+    </section>
+    {{ end }}
+    {{ with .Params.formats }}
+    <section>
+      <h2 class="gd-family__h2">Supported formats</h2>
+      <div class="gd-chips">{{ range . }}<span class="gd-chip">{{ . }}</span>{{ end }}</div>
+    </section>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* Optional product-specific prose from the markdown body */}}
+  {{ with .Content }}<div class="gd-family__prose">{{ . }}</div>{{ end }}
+
+  {{/* 5. Resources */}}
+  {{ with .Params.resources }}
+  <h2 class="gd-family__h2">Resources</h2>
+  <div class="gdoc-resources gd-family__resources">
+    {{ range . }}
+    <a class="gdoc-resource" href="{{ .url }}" rel="nofollow" target="_blank">
+      <div class="gdoc-resource__icon-box">
+        <svg class="gdoc-resource__icon"><use xlink:href="/img/groupdocs-stack.svg#{{ .icon | default "api" }}"></use></svg>
+      </div>
+      <div class="gdoc-resource__link">{{ .name }}</div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ partial "feedback-form" . }}
+</article>
+
+<script>
+document.querySelectorAll(".gd-install__copy").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var t = b.getAttribute("data-clip");
+    if (navigator.clipboard) { navigator.clipboard.writeText(t); }
+    var o = b.textContent; b.textContent = "Copied"; b.classList.add("is-copied");
+    setTimeout(function () { b.textContent = o; b.classList.remove("is-copied"); }, 1300);
+  });
+});
+</script>
+{{ end }}

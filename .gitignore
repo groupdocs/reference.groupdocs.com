@@ -1,6 +1,7 @@
 .idea/
 resources/
 public/
+public-local/
 .DS_Store
 
 

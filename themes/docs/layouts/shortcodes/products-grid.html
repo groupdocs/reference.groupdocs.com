@@ -1,0 +1,19 @@
+{{- /* Home product grid (reference.groupdocs.com) — gdoc-list-app cards from data/products.toml.
+       Single source of truth: add a product by appending a [[product]] block there. */ -}}
+{{- $labels  := dict "net" ".NET" "java" "Java" "nodejs-java" "Node.js" "python-net" "Python" -}}
+{{- $classes := dict "net" "net" "java" "java" "nodejs-java" "nodejs" "python-net" "python" -}}
+<div class="gdoc-list-apps">
+{{ range sort .Site.Data.products.product "weight" }}
+  {{ $url := .url }}
+  <div class="gdoc-list-app">
+    <img class="gdoc-list-app__icon" src="/images/products/groupdocs-{{ .icon }}.svg" alt="{{ .title }}" loading="lazy" />
+    <a class="gdoc-list-app__link" rel="nofollow" href="{{ $url }}/">{{ .title }}</a>
+    <div class="gdoc-list-app__descr">{{ .description | markdownify }}</div>
+    <div class="gdoc-list-app__buttons">
+      {{- range .platforms }}
+      <a href="{{ $url }}/{{ . }}/" class="gdoc-list-app__button gdoc-list-app__button--{{ index $classes . }}">{{ index $labels . }}</a>
+      {{- end }}
+    </div>
+  </div>
+{{ end }}
+</div>

@@ -1,0 +1,317 @@
+
+<div class="lang-selector" id="locale" style="display:none!important">
+  <a href="#">
+    <em class="{{- .Language.Params.flag}}  flag-24"></em>&nbsp; {{- .Language.LanguageName | title -}}
+  </a>
+</div>
+<div class="modal fade lanpopup" id="langModal" tabindex="-1" aria-labelledby="langModalLabel" data-nosnippet="" aria-modal="true" role="dialog" style="display:none">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="background-color: #343a40">
+      <a class="lang-close" id="lang-close">
+        <img src="/close.svg" width="14" height="14" alt="Close">
+        </em>
+      </a>
+      <div class="modal-body">
+        <div class="rowbox">
+          {{- range .Translations -}}
+          <div class="col langbox">
+            <a href="{{- .Permalink | absLangURL  -}}" data-title="{{- .Lang | title -}}" class="langmenu">
+              <span>
+                <em class="{{- .Language.Params.flag}}  flag-24"></em>&nbsp;{{.Language.LanguageName}}
+              </span>
+            </a>
+          </div>
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script defer>  
+  const langshowpop = document.getElementById('locale');
+  const langhidepop = document.getElementById('lang-close');
+  langshowpop.addEventListener('click', addClass,  false);
+  langhidepop.addEventListener('click', removeClass,  false);
+  function addClass() {
+  var langshow = document.querySelector('.lanpopup');
+  langshow.classList.toggle('show');
+  }
+  function removeClass() {
+  var langclose = document.querySelector('.lanpopup');
+  langclose.classList.remove('show');
+  }
+  </script>
+  <script defer>
+    const observer = new MutationObserver((mutations, obs) => {
+        const parent = document.getElementById('DynabicMenuUserControls');
+        if (parent) {
+            const child = document.getElementById('locale');
+            parent.prepend(child);
+            child.setAttribute("id", "localswitch");
+            child.setAttribute('style', 'visibility:visible'); 
+            obs.disconnect();
+            return;
+        }
+    });
+  
+    observer.observe(document, {
+        childList: true,
+        subtree: true
+    });
+  </script>
+  <style>
+    .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1049;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+}
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, -50px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal.fade .modal-dialog {
+    transition: none;
+  }
+}
+.modal.show .modal-dialog {
+  transform: none;
+}
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+  .modal-dialog-centered {
+    min-height: calc(100% - 3.5rem);
+  }
+}
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 800px;
+  }
+}
+#langModal a {
+  text-decoration: none !important;
+}
+#langModal a:focus,
+#langModal a:visited,
+#langModal a:hover {
+  text-decoration: none !important;
+}
+.langbox {
+  margin: 0;
+  width: 20% !important;
+  flex: none;
+}
+#langModal a {
+  color: #fff;
+  font-size: 14px !important;
+  padding: 10px 0;
+  display: block;
+}
+#langModal {
+  display: none;
+}
+#langModal.show {
+  display: block !important;
+  opacity: 1;
+}
+.rowbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+}
+.lanpopup.show:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #0009;
+}
+.lang-close {
+  position: absolute;
+  z-index: 999999;
+  color: #fff;
+  background: #dc4342 !important;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  padding: 0;
+  text-align: center;
+  line-height: 21px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lang-close img {
+  display: none;
+}
+.lang-close:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(-45deg);
+  margin: 11px 6px;
+}
+.lang-close:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(45deg);
+  margin: 11px 6px;
+}
+.lang-close img {
+  width: 14px;
+  height: 14px;
+  filter: invert(1);
+}
+.lang-close:hover {
+  transform: scale(1.1);
+}
+.col.langbox {
+  flex-grow: inherit;
+  flex-basis: inherit;
+}
+@media (max-width: 768px) {
+  .langbox {
+    width: 30% !important;
+    text-align: left;
+  }
+}
+.langbox span {
+  display: flex;
+  align-items: center;
+}
+.lang-selector:hover > a,
+.topsearchbtn:hover img,
+.userlogin:hover img {
+  filter: none !important;
+  color: #3ca3d9 !important;
+}
+body .lang-selector:hover {
+  background-color: transparent !important;
+}
+@media (max-width: 768px) {
+  .lang-close {
+    right: 0 !important;
+  }
+  .lang-selector a {
+    font-size: 0;
+  }
+  body .lang-selector {
+    min-width: 35px !important;
+    margin: 0 !important;
+    width: 35px !important;
+  }
+}
+body .lang-selector#localswitch a {
+  color: #ffffff;
+  cursor: pointer;
+}
+.subscibe-rhs #subscribe_fields input {
+  min-height: 50px !important;
+  max-width: 60% !important;
+}
+@media (max-width: 992px) and (min-width: 0px) {
+  .subscibe-rhs #subscribe_fields input {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+@media (max-width: 668px) {
+  body .lang-selector#localswitch a {
+    font-size: 0 !important;
+  }
+  body div#DynabicMenuInnerDiv .venturelogo a {
+    background-size: 150px !important;
+    width: 150px !important;
+    background-position: center !important;
+    margin-top: 0 !important;
+    min-height: 60px !important;
+  }
+}
+body .lang-selector#localswitch a {
+  font-size: 14px !important;
+}
+body .lang-selector {
+  min-width: inherit !important;
+  width: inherit !important;
+  max-width: inherit !important;
+  white-space: nowrap;
+  margin-right: 5px !important;
+}
+.langbox span {
+  text-align: center !important;
+  display: block;
+}
+.langbox a:hover {
+  color: #ffffff !important;
+  background: #222222;
+}
+.flag-24:before,
+.flag-24:after {
+  display: none !important;
+}
+.lang-selector .flag-24 {
+  width: 18px;
+  height: 18px;
+  background: url(https://www.documentprocessing.com/images/common/globe-ico.png)
+    transparent 0 0;
+  background-size: cover;
+  display: block !important;
+}
+
+  </style> 
