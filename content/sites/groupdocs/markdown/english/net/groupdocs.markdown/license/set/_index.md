@@ -11,12 +11,12 @@ url: /net/groupdocs.markdown/license/set/
 Sets the license from a file path.
 
 ```csharp
-public static void Set(string filePath)
+public static void Set(string licensePath)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| filePath | String | The path to the license file. |
+| licensePath | String | The path to the license file. |
 
 ### Examples
 
@@ -41,12 +41,12 @@ License.Set(@"C:\\GroupDocs.Markdown.lic");
 Sets the license from a stream.
 
 ```csharp
-public static void Set(Stream stream)
+public static void Set(Stream licenseStream)
 ```
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| stream | Stream | The stream that contains the license. |
+| licenseStream | Stream | The stream that contains the license. |
 
 ### Examples
 

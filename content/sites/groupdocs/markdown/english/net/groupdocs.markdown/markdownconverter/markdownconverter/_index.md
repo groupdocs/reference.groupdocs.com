@@ -1,14 +1,14 @@
 ---
 title: MarkdownConverter
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Initializes a new instance of the MarkdownConvertergroupdocs.markdown/markdownconverter class.
+description: Creates a new converter for the document at the specified file path. The file format is detected automatically from the file extension and content.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/markdownconverter/markdownconverter/
 ---
 ## MarkdownConverter(string) {#constructor_2}
 
-Initializes a new instance of the [`MarkdownConverter`](../../markdownconverter) class.
+Creates a new converter for the document at the specified file path. The file format is detected automatically from the file extension and content.
 
 ```csharp
 public MarkdownConverter(string sourcePath)
@@ -16,30 +16,15 @@ public MarkdownConverter(string sourcePath)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| sourcePath | String | The path to the source document. Must not be null or empty. |
+| sourcePath | String | Absolute or relative path to the source document (e.g. `"report.docx"`). |
 
 ### Exceptions
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | Thrown when sourcePath is null or empty. |
-| FileNotFoundException | Thrown when the source file does not exist. |
-| NotSupportedException | Thrown when no suitable converter is found for the file type. |
-
-### Remarks
-
-If the file name does not have an extension, GroupDocs.Markdown will attempt to detect the file type automatically. If file type detection fails, a NotSupportedException will be thrown.
-
-### Examples
-
-The following example shows how to create a converter from a file path:
-
-```csharp
-using (var converter = new MarkdownConverter("document.docx"))
-{
-    // Use the converter
-}
-```
+| ArgumentNullException | Thrown when *sourcePath* is `null` or empty. |
+| FileNotFoundException | Thrown when the file at *sourcePath* does not exist. |
+| NotSupportedException | Thrown when the file format is not supported. Call [`GetSupportedFormats`](../getsupportedformats) to see which formats are accepted. |
 
 ### See Also
 
@@ -51,7 +36,7 @@ using (var converter = new MarkdownConverter("document.docx"))
 
 ## MarkdownConverter(Stream) {#constructor}
 
-Initializes a new instance of the [`MarkdownConverter`](../../markdownconverter) class.
+Creates a new converter that reads the document from the supplied stream. The file format is detected automatically from the stream content. If automatic detection is not possible, use the [`MarkdownConverter`](../markdownconverter) overload and specify the format via [`LoadOptions`](../../loadoptions).
 
 ```csharp
 public MarkdownConverter(Stream sourceStream)
@@ -59,30 +44,14 @@ public MarkdownConverter(Stream sourceStream)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| sourceStream | Stream | The source stream containing the document data. Must not be null. |
+| sourceStream | Stream | A readable stream containing the document data. The stream is copied internally, so the caller may close it after construction. |
 
 ### Exceptions
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | Thrown when sourceStream is null. |
-| NotSupportedException | Thrown when no suitable converter is found for the stream type. |
-
-### Remarks
-
-GroupDocs.Markdown will attempt to detect the file type automatically from the stream content. If file type detection fails, a NotSupportedException will be thrown. Note: GroupDocs.Markdown does not take ownership of the provided stream. The caller is responsible for disposing the stream after the converter is no longer needed.
-
-### Examples
-
-The following example shows how to create a converter from a stream:
-
-```csharp
-using (var fileStream = File.OpenRead("document.docx"))
-using (var converter = new MarkdownConverter(fileStream))
-{
-    // Use the converter
-}
-```
+| ArgumentNullException | Thrown when *sourceStream* is `null`. |
+| NotSupportedException | Thrown when the file format cannot be detected or is not supported. |
 
 ### See Also
 
@@ -94,7 +63,7 @@ using (var converter = new MarkdownConverter(fileStream))
 
 ## MarkdownConverter(string, LoadOptions) {#constructor_3}
 
-Initializes a new instance of the [`MarkdownConverter`](../../markdownconverter) class.
+Creates a new converter for the document at the specified file path, using the given load options. Use this overload to supply a password for encrypted documents or to explicitly specify the file format.
 
 ```csharp
 public MarkdownConverter(string sourcePath, LoadOptions loadOptions)
@@ -102,37 +71,16 @@ public MarkdownConverter(string sourcePath, LoadOptions loadOptions)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| sourcePath | String | The path to the source document. Must not be null or empty. |
-| loadOptions | LoadOptions | Additional information about the source file. Must not be null. |
+| sourcePath | String | Absolute or relative path to the source document. |
+| loadOptions | LoadOptions | Options that control how the document is loaded. Pass a [`LoadOptions`](../../loadoptions) with [`Password`](../../loadoptions/password) set to open encrypted files, or with a specific [`FileFormat`](../../fileformat) to override automatic format detection. May be `null`. |
 
 ### Exceptions
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | Thrown when sourcePath is null or empty, or streamInfo is null. |
-| FileNotFoundException | Thrown when the source file does not exist. |
-| NotSupportedException | Thrown when no suitable converter is found for the file type. |
-
-### Remarks
-
-If the file name does not have an extension or if the provided *loadOptions* does not specify an Extension or MediaType, GroupDocs.Markdown will attempt to detect the file type automatically. If file type detection fails, a NotSupportedException will be thrown.
-
-### Examples
-
-The following example shows how to create a converter with stream information:
-
-```csharp
-var streamInfo = new StreamInfo
-{
-    Extension = ".docx",
-    Password = "password123"
-};
-
-using (var converter = new MarkdownConverter("document.docx", streamInfo))
-{
-    // Use the converter
-}
-```
+| ArgumentNullException | Thrown when *sourcePath* is `null` or empty. |
+| FileNotFoundException | Thrown when the file at *sourcePath* does not exist. |
+| NotSupportedException | Thrown when the file format is not supported. |
 
 ### See Also
 
@@ -145,7 +93,7 @@ using (var converter = new MarkdownConverter("document.docx", streamInfo))
 
 ## MarkdownConverter(Stream, LoadOptions) {#constructor_1}
 
-Initializes a new instance of the [`MarkdownConverter`](../../markdownconverter) class.
+Creates a new converter that reads the document from the supplied stream, using the given load options. Use this overload when reading from a MemoryStream, network stream, or any non-file stream where format detection from a file name is not available.
 
 ```csharp
 public MarkdownConverter(Stream sourceStream, LoadOptions loadOptions)
@@ -153,37 +101,15 @@ public MarkdownConverter(Stream sourceStream, LoadOptions loadOptions)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| sourceStream | Stream | The source stream containing the document data. Must not be null. |
-| loadOptions | LoadOptions | Additional information about the source file. Must not be null. |
+| sourceStream | Stream | A readable stream containing the document data. The stream is copied internally, so the caller may close it after construction. |
+| loadOptions | LoadOptions | Options that control how the document is loaded. Specify [`Password`](../../loadoptions/password) for encrypted files or a [`FileFormat`](../../fileformat) to override automatic detection. May be `null`. |
 
 ### Exceptions
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | Thrown when sourceStream or streamInfo is null. |
-| NotSupportedException | Thrown when no suitable converter is found for the stream type. |
-
-### Remarks
-
-If the provided *loadOptions* does not specify an Extension or MediaType, GroupDocs.Markdown will attempt to detect the file type automatically from the stream content. If file type detection fails, a NotSupportedException will be thrown. Note: GroupDocs.Markdown does not take ownership of the provided stream. The caller is responsible for disposing the stream after the converter is no longer needed.
-
-### Examples
-
-The following example shows how to create a converter from a stream with stream information:
-
-```csharp
-var streamInfo = new StreamInfo
-{
-    Extension = ".docx",
-    Password = "password123"
-};
-
-using (var fileStream = File.OpenRead("document.docx"))
-using (var converter = new MarkdownConverter(fileStream, streamInfo))
-{
-    // Use the converter
-}
-```
+| ArgumentNullException | Thrown when *sourceStream* is `null`. |
+| NotSupportedException | Thrown when the file format cannot be detected or is not supported. |
 
 ### See Also
 

@@ -1,14 +1,14 @@
 ---
 title: SetOutputImageFileName
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Set the file name without path where the image will be saved to.
+description: Overrides the default file name for this image. The image will be saved under the specified name instead of the librarygenerated ImageFileNamegroupdocs.markdown/customimagesavingargs/imagefilename.
 type: docs
-weight: 60
+weight: 70
 url: /net/groupdocs.markdown/customimagesavingargs/setoutputimagefilename/
 ---
 ## CustomImageSavingArgs.SetOutputImageFileName method
 
-Set the file name (without path) where the image will be saved to.
+Overrides the default file name for this image. The image will be saved under the specified name instead of the library-generated [`ImageFileName`](../imagefilename).
 
 ```csharp
 public void SetOutputImageFileName(string fileName)
@@ -16,7 +16,7 @@ public void SetOutputImageFileName(string fileName)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileName | String | File name |
+| fileName | String | The new file name (without path) to use for the image. |
 
 ### See Also
 

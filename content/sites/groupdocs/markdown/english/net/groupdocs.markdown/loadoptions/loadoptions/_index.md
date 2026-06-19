@@ -1,14 +1,14 @@
 ---
 title: LoadOptions
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Initializes a new instance of the LoadOptionsgroupdocs.markdown/loadoptions class.
+description: Initializes a new instance of the LoadOptionsgroupdocs.markdown/loadoptions class with automatic format detection.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/loadoptions/loadoptions/
 ---
 ## LoadOptions() {#constructor}
 
-Initializes a new instance of the [`LoadOptions`](../../loadoptions) class.
+Initializes a new instance of the [`LoadOptions`](../../loadoptions) class with automatic format detection.
 
 ```csharp
 public LoadOptions()
@@ -24,7 +24,7 @@ public LoadOptions()
 
 ## LoadOptions(FileFormat) {#constructor_1}
 
-Initializes a new instance of the [`LoadOptions`](../../loadoptions) class.
+Initializes a new instance of the [`LoadOptions`](../../loadoptions) class with an explicit file format.
 
 ```csharp
 public LoadOptions(FileFormat fileFormat)
@@ -32,7 +32,7 @@ public LoadOptions(FileFormat fileFormat)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileFormat | FileFormat | The exact type of the file. |
+| fileFormat | FileFormat | The file format of the document to load. This bypasses automatic format detection, which is especially useful when loading documents from streams that lack a file extension. |
 
 ### See Also
 

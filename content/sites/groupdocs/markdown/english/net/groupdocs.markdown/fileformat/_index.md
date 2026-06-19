@@ -1,14 +1,14 @@
 ---
 title: FileFormat
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Represents the recognized format of a loaded file.
+description: Specifies a document file format. Used both as input format when loading a document for conversion to Markdown and as output format when exporting Markdown to a document.
 type: docs
-weight: 130
+weight: 120
 url: /net/groupdocs.markdown/fileformat/
 ---
 ## FileFormat enumeration
 
-Represents the recognized format of a loaded file.
+Specifies a document file format. Used both as input format (when loading a document for conversion to Markdown) and as output format (when exporting Markdown to a document).
 
 ```csharp
 public enum FileFormat
@@ -18,12 +18,34 @@ public enum FileFormat
 
 | Name | Value | Description |
 | --- | --- | --- |
-| Unknown | `0` | The file type is not recognized. |
-| Spreadsheet | `1` | A spreadsheet file. A spreadsheet file contains data in the form of rows and columns. You can open, view and edit such files using spreadsheet software applications such as Microsoft Excel that is now available for both Windows and MacOS operating system. Similarly, Google sheets is a free online spreadsheet creating and editing tool that works from any web browser. Learn more about this file format [here](https://wiki.fileformat.com/spreadsheet/). |
-| WordProcessing | `2` | A word processing file. A word processing file contains user information in plain text or rich text format. A plain text file format contains unformatted text and no font or page settings etc. can be applied. In contrast, a rich text file format allows formatting options such as setting fonts type, styles (bold, italic, underline, etc.), page margins, headings, bullets and numbers, and several other formatting features. Learn more about this file format [here](https://wiki.fileformat.com/word-processing/). |
-| Pdf | `3` | A PDF file. Portable Document Format (PDF) is a type of document created by Adobe back in 1990s. The purpose of this file format was to introduce a standard for representation of documents and other reference material in a format that is independent of application software, hardware as well as Operating System. Learn more about this file format [here](https://wiki.fileformat.com/view/pdf/). |
-| Epub | `4` | An EPUB electronic book. Files with .EPUB extension are an e-book file format that provide a standard digital publication format for publishers and consumers. The format has been so common by now that it is supported by many e-readers and software applications. Learn more about this file format [here](https://wiki.fileformat.com/ebook/epub/). |
-| Mobi | `5` | The MOBI file format is one of the most widely used ebook file formats. The format is an enhancement to the old OEB (Open Ebook Format) format and was used as the proprietary format for Mobipocket Reader. Learn more about this file format [here](https://wiki.fileformat.com/ebook/mobi/). |
+| Unknown | `0` | The file format is not specified. The library will attempt to detect the format automatically. |
+| Doc | `1` | Microsoft Word 97-2003 Document (.doc). |
+| Docx | `2` | Microsoft Word Document (.docx). |
+| Docm | `3` | Microsoft Word Macro-Enabled Document (.docm). |
+| Dot | `4` | Microsoft Word 97-2003 Template (.dot). |
+| Dotx | `5` | Microsoft Word Template (.dotx). |
+| Dotm | `6` | Microsoft Word Macro-Enabled Template (.dotm). |
+| Rtf | `7` | Rich Text Format (.rtf). |
+| Odt | `8` | OpenDocument Text (.odt). |
+| Ott | `9` | OpenDocument Text Template (.ott). |
+| Xlsx | `10` | Microsoft Excel Spreadsheet (.xlsx). |
+| Xls | `11` | Microsoft Excel 97-2003 Spreadsheet (.xls). |
+| Xlsb | `12` | Microsoft Excel Binary Spreadsheet (.xlsb). |
+| Xlsm | `13` | Microsoft Excel Macro-Enabled Spreadsheet (.xlsm). |
+| Csv | `14` | Comma-Separated Values (.csv). |
+| Tsv | `15` | Tab-Separated Values (.tsv). |
+| Ods | `16` | OpenDocument Spreadsheet (.ods). |
+| Ots | `17` | OpenDocument Spreadsheet Template (.ots). |
+| Pdf | `18` | Portable Document Format (.pdf). |
+| Epub | `19` | Electronic Publication (.epub). |
+| Mobi | `20` | Mobipocket E-Book (.mobi). |
+| Txt | `21` | Plain Text (.txt). |
+| Md | `22` | Markdown (.md). Used as input format for reverse conversion (Markdown to document). |
+| Chm | `23` | Compiled HTML Help (.chm). |
+
+### Remarks
+
+Pass a value from this enum to the [`LoadOptions`](../loadoptions/loadoptions) constructor to explicitly specify the source document format, or use Unknown to let the library detect it automatically. Use [`GetSupportedFormats`](../markdownconverter/getsupportedformats) to retrieve all formats supported for conversion.
 
 ### See Also
 

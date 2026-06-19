@@ -1,22 +1,18 @@
 ---
 title: ImagesFolder
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the folder where images will be exported.
+description: Gets the physical folder where images will be saved on disk.
 type: docs
 weight: 20
 url: /net/groupdocs.markdown/customimagesstrategy/imagesfolder/
 ---
 ## CustomImagesStrategy.ImagesFolder property
 
-Gets the folder where images will be exported.
+Gets the physical folder where images will be saved on disk.
 
 ```csharp
 public string ImagesFolder { get; }
 ```
-
-### Property Value
-
-The path to the folder where images will be saved.
 
 ### See Also
 

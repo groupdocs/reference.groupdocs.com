@@ -1,14 +1,14 @@
 ---
 title: ResourceFileUriOutput
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the override URI that will be written into Markdown output.
+description: Gets the overridden URI set by SetResourceFileUrigroupdocs.markdown/urisavingargs/setresourcefileuri or null if no override was specified.
 type: docs
 weight: 40
 url: /net/groupdocs.markdown/urisavingargs/resourcefileurioutput/
 ---
 ## UriSavingArgs.ResourceFileUriOutput property
 
-Gets the override URI that will be written into Markdown output.
+Gets the overridden URI set by [`SetResourceFileUri`](../setresourcefileuri), or `null` if no override was specified.
 
 ```csharp
 public string ResourceFileUriOutput { get; }

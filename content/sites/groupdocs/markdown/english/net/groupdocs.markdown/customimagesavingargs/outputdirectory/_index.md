@@ -1,14 +1,14 @@
 ---
 title: OutputDirectory
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Get the Output Directory
+description: Gets the output directory where images are being saved.
 type: docs
 weight: 30
 url: /net/groupdocs.markdown/customimagesavingargs/outputdirectory/
 ---
 ## CustomImageSavingArgs.OutputDirectory property
 
-Get the Output Directory
+Gets the output directory where images are being saved.
 
 ```csharp
 public string OutputDirectory { get; }

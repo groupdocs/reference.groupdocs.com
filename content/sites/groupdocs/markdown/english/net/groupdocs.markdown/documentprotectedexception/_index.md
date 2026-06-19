@@ -1,14 +1,14 @@
 ---
 title: DocumentProtectedException
 second_title: GroupDocs.Markdown for .NET API Reference
-description: The exception that is thrown when document is protected by password.
+description: The exception that is thrown when a document is passwordprotected and no password or an incorrect password was provided via Password./loadoptions/password.
 type: docs
-weight: 100
+weight: 80
 url: /net/groupdocs.markdown/documentprotectedexception/
 ---
 ## DocumentProtectedException class
 
-The exception that is thrown when document is protected by password.
+The exception that is thrown when a document is password-protected and no password (or an incorrect password) was provided via [`Password`](../loadoptions/password).
 
 ```csharp
 public sealed class DocumentProtectedException : GroupDocsMarkdownException
@@ -18,7 +18,8 @@ public sealed class DocumentProtectedException : GroupDocsMarkdownException
 
 | Name | Description |
 | --- | --- |
-| [DocumentProtectedException](documentprotectedexception)() | Initializes a new instance of the [`DocumentProtectedException`](../documentprotectedexception) class. |
+| [DocumentProtectedException](documentprotectedexception#constructor)() | Initializes a new instance of the [`DocumentProtectedException`](../documentprotectedexception) class with the default message. |
+| [DocumentProtectedException](documentprotectedexception#constructor_1)(string, Exception) | Initializes a new instance of the [`DocumentProtectedException`](../documentprotectedexception) class. |
 
 ### See Also
 

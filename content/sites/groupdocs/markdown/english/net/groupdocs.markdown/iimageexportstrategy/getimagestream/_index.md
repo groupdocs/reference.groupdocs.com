@@ -1,14 +1,14 @@
 ---
 title: GetImageStream
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets a stream for writing the exported image.
+description: Returns a writable stream for the image described by context. The library writes the image bytes to this stream during conversion.
 type: docs
 weight: 20
 url: /net/groupdocs.markdown/iimageexportstrategy/getimagestream/
 ---
 ## IImageExportStrategy.GetImageStream method
 
-Gets a stream for writing the exported image.
+Returns a writable stream for the image described by *context*. The library writes the image bytes to this stream during conversion.
 
 ```csharp
 public Stream GetImageStream(ImageExportContext context)
@@ -16,11 +16,11 @@ public Stream GetImageStream(ImageExportContext context)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| context | ImageExportContext | The image export context containing information about the image being processed. |
+| context | ImageExportContext | The image export context containing the default image file name and other metadata. You may modify [`ImageFileName`](../../imageexportcontext/imagefilename) before returning the stream to change the file name that appears in the Markdown output. |
 
 ### Return Value
 
-A stream where the image data should be written.
+A writable Stream where the image data will be written, or `null` to use the default behavior.
 
 ### See Also
 

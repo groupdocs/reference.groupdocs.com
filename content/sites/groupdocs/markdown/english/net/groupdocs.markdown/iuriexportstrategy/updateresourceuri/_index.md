@@ -1,14 +1,14 @@
 ---
 title: UpdateResourceUri
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Updates the URI information for a resource that will be written to the Markdown output.
+description: Called for each resource URI that will be written to the Markdown output. Modify properties on context to customize the resulting URI.
 type: docs
 weight: 10
 url: /net/groupdocs.markdown/iuriexportstrategy/updateresourceuri/
 ---
 ## IUriExportStrategy.UpdateResourceUri method
 
-Updates the URI information for a resource that will be written to the Markdown output.
+Called for each resource URI that will be written to the Markdown output. Modify properties on *context* to customize the resulting URI.
 
 ```csharp
 public void UpdateResourceUri(UriExportContext context)
@@ -16,7 +16,7 @@ public void UpdateResourceUri(UriExportContext context)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| context | UriExportContext | The URI export context containing details about the resource. |
+| context | UriExportContext | The URI export context. Set [`ResourceFileUri`](../../uriexportcontext/resourcefileuri) to override the URI that appears in the Markdown output, or modify [`ResourceFileName`](../../uriexportcontext/resourcefilename) to change the resource file name. |
 
 ### See Also
 

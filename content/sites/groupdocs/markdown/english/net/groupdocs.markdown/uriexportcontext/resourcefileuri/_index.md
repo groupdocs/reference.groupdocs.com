@@ -1,17 +1,17 @@
 ---
 title: ResourceFileUri
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets or sets the URI that will be written to the Markdown output.
+description: Gets the default URI that the library would write into the Markdown output.
 type: docs
 weight: 30
 url: /net/groupdocs.markdown/uriexportcontext/resourcefileuri/
 ---
 ## UriExportContext.ResourceFileUri property
 
-Gets or sets the URI that will be written to the Markdown output.
+Gets the default URI that the library would write into the Markdown output.
 
 ```csharp
-public string ResourceFileUri { get; set; }
+public string ResourceFileUri { get; }
 ```
 
 ### See Also

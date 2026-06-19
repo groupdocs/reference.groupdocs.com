@@ -3,7 +3,7 @@ title: Password
 second_title: GroupDocs.Markdown for .NET API Reference
 description: Gets or sets the password for opening an encrypted document.
 type: docs
-weight: 50
+weight: 30
 url: /net/groupdocs.markdown/loadoptions/password/
 ---
 ## LoadOptions.Password property

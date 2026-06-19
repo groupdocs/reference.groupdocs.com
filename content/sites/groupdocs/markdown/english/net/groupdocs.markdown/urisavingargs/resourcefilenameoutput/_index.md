@@ -1,14 +1,14 @@
 ---
 title: ResourceFileNameOutput
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the override file name without path to be used for the resource.
+description: Gets the overridden file name set by the caller or null if no override was specified.
 type: docs
 weight: 20
 url: /net/groupdocs.markdown/urisavingargs/resourcefilenameoutput/
 ---
 ## UriSavingArgs.ResourceFileNameOutput property
 
-Gets the override file name (without path) to be used for the resource.
+Gets the overridden file name set by the caller, or `null` if no override was specified.
 
 ```csharp
 public string ResourceFileNameOutput { get; }

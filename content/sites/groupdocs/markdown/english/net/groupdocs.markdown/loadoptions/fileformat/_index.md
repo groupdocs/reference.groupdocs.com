@@ -1,14 +1,14 @@
 ---
 title: FileFormat
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Gets the exact type of the file that is to be loaded. The default value is Unknown which means that the type should be detected automatically.
+description: Gets the file format of the document to load.
 type: docs
-weight: 30
+weight: 20
 url: /net/groupdocs.markdown/loadoptions/fileformat/
 ---
 ## LoadOptions.FileFormat property
 
-Gets the exact type of the file that is to be loaded. The default value is Unknown which means that the type should be detected automatically.
+Gets the file format of the document to load.
 
 ```csharp
 public FileFormat FileFormat { get; }
@@ -16,7 +16,7 @@ public FileFormat FileFormat { get; }
 
 ### Property Value
 
-The exact type of the file that is to be loaded.
+The file format specified via the constructor, or Unknown (the default) which means the format will be detected automatically.
 
 ### See Also
 

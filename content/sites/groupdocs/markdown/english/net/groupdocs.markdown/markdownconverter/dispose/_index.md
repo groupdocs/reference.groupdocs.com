@@ -1,14 +1,14 @@
 ---
 title: Dispose
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Performs applicationdefined tasks associated with freeing releasing or resetting unmanaged resources.
+description: Releases all resources used by this MarkdownConvertergroupdocs.markdown/markdownconverter instance including the internal copy of the source document stream. Always call Disposegroupdocs.markdown/markdownconverter/dispose when you are finished or use a using statement to ensure timely cleanup.
 type: docs
-weight: 30
+weight: 40
 url: /net/groupdocs.markdown/markdownconverter/dispose/
 ---
 ## MarkdownConverter.Dispose method
 
-Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+Releases all resources used by this [`MarkdownConverter`](../../markdownconverter) instance, including the internal copy of the source document stream. Always call `Dispose` when you are finished, or use a `using` statement to ensure timely cleanup.
 
 ```csharp
 public void Dispose()

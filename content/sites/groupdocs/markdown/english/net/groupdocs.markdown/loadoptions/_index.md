@@ -1,14 +1,14 @@
 ---
 title: LoadOptions
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Allows a developer to specify additional options such as a password when loading a file.
+description: Specifies additional options for loading a document such as an explicit file format or a password for encrypted files.
 type: docs
-weight: 200
+weight: 210
 url: /net/groupdocs.markdown/loadoptions/
 ---
 ## LoadOptions class
 
-Allows a developer to specify additional options (such as a password) when loading a file.
+Specifies additional options for loading a document, such as an explicit file format or a password for encrypted files.
 
 ```csharp
 public class LoadOptions
@@ -18,36 +18,43 @@ public class LoadOptions
 
 | Name | Description |
 | --- | --- |
-| [LoadOptions](loadoptions#constructor)() | Initializes a new instance of the [`LoadOptions`](../loadoptions) class. |
-| [LoadOptions](loadoptions#constructor_1)(FileFormat) | Initializes a new instance of the [`LoadOptions`](../loadoptions) class. |
+| [LoadOptions](loadoptions#constructor)() | Initializes a new instance of the [`LoadOptions`](../loadoptions) class with automatic format detection. |
+| [LoadOptions](loadoptions#constructor_1)(FileFormat) | Initializes a new instance of the [`LoadOptions`](../loadoptions) class with an explicit file format. |
 
 ## Properties
 
 | Name | Description |
 | --- | --- |
-| [Extension](../../groupdocs.markdown/loadoptions/extension) { get; set; } | Gets or sets the file extension of the stream. |
-| [FileFormat](../../groupdocs.markdown/loadoptions/fileformat) { get; } | Gets the exact type of the file that is to be loaded. The default value is Unknown which means that the type should be detected automatically. |
-| [MimeType](../../groupdocs.markdown/loadoptions/mimetype) { get; set; } | Gets or sets the MIME type of the stream. |
+| [FileFormat](../../groupdocs.markdown/loadoptions/fileformat) { get; } | Gets the file format of the document to load. |
 | [Password](../../groupdocs.markdown/loadoptions/password) { get; set; } | Gets or sets the password for opening an encrypted document. |
+
+### Remarks
+
+By default, the library detects the file format automatically from the file extension or content. Use this class when you need to override automatic detection (for example, when loading from a stream without a file name) or when the document is password-protected.
 
 ### Examples
 
-The following example shows how to create a StreamInfo instance with file extension:
+Specifying the file format explicitly (useful when loading from a stream):
 
 ```csharp
-var streamInfo = new StreamInfo
+var loadOptions = new LoadOptions(FileFormat.Docx);
+
+using (var stream = File.OpenRead("document"))
+using (var converter = new MarkdownConverter(stream, loadOptions))
 {
-    Extension = ".docx"
-};
+    ConvertResult result = converter.Convert();
+    Console.WriteLine(result.Content);
+}
 ```
 
-The following example shows how to create a StreamInfo instance with MIME type:
+Loading a password-protected document:
 
 ```csharp
-var streamInfo = new StreamInfo
+var loadOptions = new LoadOptions(FileFormat.Docx)
 {
-    MimeType = "application/msword"
+    Password = "secret"
 };
+string markdown = MarkdownConverter.ToMarkdown("protected.docx", loadOptions);
 ```
 
 ### See Also

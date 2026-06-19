@@ -1,14 +1,14 @@
 ---
 title: SetOutputStream
 second_title: GroupDocs.Markdown for .NET API Reference
-description: Set the Output Stream
+description: Redirects the image data to a custom writable stream instead of the default file output. The library will write the image bytes to this stream during conversion.
 type: docs
-weight: 70
+weight: 80
 url: /net/groupdocs.markdown/customimagesavingargs/setoutputstream/
 ---
 ## CustomImageSavingArgs.SetOutputStream method
 
-Set the Output Stream
+Redirects the image data to a custom writable stream instead of the default file output. The library will write the image bytes to this stream during conversion.
 
 ```csharp
 public void SetOutputStream(Stream stream)
@@ -16,13 +16,13 @@ public void SetOutputStream(Stream stream)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| stream | Stream | Output Stream |
+| stream | Stream | A writable stream where the image data will be written. |
 
 ### Exceptions
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | Thrown when *stream* is null. |
+| ArgumentNullException | Thrown when *stream* is `null`. |
 
 ### See Also
 
