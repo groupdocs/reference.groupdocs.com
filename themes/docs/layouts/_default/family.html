@@ -28,7 +28,7 @@
         <button type="button" class="gd-install__copy" data-clip="{{ . }}" aria-label="Copy install command">Copy</button>
       </div>
       {{ end }}
-      <a class="gd-platform__cta" href="{{ .ref }}">Browse API reference <span aria-hidden="true">&rarr;</span></a>
+      <a class="gd-platform__cta" href="{{ .ref | strings.TrimPrefix "/" | relURL }}">Browse API reference <span aria-hidden="true">&rarr;</span></a>
     </div>
     {{ end }}
   </div>
