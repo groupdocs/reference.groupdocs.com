@@ -25,7 +25,9 @@ jobs:
     with:
       product_family: home
       environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
-      invalidate_paths: '/index.html'
+      # Home publishes the bucket-root files; invalidate the Markdown/llms outputs too,
+      # not just the HTML (otherwise CloudFront serves a stale /index.md, /llms.txt …).
+      invalidate_paths: '/index.html /index.md /llms.txt /llms-full.txt'
       max_deletes: '0'
     secrets: inherit
 
