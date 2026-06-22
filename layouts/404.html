@@ -1,12 +1,42 @@
-{{ define "main"}}
-    <main id="main">
-      <div class="error404">
-        <div class="content404">
-          <h4>Page Not Found</h4>
-          <h2>404</h2>
-          <p>The page you are looking for does not exist</p>
-          <span><a href="javascript:history.go(-1)" class="backButton">Go Back</a> <a href='{{ "/" | relURL }}'>Home Page</a> </span>
-        </div>
+{{ define "main" }}
+{{- /* 404 for both humans and machines. Links are root-relative absolute paths (/, /<product>/,
+       /llms.txt) so they resolve to the site root no matter which build's 404.html CloudFront
+       serves or what URL the visitor requested. */ -}}
+<article class="gdoc-markdown gd-404">
+
+  <div class="gd-404__hero">
+    <div class="gd-404__code">404</div>
+    <h1 class="gd-404__title">This page can’t be found</h1>
+    <p class="gd-404__lead">The page may have moved, or the link may be incomplete. Here’s how to get back on track.</p>
+  </div>
+
+  <div class="gd-404__cols">
+
+    {{/* 1. Humans — homepage + a jump to any product's API reference */}}
+    <section class="gd-404__panel">
+      <h2 class="gd-404__h2">Looking for a page?</h2>
+      <p class="gd-404__hint">Start from the homepage, or open a product’s API reference directly.</p>
+      <a class="gd-404__btn" href="/">Go to homepage</a>
+      {{- with .Site.Data.products }}
+      <div class="gd-404__products">
+        {{ range sort .product "weight" }}
+        <a class="gd-404__product" href="{{ .url }}/">{{ .title }}</a>
+        {{- end }}
       </div>
-    </main>
+      {{- end }}
+    </section>
+
+    {{/* 2. Agents — machine-readable entry points */}}
+    <section class="gd-404__panel">
+      <h2 class="gd-404__h2">Using an AI agent or LLM?</h2>
+      <p class="gd-404__hint">Machine-readable indexes of the entire API reference:</p>
+      <ul class="gd-404__llms">
+        <li><a href="/llms.txt"><code>/llms.txt</code></a> — curated index of every product and platform.</li>
+        <li><a href="/llms-full.txt"><code>/llms-full.txt</code></a> — the full documentation in a single file.</li>
+      </ul>
+      <p class="gd-404__hint">Every page is also available as Markdown — append <code>.md</code> to any URL (e.g. <code>/annotation.md</code>).</p>
+    </section>
+
+  </div>
+</article>
 {{ end }}

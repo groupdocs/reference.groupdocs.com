@@ -355,3 +355,74 @@ a.gd-platform__ver:focus-visible {
    centered under their icon instead of left-aligning — most visible on mobile, where
    the theme lays resources out two-up and the longer label wraps to two lines. */
 .gd-family__resources .gdoc-resource__link { text-align: center; }
+
+/* ---- 404 page: a human section (homepage + product families) and an agent section
+   (llms.txt / llms-full.txt). Reuses the family-page design language. ---- */
+.gd-404 { max-width: 60rem; margin: 0 auto; }
+.gd-404__hero { text-align: center; padding: 1.5rem 0 2.5rem; }
+.gd-404__code {
+    font-family: "Roboto Mono", monospace;
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--accent, #558FFF);
+    letter-spacing: .05em;
+}
+.gd-404__title { margin: .75rem 0 .5rem; font-size: 1.9rem; }
+.gd-404__lead { color: rgba(15, 23, 39, .7); max-width: 34rem; margin: 0 auto; }
+.gd-404__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+.gd-404__panel {
+    background: #fff;
+    border: 1px solid #EBEBEC;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(15, 23, 39, .04);
+}
+.gd-404__h2 { margin: 0 0 .35rem; font-size: 1.15rem; }
+.gd-404__hint { color: rgba(15, 23, 39, .7); font-size: .9rem; margin: .35rem 0; }
+.gd-404__btn {
+    display: inline-block;
+    margin: .5rem 0 1rem;
+    padding: .5rem 1.1rem;
+    background: #0054FA;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .15s ease;
+}
+.gd-404__btn:hover, .gd-404__btn:focus-visible { background: #003fbd; color: #fff; }
+.gd-404__products { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
+.gd-404__product {
+    font-size: .85rem;
+    padding: .3rem .7rem;
+    border: 1px solid #EBEBEC;
+    border-radius: 1rem;
+    color: var(--body-font-color, #0f1727);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color .15s ease, color .15s ease, background-color .15s ease;
+}
+.gd-404__product:hover, .gd-404__product:focus-visible {
+    border-color: #558FFF;
+    color: #558FFF;
+    background: #EDF0F1;
+}
+.gd-404__llms { margin: .5rem 0; padding-left: 1.1rem; }
+.gd-404__llms li { margin: .4rem 0; color: rgba(15, 23, 39, .7); }
+.gd-404 code {
+    background: #F9FBFC;
+    border: 1px solid #EBEBEC;
+    border-radius: 4px;
+    padding: .1em .4em;
+    font-size: .85em;
+}
+@media (max-width: 48rem) {
+    .gd-404__cols { grid-template-columns: 1fr; }
+    .gd-404__code { font-size: 4rem; }
+}

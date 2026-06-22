@@ -1,11 +1,15 @@
-{{- /* llms-full.txt: complete documentation for this build in one file.
-       This site's content is entirely section bundles (_index.md), so range pages+sections
-       (not .Site.RegularPages, which is empty here). */ -}}
+{{- /* llms-full.txt for a build's home page.
+       - PRODUCT build: content is section bundles (_index.md) — inline the whole tree in one
+         file (range pages+sections; .Site.RegularPages is empty here).
+       - SITE-ROOT build: the home has no product content (each product is a separate build),
+         so a single combined file is impossible. Emit a directory that points to every
+         product's own llms-full.txt instead of an empty file. */ -}}
+{{- $docs := where .Site.Pages "Kind" "in" (slice "page" "section") -}}
 # {{ .Site.Title }} — Complete Documentation
 
 > {{ .Site.Params.description | default .Description }}
-
-{{ range (where .Site.Pages "Kind" "in" (slice "page" "section")) -}}
+{{ if $docs }}
+{{ range $docs -}}
 ---
 
 ## {{ .Title }}
@@ -14,3 +18,17 @@ Path: {{ .Permalink }}
 
 {{ partial "md/abs-content.txt" . }}
 {{ end -}}
+{{- else if .Site.Data.products }}
+GroupDocs publishes a self-contained API reference for each product. The complete documentation
+for each product is available as its own llms-full.txt:
+{{ range sort .Site.Data.products.product "weight" }}
+{{ $base := .url | strings.TrimPrefix "/" | absURL | strings.TrimRight "/" -}}
+## {{ .title }}
+
+{{ .description }}
+
+- Full documentation: {{ $base }}/llms-full.txt
+- Section index: {{ $base }}/llms.txt
+- Overview (Markdown): {{ $base }}.md
+{{ end -}}
+{{- end -}}
