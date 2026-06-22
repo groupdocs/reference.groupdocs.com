@@ -44,6 +44,12 @@ jobs:
       - name: Build
         run: hugo --configDir config/sites/groupdocs/${{ inputs.product_family }} --environment ${{ inputs.environment }} --minify
 
+      - name: Resolve relative .md links to absolute (must precede the ugly-URL rename)
+        run: python3 resolve_md_links.py public --base-url "$BASE"
+        env:
+          # Match the build's .Site.BaseURL: full URL for production, root-relative for staging.
+          BASE: ${{ inputs.environment == 'production' && format('https://reference.groupdocs.com/{0}', inputs.product_family) || format('/{0}', inputs.product_family) }}
+
       - name: Convert .md pretty URLs to ugly (…/x/index.md -> …/x.md)
         run: |
           chmod +x ./move_md_to_ugly_urls.sh
