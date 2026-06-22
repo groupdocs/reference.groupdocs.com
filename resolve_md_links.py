@@ -102,11 +102,14 @@ def main():
             #   public/index.md               -> /
             rel = os.path.relpath(os.path.dirname(path), out).replace(os.sep, "/")
             url_dir = "/" if rel == "." else "/" + rel + "/"
-            with open(path, "r", encoding="utf-8") as f:
+            # errors="surrogateescape" + newline="" so any non-UTF-8 byte or CRLF in the
+            # generated content round-trips byte-for-byte (some source .md carry stray
+            # Windows-1252 bytes, e.g. 0xae); the link regexes only touch ASCII syntax.
+            with open(path, "r", encoding="utf-8", errors="surrogateescape", newline="") as f:
                 content = f.read()
             new = rewrite(content, url_dir, base)
             if new != content:
-                with open(path, "w", encoding="utf-8", newline="\n") as f:
+                with open(path, "w", encoding="utf-8", errors="surrogateescape", newline="") as f:
                     f.write(new)
                 changed += 1
 
