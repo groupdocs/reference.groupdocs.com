@@ -55,6 +55,25 @@ jobs:
           chmod +x ./move_md_to_ugly_urls.sh
           ./move_md_to_ugly_urls.sh public
 
+      - name: Publish family Markdown to bucket root as <product>.md
+        # The product build's home is the family landing page; serve its .md at
+        # /<product>.md (bucket root) instead of /<product>/index.md. Skipped for the
+        # `home` build, whose root index.md is the site landing page.
+        if: inputs.product_family != 'home'
+        run: |
+          BUCKET=${{ inputs.environment == 'production' && 'reference.groupdocs.com' || 'reference2.groupdocs.com' }}
+          aws s3 cp public/index.md "s3://$BUCKET/${{ inputs.product_family }}.md" \
+            --content-type "text/markdown; charset=utf-8" --region us-west-2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+
+      - name: Drop the prefixed family Markdown (served at /<product>.md instead)
+        # Removing it locally makes `hugo deploy --maxDeletes` delete the old
+        # /<product>/index.md from S3, so the family .md exists only at the root.
+        if: inputs.product_family != 'home'
+        run: rm -f public/index.md
+
       - name: Deploy to S3
         run: hugo --configDir config/sites/groupdocs/${{ inputs.product_family }} --environment ${{ inputs.environment }} deploy --target "${{ inputs.environment == 'production' && 'Production' || 'Stage' }}" --maxDeletes ${{ inputs.max_deletes }}
         env:
@@ -65,7 +84,7 @@ jobs:
         uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ inputs.environment == 'production' && secrets.AWS_DISTRIBUTION_PROD || secrets.AWS_DISTRIBUTION }}
-          PATHS: ${{ inputs.invalidate_paths != '' && inputs.invalidate_paths || format('/{0}/*', inputs.product_family) }}
+          PATHS: ${{ inputs.invalidate_paths != '' && inputs.invalidate_paths || format('/{0}/* /{0}.md', inputs.product_family) }}
           AWS_REGION: 'us-west-2'
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}

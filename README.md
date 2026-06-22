@@ -56,7 +56,11 @@ consumption. Configured per product in `config/sites/groupdocs/<product>/_defaul
 The `.md` files are post-processed so they're clean and portable:
 
 1. **No front matter, real Markdown** — `single.md` / `list.md` emit `.RawContent` (Hugo strips
-   the YAML front matter), via the partial `layouts/partials/md/abs-content.txt`.
+   the YAML front matter), via the partial `layouts/partials/md/abs-content.txt`. The product
+   **family landing page** stores its content in front matter (platforms, capabilities, formats,
+   resources) with an empty body, so `layouts/index.md` renders that data as Markdown instead
+   (matching `family.html`). Its `.md` is published at the bucket root as **`/<product>.md`**
+   (not `/<product>/index.md`) by `deploy_product.yml`.
 2. **Absolute links** — links are made absolute so they work no matter where the `.md` is served:
    - `abs-content.txt` (in-template) absolutizes **root-relative** links (`/path/` → `BASE/path.md`).
    - [`resolve_md_links.py`](resolve_md_links.py) (post-build) absolutizes **relative** links

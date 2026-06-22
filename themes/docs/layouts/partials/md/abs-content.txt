@@ -4,6 +4,11 @@
        links are left untouched. Single-language site, so BaseURL is sufficient. */ -}}
 {{- $base := strings.TrimRight "/" .Site.BaseURL -}}
 {{- $c := .RawContent -}}
+{{- /* 0. defensively strip a leading YAML front-matter block: for pages with an EMPTY body
+       (e.g. an auto-generated namespace _index.md that is front matter only), Hugo's
+       .RawContent can contain the front matter. The inner-line guard ([A-Za-z]) avoids
+       matching a leading `---` horizontal rule (which is followed by a blank line). */ -}}
+{{- $c = replaceRE `(?s)\A---\r?\n[A-Za-z].*?\r?\n---\r?\n?` "" $c -}}
 {{- /* 1. markdown PAGE links ](/path/) -> ](BASE/path.md) */ -}}
 {{- $c = replaceRE `\]\((/[^)]*?)/\)` (printf "](%s${1}.md)" $base) $c -}}
 {{- /* 2. remaining markdown root-relative links (assets) ](/...) -> ](BASE/...) */ -}}

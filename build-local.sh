@@ -31,6 +31,12 @@ for p in "${PRODUCTS[@]}"; do
        -b "http://localhost:$PORT/$p/" -d "$PWD/$OUT/$p" --cleanDestinationDir --minify
   python resolve_md_links.py "$OUT/$p" --base-url "http://localhost:$PORT/$p" >/dev/null
   bash move_md_to_ugly_urls.sh "$OUT/$p" >/dev/null
+  # Family page .md is served at /<product>.md (bucket root), not /<product>/index.md —
+  # mirror that locally (production does this via deploy_product.yml).
+  if [ -f "$OUT/$p/index.md" ]; then
+    cp "$OUT/$p/index.md" "$OUT/$p.md"
+    rm -f "$OUT/$p/index.md"
+  fi
 done
 
 echo
