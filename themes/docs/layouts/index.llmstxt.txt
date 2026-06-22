@@ -20,7 +20,7 @@
 {{- else if .Site.Data.products }}
 ## Products
 {{ range sort .Site.Data.products.product "weight" }}
-- [{{ .title }}]({{ .url | absURL }}/): {{ .description }}
+- [{{ .title }}]({{ .url | strings.TrimPrefix "/" | absURL | strings.TrimRight "/" }}.md): {{ .description }}
 {{- end }}
 {{- end }}
 ## Full documentation

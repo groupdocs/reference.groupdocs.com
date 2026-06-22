@@ -1,3 +1,4 @@
+baseURL = "https://reference.groupdocs.com/"
 
 # Google Tag Manager settings
 [params.gtm]

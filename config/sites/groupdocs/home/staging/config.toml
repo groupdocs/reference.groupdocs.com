@@ -1,3 +1,5 @@
+baseURL = "https://reference2.groupdocs.com/"
+
 [[deployment.targets]]
 name = "Stage"
 URL = "s3://reference2.groupdocs.com/?region=us-west-2"
