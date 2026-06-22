@@ -351,3 +351,7 @@ a.gd-platform__ver:focus-visible {
 }
 .gd-family__prose { margin-top: 2.25rem; }
 .gd-family__resources { margin-top: 1rem; }
+/* Center resource labels so multi-line labels (e.g. "Releases & changelog") stay
+   centered under their icon instead of left-aligning — most visible on mobile, where
+   the theme lays resources out two-up and the longer label wraps to two lines. */
+.gd-family__resources .gdoc-resource__link { text-align: center; }
