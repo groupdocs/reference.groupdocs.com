@@ -10,8 +10,9 @@
 # Usage:
 #   ./build-local.sh                 # home + annotation (default)
 #   ./build-local.sh viewer signature   # home + the listed products
-# Then serve:
-#   python -m http.server 1313 --directory public-local --bind 127.0.0.1
+# Then serve (serve-local.py sends charset=utf-8 for text, like production — plain
+# `python -m http.server` omits it and shows —/→ as mojibake):
+#   python serve-local.py 1313
 set -euo pipefail
 
 PORT="${PORT:-1313}"
@@ -39,6 +40,9 @@ for p in "${PRODUCTS[@]}"; do
   fi
 done
 
+# Combined cross-product search index for the 404 live search (built from the merged tree).
+python build_search_index.py "$OUT" --out "$OUT/search-index.json"
+
 echo
 echo "Built ${#PRODUCTS[@]} product(s) + home into ./$OUT"
-echo "Serve with:  python -m http.server $PORT --directory $OUT --bind 127.0.0.1"
+echo "Serve with:  python serve-local.py $PORT      # UTF-8 charset, matches production"
