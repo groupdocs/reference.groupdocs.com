@@ -29,6 +29,7 @@ for p in "${PRODUCTS[@]}"; do
   echo ">> $p -> /$p/"
   hugo --configDir "config/sites/groupdocs/$p" --environment staging \
        -b "http://localhost:$PORT/$p/" -d "$PWD/$OUT/$p" --cleanDestinationDir --minify
+  python resolve_md_links.py "$OUT/$p" --base-url "http://localhost:$PORT/$p" >/dev/null
   bash move_md_to_ugly_urls.sh "$OUT/$p" >/dev/null
 done
 
