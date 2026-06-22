@@ -53,11 +53,11 @@
 
 ## AI Agents & LLM Friendly
 
-GroupDocs products plug straight into AI agents, LLMs, and automated document pipelines.
+Machine-readable indexes of the entire API reference, built for agents and retrieval.
 
-- [MCP Server](https://docs.groupdocs.com/mcp): LLMs query GroupDocs documentation on demand via the Model Context Protocol, reducing token usage and improving accuracy.
-- [AGENTS.md](https://docs.groupdocs.com/): Machine-readable docs bundled into Python packages for automatic discovery by AI coding assistants like Claude, Copilot, and Cursor.
-- [llms.txt](https://docs.groupdocs.com/llms.txt): Full documentation as llms.txt and llms-full.txt for direct LLM consumption — also available per product.
+- [llms.txt]({{ "llms.txt" | absURL }}): Curated index of every product and platform.
+- [llms-full.txt]({{ "llms-full.txt" | absURL }}): The full documentation in a single file.
+- Markdown: append `.md` to any page URL — e.g. {{ "annotation.md" | absURL }}
 
 ## Developer Resources
 

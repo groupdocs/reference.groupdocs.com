@@ -22,27 +22,27 @@ Class library and REST API reference for GroupDocs document-processing SDKs — 
 <h2 class="gdoc-list-title">AI Agents &amp; LLM Friendly</h2>
 
 <div class="gdoc-list-descr">
-GroupDocs products plug straight into AI agents, LLMs, and automated document pipelines.
+Machine-readable indexes of the entire API reference, built for agents and retrieval.
 </div>
 
 <div class="gdoc-list-apps">
 
 <div class="gdoc-list-app">
-  <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#api"></use></svg>
-  <a class="gdoc-list-app__link" href="https://docs.groupdocs.com/mcp">MCP Server</a>
-  <div class="gdoc-list-app__descr">LLMs query GroupDocs documentation on demand via the Model Context Protocol, reducing token usage and improving accuracy.</div>
-</div>
-
-<div class="gdoc-list-app">
-  <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#code"></use></svg>
-  <a class="gdoc-list-app__link" href="https://docs.groupdocs.com/">AGENTS.md</a>
-  <div class="gdoc-list-app__descr">Machine-readable docs bundled into Python packages for automatic discovery by AI coding assistants like Claude, Copilot, and Cursor.</div>
-</div>
-
-<div class="gdoc-list-app">
   <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#demos"></use></svg>
-  <a class="gdoc-list-app__link" href="https://docs.groupdocs.com/llms.txt">llms.txt</a>
-  <div class="gdoc-list-app__descr">Full documentation as llms.txt and llms-full.txt for direct LLM consumption &mdash; also available per product.</div>
+  <a class="gdoc-list-app__link" href="/llms.txt">llms.txt</a>
+  <div class="gdoc-list-app__descr">Curated index of every product and platform.</div>
+</div>
+
+<div class="gdoc-list-app">
+  <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#api"></use></svg>
+  <a class="gdoc-list-app__link" href="/llms-full.txt">llms-full.txt</a>
+  <div class="gdoc-list-app__descr">The full documentation in a single file.</div>
+</div>
+
+<div class="gdoc-list-app">
+  <svg class="gdoc-list-app__icon"><use xlink:href="/img/groupdocs-stack.svg#editor"></use></svg>
+  <a class="gdoc-list-app__link" href="/annotation.md">Markdown (.md)</a>
+  <div class="gdoc-list-app__descr">Append <code>.md</code> to any page URL for Markdown &mdash; e.g. <code>/annotation.md</code>.</div>
 </div>
 
 </div>
