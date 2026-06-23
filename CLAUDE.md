@@ -1,0 +1,110 @@
+# CLAUDE.md — reference.groupdocs.com
+
+Working guide for this repo (the Hugo source for **reference.groupdocs.com**, the GroupDocs API
+reference site). Read this first; it captures the architecture and the conventions that aren't
+obvious from the code.
+
+## What this is
+- API references for **15 products** across **.NET, Java, Node.js, Python (via .NET)**. English-only.
+- Hugo **extended 0.101.0**. Deploys to **AWS S3 + CloudFront**.
+- Products: `annotation, assembly, classification, comparison, conversion, editor, markdown,
+  merger, metadata, parser, redaction, search, signature, viewer, watermark` (+ a `home` site-root build).
+
+## Architecture (important)
+- **Each product is its own Hugo build** under `config/sites/groupdocs/<product>/`, published under a
+  path prefix `/<product>/`. A separate **`home` build** publishes the landing page to the **bucket root**.
+  There is no single build that sees all products.
+- Per-product build: `hugo --configDir config/sites/groupdocs/<product> --environment <staging|production> --minify`.
+- **baseURL**: production product config sets the full host (`https://reference.groupdocs.com/<product>`);
+  staging inherits `_default` (`/<product>`, root-relative). Home build sets the host per env
+  (`production` → `https://reference.groupdocs.com/`, `staging` → `https://reference2.groupdocs.com/`),
+  deploys to the **bucket root** with `--maxDeletes 0`.
+
+## Branches & deploy
+- **`main` → staging/QA → reference2.groupdocs.com** · **`production` → prod → reference.groupdocs.com**.
+- Workflows (`.github/workflows/`):
+  - `deploy_product.yml` — reusable build+deploy for one product (inputs: `product_family`, `environment`,
+    `invalidate_paths`, `max_deletes`). Post-build order: **build → `resolve_md_links.py` →
+    `move_md_to_ugly_urls.sh` → (non-home) copy `public/index.md` to bucket-root `/<product>.md` + `rm public/index.md`
+    → `hugo deploy` → CloudFront invalidate**.
+  - `deploy_<product>.yml` (×15) — triggers on `content/sites/groupdocs/<product>/**` push; calls the reusable one.
+  - `deploy_home.yml` — `content/sites/groupdocs/home/**`; invalidates `/index.html /index.md /llms.txt /llms-full.txt /404.html`; `maxDeletes 0`.
+  - `deploy_all.yml` — `themes/**` push or manual; home → products matrix → **`search-index`** job (rebuilds `/search-index.json` from source).
+  - `refresh_search_index.yml` — `content/sites/groupdocs/**` push or manual; rebuilds `/search-index.json` from source (lightweight, no Hugo), concurrency-coalesced.
+- Secrets: `ACCESS_KEY`/`SECRET_ACCESS` (S3), `AWS_DISTRIBUTION_PROD` (prod) / `AWS_DISTRIBUTION` (staging) CloudFront.
+
+## Content model
+- All content lives under `content/sites/groupdocs/<product>/english/` as **`_index.md` section bundles**,
+  each with an explicit **`url:`** in front matter (product-relative, e.g. `/net/...`). Mostly auto-generated
+  API refs synced from `GroupDocs.<Product>-References` repos.
+- **Family/landing page** (per product): `content/sites/groupdocs/<product>/english/_index.md`, `layout: family`,
+  `url: /`. HTML by `themes/docs/layouts/_default/family.html`; Markdown by `themes/docs/layouts/index.md` (family branch).
+- **Site-root landing**: `content/sites/groupdocs/home/english/_index.md`, `layout: full-width`.
+- **`data/products.toml`** — single source of truth for the home product grid (`{{< products-grid >}}` shortcode)
+  AND the 404 product directory. 15 entries (key/title/url/icon/weight/description/platforms).
+- ⚠️ **python-net content files have a UTF-8 BOM** — parse with `utf-8-sig` (otherwise the `---` front-matter
+  delimiter check fails). Many files use CRLF — keep parsing/regex CRLF-tolerant.
+
+## Theme (`themes/docs/`, vendored Geekdoc — not a submodule)
+- `_default/baseof.html`: sidebar nav disabled for `.Kind == "404"` (404 renders full-width/centered).
+- `partials/menu-filetree.html`: **scoped** nav (current branch only) for page weight — **do not revert to the full tree**.
+- `assets/custom.css`: fingerprinted (loaded via `head/others`). Holds `gd-family*`, `gd-platform*`, `gd-404*` styles.
+  Gotcha: theme has `.gdoc-page h2 { line-height/margin-top: 2.5rem }` and global `h1..h6 { display:flex }` —
+  scope custom headings with higher specificity (e.g. `.gd-404 .gd-404__h2`) to override.
+
+## Outputs: HTML + per-page Markdown + llms.txt + search index
+- Every page also emits **Markdown (`.md`)**; home emits `llms.txt` + `llms-full.txt`.
+- `.md` is: **no front matter** (raw content via `_default/single.md`/`list.md`/`index.md` → `partials/md/abs-content.txt`),
+  **absolute links**, **ugly URLs**. Family page `.md` is served at **`/<product>.md`** (bucket root), not `/<product>/index.md`.
+- `partials/md/abs-content.txt`: emits `.RawContent`, absolutizes root-relative links, strips a leading
+  front-matter block for empty-body pages (CRLF-tolerant).
+- llms: `index.llmstxt.txt` (home lists products from `data/products.toml` with `.md` links),
+  `index.llmsfull.txt` (product build inlines all pages; site-root = directory of per-product `llms-full.txt`).
+- **Search index** `/search-index.json` (bucket root, ~37k entries, all products) powers the **404 live search**.
+  Built by `build_search_index.py --source content/sites/groupdocs` (parses front matter `title`+`url`, no Hugo).
+- Serving: `.md`/`.txt`/`.html` get `charset=utf-8` via `[[deployment.matchers]]`; CloudFront auto-gzips.
+
+## Scripts (repo root)
+- `move_md_to_ugly_urls.sh [dir]` — `public/<path>/index.md` → `public/<path>.md` (`-mindepth 2`, skips build-root index.md).
+- `resolve_md_links.py <dir> --base-url <BASE>` — resolve relative `.md` links to absolute (per page URL);
+  `surrogateescape` for non-UTF-8 bytes. Must run **before** the ugly-URL rename.
+- `build_search_index.py --source content/sites/groupdocs --out search-index.json` — combined index (source mode).
+- `build-local.sh [products…]` — builds home + listed products into `./public-local/` (runs resolver + ugly rename +
+  family-md-to-root + search index). Default product: annotation.
+- `serve-local.py [port]` — static server for `./public-local` that sends `charset=utf-8` for text (plain
+  `python -m http.server` omits it → `—`/`→` render as mojibake). **Use this for local preview**, default port 1313.
+- `config-local.toml` — home-only local config used by `build-local.sh`.
+
+## Local preview
+`hugo server` panics on this content (Hugo 0.101 concurrency bug). Instead:
+```
+./build-local.sh annotation conversion   # build home + listed products
+python serve-local.py 1313               # serve ./public-local with UTF-8
+```
+404 lives at `/404.html`; the search box only covers the products you built locally.
+
+## The 404 page
+- `layouts/404.html` (`define "main"`, `.gd-404`): hero + **live type-ahead search** over `/search-index.json`
+  + product directory (from `data/products.toml`) + AI/LLM callout. Links are root-relative absolute paths
+  (resolve at the domain root regardless of which build's `/404.html` is served). Served via CloudFront error doc.
+
+## Commit & branch conventions (follow exactly)
+- Author is the system default **Vladimir Litvinchik <vladimir.litvinchik@aspose.com>**.
+- **No `Co-Authored-By` trailer and no "Claude"/AI mention in commit messages.**
+- Keep `main` and `production` identical: commit on `production`, then `git branch -f main production`.
+  Push both (fetch first; both are normally fast-forwards — the remote can drift via automated content syncs,
+  so verify with `merge-base --is-ancestor` before pushing).
+- The product-source repos (`../GroupDocs.<X>-References`) and the design handoff (`../references-404`) are
+  **separate from this repo** — the user commits those.
+
+## Changelog rule
+**Whenever you make a notable/user-facing change here, add an entry to `CHANGELOG.md` under `## [Unreleased]`
+(Keep a Changelog format: Added / Changed / Fixed) in the same commit.** Skip purely local/throwaway changes.
+
+## Known gotchas / open items
+- Git shows `LF will be replaced by CRLF` warnings on Windows — harmless.
+- `/search-index.json` is produced only by `deploy_all` + `refresh_search_index` (source-based; no per-product artifacts).
+- Per-product `llms-full.txt` dev-guide links can double the product segment (`/annotation/annotation/...`) —
+  pre-existing source-link bug, not yet fixed.
+- `__pycache__/` from running the Python scripts is not in `.gitignore`.
+- `docs.groupdocs.com` (a separate repo) has its own llms.txt readability + charset/mojibake issues — deferred by the user.
