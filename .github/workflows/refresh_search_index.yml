@@ -1,0 +1,54 @@
+name: Refresh Search Index
+
+# Lightweight: rebuild the root /search-index.json (the 404 live search source) from product
+# source front matter — no Hugo build. Runs on any content push so the index stays current
+# between full Deploy All runs. Branch mapping: production -> production, main -> staging.
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: production
+        type: choice
+        options:
+          - staging
+          - production
+  push:
+    branches: [ production, main ]
+    paths:
+      - 'content/sites/groupdocs/**'
+
+# Coalesce bursts of content pushes; the latest content state is what we want indexed.
+concurrency:
+  group: search-index-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build search-index.json from source
+        run: python3 build_search_index.py --source content/sites/groupdocs --out search-index.json
+
+      - name: Deploy search-index.json to bucket root
+        run: |
+          BUCKET=${{ env.ENVIRONMENT == 'production' && 'reference.groupdocs.com' || 'reference2.groupdocs.com' }}
+          aws s3 cp search-index.json "s3://$BUCKET/search-index.json" \
+            --content-type "application/json; charset=utf-8" --region us-west-2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ env.ENVIRONMENT == 'production' && secrets.AWS_DISTRIBUTION_PROD || secrets.AWS_DISTRIBUTION }}
+          PATHS: '/search-index.json'
+          AWS_REGION: 'us-west-2'
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}

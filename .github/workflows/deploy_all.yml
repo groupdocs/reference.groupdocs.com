@@ -58,38 +58,18 @@ jobs:
       environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
     secrets: inherit
 
-  # Merge every product's search-index slice into one root /search-index.json for the
-  # 404 live search. Only deploy_all produces the combined index (it sees all products);
-  # single-product deploys refresh only their own pages, so re-run this to pick up new content.
+  # Rebuild the root /search-index.json (the 404 live search source) from every product's
+  # source front matter — no per-product build artifacts needed. Same job runs standalone in
+  # refresh_search_index.yml on content pushes.
   search-index:
-    needs: [products]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     env:
       ENVIRONMENT: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
     steps:
-      - name: Download search-index slices
-        uses: actions/download-artifact@v4
-        with:
-          pattern: search-index-*
-          path: slices
-          merge-multiple: true
-
-      - name: Merge slices into search-index.json
-        run: |
-          python3 - <<'PY'
-          import json, glob
-          out = []
-          files = sorted(glob.glob("slices/*.json"))
-          for f in files:
-              try:
-                  out.extend(json.load(open(f, encoding="utf-8")))
-              except Exception as e:
-                  print("skip %s: %s" % (f, e))
-          out.sort(key=lambda e: (e.get("g", ""), e.get("u", "")))
-          json.dump(out, open("search-index.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
-          print("Merged %d entries from %d slice(s)" % (len(out), len(files)))
-          PY
+      - uses: actions/checkout@v4
+      - name: Build search-index.json from source
+        run: python3 build_search_index.py --source content/sites/groupdocs --out search-index.json
 
       - name: Deploy search-index.json to bucket root
         run: |
