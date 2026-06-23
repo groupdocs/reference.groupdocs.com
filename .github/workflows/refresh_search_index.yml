@@ -1,8 +1,9 @@
-name: Refresh Search Index
+name: Refresh Root Aggregates
 
-# Lightweight: rebuild the root /search-index.json (the 404 live search source) from product
-# source front matter — no Hugo build. Runs on any content push so the index stays current
-# between full Deploy All runs. Branch mapping: production -> production, main -> staging.
+# Lightweight: rebuild the bucket-root aggregates from product SOURCE — no Hugo build:
+# /search-index.json (the 404 live search source) and /llms-full.txt (the combined, compacted
+# whole-reference file). Runs on any content push so both stay current between full Deploy All
+# runs. Branch mapping: production -> production, main -> staging.
 on:
   workflow_dispatch:
     inputs:
@@ -44,11 +45,25 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
 
+      - name: Build llms-full.txt from source
+        run: |
+          BASE=${{ env.ENVIRONMENT == 'production' && 'https://reference.groupdocs.com' || 'https://reference2.groupdocs.com' }}
+          python3 build_llms_full.py --source content/sites/groupdocs --base-url "$BASE" --out llms-full.txt
+
+      - name: Deploy llms-full.txt to bucket root
+        run: |
+          BUCKET=${{ env.ENVIRONMENT == 'production' && 'reference.groupdocs.com' || 'reference2.groupdocs.com' }}
+          aws s3 cp llms-full.txt "s3://$BUCKET/llms-full.txt" \
+            --content-type "text/plain; charset=utf-8" --region us-west-2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ env.ENVIRONMENT == 'production' && secrets.AWS_DISTRIBUTION_PROD || secrets.AWS_DISTRIBUTION }}
-          PATHS: '/search-index.json'
+          PATHS: '/search-index.json /llms-full.txt'
           AWS_REGION: 'us-west-2'
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}

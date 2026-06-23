@@ -10,6 +10,11 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **Combined, compacted `llms-full.txt`** at the site root — the entire API reference for all 15
+  products in one well-structured file. Built from source by `build_llms_full.py` (navigation
+  boilerplate stripped: `See Also` footers, `Learn more` blocks, internal link URLs, front matter,
+  heading anchors, Java separators; signatures, summaries, and member/parameter tables kept).
+  ~28 MB (~3 MB gzipped). Deployed to the bucket root by `deploy_all` + the content-push refresher.
 - **Live search on the 404 page** — type-ahead over a combined `/search-index.json` (all 15 products,
   ~37k symbols): kind badges, namespace paths, platform pills, keyboard navigation.
 - **Cross-product search index** `/search-index.json`, built from product source front matter by
@@ -31,8 +36,15 @@ tags), so changes accumulate under **[Unreleased]**.
   `deploy_home.yml`), Hugo 0.101.0, AWS S3 + CloudFront.
 - Home page: product grid driven by `data/products.toml`; **AI Agents & LLM section** refocused on this
   site's machine-readable indexes (`/llms.txt`, `/llms-full.txt`, `.md`) with clearer FontAwesome icons.
-- Site-root `llms.txt`/`llms-full.txt` and home `index.md` emit **absolute URLs** (host baseURL per env);
-  site-root `llms-full.txt` is a directory of per-product `llms-full.txt`.
+- Site-root `llms.txt`/`llms-full.txt` and home `index.md` emit **absolute URLs** (host baseURL per env).
+- **All page links in `llms.txt` / `llms-full.txt` now point to the Markdown (`.md`) rendition, not the
+  HTML page** — these files are for LLMs/agents (e.g. `…/annotator/text/` → `…/annotator/text.md`).
+  Applies to the combined `/llms-full.txt` (`Path:` lines) and the per-product Hugo `llms.txt`/`llms-full.txt`.
+- **Site-root `llms.txt` is now a per-product directory** (full-reference / section-index / Markdown
+  links per product, plus a pointer to the combined `/llms-full.txt`) — the format previously used by
+  `llms-full.txt`. The home build no longer emits `llms-full.txt`; the source-built combined file owns
+  `/llms-full.txt`. `refresh_search_index.yml` (now "Refresh Root Aggregates") rebuilds both
+  `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
 - Family-page "Browse API reference" links now include the product path prefix.

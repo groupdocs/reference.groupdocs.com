@@ -53,6 +53,13 @@ Alongside HTML, every page emits a **Markdown (`.md`)** rendition, and each buil
 consumption. Configured per product in `config/sites/groupdocs/<product>/_default/config.toml`
 (`[outputFormats.MD|LLMSTXT|LLMSFULL]`, `[outputs]`).
 
+At the **site root**, `llms.txt` is a **per-product directory** (each product's full-reference,
+section-index, and Markdown links), and `/llms-full.txt` is the **entire API reference for all 15
+products in one compacted file**. Because each product is a separate Hugo build, Hugo can't
+aggregate them — so [`build_llms_full.py`](build_llms_full.py) builds `/llms-full.txt` from source
+(stripping navigation boilerplate, keeping signatures + summaries + member/parameter tables) and CI
+uploads it to the bucket root (`deploy_all` + `refresh_search_index.yml`).
+
 The `.md` files are post-processed so they're clean and portable:
 
 1. **No front matter, real Markdown** — `single.md` / `list.md` emit `.RawContent` (Hugo strips

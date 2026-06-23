@@ -8,7 +8,7 @@
 
 ## {{ .Title }}
 
-Path: {{ .Permalink }}
+Path: {{ strings.TrimRight "/" .Permalink }}.md
 
 {{ partial "md/abs-content.txt" . }}
 {{ end -}}

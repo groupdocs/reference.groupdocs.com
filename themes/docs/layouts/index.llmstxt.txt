@@ -2,7 +2,9 @@
        reference.groupdocs.com builds each product independently, so:
        - a PRODUCT build's home is the family page -> list its platforms (.Site.Sections) and
          each platform's namespaces (.Sections), since all content is section bundles;
-       - the SITE-ROOT build's home has no sections -> list products from data/products.toml. */ -}}
+       - the SITE-ROOT build's home has no sections -> a directory of every product, each with
+         its full-reference / section-index / Markdown links. The site-wide combined
+         /llms-full.txt is built from source by build_llms_full.py (not by Hugo). */ -}}
 # {{ .Site.Title }}
 {{ with (.Site.Params.description | default .Description) }}
 > {{ . }}
@@ -10,20 +12,29 @@
 {{- if .Site.Sections }}
 ## Contents
 {{ range .Sections.ByWeight }}
-### [{{ .Title }}]({{ .Permalink }}) ([md]({{ strings.TrimRight "/" .Permalink }}.md){{ with .OutputFormats.Get "llmsfull" }}, [llms-full.txt]({{ .Permalink }}){{ end }})
+### [{{ .Title }}]({{ strings.TrimRight "/" .Permalink }}.md){{ with .OutputFormats.Get "llmsfull" }} ([llms-full.txt]({{ .Permalink }})){{ end }}
 {{ with .Description }}{{ . }}
 {{ end -}}
 {{ range .Sections.ByWeight }}
-- [{{ .Title }}]({{ .Permalink }}) ([md]({{ strings.TrimRight "/" .Permalink }}.md))
+- [{{ .Title }}]({{ strings.TrimRight "/" .Permalink }}.md)
 {{- end }}
-{{ end -}}
-{{- else if .Site.Data.products }}
-## Products
-{{ range sort .Site.Data.products.product "weight" }}
-- [{{ .title }}]({{ .url | strings.TrimPrefix "/" | absURL | strings.TrimRight "/" }}.md): {{ .description }}
-{{- end }}
-{{- end }}
+{{ end }}
 ## Full documentation
 {{ with .OutputFormats.Get "llmsfull" }}
 - [Complete documentation in one file]({{ .Permalink }})
 {{ end -}}
+{{- else if .Site.Data.products }}
+The entire API reference is also available as one compacted file: {{ "llms-full.txt" | absURL }}
+
+Per-product references:
+{{ range sort .Site.Data.products.product "weight" }}
+{{ $base := .url | strings.TrimPrefix "/" | absURL | strings.TrimRight "/" -}}
+## {{ .title }}
+
+{{ .description }}
+
+- Full documentation: {{ $base }}/llms-full.txt
+- Section index: {{ $base }}/llms.txt
+- Overview (Markdown): {{ $base }}.md
+{{ end -}}
+{{- end -}}

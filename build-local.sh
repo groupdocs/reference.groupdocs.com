@@ -43,6 +43,11 @@ done
 # Combined cross-product search index for the 404 live search (built from the merged tree).
 python build_search_index.py "$OUT" --out "$OUT/search-index.json"
 
+# Combined, compacted llms-full.txt (whole API reference, built from source). --only limits it
+# to the products built locally so the preview is quick; production builds all 15.
+python build_llms_full.py --source content/sites/groupdocs --base-url "http://localhost:$PORT" \
+  --only "$(IFS=,; echo "${PRODUCTS[*]}")" --out "$OUT/llms-full.txt"
+
 echo
 echo "Built ${#PRODUCTS[@]} product(s) + home into ./$OUT"
 echo "Serve with:  python serve-local.py $PORT      # UTF-8 charset, matches production"

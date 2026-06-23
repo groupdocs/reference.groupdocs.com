@@ -29,8 +29,10 @@ obvious from the code.
     → `hugo deploy` → CloudFront invalidate**.
   - `deploy_<product>.yml` (×15) — triggers on `content/sites/groupdocs/<product>/**` push; calls the reusable one.
   - `deploy_home.yml` — `content/sites/groupdocs/home/**`; invalidates `/index.html /index.md /llms.txt /llms-full.txt /404.html`; `maxDeletes 0`.
-  - `deploy_all.yml` — `themes/**` push or manual; home → products matrix → **`search-index`** job (rebuilds `/search-index.json` from source).
-  - `refresh_search_index.yml` — `content/sites/groupdocs/**` push or manual; rebuilds `/search-index.json` from source (lightweight, no Hugo), concurrency-coalesced.
+  - `deploy_all.yml` — `themes/**` push or manual; home → products matrix → **aggregates** job (`search-index`)
+    that rebuilds the bucket-root `/search-index.json` **and** `/llms-full.txt` from source.
+  - `refresh_search_index.yml` ("Refresh Root Aggregates") — `content/sites/groupdocs/**` push or manual;
+    rebuilds `/search-index.json` **and** `/llms-full.txt` from source (lightweight, no Hugo), concurrency-coalesced.
 - Secrets: `ACCESS_KEY`/`SECRET_ACCESS` (S3), `AWS_DISTRIBUTION_PROD` (prod) / `AWS_DISTRIBUTION` (staging) CloudFront.
 
 ## Content model
@@ -58,8 +60,15 @@ obvious from the code.
   **absolute links**, **ugly URLs**. Family page `.md` is served at **`/<product>.md`** (bucket root), not `/<product>/index.md`.
 - `partials/md/abs-content.txt`: emits `.RawContent`, absolutizes root-relative links, strips a leading
   front-matter block for empty-body pages (CRLF-tolerant).
-- llms: `index.llmstxt.txt` (home lists products from `data/products.toml` with `.md` links),
-  `index.llmsfull.txt` (product build inlines all pages; site-root = directory of per-product `llms-full.txt`).
+- llms (per-build, Hugo): `index.llmstxt.txt` — **site-root** `llms.txt` is a per-product **directory**
+  (full-reference / section-index / Markdown links per product, from `data/products.toml`); a product
+  build's `llms.txt` lists its platforms/namespaces. `index.llmsfull.txt` — a **product** build inlines
+  all its pages into `/<product>/llms-full.txt`. The **site-root** build no longer emits `llms-full.txt`.
+- **Combined `/llms-full.txt`** (bucket root): the entire reference for all 15 products in one compacted,
+  well-structured file, built from source by `build_llms_full.py` (no Hugo — each product is a separate
+  build, so Hugo can't aggregate). It strips nav boilerplate (`See Also`, `Learn more`, internal link
+  URLs, front matter, anchors, Java separators) and keeps signatures + summaries + member/parameter
+  tables. Produced & deployed by the `deploy_all` aggregates job and `refresh_search_index.yml`.
 - **Search index** `/search-index.json` (bucket root, ~37k entries, all products) powers the **404 live search**.
   Built by `build_search_index.py --source content/sites/groupdocs` (parses front matter `title`+`url`, no Hugo).
 - Serving: `.md`/`.txt`/`.html` get `charset=utf-8` via `[[deployment.matchers]]`; CloudFront auto-gzips.
@@ -69,6 +78,8 @@ obvious from the code.
 - `resolve_md_links.py <dir> --base-url <BASE>` — resolve relative `.md` links to absolute (per page URL);
   `surrogateescape` for non-UTF-8 bytes. Must run **before** the ugly-URL rename.
 - `build_search_index.py --source content/sites/groupdocs --out search-index.json` — combined index (source mode).
+- `build_llms_full.py --source content/sites/groupdocs --base-url <BASE> --out llms-full.txt` — combined,
+  compacted whole-reference file (source mode; `--only a,b` limits products for fast local preview).
 - `build-local.sh [products…]` — builds home + listed products into `./public-local/` (runs resolver + ugly rename +
   family-md-to-root + search index). Default product: annotation.
 - `serve-local.py [port]` — static server for `./public-local` that sends `charset=utf-8` for text (plain

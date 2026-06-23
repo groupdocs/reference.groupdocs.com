@@ -184,9 +184,12 @@ force = true
   notAlternative = true
 
 [outputs]
-  # llms-full only at the build home: content is all section bundles, so LLMSFULL on
-  # `section` would emit a (mostly redundant) llms-full.txt for all pages.
-  home = ["HTML", "MD", "LLMSTXT", "LLMSFULL"]
+  # The SITE-ROOT home emits llms.txt (a product directory) and per-page .md, but NOT
+  # llms-full.txt: each product is a separate build, so a combined file is impossible here.
+  # The site-wide /llms-full.txt is built from source by build_llms_full.py and uploaded to
+  # the bucket root (deploy_all.yml + refresh_search_index.yml). Product builds keep LLMSFULL
+  # in their own config so /<product>/llms-full.txt is still generated.
+  home = ["HTML", "MD", "LLMSTXT"]
   section = ["HTML", "MD"]
   page = ["HTML", "MD"]
 

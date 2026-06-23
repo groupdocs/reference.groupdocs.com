@@ -54,6 +54,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
   isPlainText = true
   notAlternative = true
 [outputs]
-  home = ["HTML", "MD", "LLMSTXT", "LLMSFULL"]
+  # Site-root home: llms.txt (product directory) + per-page .md, no llms-full.txt — the
+  # combined /llms-full.txt is built from source by build_llms_full.py (see build-local.sh).
+  home = ["HTML", "MD", "LLMSTXT"]
   section = ["HTML", "MD"]
   page = ["HTML", "MD"]
