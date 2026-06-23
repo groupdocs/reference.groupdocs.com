@@ -29,6 +29,13 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **Redesigned the home/landing page** (from the Claude Design handoff, the sibling of the 404):
+  a hero **live search** over `/search-index.json` (same engine as the 404), a **platform-filter**
+  segmented control (All / .NET / Java / Node.js / Python) over the product grid (cards show the real
+  product icon, description, and platform pills), a dark **AI/LLM panel** (`/llms.txt`,
+  `/llms-full.txt`, `.md`), and **Developer Resources** cards. Rendered by
+  `_default/full-width.html` as a scoped `gd-home` design; the `_index.md` body is now empty (the
+  layout renders everything from `data/products.toml`), so the `products-grid` shortcode is unused.
 - **English-only**: removed all non-English content/locales; edge redirects strip retired locale segments.
 - Migrated to the vendored Geekdoc-based `themes/docs/` theme (dropped the api-theme submodule); added a
   **scoped left-nav** (`menu-filetree.html`) to keep page weight low.

@@ -41,7 +41,13 @@ obvious from the code.
   API refs synced from `GroupDocs.<Product>-References` repos.
 - **Family/landing page** (per product): `content/sites/groupdocs/<product>/english/_index.md`, `layout: family`,
   `url: /`. HTML by `themes/docs/layouts/_default/family.html`; Markdown by `themes/docs/layouts/index.md` (family branch).
-- **Site-root landing**: `content/sites/groupdocs/home/english/_index.md`, `layout: full-width`.
+- **Site-root landing**: `content/sites/groupdocs/home/english/_index.md`, `layout: full-width`. Its
+  **body is empty** — the whole page is rendered by `themes/docs/layouts/_default/full-width.html` as the
+  scoped **`gd-home`** design (hero + live search over `/search-index.json`, a platform-filter over the
+  product grid, a dark AI/LLM panel, developer resources), all driven by `data/products.toml`. The hero
+  title/lead come from the front-matter `title`/`description`. (The `.md`/`llms.txt` home outputs still
+  come from `layouts/index.md` / `index.llmstxt.txt`, which read `data/products.toml`, not the body.)
+  The old `shortcodes/products-grid.html` is now unused.
 - **`data/products.toml`** — single source of truth for the home product grid (`{{< products-grid >}}` shortcode)
   AND the 404 product directory. 15 entries (key/title/url/icon/weight/description/platforms).
 - ⚠️ **python-net content files have a UTF-8 BOM** — parse with `utf-8-sig` (otherwise the `---` front-matter

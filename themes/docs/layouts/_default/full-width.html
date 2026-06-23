@@ -1,17 +1,252 @@
 {{ define "main" }}
-  {{ partial "page-header" . }}
+{{- /* Site-root home (gd-home). Recreates the Claude Design index mockup with the site's own
+       design tokens. The hero live-search reuses the combined /search-index.json (built by
+       build_search_index.py), exactly like the 404 page. The product grid + platform filter are
+       driven by data/products.toml. Rendered full-width (the home sets geekdocNav:false, so
+       baseof disables the sidebar). The .md / llms.txt outputs come from layouts/index.md and
+       index.llmstxt.txt — they render from data/products.toml, not this layout. */ -}}
+{{- $labels := dict "net" ".NET" "java" "Java" "nodejs-java" "Node.js" "python-net" "Python" -}}
+{{- $dots   := dict "net" "#5b3bd4" "java" "#e76f00" "nodejs-java" "#539e43" "python-net" "#3776ab" -}}
+{{- $segments := slice
+      (dict "key" "net" "label" ".NET" "dot" "#5b3bd4")
+      (dict "key" "java" "label" "Java" "dot" "#e76f00")
+      (dict "key" "nodejs-java" "label" "Node.js" "dot" "#539e43")
+      (dict "key" "python-net" "label" "Python" "dot" "#3776ab") -}}
+<article class="gd-home">
 
-{{/* Full-width landing layout (e.g. the home/index page): no right-rail TOC. */}}
-<div class="gdoc-content-cols" style="display: block;">
-  <article
-    class="gdoc-markdown gdoc-markdown__align--{{ default "left" (.Page.Params.GeekdocAlign | lower) }}"
-  >
-    <h1 class="pd-top-5">
-      {{ partial "utils/title" . }}
-    </h1>
+  <section class="gd-home__hero">
+    <h1 class="gd-home__title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="gd-home__lead">{{ . }}</p>{{ end }}
+    <div class="gd-home__search">
+      <form class="gd-home__searchbar" role="search" autocomplete="off" onsubmit="return false;">
+        <svg class="gd-home__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+        <input id="gd-home-q" class="gd-home__input" type="text" placeholder="Search classes, methods, namespaces…" aria-label="Search the API reference" aria-controls="gd-home-results" aria-autocomplete="list" />
+        <button id="gd-home-go" class="gd-home__search-btn" type="button">Search</button>
+      </form>
+      <div id="gd-home-results" class="gd-home__results" role="listbox" hidden></div>
+    </div>
+  </section>
 
-    {{ partial "utils/content" . }}
+  {{- with .Site.Data.products }}
+  <section class="gd-home__browse">
+    <div class="gd-home__browse-head">
+      <div class="gd-home__browse-title">
+        <h2 class="gd-home__h2">Browse products</h2>
+        <span class="gd-home__count"><span id="gd-home-count">{{ len .product }}</span> of {{ len .product }}</span>
+      </div>
+      <div class="gd-home__filter" role="group" aria-label="Filter products by platform">
+        <button type="button" class="gd-home__seg is-active" data-platform="all" aria-pressed="true">All</button>
+        {{- range $segments }}
+        <button type="button" class="gd-home__seg" data-platform="{{ .key }}" aria-pressed="false"><span class="gd-home__seg-dot" style="background:{{ .dot }}"></span>{{ .label }}</button>
+        {{- end }}
+      </div>
+    </div>
+    <div class="gd-home__grid" id="gd-home-grid">
+      {{ range sort .product "weight" }}
+      {{- $short := replace .title "GroupDocs." "" -}}
+      <a class="gd-home__card" href="{{ .url }}/" data-platforms="{{ delimit .platforms " " }}">
+        <span class="gd-home__card-top">
+          <img class="gd-home__card-icon" src="/images/products/groupdocs-{{ .icon }}.svg" alt="" loading="lazy" />
+          <span class="gd-home__card-name"><span class="gd-home__brand">GroupDocs.</span>{{ $short }}</span>
+          <svg class="gd-home__card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </span>
+        <span class="gd-home__card-desc">{{ .description }}</span>
+        <span class="gd-home__pills">
+          {{- range .platforms }}
+          <span class="gd-home__pill" data-platform="{{ . }}"><span class="gd-home__pill-dot" style="background:{{ index $dots . }}"></span>{{ index $labels . }}</span>
+          {{- end }}
+        </span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{- end }}
 
-  </article>
-</div>
+  {{/* AI / LLM panel — dark, per the index mockup */}}
+  <section class="gd-home__ai">
+    <div class="gd-home__ai-eyebrow">For AI agents</div>
+    <h2 class="gd-home__h2 gd-home__ai-title">Built to be machine-readable</h2>
+    <p class="gd-home__ai-lead">Machine-readable indexes of the entire API reference, designed for agents and retrieval.</p>
+    <div class="gd-home__ai-cards">
+      <a class="gd-home__ai-card" href="/llms.txt">
+        <span class="gd-home__token">/llms.txt</span>
+        <span class="gd-home__ai-desc">Curated index of every product and platform.</span>
+      </a>
+      <a class="gd-home__ai-card" href="/llms-full.txt">
+        <span class="gd-home__token">/llms-full.txt</span>
+        <span class="gd-home__ai-desc">The full documentation in a single file.</span>
+      </a>
+      <div class="gd-home__ai-card gd-home__ai-card--static">
+        <span class="gd-home__token">.md</span>
+        <span class="gd-home__ai-desc">Append <code>.md</code> to any page URL for Markdown — e.g. <code>/annotation.md</code></span>
+      </div>
+    </div>
+  </section>
+
+  {{/* Developer resources */}}
+  <section class="gd-home__res">
+    <h2 class="gd-home__h2">Developer resources</h2>
+    <div class="gd-home__res-cards">
+      {{- $res := slice
+          (dict "url" "https://docs.groupdocs.com/" "icon" "api" "label" "Documentation")
+          (dict "url" "https://releases.groupdocs.com/" "icon" "code" "label" "Releases & Downloads")
+          (dict "url" "https://products.groupdocs.com/" "icon" "total" "label" "Product Site")
+          (dict "url" "https://blog.groupdocs.com/" "icon" "editor" "label" "Blog")
+          (dict "url" "https://forum.groupdocs.com/" "icon" "free-support" "label" "Support Forum") -}}
+      {{- range $res }}
+      <a class="gd-home__res-card" href="{{ .url }}" rel="nofollow" target="_blank">
+        <span class="gd-home__res-icon-box"><svg class="gd-home__res-icon"><use xlink:href="/img/groupdocs-stack.svg#{{ .icon }}"></use></svg></span>
+        <span class="gd-home__res-label">{{ .label }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+
+</article>
+
+<script>
+/* Hero live search — reads the combined /search-index.json (same engine as the 404 page). */
+(function () {
+  var input = document.getElementById("gd-home-q");
+  var box = document.getElementById("gd-home-results");
+  var goBtn = document.getElementById("gd-home-go");
+  if (!input || !box) return;
+
+  var index = null, loading = false, items = [], active = -1;
+  var MAX = 8;
+
+  function load() {
+    if (index || loading) return;
+    loading = true;
+    fetch("/search-index.json").then(function (r) { return r.json(); })
+      .then(function (d) { index = d; if (input.value.trim()) run(input.value); })
+      .catch(function () { index = []; });
+  }
+
+  function kindOf(e) {
+    if (e.u.indexOf("/guides/") !== -1) return ["Guide", "g"];
+    if (!e.p) return ["Product", "pr"];
+    var t = e.t || "";
+    if (t.indexOf(".") !== -1 && t === t.toLowerCase()) return ["Namespace", "ns"];
+    if (/^[A-Z]/.test(t) && t.indexOf(" ") === -1) return ["Type", "ty"];
+    return ["Page", "pg"];
+  }
+
+  function pathOf(e) {
+    var segs = e.u.split("/").filter(Boolean);
+    return segs.slice(0, -1).join(" / ");
+  }
+
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+
+  function highlight(t, q) {
+    var i = t.toLowerCase().indexOf(q.toLowerCase());
+    if (i === -1) return esc(t);
+    return esc(t.slice(0, i)) + "<mark>" + esc(t.slice(i, i + q.length)) + "</mark>" + esc(t.slice(i + q.length));
+  }
+
+  function score(e, q) {
+    var t = (e.t || "").toLowerCase();
+    if (t === q) return 0;
+    if (t.indexOf(q) === 0) return 1;
+    if (t.indexOf(q) !== -1) return 2;
+    if (e.u.toLowerCase().indexOf(q) !== -1) return 3;
+    return 99;
+  }
+
+  function run(q) {
+    q = q.trim().toLowerCase();
+    if (!q) { hide(); return; }
+    if (!index) { load(); return; }
+    var hits = [];
+    for (var i = 0; i < index.length; i++) {
+      var s = score(index[i], q);
+      if (s < 99) hits.push([s, index[i]]);
+    }
+    hits.sort(function (a, b) { return a[0] - b[0] || a[1].t.length - b[1].t.length; });
+    items = hits.slice(0, MAX).map(function (h) { return h[1]; });
+    render(q, hits.length);
+  }
+
+  function render(q, total) {
+    if (!items.length) {
+      box.innerHTML = '<div class="gd-home__noresult">No results for <strong>' + esc(q) + '</strong>. Try a class or namespace name.</div>';
+      box.hidden = false; active = -1; return;
+    }
+    active = 0;
+    var html = items.map(function (e, i) {
+      var k = kindOf(e);
+      return '<a class="gd-home__result' + (i === 0 ? " is-active" : "") + '" role="option" href="' + esc(e.u) + '" data-i="' + i + '">'
+        + '<span class="gd-home__rk gd-home__rk--' + k[1] + '">' + k[0] + '</span>'
+        + '<span class="gd-home__rmain"><span class="gd-home__rname">' + highlight(e.t, q) + '</span>'
+        + '<span class="gd-home__rpath">' + esc(pathOf(e)) + '</span></span>'
+        + (e.p ? '<span class="gd-home__rplat">' + esc(e.p) + '</span>' : '') + '</a>';
+    }).join("");
+    if (total > items.length) html += '<div class="gd-home__more">' + (total) + ' matches — refine your search to narrow it down</div>';
+    box.innerHTML = html;
+    box.hidden = false;
+    Array.prototype.forEach.call(box.querySelectorAll(".gd-home__result"), function (el) {
+      el.addEventListener("mouseenter", function () { setActive(+el.getAttribute("data-i")); });
+    });
+  }
+
+  function hide() { box.hidden = true; box.innerHTML = ""; active = -1; }
+
+  function setActive(i) {
+    var rows = box.querySelectorAll(".gd-home__result");
+    if (!rows.length) return;
+    active = (i + rows.length) % rows.length;
+    Array.prototype.forEach.call(rows, function (el, j) { el.classList.toggle("is-active", j === active); });
+    rows[active].scrollIntoView({ block: "nearest" });
+  }
+
+  function gotoActive() {
+    var rows = box.querySelectorAll(".gd-home__result");
+    if (rows.length && active >= 0) { window.location.href = rows[active].getAttribute("href"); }
+  }
+
+  input.addEventListener("focus", load);
+  input.addEventListener("input", function () { run(input.value); });
+  input.addEventListener("keydown", function (e) {
+    if (box.hidden) return;
+    if (e.key === "ArrowDown") { e.preventDefault(); setActive(active + 1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setActive(active - 1); }
+    else if (e.key === "Enter") { e.preventDefault(); gotoActive(); }
+    else if (e.key === "Escape") { input.value = ""; hide(); }
+  });
+  goBtn.addEventListener("click", gotoActive);
+  document.addEventListener("click", function (e) { if (!box.contains(e.target) && e.target !== input) hide(); });
+})();
+
+/* Platform filter — show/hide product cards, update the count, highlight the matching pill. */
+(function () {
+  var segs = document.querySelectorAll(".gd-home__seg");
+  var cards = document.querySelectorAll(".gd-home__card");
+  var count = document.getElementById("gd-home-count");
+  if (!segs.length || !cards.length) return;
+
+  function apply(key) {
+    var n = 0;
+    Array.prototype.forEach.call(cards, function (card) {
+      var tokens = " " + (card.getAttribute("data-platforms") || "") + " ";
+      var has = key === "all" || tokens.indexOf(" " + key + " ") !== -1;
+      card.style.display = has ? "" : "none";
+      if (has) n++;
+      Array.prototype.forEach.call(card.querySelectorAll(".gd-home__pill"), function (p) {
+        p.classList.toggle("is-match", key !== "all" && p.getAttribute("data-platform") === key);
+      });
+    });
+    if (count) count.textContent = n;
+  }
+
+  Array.prototype.forEach.call(segs, function (seg) {
+    seg.addEventListener("click", function () {
+      Array.prototype.forEach.call(segs, function (s) { s.classList.remove("is-active"); s.setAttribute("aria-pressed", "false"); });
+      seg.classList.add("is-active");
+      seg.setAttribute("aria-pressed", "true");
+      apply(seg.getAttribute("data-platform"));
+    });
+  });
+})();
+</script>
 {{ end }}
