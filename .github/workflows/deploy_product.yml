@@ -74,6 +74,20 @@ jobs:
         if: inputs.product_family != 'home'
         run: rm -f public/index.md
 
+      - name: Build search-index slice (this product's pages)
+        # One slice per product; deploy_all merges all slices into the root /search-index.json
+        # consumed by the 404 live search. Runs after the ugly-URL rename so URLs are final.
+        if: inputs.product_family != 'home'
+        run: python3 build_search_index.py public --product ${{ inputs.product_family }} --out search-index-${{ inputs.product_family }}.json
+
+      - name: Upload search-index slice
+        if: inputs.product_family != 'home'
+        uses: actions/upload-artifact@v4
+        with:
+          name: search-index-${{ inputs.product_family }}
+          path: search-index-${{ inputs.product_family }}.json
+          retention-days: 1
+
       - name: Deploy to S3
         run: hugo --configDir config/sites/groupdocs/${{ inputs.product_family }} --environment ${{ inputs.environment }} deploy --target "${{ inputs.environment == 'production' && 'Production' || 'Stage' }}" --maxDeletes ${{ inputs.max_deletes }}
         env:

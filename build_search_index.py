@@ -48,6 +48,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("scan_dir", nargs="?", default="public-local")
     ap.add_argument("--out", default=None)
+    # Single-product mode (CI per-product build): scan that product's public/ where the
+    # first path segment is the PLATFORM, and prefix URLs with /<product>/. Without it
+    # (build-local merged tree), the first path segment is the product itself.
+    ap.add_argument("--product", default=None)
     args = ap.parse_args()
 
     root = args.scan_dir
@@ -55,6 +59,7 @@ def main():
     if not os.path.isdir(root):
         raise SystemExit("Error: directory '%s' does not exist." % root)
 
+    prod = args.product
     entries = []
     for dp, _dirs, files in os.walk(root):
         for fn in files:
@@ -63,13 +68,21 @@ def main():
             path = os.path.join(dp, fn)
             rel = os.path.relpath(path, root).replace(os.sep, "/")
             slug = rel[:-3]  # drop .md
+            if slug == "index":
+                continue  # build-root landing (site home or product family page)
             segs = slug.split("/")
-            product = segs[0]
-            if product in ("index", "404") or slug == "index":
-                continue  # site-root landing / 404, not a product page
-            platform = PLATFORMS.get(segs[1], "") if len(segs) > 1 else ""
+            if prod:
+                product = prod
+                platform = PLATFORMS.get(segs[0], "") if segs else ""
+                url = "/" + prod + "/" + slug
+            else:
+                product = segs[0]
+                if product == "404":
+                    continue
+                platform = PLATFORMS.get(segs[1], "") if len(segs) > 1 else ""
+                url = "/" + slug
             title = title_of(path) or segs[-1]
-            entries.append({"t": title, "u": "/" + slug, "p": platform, "g": product})
+            entries.append({"t": title, "u": url, "p": platform, "g": product})
 
     entries.sort(key=lambda e: (e["g"], e["u"]))
     with open(out, "w", encoding="utf-8") as f:

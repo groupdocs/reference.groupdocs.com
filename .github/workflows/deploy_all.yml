@@ -57,3 +57,54 @@ jobs:
       product_family: ${{ matrix.product_family }}
       environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
     secrets: inherit
+
+  # Merge every product's search-index slice into one root /search-index.json for the
+  # 404 live search. Only deploy_all produces the combined index (it sees all products);
+  # single-product deploys refresh only their own pages, so re-run this to pick up new content.
+  search-index:
+    needs: [products]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    env:
+      ENVIRONMENT: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+    steps:
+      - name: Download search-index slices
+        uses: actions/download-artifact@v4
+        with:
+          pattern: search-index-*
+          path: slices
+          merge-multiple: true
+
+      - name: Merge slices into search-index.json
+        run: |
+          python3 - <<'PY'
+          import json, glob
+          out = []
+          files = sorted(glob.glob("slices/*.json"))
+          for f in files:
+              try:
+                  out.extend(json.load(open(f, encoding="utf-8")))
+              except Exception as e:
+                  print("skip %s: %s" % (f, e))
+          out.sort(key=lambda e: (e.get("g", ""), e.get("u", "")))
+          json.dump(out, open("search-index.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+          print("Merged %d entries from %d slice(s)" % (len(out), len(files)))
+          PY
+
+      - name: Deploy search-index.json to bucket root
+        run: |
+          BUCKET=${{ env.ENVIRONMENT == 'production' && 'reference.groupdocs.com' || 'reference2.groupdocs.com' }}
+          aws s3 cp search-index.json "s3://$BUCKET/search-index.json" \
+            --content-type "application/json; charset=utf-8" --region us-west-2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ env.ENVIRONMENT == 'production' && secrets.AWS_DISTRIBUTION_PROD || secrets.AWS_DISTRIBUTION }}
+          PATHS: '/search-index.json'
+          AWS_REGION: 'us-west-2'
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
