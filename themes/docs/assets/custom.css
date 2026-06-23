@@ -237,7 +237,9 @@ a.gdoc-two-columns__column__link {
 /* Compact the home/index layout. Theme defaults (e.g. gdoc-list-descr margin-bottom:15rem)
    are tuned for a sparse single-product landing and leave huge gaps on a dense grid. */
 .gdoc-list-descr { margin-bottom: 2rem; }
-.gdoc-list-title { margin-top: 3.5rem !important; margin-bottom: 1.25rem; }
+/* !important on both: the theme's `h2.gdoc-list-title { margin-bottom: 4rem }` is more
+   specific (0,1,1) and would otherwise win, leaving a big gap before the section subheader. */
+.gdoc-list-title { margin-top: 3.5rem !important; margin-bottom: 1.25rem !important; }
 .gdoc-list-apps { margin-bottom: 2.5rem; }
 .gdoc-list-app { margin-bottom: 2.25rem; }
 

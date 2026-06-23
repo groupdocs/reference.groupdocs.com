@@ -40,3 +40,5 @@ tags), so changes accumulate under **[Unreleased]**.
 - `build_search_index.py` handles UTF-8 BOM (python-net files) and non-UTF-8 bytes (`surrogateescape`).
 - CloudFront invalidation covers the bucket-root `.md`/`llms`/`404` outputs (no more stale `/index.md`, `/llms.txt`).
 - Local preview serves text as UTF-8 (`serve-local.py`) so punctuation no longer renders as mojibake.
+- Tightened the gap between home section headings (`gdoc-list-title`) and their subheaders — the
+  theme's more-specific `h2.gdoc-list-title { margin-bottom: 4rem }` was overriding the compact override.
