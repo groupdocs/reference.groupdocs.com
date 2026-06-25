@@ -1,0 +1,6 @@
+{
+  "name": "conversion-getting-started",
+  "private": true,
+  "description": "GroupDocs.Conversion for Node.js getting-started (verification harness). Needs JAVA_HOME set to a JDK; install: npm install",
+  "dependencies": { "@groupdocs/groupdocs.conversion": "*" }
+}

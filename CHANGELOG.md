@@ -10,6 +10,15 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **Verified getting-started code** on the family pages — the "Getting started" tabs now render real
+  snippets from `data/getting_started.yaml` (keyed product → platform), sourced from the official
+  products content and **compile-verified against the real SDKs** by runnable apps under
+  `examples/getting-started/<product>/<platform>/` (`dotnet build` / `mvn compile` / import-resolve).
+  Coverage: **.NET ×15, Java ×13, Python ×13, Node.js ×2** (conversion, viewer) — every applicable
+  product/platform compile-verified against the real SDK; products/platforms without an entry fall back
+  to the install command. Verification corrected several drifted official snippets (metadata
+  `Sanitize()`, signature/Python namespaces+casing, parser/Python `get_text()`, watermark line-breaks)
+  and flagged that `groupdocs-annotation-net` on PyPI is a 0.0.0 stub.
 - **Combined, compacted `llms-full.txt`** at the site root — the entire API reference for all 15
   products in one well-structured file. Built from source by `build_llms_full.py` (navigation
   boilerplate stripped: `See Also` footers, `Learn more` blocks, internal link URLs, front matter,
@@ -29,6 +38,19 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **Redesigned the product family/landing pages** (Claude Design handoff): full-width two-column layout
+  (platform-variant sidebar + main), breadcrumb, a lead auto-extended with "…a single, consistent API
+  across &lt;platforms&gt;", a meta row (platforms · formats · **latest = the highest** version across
+  platforms), a **scoped per-product live search** (filters `/search-index.json` to the current product;
+  Search button consistent with the home/404 search), selectable **platform cards** — with a "Selected"
+  tag — that drive a **"Getting started" code block** (heading names the selected platform; the language
+  switch is a platform-dot segmented control matching the home "Browse products" filter; per-platform code
+  from `data/getting_started.yaml`, falling back to the install command), a
+  curated, **verified** **"Popular classes & namespaces"** grid (real symbols across all 15 products,
+  each link checked against the reference tree), **Key capabilities** + **Supported formats** (with an
+  optional "…and N+ more" note), **Resources** as bordered cards, and an inline **"Was this page helpful?"**
+  card — all restyled to the home/404 design system. Rendered by `_default/family.html`. New family
+  front-matter fields: `formatsCount`, `formatsNote`, and `popular[]` (`name`/`kind`/`ns`/`url`).
 - **Redesigned the home/landing page** (from the Claude Design handoff, the sibling of the 404):
   a hero **live search** over `/search-index.json` (same engine as the 404), a **platform-filter**
   segmented control (All / .NET / Java / Node.js / Python) over the product grid (cards show the real

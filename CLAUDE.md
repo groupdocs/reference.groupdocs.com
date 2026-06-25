@@ -40,7 +40,19 @@ obvious from the code.
   each with an explicit **`url:`** in front matter (product-relative, e.g. `/net/...`). Mostly auto-generated
   API refs synced from `GroupDocs.<Product>-References` repos.
 - **Family/landing page** (per product): `content/sites/groupdocs/<product>/english/_index.md`, `layout: family`,
-  `url: /`. HTML by `themes/docs/layouts/_default/family.html`; Markdown by `themes/docs/layouts/index.md` (family branch).
+  `url: /`. HTML by `themes/docs/layouts/_default/family.html` (the **`gd-family`** design: breadcrumb + meta,
+  a **scoped per-product search** over `/search-index.json` filtered by the URL's product segment, selectable
+  **platform cards** that drive a tabbed **Getting-started code block**, capabilities/formats, resources,
+  feedback). The Getting-started code comes from **`data/getting_started.yaml`** (keyed product → platform →
+  `{lang, code}`), **compile-verified** by runnable apps in **`examples/getting-started/<product>/<platform>/`**
+  (`dotnet build` / `mvn compile` / Python import-resolve); a platform with no entry falls back to its
+  `install` command. Snippets are sourced from `products/content/<product>/<platform>/_index.en.md`. Markdown
+  by `themes/docs/layouts/index.md` (family branch). The page also shows a curated **"Popular classes &
+  namespaces"** grid, and the "Latest" in the meta row is the **highest** version across platforms (not
+  the first listed). Family front matter: `lead`, `platforms[]` (`name`, `key`, `ref`, `version`,
+  `versionUrl`, `install`), `capabilities[]`, `formats[]`, `formatsCount` (display string e.g. `"170+"`),
+  `formatsNote` (muted line under the format chips), `popular[]` (`name`/`kind`/`ns`/`url` — cards link
+  into the reference), `resources[]`.
 - **Site-root landing**: `content/sites/groupdocs/home/english/_index.md`, `layout: full-width`. Its
   **body is empty** — the whole page is rendered by `themes/docs/layouts/_default/full-width.html` as the
   scoped **`gd-home`** design (hero + live search over `/search-index.json`, a platform-filter over the
@@ -113,6 +125,13 @@ python serve-local.py 1313               # serve ./public-local with UTF-8
   so verify with `merge-base --is-ancestor` before pushing).
 - The product-source repos (`../GroupDocs.<X>-References`) and the design handoff (`../references-404`) are
   **separate from this repo** — the user commits those.
+
+## Verified getting-started snippets
+- The family pages' Getting-started code comes from **`data/getting_started.yaml`** (keyed product →
+  platform → `{lang, code}`), **compile-verified** against the real SDKs by the runnable apps in
+  **`examples/getting-started/<product>/<platform>/`** (`dotnet build` / `mvn compile` / Python
+  import-resolve). A product/platform with no entry falls back to its install command. (The broader
+  product/SDK knowledge base that informed these snippets is maintained **outside this repo**.)
 
 ## Changelog rule
 **Whenever you make a notable/user-facing change here, add an entry to `CHANGELOG.md` under `## [Unreleased]`

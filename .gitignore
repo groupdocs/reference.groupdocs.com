@@ -2,6 +2,7 @@
 resources/
 public/
 public-local/
+__pycache__/
 .DS_Store
 
 
