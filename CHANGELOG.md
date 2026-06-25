@@ -76,6 +76,10 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- Restored the global GroupDocs top menu — load the modern Containerize menu engine
+  (`menucdn.containerize.com/core/engine.min.js`, venture `groupdocs-<lang>`), the same loader
+  products.groupdocs.com uses, replacing the deprecated `menu.containerize.com/api/get-menu` loader
+  that broke when the site moved to the docs theme.
 - Family-page "Browse API reference" links now include the product path prefix.
 - Markdown output no longer leaks front matter on empty-body pages (CRLF-tolerant strip).
 - `build_search_index.py` handles UTF-8 BOM (python-net files) and non-UTF-8 bytes (`surrogateescape`).
