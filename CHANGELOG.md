@@ -39,6 +39,12 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **Migrated the docs.groupdocs.com header & footer** to be **server-rendered** (`partials/site-header.html`
+  + `site-footer.html`, wired in `_default/baseof.html`), replacing the runtime Containerize menu engine
+  (`foot.html` no longer loads `containerize-menu`). The header **search box uses this site's own
+  `/search-index.json` live search** (new `partials/header-search.html`, the same engine as the home page),
+  not the docs AI search. Removed the non-functional dark/light theme toggle (the site is light-only) and
+  the Dynabic login placeholder; dropped the `wrapper-space-top` offset (the header is now in-flow).
 - **Redesigned the product family/landing pages** (Claude Design handoff): full-width two-column layout
   (platform-variant sidebar + main), breadcrumb, a lead auto-extended with "…a single, consistent API
   across &lt;platforms&gt;", a meta row (platforms · formats · **latest = the highest** version across

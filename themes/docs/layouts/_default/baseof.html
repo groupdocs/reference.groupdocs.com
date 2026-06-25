@@ -35,11 +35,13 @@
     {{ partial "svg-icon-symbols" . }}
 
     <div
-      class="wrapper wrapper-space-top {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }} {{ if  not $navEnabled }}wrapper-bg{{ end }}"
+      class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }} {{ if  not $navEnabled }}wrapper-bg{{ end }}"
     >
       <input type="checkbox" class="hidden" id="menu-control" />
       <input type="checkbox" class="hidden" id="menu-header-control" />
-     
+
+      {{ partial "site-header" . }}
+
       {{ $aiSearchEnabled := false }}
       {{ $url := $.RelPermalink }}      
       {{ $slittedUrl := split $url "/" }}
@@ -67,6 +69,8 @@
       </main>
 
       {{ partial "go-top" . }}
+
+      {{ partial "site-footer" . }}
     </div>
     {{ partial "foot" . }}
   </body>
