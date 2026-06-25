@@ -79,6 +79,9 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- Pointed leftover `groupdocs.net` references at `groupdocs.com` (cookie-consent domain + privacy-policy
+  URL, structured-data sales email, and the feedback API endpoint), and removed the unused legacy menu
+  assets under `static/menu/` left over from the old menu loader.
 - Restored the global GroupDocs top menu — load the modern Containerize menu engine
   (`menucdn.containerize.com/core/engine.min.js`, venture `groupdocs-<lang>`), the same loader
   products.groupdocs.com uses, replacing the deprecated `menu.containerize.com/api/get-menu` loader
