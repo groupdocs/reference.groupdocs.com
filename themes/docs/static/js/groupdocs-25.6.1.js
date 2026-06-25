@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const FEEDBACK_FORM_VERSION = "25.6.1";
-    const FEEDBACK_API_ENDPOINT = "https://api.groupdocs.com/feedback";
+    const FEEDBACK_API_ENDPOINT = "https://docs.groupdocs.com/api/feedback";
 
     const feedbackData = { page: window.location.pathname, pageTitle: document.title, referrer: document.referrer, appVersion: FEEDBACK_FORM_VERSION };
     const feedbackForm = document.querySelector("#feedback");
