@@ -1,0 +1,122 @@
+{{- /* Header search: reference.groupdocs.com's own live search over the combined /search-index.json —
+       the SAME engine as the home page (gd-home). Revealed by the header's #search_toggle button.
+       Replaces the docs AI/geekdoc header search. Global scope (all products); fetches the bucket-root
+       /search-index.json so it works across every per-product build. Result rows reuse the gd-home
+       result styles (.gd-home__result*). */ -}}
+<div class="gdoc-search flex align-center" role="search">
+  <svg class="gdoc-search__search-icon"><use xlink:href="/img/groupdocs-stack.svg#search_control"></use></svg>
+  <input type="text" id="gd-hdr-q" class="gdoc-search__input" placeholder="Search classes, methods, namespaces…"
+         aria-label="Search the API reference" aria-controls="gd-hdr-results" aria-autocomplete="list"
+         autocomplete="off" maxlength="64" />
+  <button type="button" id="gd-hdr-close" class="gdoc-search__close-btn" aria-label="Close search">
+    <svg class="gdoc-search__close-icon"><use xlink:href="/img/groupdocs-stack.svg#search_close"></use></svg>
+  </button>
+</div>
+<div id="gd-hdr-results" class="gd-hdr-results" role="listbox" hidden></div>
+
+<script>
+/* Header search — reveal toggle + live results over /search-index.json (same engine as the home page). */
+(function () {
+  var wrap   = document.querySelector(".gdoc-header__search");
+  var toggle = document.getElementById("search_toggle");
+  var closeB = document.getElementById("gd-hdr-close");
+  var input  = document.getElementById("gd-hdr-q");
+  var box    = document.getElementById("gd-hdr-results");
+  if (!wrap || !input || !box) return;
+
+  function open()  { wrap.classList.add("is-open"); setTimeout(function () { input.focus(); }, 0); }
+  function shut()  { wrap.classList.remove("is-open"); hide(); }
+  if (toggle) toggle.addEventListener("click", function (e) {
+    e.preventDefault(); wrap.classList.contains("is-open") ? shut() : open();
+  });
+  if (closeB) closeB.addEventListener("click", function (e) { e.preventDefault(); shut(); });
+  document.addEventListener("click", function (e) {
+    if (!wrap.classList.contains("is-open")) return;
+    if (wrap.contains(e.target) || (toggle && toggle.contains(e.target))) return;
+    shut();
+  });
+
+  var index = null, loading = false, items = [], active = -1, MAX = 8;
+  function load() {
+    if (index || loading) return;
+    loading = true;
+    fetch("/search-index.json").then(function (r) { return r.json(); })
+      .then(function (d) { index = d; if (input.value.trim()) run(input.value); })
+      .catch(function () { index = []; });
+  }
+  function kindOf(e) {
+    if (e.u.indexOf("/guides/") !== -1) return ["Guide", "g"];
+    if (!e.p) return ["Product", "pr"];
+    var t = e.t || "";
+    if (t.indexOf(".") !== -1 && t === t.toLowerCase()) return ["Namespace", "ns"];
+    if (/^[A-Z]/.test(t) && t.indexOf(" ") === -1) return ["Type", "ty"];
+    return ["Page", "pg"];
+  }
+  function pathOf(e) { return e.u.split("/").filter(Boolean).slice(0, -1).join(" / "); }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+  function highlight(t, q) {
+    var i = t.toLowerCase().indexOf(q.toLowerCase());
+    if (i === -1) return esc(t);
+    return esc(t.slice(0, i)) + "<mark>" + esc(t.slice(i, i + q.length)) + "</mark>" + esc(t.slice(i + q.length));
+  }
+  function score(e, q) {
+    var t = (e.t || "").toLowerCase();
+    if (t === q) return 0;
+    if (t.indexOf(q) === 0) return 1;
+    if (t.indexOf(q) !== -1) return 2;
+    if (e.u.toLowerCase().indexOf(q) !== -1) return 3;
+    return 99;
+  }
+  function run(q) {
+    q = q.trim().toLowerCase();
+    if (!q) { hide(); return; }
+    if (!index) { load(); return; }
+    var hits = [];
+    for (var i = 0; i < index.length; i++) { var s = score(index[i], q); if (s < 99) hits.push([s, index[i]]); }
+    hits.sort(function (a, b) { return a[0] - b[0] || a[1].t.length - b[1].t.length; });
+    items = hits.slice(0, MAX).map(function (h) { return h[1]; });
+    render(q, hits.length);
+  }
+  function render(q, total) {
+    if (!items.length) {
+      box.innerHTML = '<div class="gd-home__noresult">No results for <strong>' + esc(q) + '</strong>.</div>';
+      box.hidden = false; active = -1; return;
+    }
+    active = 0;
+    var html = items.map(function (e, i) {
+      var k = kindOf(e);
+      return '<a class="gd-home__result' + (i === 0 ? " is-active" : "") + '" role="option" href="' + esc(e.u) + '" data-i="' + i + '">'
+        + '<span class="gd-home__rk gd-home__rk--' + k[1] + '">' + k[0] + '</span>'
+        + '<span class="gd-home__rmain"><span class="gd-home__rname">' + highlight(e.t, q) + '</span>'
+        + '<span class="gd-home__rpath">' + esc(pathOf(e)) + '</span></span>'
+        + (e.p ? '<span class="gd-home__rplat">' + esc(e.p) + '</span>' : '') + '</a>';
+    }).join("");
+    if (total > items.length) html += '<div class="gd-home__more">' + total + ' matches — refine your search to narrow it down</div>';
+    box.innerHTML = html; box.hidden = false;
+    Array.prototype.forEach.call(box.querySelectorAll(".gd-home__result"), function (el) {
+      el.addEventListener("mouseenter", function () { setActive(+el.getAttribute("data-i")); });
+    });
+  }
+  function hide() { box.hidden = true; box.innerHTML = ""; active = -1; }
+  function setActive(i) {
+    var rows = box.querySelectorAll(".gd-home__result");
+    if (!rows.length) return;
+    active = (i + rows.length) % rows.length;
+    Array.prototype.forEach.call(rows, function (el, j) { el.classList.toggle("is-active", j === active); });
+    rows[active].scrollIntoView({ block: "nearest" });
+  }
+  function gotoActive() {
+    var rows = box.querySelectorAll(".gd-home__result");
+    if (rows.length && active >= 0) { window.location.href = rows[active].getAttribute("href"); }
+  }
+  input.addEventListener("focus", load);
+  input.addEventListener("input", function () { run(input.value); });
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { if (input.value) { input.value = ""; hide(); } else { shut(); } return; }
+    if (box.hidden) return;
+    if (e.key === "ArrowDown") { e.preventDefault(); setActive(active + 1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setActive(active - 1); }
+    else if (e.key === "Enter") { e.preventDefault(); gotoActive(); }
+  });
+})();
+</script>

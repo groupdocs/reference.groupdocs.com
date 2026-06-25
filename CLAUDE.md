@@ -67,6 +67,13 @@ obvious from the code.
 
 ## Theme (`themes/docs/`, vendored Geekdoc — not a submodule)
 - `_default/baseof.html`: sidebar nav disabled for `.Kind == "404"` (404 renders full-width/centered).
+- **Header & footer** are **server-rendered** in `baseof.html` from `partials/site-header.html` +
+  `partials/site-footer.html` (migrated from docs.groupdocs.com). This **replaced the runtime Containerize
+  menu engine** — `partials/foot.html` no longer loads `partials/containerize-menu.html` (left in place,
+  unused). The header **search uses this site's own `/search-index.json`** via `partials/header-search.html`
+  (same engine as the home `gd-home` search), revealed by the `#search_toggle` button; the docs AI search
+  (`search-input.html`) is unused for the header. Site is light-only (no theme toggle). The `.gdoc-*`
+  header/footer CSS is loaded by `head/others` (`main-groupdocs.css` etc.).
 - `partials/menu-filetree.html`: **scoped** nav (current branch only) for page weight — **do not revert to the full tree**.
 - `assets/custom.css`: fingerprinted (loaded via `head/others`). Holds `gd-family*`, `gd-platform*`, `gd-404*` styles.
   Gotcha: theme has `.gdoc-page h2 { line-height/margin-top: 2.5rem }` and global `h1..h6 { display:flex }` —

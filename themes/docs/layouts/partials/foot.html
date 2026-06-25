@@ -1,8 +1,6 @@
 <!-- JS scripts -->
 <script defer src="{{ index (index .Site.Data.assets "groupdocs.js") "src" | relURL }}"></script>
 
-{{ partial "containerize-menu" . }}
-
 {{ if default false .Params.LiveChatScript }}
 <script>
    function openLiveChat() {
