@@ -1,0 +1,8 @@
+# Build artifacts / downloaded SDKs — only the example sources are tracked.
+**/bin/
+**/obj/
+**/target/
+**/node_modules/
+**/.venv*/
+**/.pkgs/
+*.user

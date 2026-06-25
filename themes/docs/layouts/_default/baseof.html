@@ -28,6 +28,7 @@
 
   {{ $navEnabled := default true .Page.Params.GeekdocNav }}
   {{ if eq .Kind "404" }}{{ $navEnabled = false }}{{ end }}{{/* 404 has no sidebar — render full-width */}}
+  {{ if eq .Layout "family" }}{{ $navEnabled = false }}{{ end }}{{/* family page is full-width with its own platform sidebar */}}
   <body itemscope itemtype="https://schema.org/WebPage">
     {{ partial "consent-script" . }}
     {{ partial "gtm-body" . }}

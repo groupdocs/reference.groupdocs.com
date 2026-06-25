@@ -1,26 +1,84 @@
 {{ define "main" }}
-{{ partial "page-header" . }}
+{{- /* Product family / landing page (gd-family). Recreates the Claude Design family mockup with
+       the site's design tokens, matching the home + 404 system. The scoped search filters the
+       combined /search-index.json down to THIS product (by the leading URL segment / entry .g).
+       The platform cards double as the language selector for the "Getting started" code block.
+       Per-platform code comes from an optional front-matter `snippet`; it falls back to the
+       install command when absent. The Markdown output stays in layouts/index.md. */ -}}
+{{- $short := replace .Title "GroupDocs." "" -}}
+{{- $tabLabels := dict "net" "C#" "java" "Java" "nodejs" "Node.js" "python" "Python" -}}
+{{- /* Getting-started snippets live in data/getting_started.yaml, keyed by product (derived from
+       the build's baseURL) then platform key. Verified by the apps in examples/getting-started/.
+       Products/platforms without an entry fall back to the install command. */ -}}
+{{- $product := path.Base (strings.TrimRight "/" .Site.BaseURL) -}}
+{{- $gs := index (.Site.Data.getting_started | default dict) $product | default dict -}}
+{{- /* Clean platform names for the lead's "consistent API across …" clause. */ -}}
+{{- $nameMap := dict "net" ".NET" "java" "Java" "nodejs" "Node.js" "python" "Python" -}}
+{{- $dotMap := dict "net" "#5b3bd4" "java" "#e76f00" "nodejs" "#539e43" "python" "#3776ab" -}}
+{{- $leadNames := slice -}}
+{{- range .Params.platforms }}{{ $leadNames = $leadNames | append (index $nameMap .key | default .name) }}{{ end -}}
+{{- $platList := delimit $leadNames ", " ", and " -}}
+{{- /* Latest = the highest semantic version across platforms (not merely the first listed). */ -}}
+{{- $latest := "" -}}{{- $latestKey := -1 -}}
+{{- range .Params.platforms }}{{- with .version -}}
+{{- $parts := split . "." -}}
+{{- $min := 0 }}{{ if gt (len $parts) 1 }}{{ $min = int (index $parts 1) }}{{ end -}}
+{{- $pat := 0 }}{{ if gt (len $parts) 2 }}{{ $pat = int (index $parts 2) }}{{ end -}}
+{{- $k := add (add (mul (int (index $parts 0)) 1000000) (mul $min 1000)) $pat -}}
+{{- if gt $k $latestKey }}{{ $latestKey = $k }}{{ $latest = . }}{{ end -}}
+{{- end }}{{- end -}}
+<article class="gd-family">
 
-<article class="gdoc-markdown gd-family">
+  {{/* Left: platform-variant selector sidebar — full-width family layout (matches the design) */}}
+  {{- with .Params.platforms }}
+  <aside class="gd-family__side">
+    <div class="gd-family__side-label">This product</div>
+    <nav class="gd-family__variants" role="group" aria-label="Platform variants">
+      {{ range $i, $p := . }}
+      <button type="button" class="gd-family__variant gd-family__variant--{{ .key }}{{ if eq $i 0 }} is-selected{{ end }}" data-platform="{{ .key }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
+        <span class="gd-family__variant-name"><span class="gd-family__variant-dot"></span>{{ .name }}</span>
+        {{ with .version }}<span class="gd-family__variant-ver">v{{ . }}</span>{{ end }}
+      </button>
+      {{ end }}
+    </nav>
+    <a class="gd-family__side-feedback" href="#feedback"><svg class="gdoc-feedback-link__icon"><use xlink:href="/img/groupdocs-stack.svg#thumb_up"></use></svg> Leave feedback</a>
+  </aside>
+  {{- end }}
 
-  {{/* 1. Header: product name + latest-version badge + one-line description */}}
-  <h1 class="gd-family__title">{{ .Title }}
-    <a class="gdoc-feedback-link" href="#feedback">
-      <svg class="gdoc-feedback-link__icon"><use xlink:href="/img/groupdocs-stack.svg#thumb_up"></use></svg>
-      <span class="gdoc-feedback-link__label">Leave&nbsp;feedback</span>
-    </a>
-  </h1>
-  {{ with (or .Params.lead .Params.summary) }}<p class="gd-family__lead">{{ . | safeHTML }}</p>{{ end }}
+  <div class="gd-family__main">
+  {{/* Hero: breadcrumb, title, lead, meta row */}}
+  <nav class="gd-family__crumb" aria-label="Breadcrumb"><a href="/">API Reference</a> <span aria-hidden="true">/</span> {{ $short }}</nav>
+  <h1 class="gd-family__title">{{ .Title }}</h1>
+  {{ with (or .Params.lead .Params.summary) }}
+  {{- $full := strings.TrimRight " ." . -}}
+  {{- if gt (len $.Params.platforms) 1 }}{{ $full = printf "%s — with a single, consistent API across %s." $full $platList }}{{ end -}}
+  <p class="gd-family__lead">{{ $full | safeHTML }}</p>
+  {{ end }}
+  <div class="gd-family__meta">
+    {{ with .Params.platforms }}<span class="gd-family__meta-item"><span class="gd-family__meta-num">{{ len . }}</span> platform{{ if gt (len .) 1 }}s{{ end }}</span>{{ end }}
+    {{ if or .Params.formatsCount .Params.formats }}<span class="gd-family__meta-item"><span class="gd-family__meta-num">{{ .Params.formatsCount | default (len .Params.formats) }}</span> formats</span>{{ end }}
+    {{ with $latest }}<span class="gd-family__meta-item">Latest <span class="gd-family__meta-ver">v{{ . }}</span></span>{{ end }}
+  </div>
 
-  {{/* 2. Platform cards: version + install + reference link */}}
+  {{/* Scoped, type-ahead search over this product's symbols */}}
+  <div class="gd-family__search">
+    <form class="gd-family__searchbar" role="search" autocomplete="off" onsubmit="return false;">
+      <svg class="gd-family__search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <input id="gd-fam-q" class="gd-family__searchinput" type="text" placeholder="Search classes, methods &amp; namespaces in {{ $short }}…" aria-label="Search {{ .Title }}" aria-controls="gd-fam-results" aria-autocomplete="list" />
+      <button id="gd-fam-go" class="gd-family__search-btn" type="button">Search</button>
+    </form>
+    <div id="gd-fam-results" class="gd-family__results" role="listbox" hidden></div>
+  </div>
+
+  {{/* Platform cards — also select the language for the code block below */}}
   {{ with .Params.platforms }}
-  <h2 class="gd-family__h2">Choose your platform</h2>
+  <h2 class="gd-family__h2">Choose your platform <span class="gd-family__h2-note">selecting one updates the snippets below</span></h2>
   <div class="gd-platforms">
-    {{ range . }}
-    <div class="gd-platform gd-platform--{{ .key }}">
+    {{ range $i, $p := . }}
+    <div class="gd-platform gd-platform--{{ .key }}{{ if eq $i 0 }} is-selected{{ end }}" data-platform="{{ .key }}" role="button" tabindex="0" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
       <div class="gd-platform__top">
-        <span class="gd-platform__name">{{ .name }}</span>
-        {{ if .version }}{{ if .versionUrl }}<a class="gd-platform__ver" href="{{ .versionUrl }}" rel="nofollow" target="_blank">v{{ .version }}</a>{{ else }}<span class="gd-platform__ver">v{{ .version }}</span>{{ end }}{{ end }}
+        <span class="gd-platform__name"><span class="gd-platform__dot"></span>{{ .name }}</span>
+        {{ if .version }}{{ if .versionUrl }}<a class="gd-platform__ver" href="{{ .versionUrl }}" rel="nofollow" target="_blank" onclick="event.stopPropagation()">v{{ .version }}</a>{{ else }}<span class="gd-platform__ver">v{{ .version }}</span>{{ end }}{{ end }}
       </div>
       {{ with .install }}
       <div class="gd-install">
@@ -28,13 +86,53 @@
         <button type="button" class="gd-install__copy" data-clip="{{ . }}" aria-label="Copy install command">Copy</button>
       </div>
       {{ end }}
-      <a class="gd-platform__cta" href="{{ .ref | strings.TrimPrefix "/" | relURL }}">Browse API reference <span aria-hidden="true">&rarr;</span></a>
+      <div class="gd-platform__foot">
+        <a class="gd-platform__cta" href="{{ .ref | strings.TrimPrefix "/" | relURL }}">Browse API reference <span aria-hidden="true">&rarr;</span></a>
+        <span class="gd-platform__selected" aria-hidden="true">Selected</span>
+      </div>
     </div>
+    {{ end }}
+  </div>
+
+  {{/* Getting started — segmented language tabs (in the heading row) drive the dark code block */}}
+  {{- $first := index . 0 -}}
+  <div class="gd-gs-head">
+    <h2 class="gd-family__h2 gd-gs-title">Getting started with <span class="gd-gs-plat">{{ index $nameMap $first.key | default $first.name }}</span></h2>
+    <div class="gd-gs-tabs" role="tablist">
+      {{ range $i, $p := . }}
+      <button type="button" class="gd-gs-tab{{ if eq $i 0 }} is-active{{ end }}" data-platform="{{ .key }}" data-gs-name="{{ index $nameMap .key | default .name }}" role="tab"><span class="gd-gs-dot" style="background:{{ index $dotMap .key }}"></span>{{ index $tabLabels .key | default .name }}</button>
+      {{ end }}
+    </div>
+  </div>
+  <div class="gd-code">
+    <div class="gd-code__bar">
+      <span class="gd-code__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <button type="button" class="gd-code__copy" aria-label="Copy code">Copy</button>
+    </div>
+    {{ range $i, $p := . }}
+    {{- $snip := index $gs .key -}}
+    <pre class="gd-code__block{{ if eq $i 0 }} is-active{{ end }}" data-platform="{{ .key }}"><code{{ with $snip }} class="language-{{ .lang }}"{{ end }}>{{ with $snip }}{{ .code }}{{ else }}{{ with $p.install }}{{ . }}{{ else }}// Add the package, then see the reference for usage.{{ end }}{{ end }}</code></pre>
     {{ end }}
   </div>
   {{ end }}
 
-  {{/* 3 + 4. Capabilities and supported formats, side by side */}}
+  {{/* Popular classes & namespaces — curated per product; cards link into the .NET reference */}}
+  {{ with .Params.popular }}
+  <h2 class="gd-family__h2">Popular classes &amp; namespaces</h2>
+  <div class="gd-pop">
+    {{ range . }}
+    <a class="gd-pop__card" href="{{ .url | strings.TrimPrefix "/" | relURL }}">
+      <span class="gd-pop__kind gd-pop__kind--{{ .kind | lower }}">{{ .kind }}</span>
+      <span class="gd-pop__body">
+        <span class="gd-pop__name">{{ .name }}</span>
+        <span class="gd-pop__ns">{{ .ns }}</span>
+      </span>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* Capabilities + supported formats, side by side */}}
   {{ if or .Params.capabilities .Params.formats }}
   <div class="gd-family__split">
     {{ with .Params.capabilities }}
@@ -47,6 +145,7 @@
     <section>
       <h2 class="gd-family__h2">Supported formats</h2>
       <div class="gd-chips">{{ range . }}<span class="gd-chip">{{ . }}</span>{{ end }}</div>
+      {{ with $.Params.formatsNote }}<p class="gd-family__formats-note">{{ . }}</p>{{ end }}
     </section>
     {{ end }}
   </div>
@@ -55,32 +154,177 @@
   {{/* Optional product-specific prose from the markdown body */}}
   {{ with .Content }}<div class="gd-family__prose">{{ . }}</div>{{ end }}
 
-  {{/* 5. Resources */}}
+  {{/* Resources */}}
   {{ with .Params.resources }}
   <h2 class="gd-family__h2">Resources</h2>
-  <div class="gdoc-resources gd-family__resources">
+  <div class="gd-resources">
     {{ range . }}
-    <a class="gdoc-resource" href="{{ .url }}" rel="nofollow" target="_blank">
-      <div class="gdoc-resource__icon-box">
+    <a class="gd-resource" href="{{ .url }}" rel="nofollow" target="_blank">
+      <span class="gd-resource__icon-box">
         <svg class="gdoc-resource__icon"><use xlink:href="/img/groupdocs-stack.svg#{{ .icon | default "api" }}"></use></svg>
-      </div>
-      <div class="gdoc-resource__link">{{ .name }}</div>
+      </span>
+      <span class="gd-resource__label">{{ .name }}</span>
     </a>
     {{ end }}
   </div>
   {{ end }}
 
   {{ partial "feedback-form" . }}
+  </div>
 </article>
 
 <script>
-document.querySelectorAll(".gd-install__copy").forEach(function (b) {
-  b.addEventListener("click", function () {
-    var t = b.getAttribute("data-clip");
-    if (navigator.clipboard) { navigator.clipboard.writeText(t); }
+/* Copy buttons: install commands + the active code block. */
+(function () {
+  function flash(b) {
     var o = b.textContent; b.textContent = "Copied"; b.classList.add("is-copied");
     setTimeout(function () { b.textContent = o; b.classList.remove("is-copied"); }, 1300);
+  }
+  document.querySelectorAll(".gd-install__copy").forEach(function (b) {
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var t = b.getAttribute("data-clip");
+      if (navigator.clipboard) { navigator.clipboard.writeText(t); }
+      flash(b);
+    });
   });
-});
+  document.querySelectorAll(".gd-code__copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var blk = document.querySelector(".gd-code__block.is-active code");
+      if (blk && navigator.clipboard) { navigator.clipboard.writeText(blk.textContent); }
+      flash(b);
+    });
+  });
+})();
+
+/* Platform selector: cards + code tabs stay in sync; selecting one swaps the code block. */
+(function () {
+  function select(key) {
+    document.querySelectorAll(".gd-platform").forEach(function (c) {
+      var on = c.getAttribute("data-platform") === key;
+      c.classList.toggle("is-selected", on); c.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    document.querySelectorAll(".gd-family__variant").forEach(function (v) {
+      var on = v.getAttribute("data-platform") === key;
+      v.classList.toggle("is-selected", on); v.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    document.querySelectorAll(".gd-gs-tab").forEach(function (t) {
+      var on = t.getAttribute("data-platform") === key;
+      t.classList.toggle("is-active", on);
+      if (on) { var n = document.querySelector(".gd-gs-plat"); if (n && t.getAttribute("data-gs-name")) n.textContent = t.getAttribute("data-gs-name"); }
+    });
+    document.querySelectorAll(".gd-code__block").forEach(function (b) {
+      b.classList.toggle("is-active", b.getAttribute("data-platform") === key);
+    });
+  }
+  document.querySelectorAll(".gd-platform").forEach(function (c) {
+    c.addEventListener("click", function (e) {
+      if (e.target.closest("a, button")) return; // don't hijack the CTA / copy / version link
+      select(c.getAttribute("data-platform"));
+    });
+    c.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(c.getAttribute("data-platform")); }
+    });
+  });
+  document.querySelectorAll(".gd-gs-tab").forEach(function (t) {
+    t.addEventListener("click", function () { select(t.getAttribute("data-platform")); });
+  });
+  document.querySelectorAll(".gd-family__variant").forEach(function (v) {
+    v.addEventListener("click", function () { select(v.getAttribute("data-platform")); });
+  });
+})();
+
+/* Scoped live search — the combined /search-index.json filtered to this product. */
+(function () {
+  var input = document.getElementById("gd-fam-q");
+  var box = document.getElementById("gd-fam-results");
+  var goBtn = document.getElementById("gd-fam-go");
+  if (!input || !box) return;
+  var prod = (location.pathname.split("/").filter(Boolean)[0] || "");
+  var index = null, loading = false, items = [], active = -1, MAX = 8;
+
+  function load() {
+    if (index || loading) return;
+    loading = true;
+    fetch("/search-index.json").then(function (r) { return r.json(); })
+      .then(function (d) { index = d.filter(function (e) { return e.g === prod; }); if (input.value.trim()) run(input.value); })
+      .catch(function () { index = []; });
+  }
+  function kindOf(e) {
+    if (e.u.indexOf("/guides/") !== -1) return ["Guide", "g"];
+    var t = e.t || "";
+    if (t.indexOf(".") !== -1 && t === t.toLowerCase()) return ["Namespace", "ns"];
+    if (/^[A-Z]/.test(t) && t.indexOf(" ") === -1) return ["Type", "ty"];
+    return ["Page", "pg"];
+  }
+  function pathOf(e) { return e.u.split("/").filter(Boolean).slice(1, -1).join(" / "); }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+  function highlight(t, q) {
+    var i = t.toLowerCase().indexOf(q.toLowerCase());
+    if (i === -1) return esc(t);
+    return esc(t.slice(0, i)) + "<mark>" + esc(t.slice(i, i + q.length)) + "</mark>" + esc(t.slice(i + q.length));
+  }
+  function score(e, q) {
+    var t = (e.t || "").toLowerCase();
+    if (t === q) return 0;
+    if (t.indexOf(q) === 0) return 1;
+    if (t.indexOf(q) !== -1) return 2;
+    if (e.u.toLowerCase().indexOf(q) !== -1) return 3;
+    return 99;
+  }
+  function run(q) {
+    q = q.trim().toLowerCase();
+    if (!q) { hide(); return; }
+    if (!index) { load(); return; }
+    var hits = [];
+    for (var i = 0; i < index.length; i++) { var s = score(index[i], q); if (s < 99) hits.push([s, index[i]]); }
+    hits.sort(function (a, b) { return a[0] - b[0] || a[1].t.length - b[1].t.length; });
+    items = hits.slice(0, MAX).map(function (h) { return h[1]; });
+    render(q, hits.length);
+  }
+  function render(q, total) {
+    if (!items.length) {
+      box.innerHTML = '<div class="gd-family__noresult">No results for <strong>' + esc(q) + '</strong> in this product.</div>';
+      box.hidden = false; active = -1; return;
+    }
+    active = 0;
+    var html = items.map(function (e, i) {
+      var k = kindOf(e);
+      return '<a class="gd-family__result' + (i === 0 ? " is-active" : "") + '" role="option" href="' + esc(e.u) + '" data-i="' + i + '">'
+        + '<span class="gd-family__rk gd-family__rk--' + k[1] + '">' + k[0] + '</span>'
+        + '<span class="gd-family__rmain"><span class="gd-family__rname">' + highlight(e.t, q) + '</span>'
+        + '<span class="gd-family__rpath">' + esc(pathOf(e)) + '</span></span>'
+        + (e.p ? '<span class="gd-family__rplat">' + esc(e.p) + '</span>' : '') + '</a>';
+    }).join("");
+    if (total > items.length) html += '<div class="gd-family__more">' + total + ' matches — refine your search to narrow it down</div>';
+    box.innerHTML = html; box.hidden = false;
+    Array.prototype.forEach.call(box.querySelectorAll(".gd-family__result"), function (el) {
+      el.addEventListener("mouseenter", function () { setActive(+el.getAttribute("data-i")); });
+    });
+  }
+  function hide() { box.hidden = true; box.innerHTML = ""; active = -1; }
+  function setActive(i) {
+    var rows = box.querySelectorAll(".gd-family__result");
+    if (!rows.length) return;
+    active = (i + rows.length) % rows.length;
+    Array.prototype.forEach.call(rows, function (el, j) { el.classList.toggle("is-active", j === active); });
+    rows[active].scrollIntoView({ block: "nearest" });
+  }
+  function gotoActive() {
+    var rows = box.querySelectorAll(".gd-family__result");
+    if (rows.length && active >= 0) { window.location.href = rows[active].getAttribute("href"); }
+  }
+  input.addEventListener("focus", load);
+  input.addEventListener("input", function () { run(input.value); });
+  input.addEventListener("keydown", function (e) {
+    if (box.hidden) return;
+    if (e.key === "ArrowDown") { e.preventDefault(); setActive(active + 1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setActive(active - 1); }
+    else if (e.key === "Enter") { e.preventDefault(); gotoActive(); }
+    else if (e.key === "Escape") { input.value = ""; hide(); }
+  });
+  if (goBtn) goBtn.addEventListener("click", gotoActive);
+  document.addEventListener("click", function (e) { if (!box.contains(e.target) && e.target !== input) hide(); });
+})();
 </script>
 {{ end }}
