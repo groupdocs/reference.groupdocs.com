@@ -25,6 +25,8 @@ platforms:
     install: "pip install groupdocs-markdown-net"
 
 formats: ["PDF", "Word", "Excel", "PowerPoint", "HTML"]
+formatsCount: "30+"
+formatsNote: "…and 20+ more document formats convertible to Markdown."
 
 capabilities:
   - "Export to clean Markdown"
