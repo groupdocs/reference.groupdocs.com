@@ -29,6 +29,8 @@ platforms:
     install: "pip install groupdocs-annotation-net"
 
 formats: ["PDF", "Word", "Excel", "PowerPoint", "Images", "CAD"]
+formatsCount: "30+"
+formatsNote: "…and 20+ more document, image, and CAD formats."
 
 capabilities:
   - "Text markup & comments"

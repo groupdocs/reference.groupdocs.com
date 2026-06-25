@@ -14,9 +14,10 @@ tags), so changes accumulate under **[Unreleased]**.
   snippets from `data/getting_started.yaml` (keyed product → platform), sourced from the official
   products content and **compile-verified against the real SDKs** by runnable apps under
   `examples/getting-started/<product>/<platform>/` (`dotnet build` / `mvn compile` / import-resolve).
-  Coverage: **.NET ×15, Java ×13, Python ×13, Node.js ×2** (conversion, viewer) — every applicable
-  product/platform compile-verified against the real SDK; products/platforms without an entry fall back
-  to the install command. Verification corrected several drifted official snippets (metadata
+  Coverage: **.NET ×15, Java ×13, Python ×13, Node.js ×6** (conversion & viewer compile-run via a
+  prebuilt node-java; signature, merger, metadata & editor ship snippets **derived from the verified
+  Java**, since node-java's native build is blocked on Node 22 here); products/platforms without an
+  entry fall back to the install command. Verification corrected several drifted official snippets (metadata
   `Sanitize()`, signature/Python namespaces+casing, parser/Python `get_text()`, watermark line-breaks)
   and flagged that `groupdocs-annotation-net` on PyPI is a 0.0.0 stub.
 - **Combined, compacted `llms-full.txt`** at the site root — the entire API reference for all 15
@@ -50,7 +51,9 @@ tags), so changes accumulate under **[Unreleased]**.
   each link checked against the reference tree), **Key capabilities** + **Supported formats** (with an
   optional "…and N+ more" note), **Resources** as bordered cards, and an inline **"Was this page helpful?"**
   card — all restyled to the home/404 design system. Rendered by `_default/family.html`. New family
-  front-matter fields: `formatsCount`, `formatsNote`, and `popular[]` (`name`/`kind`/`ns`/`url`).
+  front-matter fields `formatsCount`, `formatsNote`, and `popular[]` (`name`/`kind`/`ns`/`url`),
+  populated for **all 15 products** (format counts sourced from the products.groupdocs.com overviews;
+  Popular symbols verified against the reference tree).
 - **Redesigned the home/landing page** (from the Claude Design handoff, the sibling of the 404):
   a hero **live search** over `/search-index.json` (same engine as the 404), a **platform-filter**
   segmented control (All / .NET / Java / Node.js / Python) over the product grid (cards show the real

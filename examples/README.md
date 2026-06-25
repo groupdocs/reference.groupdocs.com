@@ -35,18 +35,26 @@ examples/getting-started/<product>/
 
 | Product     | .NET | Java | Python | Node.js |
 |-------------|:----:|:----:|:------:|:-------:|
-| conversion  |  ✓   |  ✓   |   ✓    |  defer  |
-| annotation  |  ✓   |  ✓   |  n/a¹  |  defer  |
-| viewer      |  ✓   |  ✓   |   ✓    |  defer  |
-| signature   |  ✓   |  ✓   |   ✓²   |  defer  |
+| conversion  |  ✓   |  ✓   |   ✓    |   ✓³    |
+| annotation  |  ✓   |  ✓   |  n/a¹  |  n/a⁴   |
+| viewer      |  ✓   |  ✓   |   ✓    |   ✓³    |
+| signature   |  ✓   |  ✓   |   ✓²   |  der⁵   |
 
-✓ compile-verified against the real SDK · defer = Node.js (node-java bridge) verified in a later pass;
-the family page falls back to `npm i …` until then.
+✓ compile-verified against the real SDK.
 
 ¹ `groupdocs-annotation-net` on PyPI is a **0.0.0 stub**, so annotation/Python can't be verified yet;
 the family page falls back to the `pip install` command.
 ² the official products snippet was outdated — corrected to the current API
 (`TextSignOptions` in `groupdocs.signature.options`, `Color` in `groupdocs.pydrawing`, snake_case members).
+³ Node.js compile-run via a prebuilt `node-java` binary.
+⁴ no `@groupdocs/groupdocs.*` npm package → no Node.js tab.
+⁵ **der** = snippet **derived from the verified Java snippet**. Of the 6 products with a Node.js tab,
+conversion & viewer are compile-run via a prebuilt `node-java`; **signature, merger, metadata, and
+editor** ship derived Node.js snippets because `node-java`'s native build fails on Node 22 in this
+environment (no usable prebuilt), so they can't be locally compile-run. The derivation follows the
+proven conversion/viewer node-java pattern (`groupdocs.<ClassName>`, camelCase methods, explicit
+`.close()`).
 
-Remaining products (assembly, classification, comparison, editor, markdown, merger, metadata, parser,
-redaction, search, watermark) are pending this same treatment.
+The other products' .NET/Java/Python are verified the same way. No Node.js tab for: annotation,
+assembly, classification, markdown, parser, redaction (no npm package); and comparison, search,
+watermark (npm package exists, but the site has no Node.js API-reference content for them yet).
