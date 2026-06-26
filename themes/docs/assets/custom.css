@@ -712,22 +712,30 @@ a.gd-home__ai-card:hover { border-color: #2563eb; box-shadow: 0 6px 18px rgba(37
 }
 
 /* ===== Header search (this site's /search-index.json engine, revealed by the header #search_toggle) =====
-   Reuses the home result rows (.gd-home__result*). The .gdoc-header__search slot is display:none by
-   default (main-groupdocs.css); #search_toggle adds .is-open to reveal it as an overlay over the header. */
+   Mirrors the docs.groupdocs.com reveal: the search opens INLINE as a bounded box between the brand and the
+   right edge — the brand stays put, the nav menu + magnifier hide (the brand also hides on mobile to give the
+   input room). It is NOT a full-width overlay. Driven by .is-searching on .gdoc-header__content. The search
+   slot keeps its base width:100%; margin:0 60px (main-groupdocs.css). Rows reuse .gd-home__result*. */
 .gdoc-header__content { position: relative; }
-.gdoc-header__search.is-open {
-    display: flex; align-items: center; width: auto; margin: 0;
-    position: absolute; left: 0; right: 0; top: 0; height: 70px;
-    padding: 0 15px; background: #fff; z-index: 60;
-}
-.gdoc-header__search.is-open .gdoc-search { flex: 1; width: 100%; }
-.gdoc-search__close-btn { flex: none; border: 0; background: transparent; cursor: pointer; padding: .25rem; margin-left: .25rem; color: #94a3b8; display: inline-flex; align-items: center; }
-.gdoc-search__close-btn:hover { color: var(--body-font-color, #0f1727); }
-.gdoc-search__close-btn .gdoc-search__close-icon { width: 1.15rem; height: 1.15rem; }
+.gdoc-header__search { position: relative; }                                   /* anchor for the dropdown */
+.gdoc-header__content.is-searching .gdoc-header__search { display: block; }
+.gdoc-header__content.is-searching .gdoc-header__search .gdoc-search { width: 100%; }
+.gdoc-header__content.is-searching .gdoc-header__menu { display: none; }
+.gdoc-header__content.is-searching #search_toggle { display: none; }
+@media (max-width: 48rem) { .gdoc-header__content.is-searching .gdoc-header__brand { display: none; } }
+/* Close (X): the bare docs close icon (absolute, right:.7rem in main-groupdocs.css). Nudge it a touch
+   further in from the right edge so it doesn't crowd the input border. */
+.gdoc-header__search .gdoc-search__close-icon { right: 1rem; }
 .gd-hdr-results {
-    position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
-    background: #fff; border: 1px solid #EBEBEC; border-radius: 0 0 12px 12px;
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 60;
+    background: #fff; border: 1px solid #EBEBEC; border-radius: 12px;
     box-shadow: 0 16px 40px rgba(15, 23, 39, .14); overflow: hidden;
     max-height: 75vh; overflow-y: auto; text-align: left;
 }
 @media (max-width: 48rem) { .gd-hdr-results .gd-home__rpath { display: none; } }
+
+/* ===== "On this page" TOC — wrap long signatures ===== The API headings join signature tokens with
+   non-breaking spaces (e.g. "Convert(Func<SaveContext, Stream>, ConvertOptions, CancellationToken)"),
+   so in the fixed 16rem TOC column they form one unbreakable run that overflows off-screen (horizontal
+   scrollbar). Allow the links to break anywhere so each entry wraps within the column. */
+.gdoc-toc a { overflow-wrap: anywhere; word-break: break-word; white-space: normal; }
