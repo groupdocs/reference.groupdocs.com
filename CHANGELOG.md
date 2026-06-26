@@ -85,6 +85,12 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- Header search now opens and matches the docs look. Two fixes: (1) the `#search_toggle` magnifier had no
+  click handler because the header-search script ran during parse, before the toggle button (rendered later
+  in `site-header.html`) existed — deferred the partial's init to `DOMContentLoaded`; (2) the reveal was a
+  full-width white overlay that hid the brand/logo — changed it to the docs' inline reveal (a bounded search
+  box between the brand and the right edge; the brand stays, the nav menu + magnifier hide, brand hides only
+  on mobile), driven by `.is-searching` on `.gdoc-header__content`.
 - Pointed leftover `groupdocs.net` references at `groupdocs.com` (cookie-consent domain + privacy-policy
   URL, structured-data sales email, and the feedback API endpoint), and removed the unused legacy menu
   assets under `static/menu/` left over from the old menu loader.
