@@ -1,8 +1,6 @@
-{{- with partial "utils/featured" . }}
-  <meta name="twitter:card" content="summary_large_image" />
-{{- else }}
-  <meta name="twitter:card" content="summary" />
-{{- end }}
+{{- /* Compact card: a small icon thumbnail on the right of the text (our og:image is a square brand
+       icon, not a 1.91:1 hero), matching how Discord/Slack/X render PyPI-style links. */}}
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:title" {{ partial "utils/title" . | printf "content=%q" | safeHTMLAttr }} />
 {{- with partial "utils/featured" . }}
   <meta property="twitter:image" content="{{ . }}" />

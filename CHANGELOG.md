@@ -10,12 +10,14 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
-- **Branded link previews (Open Graph / Twitter Card images)** — shared links (Teams, Slack, LinkedIn, etc.)
-  now show a GroupDocs image instead of a generic placeholder: the GroupDocs symbol on the site root/home and
-  the product's own icon on each product build. `og:image` was previously empty (the `utils/featured` resolver
-  fell back to `Site.Params.images`, which was unset because the config key sits under `[params.meta]`); the
-  resolver now derives the image from the build (product key = first path segment of the URL). Icons live in
-  theme static at `/img/og/` (GroupDocs symbol + 15 product PNGs).
+- **Branded link previews (Open Graph / Twitter Card images)** — shared links (Teams, Slack, LinkedIn, Discord,
+  etc.) now show a GroupDocs image instead of a generic placeholder: the GroupDocs symbol on the site root/home
+  and the product's own icon on each product build. `og:image` was previously empty (the `utils/featured`
+  resolver fell back to `Site.Params.images`, which was unset because the config key sits under `[params.meta]`);
+  the resolver now derives the image from the build (product key = first path segment of the URL). The card uses
+  the compact `summary` Twitter Card (small icon thumbnail beside the text) rather than `summary_large_image`, and
+  the icons are crisp **512×512** PNGs (rasterized from the brand product SVGs onto a white square) with
+  `og:image:width`/`height`/`type`/`alt` declared. Icons live in theme static at `/img/og/`.
 - **Verified getting-started code** on the family pages — the "Getting started" tabs now render real
   snippets from `data/getting_started.yaml` (keyed product → platform), sourced from the official
   products content and **compile-verified against the real SDKs** by runnable apps under
