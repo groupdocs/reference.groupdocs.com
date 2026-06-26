@@ -1,11 +1,23 @@
+{{/* og:image / twitter:image resolver (used by microformats/opengraph + twitter_cards).
+     1) An explicit page image resource (feature/cover/thumbnail) wins, if a page bundle has one.
+     2) Otherwise brand it: the GroupDocs symbol on the site root/home, and the product's own icon on a
+        product build. Each product is a SEPARATE Hugo build whose pages live under /<product>/, so the
+        first path segment of .RelPermalink is the product key (empty / non-product on the home build).
+        Images are theme static under /img/og/ (published into every build) and referenced per-build via
+        absURL, so the URL is correct for both production and staging hosts and every product prefix. */}}
 {{ $img := "" }}
 
 {{ with $source := ($.Resources.ByType "image").GetMatch "{*feature*,*cover*,*thumbnail*}" }}
-  {{ $featured := .Fill (printf "1200x630 %s" (default "Smart" .Params.anchor)) }}
+  {{ $featured := .Fill (printf "1200x630 %s" (default "Smart" $.Params.anchor)) }}
   {{ $img = $featured.Permalink }}
 {{ else }}
-  {{ with default $.Site.Params.images $.Params.images }}
-    {{ $img = index . 0 | absURL }}
+  {{ $seg := index (split (strings.TrimPrefix "/" $.RelPermalink) "/") 0 }}
+  {{ $keys := slice }}
+  {{ range $.Site.Data.products.product }}{{ $keys = $keys | append .key }}{{ end }}
+  {{ if in $keys $seg }}
+    {{ $img = printf "img/og/groupdocs-%s.png" $seg | absURL }}
+  {{ else }}
+    {{ $img = "img/og/groupdocs.png" | absURL }}
   {{ end }}
 {{ end }}
 
