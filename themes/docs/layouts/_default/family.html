@@ -12,21 +12,34 @@
        Products/platforms without an entry fall back to the install command. */ -}}
 {{- $product := path.Base (strings.TrimRight "/" .Site.BaseURL) -}}
 {{- $gs := index (.Site.Data.getting_started | default dict) $product | default dict -}}
+{{- /* Live versions from data/versions.json (refreshed twice daily from products.groupdocs.com/versions.json).
+       Per platform we override the front-matter version + release-notes link, falling back to front matter when
+       a product/platform is absent. The upstream platform key for Node is "node" (front matter uses "nodejs"). */ -}}
+{{- $vprod := index (.Site.Data.versions | default dict) $product | default dict -}}
+{{- $vplat := $vprod.platforms | default dict -}}
 {{- /* Clean platform names for the lead's "consistent API across …" clause. */ -}}
 {{- $nameMap := dict "net" ".NET" "java" "Java" "nodejs" "Node.js" "python" "Python" -}}
 {{- $dotMap := dict "net" "#5b3bd4" "java" "#e76f00" "nodejs" "#539e43" "python" "#3776ab" -}}
 {{- $leadNames := slice -}}
 {{- range .Params.platforms }}{{ $leadNames = $leadNames | append (index $nameMap .key | default .name) }}{{ end -}}
 {{- $platList := delimit $leadNames ", " ", and " -}}
-{{- /* Latest = the highest semantic version across platforms (not merely the first listed). */ -}}
-{{- $latest := "" -}}{{- $latestKey := -1 -}}
-{{- range .Params.platforms }}{{- with .version -}}
+{{- /* Latest = the upstream max (data file) when present, else the highest semantic version across
+       platforms with live data overriding front matter. */ -}}
+{{- $latest := $vprod.latest | default "" -}}
+{{- if not $latest -}}
+{{- $latestKey := -1 -}}
+{{- range .Params.platforms -}}
+{{- $pk := .key }}{{ if eq $pk "nodejs" }}{{ $pk = "node" }}{{ end -}}
+{{- $v := or (index $vplat $pk | default dict).version .version -}}
+{{- with $v -}}
 {{- $parts := split . "." -}}
 {{- $min := 0 }}{{ if gt (len $parts) 1 }}{{ $min = int (index $parts 1) }}{{ end -}}
 {{- $pat := 0 }}{{ if gt (len $parts) 2 }}{{ $pat = int (index $parts 2) }}{{ end -}}
 {{- $k := add (add (mul (int (index $parts 0)) 1000000) (mul $min 1000)) $pat -}}
-{{- if gt $k $latestKey }}{{ $latestKey = $k }}{{ $latest = . }}{{ end -}}
-{{- end }}{{- end -}}
+{{- if gt $k $latestKey }}{{ $latestKey = $k }}{{ $latest = $v }}{{ end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
 <article class="gd-family">
 
   {{/* Left: platform-variant selector sidebar — full-width family layout (matches the design) */}}
@@ -37,7 +50,9 @@
       {{ range $i, $p := . }}
       <button type="button" class="gd-family__variant gd-family__variant--{{ .key }}{{ if eq $i 0 }} is-selected{{ end }}" data-platform="{{ .key }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
         <span class="gd-family__variant-name"><span class="gd-family__variant-dot"></span>{{ .name }}</span>
-        {{ with .version }}<span class="gd-family__variant-ver">v{{ . }}</span>{{ end }}
+        {{- $pk := .key }}{{ if eq $pk "nodejs" }}{{ $pk = "node" }}{{ end -}}
+        {{- $v := or (index $vplat $pk | default dict).version .version -}}
+        {{ with $v }}<span class="gd-family__variant-ver">v{{ . }}</span>{{ end }}
       </button>
       {{ end }}
     </nav>
@@ -78,7 +93,10 @@
     <div class="gd-platform gd-platform--{{ .key }}{{ if eq $i 0 }} is-selected{{ end }}" data-platform="{{ .key }}" role="button" tabindex="0" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}">
       <div class="gd-platform__top">
         <span class="gd-platform__name"><span class="gd-platform__dot"></span>{{ .name }}</span>
-        {{ if .version }}{{ if .versionUrl }}<a class="gd-platform__ver" href="{{ .versionUrl }}" rel="nofollow" target="_blank" onclick="event.stopPropagation()">v{{ .version }}</a>{{ else }}<span class="gd-platform__ver">v{{ .version }}</span>{{ end }}{{ end }}
+        {{- $pk := .key }}{{ if eq $pk "nodejs" }}{{ $pk = "node" }}{{ end -}}
+        {{- $lp := index $vplat $pk | default dict -}}
+        {{- $v := or $lp.version .version -}}{{- $vurl := or $lp.url .versionUrl -}}
+        {{ if $v }}{{ if $vurl }}<a class="gd-platform__ver" href="{{ $vurl }}" rel="nofollow" target="_blank" onclick="event.stopPropagation()">v{{ $v }}</a>{{ else }}<span class="gd-platform__ver">v{{ $v }}</span>{{ end }}{{ end }}
       </div>
       {{ with .install }}
       <div class="gd-install">

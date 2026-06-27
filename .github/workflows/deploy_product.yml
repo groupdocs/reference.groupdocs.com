@@ -24,6 +24,11 @@ on:
         required: false
         type: string
         default: '-1'
+      ref:
+        description: 'Git ref/branch to build. Empty = the triggering ref (default). Set e.g. to "production" for scheduled jobs that must build a specific branch HEAD.'
+        required: false
+        type: string
+        default: ''
 
 jobs:
   deploy:
@@ -33,6 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: ${{ inputs.ref }}    # empty -> triggering ref (deploy_all); set for scheduled branch builds
           fetch-depth: 0    # full history for .GitInfo / .Lastmod
 
       - name: Setup Hugo
