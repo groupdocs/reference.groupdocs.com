@@ -98,7 +98,10 @@
         {{- $v := or $lp.version .version -}}{{- $vurl := or $lp.url .versionUrl -}}
         {{ if $v }}{{ if $vurl }}<a class="gd-platform__ver" href="{{ $vurl }}" rel="nofollow" target="_blank" onclick="event.stopPropagation()">v{{ $v }}</a>{{ else }}<span class="gd-platform__ver">v{{ $v }}</span>{{ end }}{{ end }}
       </div>
-      {{ with .install }}
+      {{- /* Node.js front matter has no install field; derive the npm command from the product slug. */ -}}
+      {{- $install := .install -}}
+      {{- if and (not $install) (eq .key "nodejs") }}{{ $install = printf "npm install @groupdocs/groupdocs.%s" $product }}{{ end -}}
+      {{ with $install }}
       <div class="gd-install">
         <code class="gd-install__cmd">{{ . }}</code>
         <button type="button" class="gd-install__copy" data-clip="{{ . }}" aria-label="Copy install command">Copy</button>

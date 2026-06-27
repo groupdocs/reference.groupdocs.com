@@ -45,27 +45,25 @@
   </section>
   {{- end }}
 
-  {{/* AI / LLM callout */}}
-  <section class="gd-404__ai">
-    <div class="gd-404__ai-head">
-      <span class="gd-404__ai-icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="13" rx="2"></rect><path d="M9 6V4h6v2"></path><circle cx="9" cy="12.5" r="1"></circle><circle cx="15" cy="12.5" r="1"></circle><path d="M9 16h6"></path></svg>
-      </span>
-      <h2 class="gd-404__h2">Using an AI agent or LLM?</h2>
+  {{/* "For AI agents" panel — shared design (identical on the home page); styled by .gd-ai in custom.css. */}}
+  <section class="gd-ai">
+    <div class="gd-ai__intro">
+      <div class="gd-ai__eyebrow"><span class="gd-ai__eyebrow-dot"></span>For AI agents</div>
+      <h2 class="gd-ai__title">Built to be machine-readable</h2>
+      <p class="gd-ai__lead">Machine-readable indexes of the entire API reference, designed for agents and retrieval.</p>
     </div>
-    <p class="gd-404__ai-lead">Machine-readable indexes of the entire API reference, built for agents and retrieval.</p>
-    <div class="gd-404__ai-cards">
-      <a class="gd-404__ai-card" href="/llms.txt">
-        <span class="gd-404__token">/llms.txt</span>
-        <span class="gd-404__ai-desc">Curated index of every product and platform.</span>
+    <div class="gd-ai__cards">
+      <a class="gd-ai__card" href="/llms.txt">
+        <span class="gd-ai__chip">/llms.txt</span>
+        <span class="gd-ai__desc">Curated index of every product and platform.</span>
       </a>
-      <a class="gd-404__ai-card" href="/llms-full.txt">
-        <span class="gd-404__token">/llms-full.txt</span>
-        <span class="gd-404__ai-desc">The full documentation in a single file.</span>
+      <a class="gd-ai__card" href="/llms-full.txt">
+        <span class="gd-ai__chip">/llms-full.txt</span>
+        <span class="gd-ai__desc">The full documentation in a single file.</span>
       </a>
-      <div class="gd-404__ai-card">
-        <span class="gd-404__token">.md</span>
-        <span class="gd-404__ai-desc">Append <code>.md</code> to any page URL for Markdown — e.g. <code>/annotation.md</code></span>
+      <div class="gd-ai__card gd-ai__card--wide">
+        <span class="gd-ai__chip">.md</span>
+        <span class="gd-ai__desc">Append <code>.md</code> to any page URL for Markdown — e.g. <code>/annotation.md</code></span>
       </div>
     </div>
   </section>

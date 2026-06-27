@@ -1,5 +1,32 @@
 <script src="{{ index (index .Site.Data.assets "main.js") "src" | relURL }}"></script>
 
+{{- /* Self-contained color-theme toggle. The geekdoc bundle's own handler is unreliable here, so we
+       drive the theme ourselves using the same contract the CSS expects: a `color-theme` attribute (read
+       by color-groupdocs.css) + a `.color-toggle-<state>` class on <html> (read by main-groupdocs.css to
+       show the right icon). Runs in <head> for anti-flash; binds the #gdoc-color-theme button on load. */ -}}
+<script>
+(function () {
+  var KEY = "gd-color-theme", STATES = ["auto", "dark", "light"], h = document.documentElement;
+  function read() { try { var v = localStorage.getItem(KEY); return STATES.indexOf(v) >= 0 ? v : "auto"; } catch (e) { return "auto"; } }
+  function apply(t) {
+    h.className = (h.className || "").replace(/\bcolor-toggle-\S+/g, "").trim();
+    h.classList.add("color-toggle-" + t);
+    if (t === "auto") { h.removeAttribute("color-theme"); } else { h.setAttribute("color-theme", t); }
+  }
+  apply(read());
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("gdoc-color-theme");
+    if (!btn) return;
+    btn.onclick = function (e) {
+      e.preventDefault();
+      var next = STATES[(STATES.indexOf(read()) + 1) % STATES.length];
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+      apply(next);
+    };
+  });
+})();
+</script>
+
 {{- $scssMain := "scss/main.scss"}}
 {{- $css := resources.Get $scssMain | toCSS  | resources.Minify | fingerprint -}}
 <link rel="preload" href="{{- $css.RelPermalink -}}" as="style">
@@ -55,14 +82,14 @@
 
 <link
   rel="preload"
-  href="/color-light-groupdocs.css?v=25.5.0"
+  href="/color-groupdocs.css?v=26.6.0"
   as="style"
 />
 <link
   rel="stylesheet"
-  href="/color-light-groupdocs.css?v=25.5.0"
+  href="/color-groupdocs.css?v=26.6.0"
   media="all"
-/> 
+/>
 
 
 <link
