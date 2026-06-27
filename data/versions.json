@@ -1,0 +1,294 @@
+{
+  "annotation": {
+    "latest": "26.6.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/annotation/release-notes/",
+        "version": "25.6.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/annotation/release-notes/",
+        "version": "26.6.0"
+      }
+    }
+  },
+  "assembly": {
+    "latest": "26.1.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/assembly/release-notes/",
+        "version": "26.1.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/assembly/release-notes/",
+        "version": "25.12.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/assembly/release-notes/",
+        "version": "25.5.1"
+      }
+    }
+  },
+  "classification": {
+    "latest": "21.1.0",
+    "platforms": {
+      "net": {
+        "url": "https://releases.groupdocs.com/classification/release-notes/",
+        "version": "21.1.0"
+      }
+    }
+  },
+  "comparison": {
+    "latest": "26.5.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "version": "26.5.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "version": "26.5.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "version": "25.11.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "version": "26.5.0"
+      }
+    }
+  },
+  "conversion": {
+    "latest": "26.5.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "version": "26.5.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "version": "26.3.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "version": "25.11.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "version": "26.5.0"
+      }
+    }
+  },
+  "editor": {
+    "latest": "26.6.1",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "version": "26.1.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "version": "26.6.1"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "version": "26.1.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "version": "26.5.0"
+      }
+    }
+  },
+  "markdown": {
+    "latest": "26.5.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/markdown/release-notes/",
+        "version": "26.5.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/markdown/release-notes/",
+        "version": "26.3.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/markdown/release-notes/",
+        "version": "26.3.0"
+      }
+    }
+  },
+  "merger": {
+    "latest": "26.6.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "version": "26.4.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "version": "26.4.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "version": "24.12.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "version": "26.6.0"
+      }
+    }
+  },
+  "metadata": {
+    "latest": "26.6.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "version": "26.1.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "version": "26.6.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "version": "26.2.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "version": "26.5.0"
+      }
+    }
+  },
+  "parser": {
+    "latest": "26.5.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/parser/release-notes/",
+        "version": "26.5.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/parser/release-notes/",
+        "version": "26.4.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/parser/release-notes/",
+        "version": "25.12.0"
+      }
+    }
+  },
+  "redaction": {
+    "latest": "26.6.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/redaction/release-notes/",
+        "version": "25.12.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/redaction/release-notes/",
+        "version": "26.5.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/redaction/release-notes/",
+        "version": "26.6.0"
+      }
+    }
+  },
+  "search": {
+    "latest": "26.6.1",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/search/release-notes/",
+        "version": "26.6.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/search/release-notes/",
+        "version": "26.6.1"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/search/release-notes/",
+        "version": "24.7.0"
+      }
+    }
+  },
+  "signature": {
+    "latest": "26.5.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "version": "26.5.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "version": "26.2.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "version": "24.12.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "version": "26.1.0"
+      }
+    }
+  },
+  "total": {
+    "latest": "26.6.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "version": "26.6.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "version": "26.4.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "version": "26.3.0"
+      }
+    }
+  },
+  "viewer": {
+    "latest": "26.5.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "version": "26.5.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "version": "26.4.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "version": "26.5.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "version": "26.5.0"
+      }
+    }
+  },
+  "watermark": {
+    "latest": "26.6.0",
+    "platforms": {
+      "java": {
+        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "version": "26.4.0"
+      },
+      "net": {
+        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "version": "26.6.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "version": "26.1.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "version": "26.6.0"
+      }
+    }
+  }
+}

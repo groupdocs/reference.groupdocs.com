@@ -10,6 +10,14 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **Auto-updating SDK versions on the family pages** — version badges (platform cards, the platform sidebar,
+  and the "Latest" meta) now read `data/versions.json`, refreshed from the canonical
+  `products.groupdocs.com/versions.json` feed by a scheduled workflow (`update_versions.yml`, 06:10 + 18:10 UTC,
+  +10 min after upstream publishes). The job commits the data file to both branches and redeploys the product
+  family pages only when a version actually changed; the family template falls back to each page's front-matter
+  version when the feed has no entry, and the version badge links to the platform's release notes.
+  `update_versions.py` trims the feed to the rendered fields; `deploy_product.yml` gained a `ref` input so the
+  scheduled job can build the updated branch HEAD.
 - **Branded link previews (Open Graph / Twitter Card images)** — shared links (Teams, Slack, LinkedIn, Discord,
   etc.) now show a GroupDocs image instead of a generic placeholder: the GroupDocs symbol on the site root/home
   and the product's own icon on each product build. `og:image` was previously empty (the `utils/featured`
