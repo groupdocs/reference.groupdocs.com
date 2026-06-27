@@ -31,20 +31,12 @@
   itemprop="breadcrumb"
 >
   {{ if $showBreadcrumb }}
-     <label for="menu-control" class="gdoc-nav__control" tabindex="0">
-            <svg class="gdoc-icon gdoc_menu">
-                <title>{{ i18n "button_nav_open" }}</title>
-                <use xlink:href="#gdoc_menu"></use>
-            </svg>
-            <svg class="gdoc-icon gdoc_arrow_back">
-                <title>{{ i18n "button_nav_close" }}</title>
-                <use xlink:href="#gdoc_arrow_back"></use>
-            </svg>
-    </label>
+    {{/* The sidebar-nav hamburger lives in the site header now — no duplicate here. */}}
     <div>
-     
-
       <ol class="gdoc-breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {{/* Root crumb back to the site index, matching the family page's "API Reference" breadcrumb. */}}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="/" href="/"><span itemprop="name">API Reference</span></a><meta itemprop="position" content="1" /></li>
+        <li class="gdoc-breadcrumb__sep">/</li>
         {{ $position := sub (len (split .RelPermalink "/")) 1 }}
         {{ $name := (partial "utils/short-title" .) }}
         {{ $value := (printf "<li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>%s</span><meta itemprop='position' content='%d' /></li>" $name $position ) }}

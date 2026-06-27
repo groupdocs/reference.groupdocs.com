@@ -13,7 +13,10 @@
           <use xlink:href="#gdoc_keyboard_arrow_down"></use>
         </svg>
       </h2>
-      {{ .Page.TableOfContents | replaceRE `<nav id="TableOfContents">\s*<ul>\s*<li>\s*<ul>` `<nav id="TableOfContentsMobile"><ul>` | replaceRE `</ul>\s*</li>\s*</ul>\s*</nav>` `</ul></nav>` | safeHTML }}
+      {{- /* Rename the nav id unconditionally first (the toggle JS targets #TableOfContentsMobile); the
+             unwrap below only matches NESTED TOCs, so without this rename a flat/sparse TOC keeps id
+             "TableOfContents" and the mobile toggle does nothing. */ -}}
+      {{ .Page.TableOfContents | replaceRE `id="TableOfContents"` `id="TableOfContentsMobile"` | replaceRE `<nav id="TableOfContentsMobile">\s*<ul>\s*<li>\s*<ul>` `<nav id="TableOfContentsMobile"><ul>` | replaceRE `</ul>\s*</li>\s*</ul>\s*</nav>` `</ul></nav>` | safeHTML }}
      
     </div>
 {{- end -}}

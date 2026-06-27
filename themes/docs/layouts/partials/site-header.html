@@ -5,7 +5,11 @@
     <div class="gdoc-header">
         <div class="gdoc-header__content">
 
+            {{- /* Mirror baseof: family/404 render full-width with no sidebar nav, so don't show a
+                   hamburger that would open an empty drawer. */ -}}
             {{ $navEnabled := default true .Page.Params.GeekdocNav }}
+            {{ if eq .Kind "404" }}{{ $navEnabled = false }}{{ end }}
+            {{ if eq .Layout "family" }}{{ $navEnabled = false }}{{ end }}
             {{ if $navEnabled }}
                 <label for="menu-control" class="gdoc-nav__control" tabindex="0">
                     <svg class="gdoc-icon gdoc_menu">
@@ -132,6 +136,23 @@
                     <svg class="gdoc-header__search-btn-icon">
                         <use xlink:href="/img/groupdocs-stack.svg#search"></use>
                     </svg>
+                </div>
+
+                {{/* Color theme toggle (light/dark/auto). The already-loaded geekdoc JS bundle binds
+                     #gdoc-color-theme, cycles auto->dark->light, persists to localStorage, and sets the
+                     color-theme attribute on <html>; .color-toggle-* CSS shows the active icon. */}}
+                <div id="gdoc-color-theme" title="Color theme">
+                    <span>
+                        <svg class="gdoc-theme-icon gdoc_brightness_dark">
+                            <use xlink:href="/img/groupdocs-stack.svg#theme_dark"></use>
+                        </svg>
+                        <svg class="gdoc-theme-icon gdoc_brightness_light">
+                            <use xlink:href="/img/groupdocs-stack.svg#theme_light"></use>
+                        </svg>
+                        <svg class="gdoc-theme-icon gdoc_brightness_auto">
+                            <use xlink:href="/img/groupdocs-stack.svg#theme_auto"></use>
+                        </svg>
+                    </span>
                 </div>
             </div>
 

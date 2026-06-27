@@ -10,6 +10,14 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **Dark theme (light / dark / auto)** following the docs.groupdocs.com dark redesign. Loads the dark-capable
+  `color-groupdocs.css` (was the light-only `color-light-groupdocs.css`) so the header/footer/sidebar, every API
+  reference page, and code blocks get full light/dark/auto via the geekdoc color variables; restored the header
+  theme toggle (`#gdoc-color-theme`, cycles auto→dark→light, remembered in localStorage; default Auto follows the
+  OS). The custom landing pages (home, family, 404, header search) use semantic tokens with dark overrides aligned
+  to the docs-dark reference palette (`#282828`/`#3a3a3a` surfaces, `#558fff` accent). The **"For AI agents"**
+  callout is now a single shared component (`.gd-ai`) on the home and 404 pages — "Built to be machine-readable"
+  with `/llms.txt`, `/llms-full.txt`, and `.md` cards — a dark panel in both themes.
 - **Auto-updating SDK versions on the family pages** — version badges (platform cards, the platform sidebar,
   and the "Latest" meta) now read `data/versions.json`, refreshed from the canonical
   `products.groupdocs.com/versions.json` feed by a scheduled workflow (`update_versions.yml`, 06:10 + 18:10 UTC,
@@ -101,6 +109,13 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **Mobile layout fixes** — (1) only one hamburger on doc pages (removed the duplicate in the breadcrumb/page
+  header; the sidebar-nav toggle lives in the site header); (2) the "On this page" mobile TOC toggle now works on
+  flat/sparse pages (the nav id is renamed to `#TableOfContentsMobile` unconditionally) and the box is hidden
+  unless there are ≥2 entries; (3) family/404 no longer show a dead hamburger that opened an empty drawer (the
+  site header now mirrors baseof's nav-disabled condition); (4) the home/family/404 brand/logo no longer looks
+  off-place (the empty nav-control placeholder reserves the hamburger's width); (5) the Node.js platform card now
+  shows an install command (`npm install @groupdocs/groupdocs.<product>`, derived in the family template).
 - Header search now opens and matches the docs look. Two fixes: (1) the `#search_toggle` magnifier had no
   click handler because the header-search script ran during parse, before the toggle button (rendered later
   in `site-header.html`) existed — deferred the partial's init to `DOMContentLoaded`; (2) the reveal was a

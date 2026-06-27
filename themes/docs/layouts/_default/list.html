@@ -3,7 +3,7 @@
 {{ $showFeedbackForm := default .Site.Params.showFeedbackForm .Page.Params.showFeedbackForm }}
 {{/* TOC on by default; opt out per-page or per-site with `toc = false`. Only render it
      when there are actual entries — otherwise an "On this page" box shows up empty. */}}
-{{ $showToc := and (ne .Site.Params.toc false) (ne .Params.toc false) (findRE "<li" .TableOfContents 1) }}
+{{ $showToc := and (ne .Site.Params.toc false) (ne .Params.toc false) (gt (len (findRE "<li" .TableOfContents)) 1) }}
 
 {{ $fullWidthClass := default "" }}
 

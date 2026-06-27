@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{/* TOC on by default; opt out with `toc = false`. Only render when it has entries. */}}
-  {{ $showToc := and (ne .Site.Params.toc false) (ne .Params.toc false) (findRE "<li" .TableOfContents 1) }}
+  {{ $showToc := and (ne .Site.Params.toc false) (ne .Params.toc false) (gt (len (findRE "<li" .TableOfContents)) 1) }}
   {{ partial "page-header" . }}
 
 <div class="gdoc-content-cols">

@@ -62,23 +62,26 @@
   </section>
   {{- end }}
 
-  {{/* AI / LLM panel — dark, per the index mockup */}}
-  <section class="gd-home__ai">
-    <div class="gd-home__ai-eyebrow">For AI agents</div>
-    <h2 class="gd-home__h2 gd-home__ai-title">Built to be machine-readable</h2>
-    <p class="gd-home__ai-lead">Machine-readable indexes of the entire API reference, designed for agents and retrieval.</p>
-    <div class="gd-home__ai-cards">
-      <a class="gd-home__ai-card" href="/llms.txt">
-        <span class="gd-home__token">/llms.txt</span>
-        <span class="gd-home__ai-desc">Curated index of every product and platform.</span>
+  {{/* "For AI agents" panel — shared design (identical on the 404 page); styled by .gd-ai in custom.css.
+       Dark in both themes (navy in light, #282828 in dark) via the --gd-ai-* tokens. */}}
+  <section class="gd-ai">
+    <div class="gd-ai__intro">
+      <div class="gd-ai__eyebrow"><span class="gd-ai__eyebrow-dot"></span>For AI agents</div>
+      <h2 class="gd-ai__title">Built to be machine-readable</h2>
+      <p class="gd-ai__lead">Machine-readable indexes of the entire API reference, designed for agents and retrieval.</p>
+    </div>
+    <div class="gd-ai__cards">
+      <a class="gd-ai__card" href="/llms.txt">
+        <span class="gd-ai__chip">/llms.txt</span>
+        <span class="gd-ai__desc">Curated index of every product and platform.</span>
       </a>
-      <a class="gd-home__ai-card" href="/llms-full.txt">
-        <span class="gd-home__token">/llms-full.txt</span>
-        <span class="gd-home__ai-desc">The full documentation in a single file.</span>
+      <a class="gd-ai__card" href="/llms-full.txt">
+        <span class="gd-ai__chip">/llms-full.txt</span>
+        <span class="gd-ai__desc">The full documentation in a single file.</span>
       </a>
-      <div class="gd-home__ai-card gd-home__ai-card--static">
-        <span class="gd-home__token">.md</span>
-        <span class="gd-home__ai-desc">Append <code>.md</code> to any page URL for Markdown — e.g. <code>/annotation.md</code></span>
+      <div class="gd-ai__card gd-ai__card--wide">
+        <span class="gd-ai__chip">.md</span>
+        <span class="gd-ai__desc">Append <code>.md</code> to any page URL for Markdown — e.g. <code>/annotation.md</code></span>
       </div>
     </div>
   </section>

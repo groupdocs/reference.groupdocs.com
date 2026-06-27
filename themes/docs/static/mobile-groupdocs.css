@@ -73,6 +73,7 @@
     
     .gdoc-nav__control--none {
         display: block;
+        width: 1.5rem;   /* reserve the hamburger's footprint so the brand stays put on home/family/404 */
     }
 
     .gdoc-nav nav {
