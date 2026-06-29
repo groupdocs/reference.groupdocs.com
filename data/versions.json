@@ -60,7 +60,7 @@
     }
   },
   "conversion": {
-    "latest": "26.5.0",
+    "latest": "26.6.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/conversion/release-notes/",
@@ -68,7 +68,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/conversion/release-notes/",
-        "version": "26.3.0"
+        "version": "26.6.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/conversion/release-notes/",
