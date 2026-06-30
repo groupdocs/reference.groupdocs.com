@@ -13,15 +13,15 @@
     }
   },
   "assembly": {
-    "latest": "26.1.0",
+    "latest": "26.6.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/assembly/release-notes/",
-        "version": "26.1.0"
+        "version": "26.6.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/assembly/release-notes/",
-        "version": "25.12.0"
+        "version": "26.6.0"
       },
       "python": {
         "url": "https://releases.groupdocs.com/assembly/release-notes/",
