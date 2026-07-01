@@ -161,7 +161,7 @@
     }
   },
   "parser": {
-    "latest": "26.5.0",
+    "latest": "26.6.1",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/parser/release-notes/",
@@ -169,7 +169,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/parser/release-notes/",
-        "version": "26.4.0"
+        "version": "26.6.1"
       },
       "python": {
         "url": "https://releases.groupdocs.com/parser/release-notes/",
@@ -212,7 +212,7 @@
     }
   },
   "signature": {
-    "latest": "26.5.0",
+    "latest": "26.6.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
@@ -220,7 +220,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
-        "version": "26.2.0"
+        "version": "26.6.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
