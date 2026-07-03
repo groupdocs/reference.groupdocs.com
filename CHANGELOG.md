@@ -10,6 +10,24 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **Broken-link redirects (API URL-scheme migration)** — restored 301s for **1,456** legacy API URLs that
+  began 404-ing after the June-2026 "Simplify CI" change (`855972156b`) stripped the redirect config down
+  to locale-only. The 404s are old URL schemes for pages that still exist at the canonical
+  `/{product}/{platform}/{namespace}/{class}/`: platform-less `/{product}/{namespace}/{class}` (insert
+  `net`/`java`) and flat `/{product}/net/{class}` (insert the namespace). New **`redirects/redirects.map`**
+  is generated from the 404 crawl + content tree by **`scripts/gen_redirects_map.py`** (every target
+  verified: 1,440 resolve to the exact page, 16 reorg stragglers fall back to their namespace landing;
+  `redirects/known_extra_404s.tsv` adds 3 uncrawled URLs) and published as **S3 per-object redirects**
+  (`x-amz-website-redirect-location` → 301, served via the bucket's static-website endpoint through
+  CloudFront) by **`scripts/deploy_redirects.sh`** via the manual **`deploy_redirects.yml`** workflow
+  (two objects per URL, then invalidates the affected CloudFront product prefixes). The old
+  `redirects/*.redirects.txt` nginx files are VM-era leftovers, not consumed by the S3+CloudFront stack.
+- A content-link audit (all 37,609 API pages) found the generators produce correct paths — `url:` front
+  matter is 100% consistent and class/member tables use proper links. The only defect is **3 .NET
+  namespace pages** (metadata, parser, comparison) whose intro prose carries an upstream **xmldocmd**
+  `see cref` that resolves one level too deep (doubled namespace → 404). All 3 are now 301'd via
+  `redirects/known_extra_404s.tsv` (fed to the generator with `--extra`); the durable fix belongs upstream
+  in the `GroupDocs.<Product>-References` sources (xmldocmd namespace-summary links, or a post-sync sanitize).
 - **Dark theme (light / dark / auto)** following the docs.groupdocs.com dark redesign. Loads the dark-capable
   `color-groupdocs.css` (was the light-only `color-light-groupdocs.css`) so the header/footer/sidebar, every API
   reference page, and code blocks get full light/dark/auto via the geekdoc color variables; restored the header
@@ -63,6 +81,27 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **Reorganized repo-root scripts into `scripts/` and edge-redirect files into `redirects/`.** All
+  build/deploy/preview helpers now live in `scripts/` (`resolve_md_links.py`, `move_md_to_ugly_urls.sh`,
+  `build_search_index.py`, `build_llms_full.py`, `update_versions.py`, `serve-local.py`, `build_refs.cmd`);
+  `build-local.sh` and `config-local.toml` stay in the repo root. The two nginx locale-strip redirect files
+  moved to `redirects/reference.groupdocs.com.redirects.txt` / `redirects/reference2.groupdocs.com.redirects.txt`.
+  Updated every caller — the CI workflows (`deploy_product.yml`, `deploy_all.yml`, `refresh_search_index.yml`,
+  `update_versions.yml`), `build-local.sh`, the per-product `config.toml` deploy comments, and the docs
+  (README, CLAUDE.md, RESUME.md). ⚠️ If the edge layer pulls the redirect files by their old repo-root path,
+  update that reference to `redirects/`.
+- **Home hero search is now a product filter** (matches docs.groupdocs.com). The index-page search box
+  live-filters the "Browse products" grid on the page (by short name / title / description, combined with the
+  platform segments) instead of running a full `/search-index.json` type-ahead that navigated away — added a
+  clear (×) button and a "no products match" empty state, and it drops the results dropdown. The full-reference
+  search is unchanged and still lives in the header (`partials/header-search.html`), which keeps reusing the
+  `.gd-home__result*` row styles.
+- **Removed "REST API" from the site descriptions** — this site is class-library reference only. The home
+  hero lead / meta description is now "Class library reference for GroupDocs document-processing SDKs…"
+  (`home/english/_index.md` + the `/llms-full.txt` header in `build_llms_full.py`), and the fallback
+  `[params] description` in all 16 `config/sites/groupdocs/<product>/_default/config.toml` files (the default
+  `<meta>`/OG description on the API-reference pages) now reads "Class Libraries for the developers to
+  manipulate & process Files…" (was "Class Libraries & REST APIs for the developers…").
 - **Migrated the docs.groupdocs.com header & footer** to be **server-rendered** (`partials/site-header.html`
   + `site-footer.html`, wired in `_default/baseof.html`), replacing the runtime Containerize menu engine
   (`foot.html` no longer loads `containerize-menu`). The header **search box uses this site's own
@@ -109,6 +148,13 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **Stacked install code blocks → platform tabs** on the Watermark Python-via-.NET *Installation* guide
+  (`watermark/python-net/guides/installation/`). The PyPI install, pre-downloaded-wheel install, and Linux/macOS
+  prerequisites were each authored as consecutive fenced code blocks that rendered as separate boxes stacked one
+  under another; they are now grouped into the theme's `tabs`/`tab` shortcode platform tabs
+  (Windows / Linux / macOS — the wheel block adds macOS Intel + Apple Silicon). Same shortcode + `.gdoc-tabs`
+  styling already vendored from the docs `hugo-geekdoc` theme; no theme changes. (Canonical fix also landed in the
+  `GroupDocs.Watermark-References` product source so the content sync won't revert it.)
 - **Mobile layout fixes** — (1) only one hamburger on doc pages (removed the duplicate in the breadcrumb/page
   header; the sidebar-nav toggle lives in the site header); (2) the "On this page" mobile TOC toggle now works on
   flat/sparse pages (the nav id is renamed to `#TableOfContentsMobile` unconditionally) and the box is hidden

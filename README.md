@@ -56,7 +56,7 @@ consumption. Configured per product in `config/sites/groupdocs/<product>/_defaul
 At the **site root**, `llms.txt` is a **per-product directory** (each product's full-reference,
 section-index, and Markdown links), and `/llms-full.txt` is the **entire API reference for all 15
 products in one compacted file**. Because each product is a separate Hugo build, Hugo can't
-aggregate them — so [`build_llms_full.py`](build_llms_full.py) builds `/llms-full.txt` from source
+aggregate them — so [`scripts/build_llms_full.py`](scripts/build_llms_full.py) builds `/llms-full.txt` from source
 (stripping navigation boilerplate, keeping signatures + summaries + member/parameter tables) and CI
 uploads it to the bucket root (`deploy_all` + `refresh_search_index.yml`).
 
@@ -70,14 +70,14 @@ The `.md` files are post-processed so they're clean and portable:
    (not `/<product>/index.md`) by `deploy_product.yml`.
 2. **Absolute links** — links are made absolute so they work no matter where the `.md` is served:
    - `abs-content.txt` (in-template) absolutizes **root-relative** links (`/path/` → `BASE/path.md`).
-   - [`resolve_md_links.py`](resolve_md_links.py) (post-build) absolutizes **relative** links
+   - [`scripts/resolve_md_links.py`](scripts/resolve_md_links.py) (post-build) absolutizes **relative** links
      (`../ns/class`, `./x`, of any depth) by resolving each against its page's own URL. It must run
      **before** the ugly-URL rename.
-3. **Ugly URLs** — [`move_md_to_ugly_urls.sh`](move_md_to_ugly_urls.sh) renames
+3. **Ugly URLs** — [`scripts/move_md_to_ugly_urls.sh`](scripts/move_md_to_ugly_urls.sh) renames
    `public/<path>/index.md` → `public/<path>.md`, so `/viewer/net.md` is served (not
    `/viewer/net/index.md`).
 
-The post-build order is always: **build → `resolve_md_links.py` → `move_md_to_ugly_urls.sh`**.
+The post-build order is always: **build → `scripts/resolve_md_links.py` → `scripts/move_md_to_ugly_urls.sh`**.
 
 ## Local preview
 
@@ -111,8 +111,12 @@ Branch → environment mapping:
 | `main`       | staging     | reference2.groupdocs.com (QA) | `Stage`      |
 | `production` | production  | reference.groupdocs.com       | `Production` |
 
-Retired non-English locales are stripped at the edge via `reference.groupdocs.com.redirects.txt`
-and `reference2.groupdocs.com.redirects.txt` (nginx `rewrite … permanent;` rules).
+Page redirects live in `redirects/redirects.map` and are published as **S3 per-object 301s**
+(`x-amz-website-redirect-location`, served via the bucket's static-website endpoint through CloudFront)
+by `scripts/deploy_redirects.sh` — run the manual **Deploy Redirects** workflow (QA first, then prod).
+Regenerate the broken-link batch with `scripts/gen_redirects_map.py` (reads a 404 crawl + the content
+tree, every target verified). The old `redirects/*.redirects.txt` nginx files are VM-era leftovers, not
+consumed by the S3+CloudFront stack.
 
 ## Common tasks
 
@@ -130,9 +134,14 @@ config/sites/groupdocs/<product>/   per-product Hugo config (_default/staging/pr
 content/sites/groupdocs/<product>/  english/ content + static/ assets
 themes/docs/                        vendored theme (layouts, assets/custom.css, partials)
 data/products.toml                  home product grid
-build-local.sh, config-local.toml   local combined preview
-resolve_md_links.py                 post-build: relative .md links → absolute
-move_md_to_ugly_urls.sh             post-build: pretty .md → ugly .md
-*.redirects.txt                     edge locale-strip redirects
+build-local.sh, config-local.toml   local combined preview (kept in repo root)
+scripts/                            build/deploy + preview helpers: resolve_md_links.py,
+                                    move_md_to_ugly_urls.sh, build_search_index.py,
+                                    build_llms_full.py, update_versions.py, serve-local.py, build_refs.cmd
+redirects/redirects.map             page redirects -> S3 per-object 301s (deploy_redirects.sh)
+redirects/*.redirects.txt           VM-era nginx rules (vestigial; not consumed by S3+CloudFront)
+scripts/gen_redirects_map.py        build redirects.map from a 404 crawl + content tree
+scripts/deploy_redirects.sh         publish redirects.map as S3 per-object 301s + CloudFront invalidation
 .github/workflows/                  deploy_product.yml (reusable) + per-product runners + deploy_all.yml
+                                    + deploy_redirects.yml (manual redirect publish)
 ```

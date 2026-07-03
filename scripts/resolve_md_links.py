@@ -14,7 +14,7 @@ Run it BEFORE move_md_to_ugly_urls.sh: resolution relies on the pretty path
 public/<a>/<b>/index.md => page URL /<a>/<b>/.
 
 Usage:
-    python resolve_md_links.py [output_dir] --base-url <BASE>
+    python scripts/resolve_md_links.py [output_dir] --base-url <BASE>
 
     output_dir   Hugo output directory (default: "public").
     --base-url   The build's Hugo .Site.BaseURL, e.g.

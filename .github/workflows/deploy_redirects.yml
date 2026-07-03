@@ -1,0 +1,50 @@
+name: Deploy Redirects
+
+# Publishes redirects/redirects.map to the S3 static-website bucket as per-object 301s
+# (x-amz-website-redirect-location), then invalidates CloudFront. Manual, re-runnable.
+# reference.groupdocs.com = AWS S3 (static-website) + CloudFront; the website endpoint honours
+# per-object redirects. Run QA first and check the verify output before running prod.
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'qa'
+        type: choice
+        options:
+          - qa
+          - prod
+
+jobs:
+  deploy:
+    name: Deploy redirects (${{ inputs.environment }})
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve environment
+        id: cfg
+        run: |
+          if [ "${{ inputs.environment }}" = "prod" ]; then
+            echo "bucket=reference.groupdocs.com"          >> $GITHUB_OUTPUT
+            echo "verify_base=https://reference.groupdocs.com" >> $GITHUB_OUTPUT
+            echo "cf_secret=PROD" >> $GITHUB_OUTPUT
+          else
+            echo "bucket=reference2.groupdocs.com"         >> $GITHUB_OUTPUT
+            echo "verify_base=https://reference2.groupdocs.com" >> $GITHUB_OUTPUT
+            echo "cf_secret=STAGE" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Apply redirects
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+          BUCKET: ${{ steps.cfg.outputs.bucket }}
+          REGION: us-west-2
+          VERIFY_BASE: ${{ steps.cfg.outputs.verify_base }}
+          CF_DISTRIBUTION: ${{ steps.cfg.outputs.cf_secret == 'PROD' && secrets.AWS_DISTRIBUTION_PROD || secrets.AWS_DISTRIBUTION }}
+        run: |
+          chmod +x ./scripts/deploy_redirects.sh
+          ./scripts/deploy_redirects.sh

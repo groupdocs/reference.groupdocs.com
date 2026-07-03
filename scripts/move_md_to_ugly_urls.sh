@@ -5,7 +5,7 @@
 # /viewer/net.md is served instead of /viewer/net/index.md.
 #
 # Usage:
-#   ./move_md_to_ugly_urls.sh [output_dir]
+#   ./scripts/move_md_to_ugly_urls.sh [output_dir]
 #
 # Arguments:
 #   output_dir  Hugo output directory (default: "public")

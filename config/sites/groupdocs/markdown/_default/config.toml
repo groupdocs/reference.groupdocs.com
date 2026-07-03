@@ -174,7 +174,7 @@ title_404_page = "404 - Page Not Found | groupdocs API References"
 # Open Grapgh settings
 title = "groupdocs API References"
 images = ["images/groupdocs-image-for-open-graph.jpg"]
-description = "Class Libraries & REST APIs for the developers to manipulate & process Files from Word, Excel, PowerPoint, Visio, PDF, CAD & several other categories in Web, Desktop or Mobile apps. Develop & deploy on Windows, Linux, MacOS & Android platforms."
+description = "Class Libraries for the developers to manipulate & process Files from Word, Excel, PowerPoint, Visio, PDF, CAD & several other categories in Web, Desktop or Mobile apps. Develop & deploy on Windows, Linux, MacOS & Android platforms."
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
@@ -236,7 +236,7 @@ force = true
 
 # Per-page Markdown (.md) + llms.txt + llms-full.txt — matches docs.groupdocs.* .
 # Rendered by the theme's _default/single.md|list.md and *.llmstxt.txt|*.llmsfull.txt layouts.
-# Deploy renames pretty .md (…/x/index.md) to ugly (…/x.md) via move_md_to_ugly_urls.sh.
+# Deploy renames pretty .md (…/x/index.md) to ugly (…/x.md) via scripts/move_md_to_ugly_urls.sh.
 [mediaTypes."text/markdown"]
   suffixes = ["md"]
 

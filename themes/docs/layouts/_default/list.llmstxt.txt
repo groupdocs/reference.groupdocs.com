@@ -1,6 +1,6 @@
 {{- /* list.llmstxt.txt — per-section llms.txt. Curated, absolute-linked index of this
        section's subtree. Links point to each page's Markdown (.md, ugly-URL sibling per
-       move_md_to_ugly_urls.sh) — these files are for LLMs/agents, not the HTML pages. Child
+       scripts/move_md_to_ugly_urls.sh) — these files are for LLMs/agents, not the HTML pages. Child
        sections also expose their own llms.txt / llms-full.txt only when those formats are
        generated, so there are never dead links. */ -}}
 # {{ .Title }}

@@ -18,17 +18,23 @@ Before installing, confirm your environment matches the supported platforms and 
 
 Open a terminal and run the install command for your platform:
 
+{{< tabs "install-pypi" >}}
+{{< tab "Windows" >}}
 ```ps
 py -m pip install groupdocs-watermark-net
 ```
-
+{{< /tab >}}
+{{< tab "Linux" >}}
 ```bash
 python3 -m pip install groupdocs-watermark-net
 ```
-
+{{< /tab >}}
+{{< tab "macOS" >}}
 ```bash
 python3 -m pip install groupdocs-watermark-net
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 After running the command you should see output similar to:
 
@@ -67,21 +73,28 @@ If your build environment cannot reach PyPI, download the appropriate wheel from
 
 Place the downloaded wheel into your project folder, then install it:
 
+{{< tabs "install-wheel" >}}
+{{< tab "Windows" >}}
 ```ps
 py -m pip install ./groupdocs_watermark_net-26.6.0-py3-none-win_amd64.whl
 ```
-
+{{< /tab >}}
+{{< tab "Linux" >}}
 ```bash
 python3 -m pip install ./groupdocs_watermark_net-26.6.0-py3-none-manylinux1_x86_64.whl
 ```
-
+{{< /tab >}}
+{{< tab "macOS (Intel)" >}}
 ```bash
 python3 -m pip install ./groupdocs_watermark_net-26.6.0-py3-none-macosx_10_14_x86_64.whl
 ```
-
+{{< /tab >}}
+{{< tab "macOS (Apple Silicon)" >}}
 ```bash
 python3 -m pip install ./groupdocs_watermark_net-26.6.0-py3-none-macosx_11_0_arm64.whl
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 Expected output:
 
@@ -95,13 +108,18 @@ Successfully installed groupdocs-watermark-net-26.6.0
 
 On Windows no extra steps are required. On Linux and macOS, install the native libraries the rendering engine depends on:
 
+{{< tabs "prereqs" >}}
+{{< tab "Linux" >}}
 ```bash
 apt install libgdiplus libfontconfig1 libicu-dev ttf-mscorefonts-installer
 ```
-
+{{< /tab >}}
+{{< tab "macOS" >}}
 ```bash
 brew install mono-libgdiplus
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Verify the Installation
 
