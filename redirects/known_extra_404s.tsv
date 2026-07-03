@@ -1,0 +1,9 @@
+# Known broken links NOT present in the crawl export, fed to gen_redirects_map.py via --extra.
+# These are the xmldocmd "namespace-summary see-cref doubling" bug: a namespace _index.md intro
+# renders a bare `ns/class` cref that resolves one level too deep -> a doubled-namespace 404.
+# The upstream fix belongs in the GroupDocs.<Product>-References sources (xmldocmd); these explicit
+# 301s are the safety net until then. Columns: source <whitespace> target  (both /-rooted).
+#
+/metadata/net/groupdocs.metadata/groupdocs.metadata/metadata                                    /metadata/net/groupdocs.metadata/metadata/
+/parser/net/groupdocs.parser/groupdocs.parser/parser                                            /parser/net/groupdocs.parser/parser/
+/comparison/net/groupdocs.comparison.common.delegates/groupdocs.comparison.options/previewoptions  /comparison/net/groupdocs.comparison.options/previewoptions/
