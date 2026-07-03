@@ -20,9 +20,9 @@ Output outline (a real navigable tree):
     Path: https://reference.groupdocs.com/annotation/net/groupdocs.annotation/annotator/add/
 
 Usage:
-    python build_llms_full.py --source content/sites/groupdocs \\
+    python scripts/build_llms_full.py --source content/sites/groupdocs \\
         --base-url https://reference.groupdocs.com --out llms-full.txt
-    python build_llms_full.py --source content/sites/groupdocs --only annotation,conversion ...
+    python scripts/build_llms_full.py --source content/sites/groupdocs --only annotation,conversion ...
 """
 import argparse
 import os
@@ -270,7 +270,7 @@ def render(products, base_url):
     out = [
         "# GroupDocs API References — Complete API Reference",
         "",
-        "> Class library and REST API reference for GroupDocs document-processing SDKs "
+        "> Class library reference for GroupDocs document-processing SDKs "
         "across .NET, Java, Node.js, and Python.",
         "",
         "This file concatenates the entire API reference for every product, with navigation "

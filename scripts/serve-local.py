@@ -5,7 +5,7 @@ Plain `python -m http.server` serves .txt/.md without a charset, so UTF-8 punctu
 (—, →) renders as mojibake (â€", â†') in the browser. Production sends
 `; charset=utf-8` via the S3 deploy matchers, so this just makes local preview faithful.
 
-Usage:  python serve-local.py [port]      # default 1313, serves ./public-local
+Usage:  python scripts/serve-local.py [port]      # default 1313, serves ./public-local
 """
 import functools
 import http.server

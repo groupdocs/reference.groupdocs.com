@@ -13,8 +13,8 @@ Two ways to produce the combined index (both yield the same compact entries
    lightweight CI job rebuild the whole index on any content push.
 
 Usage:
-    python build_search_index.py [scan_dir] [--product NAME] --out search-index.json
-    python build_search_index.py --source content/sites/groupdocs --out search-index.json
+    python scripts/build_search_index.py [scan_dir] [--product NAME] --out search-index.json
+    python scripts/build_search_index.py --source content/sites/groupdocs --out search-index.json
 """
 import argparse
 import json

@@ -4,7 +4,7 @@ name: Update versions
 # https://products.groupdocs.com/versions.json. Upstream regenerates that file twice a day
 # (06:00 + 18:00 UTC via its own GitHub Action), so we run +10 minutes later.
 #
-# update_versions.py trims the feed to just the fields we render (version + release-notes URL) and
+# scripts/update_versions.py trims the feed to just the fields we render (version + release-notes URL) and
 # sorts keys, so data/versions.json only changes when a version actually moves (not on the upstream's
 # generatedAt/downloads churn). We commit the data file to BOTH branches (keeping main == production)
 # and redeploy a target environment ONLY when its branch's data file changed.
@@ -53,7 +53,7 @@ jobs:
           echo "ref=$REF" >> "$GITHUB_OUTPUT"
 
       - name: Fetch + transform versions.json
-        run: python3 update_versions.py --out /tmp/versions.json
+        run: python3 scripts/update_versions.py --out /tmp/versions.json
 
       - name: Commit data/versions.json on both branches (deploy only if the target branch changed)
         id: sync

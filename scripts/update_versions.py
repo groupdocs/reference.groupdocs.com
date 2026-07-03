@@ -10,9 +10,9 @@ file only changes when an actual version changes — not on every upstream `gene
 That lets the scheduled workflow deploy only when something really moved.
 
 Usage:
-  python update_versions.py                      # fetch live, write data/versions.json
-  python update_versions.py --input some.json    # transform a local copy (for testing)
-  python update_versions.py --out path.json
+  python scripts/update_versions.py                      # fetch live, write data/versions.json
+  python scripts/update_versions.py --input some.json    # transform a local copy (for testing)
+  python scripts/update_versions.py --out path.json
 """
 import argparse, json, os, sys, urllib.request
 

@@ -63,6 +63,12 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **Relocated the repo-root helper scripts into `scripts/`** (`resolve_md_links.py`, `move_md_to_ugly_urls.sh`,
+  `build_search_index.py`, `build_llms_full.py`, `update_versions.py`, `serve-local.py`, `build_refs.cmd`;
+  `build-local.sh` and `config-local.toml` stay in the repo root) and **updated every caller** — the CI
+  workflows (`deploy_product.yml`, `deploy_all.yml`, `refresh_search_index.yml`, `update_versions.yml`) and
+  `build-local.sh` — to invoke them from `scripts/`. Fixes the scheduled **Update versions** job (and the
+  deploy/aggregate workflows), which had been failing with `can't open file 'update_versions.py'` after the move.
 - **Migrated the docs.groupdocs.com header & footer** to be **server-rendered** (`partials/site-header.html`
   + `site-footer.html`, wired in `_default/baseof.html`), replacing the runtime Containerize menu engine
   (`foot.html` no longer loads `containerize-menu`). The header **search box uses this site's own
