@@ -9,6 +9,10 @@
       "net": {
         "url": "https://releases.groupdocs.com/annotation/release-notes/",
         "version": "26.6.0"
+      },
+      "python": {
+        "url": "https://releases.groupdocs.com/annotation/release-notes/",
+        "version": "26.6.0"
       }
     }
   },
