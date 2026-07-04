@@ -6,23 +6,24 @@ name: Update versions
 #
 # scripts/update_versions.py trims the feed to just the fields we render (version + release-notes URL) and
 # sorts keys, so data/versions.json only changes when a version actually moves (not on the upstream's
-# generatedAt/downloads churn). We commit the data file to BOTH branches (keeping main == production)
-# and redeploy a target environment ONLY when its branch's data file changed.
+# generatedAt/downloads churn). We commit the data file to BOTH branches (keeping main == production) and
+# then redeploy BOTH environments automatically — production (from `production`) and staging (from `main`) —
+# each only when its own branch's data file actually changed.
 
 on:
   schedule:
     - cron: '10 6,18 * * *'   # 06:10 + 18:10 UTC (+10 min after upstream publishes versions.json)
   workflow_dispatch:
     inputs:
-      environment:
-        description: Environment to redeploy
-        type: choice
-        options: [production, staging]
-        default: production
       force:
-        description: Deploy even if versions did not change
+        description: Redeploy even if versions did not change
         type: boolean
         default: false
+      environment:
+        description: When forcing, which environment(s) to redeploy
+        type: choice
+        options: [both, production, staging]
+        default: both
 
 permissions:
   contents: write
@@ -35,36 +36,28 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     outputs:
-      changed: ${{ steps.sync.outputs.changed }}
-      environment: ${{ steps.env.outputs.environment }}
-      ref: ${{ steps.env.outputs.ref }}
+      prod_changed: ${{ steps.sync.outputs.prod_changed }}
+      staging_changed: ${{ steps.sync.outputs.staging_changed }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: production
           fetch-depth: 0
 
-      - name: Resolve target environment + branch
-        id: env
-        run: |
-          ENV="${{ github.event.inputs.environment || 'production' }}"
-          if [ "$ENV" = "staging" ]; then REF=main; else REF=production; fi
-          echo "environment=$ENV" >> "$GITHUB_OUTPUT"
-          echo "ref=$REF" >> "$GITHUB_OUTPUT"
-
       - name: Fetch + transform versions.json
         run: python3 scripts/update_versions.py --out /tmp/versions.json
 
-      - name: Commit data/versions.json on both branches (deploy only if the target branch changed)
+      - name: Commit data/versions.json on both branches (flag each branch that changed)
         id: sync
         env:
           FORCE: ${{ github.event.inputs.force || 'false' }}
-          TARGET_REF: ${{ steps.env.outputs.ref }}
+          FORCE_ENV: ${{ github.event.inputs.environment || 'both' }}
         run: |
           git config user.name "groupdocs-version-bot"
           git config user.email "groupdocs-version-bot@users.noreply.github.com"
           git fetch origin production main
-          changed=false
+          prod_changed=false
+          staging_changed=false
           for BR in production main; do
             git checkout -B "$BR" "origin/$BR"
             cp /tmp/versions.json data/versions.json
@@ -75,19 +68,28 @@ jobs:
               git commit -m "Update SDK versions from products.groupdocs.com/versions.json"
               git push origin "$BR"
               echo "[$BR] versions updated"
-              if [ "$BR" = "$TARGET_REF" ]; then changed=true; fi
+              if [ "$BR" = "production" ]; then prod_changed=true; else staging_changed=true; fi
             fi
           done
-          if [ "$FORCE" = "true" ]; then changed=true; fi
-          echo "changed=$changed" >> "$GITHUB_OUTPUT"
-          echo "Deploy target ($TARGET_REF) changed: $changed"
+          # Manual dispatch with force: redeploy the selected environment(s) even with no data change.
+          if [ "$FORCE" = "true" ]; then
+            case "$FORCE_ENV" in
+              production) prod_changed=true ;;
+              staging)    staging_changed=true ;;
+              *)          prod_changed=true; staging_changed=true ;;
+            esac
+          fi
+          echo "prod_changed=$prod_changed" >> "$GITHUB_OUTPUT"
+          echo "staging_changed=$staging_changed" >> "$GITHUB_OUTPUT"
+          echo "prod_changed=$prod_changed  staging_changed=$staging_changed"
 
   # Rebuild + redeploy the product family pages with the new versions. Only the 15 product builds
-  # render versions (home/aggregates don't), so we skip them. Builds the target branch HEAD (the
-  # commit the sync job just pushed) via deploy_product's `ref` input.
-  deploy:
+  # render versions (home/aggregates don't), so we skip them. Each environment builds its own branch
+  # HEAD (the commit the sync job just pushed) via deploy_product's `ref` input, and runs only when
+  # that branch's data/versions.json actually changed.
+  deploy_production:
     needs: sync
-    if: needs.sync.outputs.changed == 'true'
+    if: needs.sync.outputs.prod_changed == 'true'
     strategy:
       fail-fast: false
       matrix:
@@ -110,6 +112,35 @@ jobs:
     uses: ./.github/workflows/deploy_product.yml
     with:
       product_family: ${{ matrix.product_family }}
-      environment: ${{ needs.sync.outputs.environment }}
-      ref: ${{ needs.sync.outputs.ref }}
+      environment: production
+      ref: production
+    secrets: inherit
+
+  deploy_staging:
+    needs: sync
+    if: needs.sync.outputs.staging_changed == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        product_family:
+          - annotation
+          - assembly
+          - classification
+          - comparison
+          - conversion
+          - editor
+          - markdown
+          - merger
+          - metadata
+          - parser
+          - redaction
+          - search
+          - signature
+          - viewer
+          - watermark
+    uses: ./.github/workflows/deploy_product.yml
+    with:
+      product_family: ${{ matrix.product_family }}
+      environment: staging
+      ref: main
     secrets: inherit
