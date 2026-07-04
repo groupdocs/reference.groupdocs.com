@@ -63,6 +63,12 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **The scheduled "Update versions" job now auto-redeploys _both_ environments.** Previously it committed
+  `data/versions.json` to both branches but only rebuilt one environment (production by default), so
+  staging/reference2 got the new version data without a site rebuild. The workflow now fans out to two deploy
+  jobs — production (built from `production`) and staging (built from `main`) — each running only when its own
+  branch's data actually changed. Manual dispatch replaces the single-environment picker with a `force` toggle
+  plus an `environment` selector (`both` / `production` / `staging`) that only applies when forcing.
 - **Relocated the repo-root helper scripts into `scripts/`** (`resolve_md_links.py`, `move_md_to_ugly_urls.sh`,
   `build_search_index.py`, `build_llms_full.py`, `update_versions.py`, `serve-local.py`, `build_refs.cmd`;
   `build-local.sh` and `config-local.toml` stay in the repo root) and **updated every caller** — the CI
