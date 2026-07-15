@@ -199,7 +199,7 @@
     }
   },
   "search": {
-    "latest": "26.6.1",
+    "latest": "26.7.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/search/release-notes/",
@@ -207,7 +207,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/search/release-notes/",
-        "version": "26.6.1"
+        "version": "26.7.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/search/release-notes/",
