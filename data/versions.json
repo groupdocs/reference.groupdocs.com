@@ -144,7 +144,7 @@
     }
   },
   "metadata": {
-    "latest": "26.6.0",
+    "latest": "26.7.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/metadata/release-notes/",
@@ -156,7 +156,7 @@
       },
       "node": {
         "url": "https://releases.groupdocs.com/metadata/release-notes/",
-        "version": "26.2.0"
+        "version": "26.7.0"
       },
       "python": {
         "url": "https://releases.groupdocs.com/metadata/release-notes/",
