@@ -182,11 +182,11 @@
     }
   },
   "redaction": {
-    "latest": "26.6.0",
+    "latest": "26.7.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/redaction/release-notes/",
-        "version": "25.12.0"
+        "version": "26.7.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/redaction/release-notes/",
