@@ -85,11 +85,11 @@
     }
   },
   "editor": {
-    "latest": "26.6.1",
+    "latest": "26.7.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/editor/release-notes/",
-        "version": "26.1.0"
+        "version": "26.7.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/editor/release-notes/",
