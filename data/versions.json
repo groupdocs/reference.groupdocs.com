@@ -43,7 +43,7 @@
     }
   },
   "comparison": {
-    "latest": "26.5.0",
+    "latest": "26.7.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/comparison/release-notes/",
@@ -51,7 +51,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/comparison/release-notes/",
-        "version": "26.5.0"
+        "version": "26.7.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/comparison/release-notes/",
