@@ -5,7 +5,12 @@ name: Refresh Root Aggregates
 # whole-reference file). Runs on any content push so both stay current between full Deploy All
 # runs.
 #
-# The target environment(s) come from `resolve_targets.yml` — see that file for the rule.
+# ⚠️ Push-triggered runs ALWAYS target staging, deliberately. These aggregates are built from
+# EVERY product's current source, so refreshing production here would publish index entries for
+# products that have not been promoted yet — search results that 404. Letting production's index
+# LAG instead means it is merely missing new entries, which is the safe failure direction.
+# Production aggregates are refreshed by `deploy_all.yml` (the site-wide promotion unit, which
+# publishes the pages and the index together) or by a manual run of this workflow.
 on:
   workflow_dispatch:
     inputs:
@@ -18,7 +23,7 @@ on:
           - staging
           - production
   push:
-    branches: [ production, main ]
+    branches: [ main ]
     paths:
       - 'content/sites/groupdocs/**'
 
@@ -26,7 +31,8 @@ jobs:
   targets:
     uses: ./.github/workflows/resolve_targets.yml
     with:
-      environment_override: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || '' }}
+      # Manual runs pick freely; every push refreshes staging only (see the note above).
+      environment_override: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || 'staging' }}
 
   refresh:
     needs: targets

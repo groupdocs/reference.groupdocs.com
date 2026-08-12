@@ -91,6 +91,18 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **`main` is now the only deploy branch.** All 18 deploy workflows trigger on `main` alone, the `production`
+  branch no longer triggers anything, and `resolve_targets.yml` has dropped its branch-name clause. Where a
+  change deploys is decided by its commit message: a `[deploy-prod]` marker deploys staging and then
+  production, anything else deploys staging only, and a manual run picks its environment directly.
+  **`update_versions.yml`** now commits `data/versions.json` once, to `main` (with a rebase-retry, since `main`
+  also absorbs every product sync), and redeploys staging; production is gated behind the new
+  `AUTO_PROMOTE_VERSIONS` repo variable, **off by default**, because under one branch a production run
+  publishes every product's current content rather than just the version strings. **Push-triggered "Refresh
+  Root Aggregates" runs now target staging only** — `/search-index.json` and `/llms-full.txt` are built from
+  every product's source, so refreshing production on one product's push would publish index entries for pages
+  production has not deployed yet (search hits that 404); production aggregates come from `deploy_all.yml`,
+  the site-wide promotion unit that publishes pages and index together.
 - **Deploy-environment resolution now lives in one place.** The branch→environment ternary was copy-pasted
   into 20 spots across 18 workflows; it now lives only in the new reusable **`resolve_targets.yml`**, which
   every deploy workflow calls. It resolves, in order: an explicit environment on a manual run → a deploy

@@ -4,11 +4,16 @@ name: Update versions
 # https://products.groupdocs.com/versions.json. Upstream regenerates that file twice a day
 # (06:00 + 18:00 UTC via its own GitHub Action), so we run +10 minutes later.
 #
-# scripts/update_versions.py trims the feed to just the fields we render (version + release-notes URL) and
-# sorts keys, so data/versions.json only changes when a version actually moves (not on the upstream's
-# generatedAt/downloads churn). We commit the data file to BOTH branches (keeping main == production) and
-# then redeploy BOTH environments automatically — production (from `production`) and staging (from `main`) —
-# each only when its own branch's data file actually changed.
+# scripts/update_versions.py trims the feed to just the fields we render (version + release-notes URL)
+# and sorts keys, so data/versions.json only changes when a version actually moves (not on the
+# upstream's generatedAt/downloads churn).
+#
+# Single-branch model: the data file is committed once, to `main`, and staging is redeployed.
+# Production is NOT redeployed by default — see AUTO_PROMOTE_VERSIONS below.
+#
+# Note this job commits with GITHUB_TOKEN, whose pushes deliberately do not trigger other
+# workflows. That is why it calls the deploy jobs itself, and why a deploy marker in its commit
+# message would be inert — do not add one.
 
 on:
   schedule:
@@ -23,7 +28,7 @@ on:
         description: When forcing, which environment(s) to redeploy
         type: choice
         options: [both, production, staging]
-        default: both
+        default: staging
 
 permissions:
   contents: write
@@ -36,89 +41,85 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     outputs:
-      prod_changed: ${{ steps.sync.outputs.prod_changed }}
-      staging_changed: ${{ steps.sync.outputs.staging_changed }}
+      do_staging: ${{ steps.sync.outputs.do_staging }}
+      do_prod: ${{ steps.sync.outputs.do_prod }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: production
+          ref: main
           fetch-depth: 0
 
       - name: Fetch + transform versions.json
         run: python3 scripts/update_versions.py --out /tmp/versions.json
 
-      - name: Commit data/versions.json on both branches (flag each branch that changed)
+      - name: Commit data/versions.json on main
         id: sync
         env:
           FORCE: ${{ github.event.inputs.force || 'false' }}
-          FORCE_ENV: ${{ github.event.inputs.environment || 'both' }}
+          FORCE_ENV: ${{ github.event.inputs.environment || 'staging' }}
+          # Repo variable, default off. When true, a version change also publishes to production.
+          # Leave it off unless you want the site continuously deployed: `main` is now the single
+          # branch, so a production run here publishes EVERY product's current content, not just
+          # the version strings.
+          AUTO_PROMOTE: ${{ vars.AUTO_PROMOTE_VERSIONS || 'false' }}
         run: |
+          set -euo pipefail
           git config user.name "groupdocs-version-bot"
           git config user.email "groupdocs-version-bot@users.noreply.github.com"
-          git fetch origin production main
-          prod_changed=false
-          staging_changed=false
-          for BR in production main; do
-            git checkout -B "$BR" "origin/$BR"
-            cp /tmp/versions.json data/versions.json
-            if git diff --quiet -- data/versions.json; then
-              echo "[$BR] no version changes"
-            else
-              git add data/versions.json
-              git commit -m "Update SDK versions from products.groupdocs.com/versions.json"
-              git push origin "$BR"
-              echo "[$BR] versions updated"
-              if [ "$BR" = "production" ]; then prod_changed=true; else staging_changed=true; fi
+          git fetch origin main
+          git checkout -B main origin/main
+          cp /tmp/versions.json data/versions.json
+
+          changed=false
+          if git diff --quiet -- data/versions.json; then
+            echo "no version changes"
+          else
+            git add data/versions.json
+            git commit -m "Update SDK versions from products.groupdocs.com/versions.json"
+            # `main` is now the only branch, so it also absorbs every product sync. Retry on a
+            # racing push rather than failing (or, worse, silently losing) the update.
+            pushed=false
+            for i in 1 2 3 4 5; do
+              if git push origin main; then pushed=true; break; fi
+              sleep $(( i * 5 ))
+              git fetch origin main
+              git rebase origin/main
+            done
+            if [ "$pushed" != true ]; then
+              echo "::error::could not push data/versions.json after 5 attempts"
+              exit 1
             fi
-          done
-          # Manual dispatch with force: redeploy the selected environment(s) even with no data change.
+            changed=true
+            echo "versions updated"
+          fi
+
+          do_staging=$changed
+          do_prod=false
+          if [ "$AUTO_PROMOTE" = "true" ] && [ "$changed" = "true" ]; then
+            do_prod=true
+          fi
+
+          # Manual dispatch with force: redeploy the selected environment(s) even with no change.
           if [ "$FORCE" = "true" ]; then
             case "$FORCE_ENV" in
-              production) prod_changed=true ;;
-              staging)    staging_changed=true ;;
-              *)          prod_changed=true; staging_changed=true ;;
+              production) do_prod=true ;;
+              staging)    do_staging=true ;;
+              *)          do_prod=true; do_staging=true ;;
             esac
           fi
-          echo "prod_changed=$prod_changed" >> "$GITHUB_OUTPUT"
-          echo "staging_changed=$staging_changed" >> "$GITHUB_OUTPUT"
-          echo "prod_changed=$prod_changed  staging_changed=$staging_changed"
+
+          {
+            echo "do_staging=$do_staging"
+            echo "do_prod=$do_prod"
+          } >> "$GITHUB_OUTPUT"
+          echo "changed=$changed  do_staging=$do_staging  do_prod=$do_prod"
 
   # Rebuild + redeploy the product family pages with the new versions. Only the 15 product builds
-  # render versions (home/aggregates don't), so we skip them. Each environment builds its own branch
-  # HEAD (the commit the sync job just pushed) via deploy_product's `ref` input, and runs only when
-  # that branch's data/versions.json actually changed.
-  deploy_production:
-    needs: sync
-    if: needs.sync.outputs.prod_changed == 'true'
-    strategy:
-      fail-fast: false
-      matrix:
-        product_family:
-          - annotation
-          - assembly
-          - classification
-          - comparison
-          - conversion
-          - editor
-          - markdown
-          - merger
-          - metadata
-          - parser
-          - redaction
-          - search
-          - signature
-          - viewer
-          - watermark
-    uses: ./.github/workflows/deploy_product.yml
-    with:
-      product_family: ${{ matrix.product_family }}
-      environment: production
-      ref: production
-    secrets: inherit
-
+  # render versions (home/aggregates don't), so we skip them. Both environments build `main` — the
+  # single deploy branch.
   deploy_staging:
     needs: sync
-    if: needs.sync.outputs.staging_changed == 'true'
+    if: needs.sync.outputs.do_staging == 'true'
     strategy:
       fail-fast: false
       matrix:
@@ -142,5 +143,36 @@ jobs:
     with:
       product_family: ${{ matrix.product_family }}
       environment: staging
+      ref: main
+    secrets: inherit
+
+  deploy_production:
+    needs: [sync, deploy_staging]
+    # `always()` so an explicit production force still runs when deploy_staging was skipped.
+    if: ${{ always() && needs.sync.outputs.do_prod == 'true'
+            && needs.deploy_staging.result != 'failure' && needs.deploy_staging.result != 'cancelled' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        product_family:
+          - annotation
+          - assembly
+          - classification
+          - comparison
+          - conversion
+          - editor
+          - markdown
+          - merger
+          - metadata
+          - parser
+          - redaction
+          - search
+          - signature
+          - viewer
+          - watermark
+    uses: ./.github/workflows/deploy_product.yml
+    with:
+      product_family: ${{ matrix.product_family }}
+      environment: production
       ref: main
     secrets: inherit

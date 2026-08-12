@@ -20,7 +20,7 @@ on:
           - staging
           - production
   push:
-    branches: [ production, main ]
+    branches: [ main ]
     paths:
       - 'themes/**'
 
