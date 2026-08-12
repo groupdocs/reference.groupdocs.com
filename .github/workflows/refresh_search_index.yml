@@ -3,7 +3,9 @@ name: Refresh Root Aggregates
 # Lightweight: rebuild the bucket-root aggregates from product SOURCE — no Hugo build:
 # /search-index.json (the 404 live search source) and /llms-full.txt (the combined, compacted
 # whole-reference file). Runs on any content push so both stay current between full Deploy All
-# runs. Branch mapping: production -> production, main -> staging.
+# runs.
+#
+# The target environment(s) come from `resolve_targets.yml` — see that file for the rule.
 on:
   workflow_dispatch:
     inputs:
@@ -20,16 +22,28 @@ on:
     paths:
       - 'content/sites/groupdocs/**'
 
-# Coalesce bursts of content pushes; the latest content state is what we want indexed.
-concurrency:
-  group: search-index-${{ github.ref_name }}
-  cancel-in-progress: true
-
 jobs:
+  targets:
+    uses: ./.github/workflows/resolve_targets.yml
+    with:
+      environment_override: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || '' }}
+
   refresh:
+    needs: targets
+    if: ${{ needs.targets.outputs.environments != '[]' }}
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        environment: ${{ fromJSON(needs.targets.outputs.environments) }}
+    # Coalesce bursts of content pushes; the latest content state is what we want indexed.
+    # Keyed on the ENVIRONMENT, not the branch: once both environments deploy from `main`,
+    # a branch-keyed group would make a staging refresh cancel a production one.
+    concurrency:
+      group: search-index-${{ matrix.environment }}
+      cancel-in-progress: true
     env:
-      ENVIRONMENT: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+      ENVIRONMENT: ${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v4
 

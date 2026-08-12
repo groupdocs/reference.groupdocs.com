@@ -63,6 +63,17 @@ tags), so changes accumulate under **[Unreleased]**.
 - Comprehensive README, `CLAUDE.md`, and this changelog.
 
 ### Changed
+- **Deploy-environment resolution now lives in one place.** The branch→environment ternary was copy-pasted
+  into 20 spots across 18 workflows; it now lives only in the new reusable **`resolve_targets.yml`**, which
+  every deploy workflow calls. It resolves, in order: an explicit environment on a manual run → a deploy
+  marker in the pushed commit messages → the legacy `production` branch → staging by default (production is
+  always opt-in). The per-family workflows (`deploy_<product>.yml` ×15, `deploy_home.yml`) now run
+  `targets → staging → production` as separate jobs, so a production deploy is gated on a successful staging
+  build; `deploy_all.yml` and `refresh_search_index.yml` fan out over the resolved environments with a matrix.
+  "Refresh Root Aggregates" concurrency is keyed on the resolved **environment** instead of `github.ref_name`,
+  so a staging refresh can no longer cancel a production one once both environments deploy from one branch.
+  Behavior is unchanged for now: pushes to `production` still deploy production, pushes to `main` still deploy
+  staging. Groundwork for retiring the `production` branch.
 - **The scheduled "Update versions" job now auto-redeploys _both_ environments.** Previously it committed
   `data/versions.json` to both branches but only rebuilt one environment (production by default), so
   staging/reference2 got the new version data without a site rebuild. The workflow now fans out to two deploy
