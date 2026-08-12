@@ -1,0 +1,96 @@
+name: Resolve Deploy Targets
+
+# The ONE place the "where does this deploy go?" rule lives. Every deploy workflow
+# calls this and acts on its outputs, so the rule is never copy-pasted.
+#
+# Precedence:
+#   1. environment_override — an explicit choice from the caller (a manual run, or a
+#      scheduled job that must target a specific environment).
+#   2. A `[deploy-prod]` marker in ANY commit message of the push -> staging AND production.
+#   3. A push to the legacy `production` branch -> production.        <-- REMOVED at Stage 4
+#   4. Default -> staging only. Production is always opt-in.
+#
+# Note: in a reusable workflow the `github` context belongs to the CALLER's originating
+# event, so the push payload below is the real one.
+on:
+  workflow_call:
+    inputs:
+      environment_override:
+        description: 'Explicit environment ("staging" or "production"). Empty = decide from the event.'
+        required: false
+        type: string
+        default: ''
+    outputs:
+      staging:
+        description: 'true when this run should deploy to staging.'
+        value: ${{ jobs.resolve.outputs.staging }}
+      production:
+        description: 'true when this run should deploy to production.'
+        value: ${{ jobs.resolve.outputs.production }}
+      environments:
+        description: 'JSON array of the environments to deploy, staging first — for matrix fan-out.'
+        value: ${{ jobs.resolve.outputs.environments }}
+
+jobs:
+  resolve:
+    name: Resolve targets
+    runs-on: ubuntu-latest
+    outputs:
+      staging: ${{ steps.r.outputs.staging }}
+      production: ${{ steps.r.outputs.production }}
+      environments: ${{ steps.r.outputs.environments }}
+    steps:
+      - id: r
+        env:
+          OVERRIDE: ${{ inputs.environment_override }}
+          REF_NAME: ${{ github.ref_name }}
+          EVENT: ${{ github.event_name }}
+          # Commit messages are UNTRUSTED input — an external API-doc generator writes them.
+          # They reach the script only through env; never interpolate ${{ }} into `run:`.
+          # Both are read because the push payload caps `commits` at 20 entries.
+          MESSAGES: ${{ join(github.event.commits.*.message, ' ') }}
+          HEAD_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          set -euo pipefail
+          staging=false
+          production=false
+
+          if [ -n "$OVERRIDE" ]; then
+            case "$OVERRIDE" in
+              staging)    staging=true ;;
+              production) production=true ;;
+              *) echo "::error::unknown environment_override '$OVERRIDE'"; exit 1 ;;
+            esac
+          elif [ "$REF_NAME" = "production" ]; then
+            # LEGACY: the two-branch model. Removed once `production` is retired.
+            production=true
+          else
+            staging=true
+            case "$MESSAGES $HEAD_MSG" in
+              *'[deploy-prod]'*) production=true ;;
+            esac
+          fi
+
+          envs='[]'
+          if [ "$staging" = true ] && [ "$production" = true ]; then envs='["staging","production"]'
+          elif [ "$staging" = true ];                             then envs='["staging"]'
+          elif [ "$production" = true ];                          then envs='["production"]'
+          fi
+
+          {
+            echo "staging=$staging"
+            echo "production=$production"
+            echo "environments=$envs"
+          } >> "$GITHUB_OUTPUT"
+
+          {
+            echo "### Deploy targets"
+            echo ""
+            echo "| input | value |"
+            echo "|---|---|"
+            echo "| event | \`$EVENT\` |"
+            echo "| ref | \`$REF_NAME\` |"
+            echo "| override | \`${OVERRIDE:-(none)}\` |"
+            echo "| **staging** | \`$staging\` |"
+            echo "| **production** | \`$production\` |"
+          } >> "$GITHUB_STEP_SUMMARY"

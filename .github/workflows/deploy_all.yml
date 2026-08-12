@@ -1,8 +1,13 @@
 name: Deploy All
 
-# Site-wide deploy. Runs on demand, and automatically when the shared theme changes
-# (themes/** affects every product). Branch mapping for pushes: production -> production,
-# main -> staging. Home publishes to the bucket root and runs first.
+# Site-wide deploy, and the promotion unit for the whole site: it is the only workflow
+# that rebuilds every product AND the bucket-root aggregates together, so production
+# never ends up with an index that references pages it has not published.
+#
+# Runs on demand, and automatically when the shared theme changes (themes/** affects
+# every product). Home publishes to the bucket root and runs first.
+#
+# The target environment(s) come from `resolve_targets.yml` — see that file for the rule.
 on:
   workflow_dispatch:
     inputs:
@@ -20,11 +25,23 @@ on:
       - 'themes/**'
 
 jobs:
+  targets:
+    uses: ./.github/workflows/resolve_targets.yml
+    with:
+      environment_override: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || '' }}
+
   home:
+    needs: targets
+    if: ${{ needs.targets.outputs.environments != '[]' }}
+    strategy:
+      # Staging first, and a staging failure stops the production build.
+      max-parallel: 1
+      matrix:
+        environment: ${{ fromJSON(needs.targets.outputs.environments) }}
     uses: ./.github/workflows/deploy_product.yml
     with:
       product_family: home
-      environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+      environment: ${{ matrix.environment }}
       # Home publishes the bucket-root files; invalidate the Markdown/llms/404 outputs too,
       # not just the HTML (otherwise CloudFront serves a stale /index.md, /llms.txt, /404.html …).
       invalidate_paths: '/index.html /index.md /llms.txt /llms-full.txt /404.html'
@@ -32,10 +49,12 @@ jobs:
     secrets: inherit
 
   products:
-    needs: [home]
+    needs: [targets, home]
+    if: ${{ needs.targets.outputs.environments != '[]' }}
     strategy:
       fail-fast: false
       matrix:
+        environment: ${{ fromJSON(needs.targets.outputs.environments) }}
         product_family:
           - annotation
           - assembly
@@ -55,7 +74,7 @@ jobs:
     uses: ./.github/workflows/deploy_product.yml
     with:
       product_family: ${{ matrix.product_family }}
-      environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+      environment: ${{ matrix.environment }}
     secrets: inherit
 
   # Rebuild the bucket-root aggregates from every product's SOURCE — no per-product build
@@ -63,10 +82,15 @@ jobs:
   # compacted whole-reference file (/llms-full.txt). Same job runs standalone in
   # refresh_search_index.yml on content pushes.
   search-index:
-    if: ${{ !cancelled() }}
+    needs: [targets, products]
+    if: ${{ !cancelled() && needs.targets.outputs.environments != '[]' }}
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        environment: ${{ fromJSON(needs.targets.outputs.environments) }}
     env:
-      ENVIRONMENT: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+      ENVIRONMENT: ${{ matrix.environment }}
     steps:
       - uses: actions/checkout@v4
       - name: Build search-index.json from source

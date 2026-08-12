@@ -1,7 +1,11 @@
 name: Deploy Metadata
 
-# Deploys the metadata product family. Push to `production` -> production,
-# push to `main` -> staging. Manual runs choose the environment.
+# Deploys the metadata product family.
+#
+# The target environment is resolved by `resolve_targets.yml` (the single place that
+# rule lives): an explicit choice on a manual run, a `[deploy-prod]` marker in the
+# pushed commit messages (staging first, then production), a push to the legacy
+# `production` branch, or staging by default.
 on:
   push:
     branches: [ production, main ]
@@ -19,9 +23,28 @@ on:
           - production
 
 jobs:
-  deploy:
+  targets:
+    uses: ./.github/workflows/resolve_targets.yml
+    with:
+      environment_override: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || '' }}
+
+  staging:
+    needs: targets
+    if: ${{ needs.targets.outputs.staging == 'true' }}
     uses: ./.github/workflows/deploy_product.yml
     with:
       product_family: metadata
-      environment: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || (github.ref_name == 'production' && 'production' || 'staging') }}
+      environment: staging
+    secrets: inherit
+
+  # Runs only after staging succeeded (or was skipped by an explicit production choice),
+  # so a broken build can never reach the live site.
+  production:
+    needs: [targets, staging]
+    if: ${{ always() && needs.targets.outputs.production == 'true'
+            && needs.staging.result != 'failure' && needs.staging.result != 'cancelled' }}
+    uses: ./.github/workflows/deploy_product.yml
+    with:
+      product_family: metadata
+      environment: production
     secrets: inherit
