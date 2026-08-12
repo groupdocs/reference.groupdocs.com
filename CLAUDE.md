@@ -21,18 +21,51 @@ obvious from the code.
   deploys to the **bucket root** with `--maxDeletes 0`.
 
 ## Branches & deploy
-- **`main` → staging/QA → reference2.groupdocs.com** · **`production` → prod → reference.groupdocs.com**.
+- **One branch: `main`.** There is no `production` branch. Where a change deploys is decided by its
+  **commit message**, not by a branch:
+
+  | Commit on `main` | Deploys to | Host |
+  | --- | --- | --- |
+  | no marker, or `[deploy-qa]` | staging only | reference2.groupdocs.com |
+  | contains `[deploy-prod]` | staging, **then** production | reference2 → reference.groupdocs.com |
+  | (manual run) | whichever environment you pick | — |
+
+  Production is always **opt-in**: nothing reaches the live site without an explicit marker or a manual run.
+  The marker is matched anywhere in **any** commit message of the push (case-insensitively), so
+  ⚠️ **never put the literal token in a commit message unless you mean it** — including commits that merely
+  *document* the mechanism. Write "the deploy marker" in prose instead.
+- **Promoting content that is already on `main`** (no file changed, so no commit and no marker) is a manual
+  run: `gh workflow run deploy_<product>.yml --repo groupdocs/reference.groupdocs.com --ref main -f environment=production`.
+  The **site-wide promotion unit** is `deploy_all.yml` with `environment=production` — it is the only thing
+  that publishes every product **and** the bucket-root aggregates together, so production never ends up with
+  a search index referencing pages it has not published.
 - Workflows (`.github/workflows/`):
+  - `resolve_targets.yml` — **the single place the routing rule lives** (reusable). Outputs `staging` /
+    `production` booleans plus an `environments` JSON array for matrix fan-out. Every deploy workflow calls it.
+    Commit messages reach its shell only via `env:` — never interpolated into `run:`, since an external
+    generator writes them.
   - `deploy_product.yml` — reusable build+deploy for one product (inputs: `product_family`, `environment`,
     `invalidate_paths`, `max_deletes`). Post-build order: **build → `scripts/resolve_md_links.py` →
     `scripts/move_md_to_ugly_urls.sh` → (non-home) copy `public/index.md` to bucket-root `/<product>.md` + `rm public/index.md`
     → `hugo deploy` → CloudFront invalidate**.
-  - `deploy_<product>.yml` (×15) — triggers on `content/sites/groupdocs/<product>/**` push; calls the reusable one.
+  - `deploy_<product>.yml` (×15) — triggers on `content/sites/groupdocs/<product>/**` push. Runs
+    `targets` → `staging` → `production` as separate jobs, so a production deploy is gated on a
+    successful staging build.
   - `deploy_home.yml` — `content/sites/groupdocs/home/**`; invalidates `/index.html /index.md /llms.txt /llms-full.txt /404.html`; `maxDeletes 0`.
   - `deploy_all.yml` — `themes/**` push or manual; home → products matrix → **aggregates** job (`search-index`)
-    that rebuilds the bucket-root `/search-index.json` **and** `/llms-full.txt` from source.
+    that rebuilds the bucket-root `/search-index.json` **and** `/llms-full.txt` from source. Fans out over
+    the resolved environments (staging first).
   - `refresh_search_index.yml` ("Refresh Root Aggregates") — `content/sites/groupdocs/**` push or manual;
-    rebuilds `/search-index.json` **and** `/llms-full.txt` from source (lightweight, no Hugo), concurrency-coalesced.
+    rebuilds `/search-index.json` **and** `/llms-full.txt` from source (lightweight, no Hugo), concurrency-coalesced
+    **per environment** (not per branch). ⚠️ **Push-triggered runs always target staging**, deliberately: these
+    aggregates are built from *every* product's source, so refreshing production on one product's push would
+    publish index entries for pages production has not deployed (search hits that 404). A lagging production
+    index is merely incomplete — the safe direction. Production aggregates come from `deploy_all.yml`.
+  - `update_versions.yml` — cron 06:10/18:10 UTC; commits `data/versions.json` to `main` (rebase-retry, since
+    `main` absorbs every product sync too) and redeploys **staging**. Production is gated behind the
+    `AUTO_PROMOTE_VERSIONS` repo variable, **off by default** — under one branch a production run publishes
+    every product's current content, not just version strings. It pushes with `GITHUB_TOKEN`, whose pushes do
+    not trigger other workflows, so it calls the deploy jobs itself; a marker in its message would be inert.
 - Secrets: `ACCESS_KEY`/`SECRET_ACCESS` (S3), `AWS_DISTRIBUTION_PROD` (prod) / `AWS_DISTRIBUTION` (staging) CloudFront.
 
 ## Content model
@@ -129,9 +162,18 @@ python scripts/serve-local.py 1313       # serve ./public-local with UTF-8
 ## Commit & branch conventions (follow exactly)
 - Author is the system default **Vladimir Litvinchik <vladimir.litvinchik@aspose.com>**.
 - **No `Co-Authored-By` trailer and no "Claude"/AI mention in commit messages.**
-- Keep `main` and `production` identical: commit on `production`, then `git branch -f main production`.
-  Push both (fetch first; both are normally fast-forwards — the remote can drift via automated content syncs,
-  so verify with `merge-base --is-ancestor` before pushing).
+- **Commit on `main`** — it is the only branch. Fetch immediately before pushing: the remote drifts constantly
+  via the automated content syncs and the versions bot, so your local branch is usually behind at push time.
+- **Never force-push.** When you genuinely must move a branch to another tree (as in the June-2026
+  `main`/`production` reconciliation), build a merge commit whose **first parent is the current branch tip** —
+  that makes the push an ordinary fast-forward and orphans nothing:
+  ```
+  NEW=$(git commit-tree <target>^{tree} -p origin/main -p <target> -m "…")
+  git merge-base --is-ancestor origin/main "$NEW"   # must pass
+  git push origin "$NEW:refs/heads/main"
+  ```
+- ⚠️ **A commit message containing the production deploy marker publishes to the live site.** Never include the
+  literal token unless that is the intent — see "Branches & deploy".
 - The product-source repos (`../GroupDocs.<X>-References`) and the design handoff (`../references-404`) are
   **separate from this repo** — the user commits those.
 

@@ -1,8 +1,8 @@
 # RESUME — work-in-progress handoff (reference.groupdocs.com)
 
 Snapshot for continuing after a context reset. Repo: `reference.groupdocs.com` (Hugo API-ref site,
-15 products). Branch model: `production`→prod, `main`→staging; keep them identical (commit on
-production, then `git branch -f main production`, push both). Commits: author = system default
+15 products). Branch model: a single `main`; the deploy target comes from the commit message
+(no marker → staging, `[deploy-prod]` → staging then prod). Commits: author = system default
 **Vladimir Litvinchik <vladimir.litvinchik@aspose.com>**, **NO Co-Authored-By / no "Claude" mention**.
 
 ## Already committed + pushed (both branches)
@@ -98,7 +98,6 @@ git commit -F - <<'EOF'
 Redesign family pages; verified getting-started across .NET/Java/Python/Node; add PRODUCTS_DATA_STORE
 ...
 EOF
-git branch -f main production && git fetch origin
-git push origin production && git push origin main
+git fetch origin && git push origin main
 ```
 Note: confirm `examples/**` build artifacts + `__pycache__/` are gitignored before committing.

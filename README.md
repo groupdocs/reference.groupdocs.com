@@ -98,18 +98,34 @@ home-only config is `config-local.toml`.
 
 CI is a thin, reusable pipeline:
 
+- `.github/workflows/resolve_targets.yml` — the single place the branch/marker routing rule lives;
+  every deploy workflow calls it.
 - `.github/workflows/deploy_product.yml` — reusable build + deploy for one product (Hugo build →
   resolve links → ugly URLs → `hugo deploy` to S3 → CloudFront invalidation).
 - `.github/workflows/deploy_<product>.yml` — one thin runner per product (path-filtered triggers).
 - `.github/workflows/deploy_all.yml` — orchestrator (matrix over all products; also triggered by
   `themes/**` changes).
 
-Branch → environment mapping:
+**There is one branch, `main`.** The deploy target comes from the commit message, not the branch:
 
-| Branch       | Environment | Host                          | S3 target    |
-| ------------ | ----------- | ----------------------------- | ------------ |
-| `main`       | staging     | reference2.groupdocs.com (QA) | `Stage`      |
-| `production` | production  | reference.groupdocs.com       | `Production` |
+| Commit on `main`             | Environment            | Host                                  | S3 target             |
+| ---------------------------- | ---------------------- | ------------------------------------- | --------------------- |
+| no marker, or `[deploy-qa]`  | staging                | reference2.groupdocs.com (QA)         | `Stage`               |
+| contains `[deploy-prod]`     | staging, then production | reference2 → reference.groupdocs.com | `Stage` → `Production` |
+| manual run                   | whichever you pick     | —                                     | —                     |
+
+Production is opt-in — nothing goes live without an explicit marker or a manual run. The marker matches
+anywhere in any commit message of the push, so don't write the literal token unless you mean it.
+
+To promote content that is already on `main` (nothing changed, so there is no commit to mark), run a
+workflow manually:
+
+```bash
+# one product
+gh workflow run deploy_viewer.yml --repo groupdocs/reference.groupdocs.com --ref main -f environment=production
+# the whole site — pages AND the bucket-root aggregates together (the promotion unit)
+gh workflow run deploy_all.yml    --repo groupdocs/reference.groupdocs.com --ref main -f environment=production
+```
 
 Page redirects live in `redirects/redirects.map` and are published as **S3 per-object 301s**
 (`x-amz-website-redirect-location`, served via the bucket's static-website endpoint through CloudFront)
@@ -121,8 +137,10 @@ consumed by the S3+CloudFront stack.
 ## Common tasks
 
 - **Update a product's content** — edit under `content/sites/groupdocs/<product>/english/`
-  (or let the `GroupDocs.<Product>-References` sync bring in regenerated API content), push the
-  matching branch; the per-product workflow deploys it.
+  (or let the `GroupDocs.<Product>-References` sync bring in regenerated API content) and push `main`;
+  the per-product workflow deploys it to staging. Add the production marker to the commit message, or
+  run the workflow manually, to publish it live. Note the canonical source for API content is the
+  product repo — edits made only here are overwritten by the next sync.
 - **Change a family page** (versions, capabilities, etc.) — edit that product's
   `english/_index.md` front matter.
 - **Add/adjust the home product grid** — edit `data/products.toml` (drives `{{< products-grid >}}`).
