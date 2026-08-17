@@ -247,6 +247,10 @@
         "url": "https://releases.groupdocs.com/total/release-notes/",
         "version": "26.6.0"
       },
+      "node": {
+        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "version": "26.8.0"
+      },
       "python": {
         "url": "https://releases.groupdocs.com/total/release-notes/",
         "version": "26.3.0"
