@@ -77,6 +77,10 @@ jobs:
           elif [ "$production" = true ];                          then envs='["production"]'
           fi
 
+          # Echo to stdout as well as the step summary, so the routing decision is
+          # readable from `gh api .../jobs/<id>/logs` and not only in the web UI.
+          echo "RESOLVED: staging=$staging production=$production envs=$envs"                "(event=$EVENT ref=$REF_NAME override=${OVERRIDE:-none})"
+
           {
             echo "staging=$staging"
             echo "production=$production"
