@@ -1,14 +1,13 @@
 name: Deploy Conversion
 
-# Deploys the conversion product family.
+# Deploys the conversion product family from `main` — the single deploy branch.
 #
 # The target environment is resolved by `resolve_targets.yml` (the single place that
 # rule lives): an explicit choice on a manual run, a `[deploy-prod]` marker in the
-# pushed commit messages (staging first, then production), a push to the legacy
-# `production` branch, or staging by default.
+# pushed commit messages (staging first, then production), or staging by default.
 on:
   push:
-    branches: [ production, main ]
+    branches: [ main ]
     paths:
       - 'content/sites/groupdocs/conversion/**'
   workflow_dispatch:

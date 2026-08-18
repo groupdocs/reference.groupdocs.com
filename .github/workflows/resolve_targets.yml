@@ -7,8 +7,7 @@ name: Resolve Deploy Targets
 #   1. environment_override — an explicit choice from the caller (a manual run, or a
 #      scheduled job that must target a specific environment).
 #   2. A `[deploy-prod]` marker in ANY commit message of the push -> staging AND production.
-#   3. A push to the legacy `production` branch -> production.        <-- REMOVED at Stage 4
-#   4. Default -> staging only. Production is always opt-in.
+#   3. Default -> staging only. Production is always opt-in.
 #
 # Note: in a reusable workflow the `github` context belongs to the CALLER's originating
 # event, so the push payload below is the real one.
@@ -61,9 +60,6 @@ jobs:
               production) production=true ;;
               *) echo "::error::unknown environment_override '$OVERRIDE'"; exit 1 ;;
             esac
-          elif [ "$REF_NAME" = "production" ]; then
-            # LEGACY: the two-branch model. Removed once `production` is retired.
-            production=true
           else
             staging=true
             case "$MESSAGES $HEAD_MSG" in

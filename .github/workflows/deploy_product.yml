@@ -25,7 +25,7 @@ on:
         type: string
         default: '-1'
       ref:
-        description: 'Git ref/branch to build. Empty = the triggering ref (default). Set e.g. to "production" for scheduled jobs that must build a specific branch HEAD.'
+        description: 'Git ref/branch to build. Empty = the triggering ref (default). Set to "main" for scheduled jobs, which have no meaningful triggering ref.'
         required: false
         type: string
         default: ''
