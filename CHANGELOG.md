@@ -175,6 +175,15 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **Five API pages were silently dropped from every sync by `.gitignore`.** The file is a stock Node/JS
+  template, and two of its unanchored rules also matched real reference paths: `resources/` swallowed
+  `parser/net/groupdocs.parser/resources/` (the `Resources` class and its `StoragePath` property) and
+  `coverage` swallowed the `Coverage` property pages of `EpubPackage`, `DublinCorePackage` and
+  `XmpDublinCorePackage` under metadata. The product-repo sync runs `git add -A`, which honours
+  `.gitignore`, so these five pages never reached the site and 404'd in production. Both rules are now
+  anchored to the repo root (`/resources/`, `/coverage/`), which still ignores Hugo's `resources/_gen`
+  cache while leaving `content/` untouched. Re-including them by negation is not possible — git cannot
+  re-include a path whose parent directory is excluded — so anchoring is the fix.
 - **Stacked install code blocks → platform tabs** on the Watermark Python-via-.NET *Installation* guide
   (`watermark/python-net/guides/installation/`). The PyPI install, pre-downloaded-wheel install, and Linux/macOS
   prerequisites were each authored as consecutive fenced code blocks that rendered as separate boxes stacked one

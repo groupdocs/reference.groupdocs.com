@@ -1,5 +1,10 @@
 .idea/
-resources/
+# NOTE: the generic Node/JS ignores in this file are ANCHORED to the repo root on
+# purpose. Unanchored, they also match real API-reference paths under content/ —
+# `resources/` swallowed the parser Resources class and `coverage` swallowed three
+# metadata Coverage properties, and because the sync runs `git add -A` those pages
+# were silently dropped from every sync. Keep root-relative leading slashes.
+/resources/
 public/
 public-local/
 __pycache__/
@@ -27,7 +32,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+/coverage/
 *.lcov
 
 # nyc test coverage
