@@ -16,4 +16,8 @@ showFeedbackForm: false
 <!-- The home page is rendered entirely by themes/docs/layouts/_default/full-width.html
      (the gd-home design: hero + live search, platform-filterable product grid from
      data/products.toml, AI/LLM panel, developer resources). The .md / llms.txt outputs
-     come from layouts/index.md and index.llmstxt.txt. No body content is needed here. -->
+     come from layouts/index.md and index.llmstxt.txt. No body content is needed here.
+
+     NOTE: no workflow watches data/**, so editing data/products.toml on its own deploys
+     nothing. The product grid, the platform filter, the 404 directory and the root
+     llms.txt only change once a home build runs - touch this file, or run Deploy Home. -->
