@@ -605,11 +605,12 @@ body .gdoc-feedback { margin: 2.75rem 0; padding: 1.05rem 1.4rem; box-shadow: no
 }
 
 /* ============================ Home (gd-home) ============================
-   Functional landing: hero live-search (same /search-index.json as the 404),
-   a platform-filterable product grid, a dark AI/LLM panel, and developer
-   resources. Reuses the 404 tokens (--gd404-blue #0054FA / --gd404-link #558FFF);
-   the `.gd-home ` prefix raises specificity over the theme's `h1..h6{display:flex}`
-   and `.gdoc-page h2` so headings render as designed. */
+   Functional landing: a hero product-filter search (live-filters the product grid on this
+   page — same behavior as docs.groupdocs.com; no fetch), a platform-filterable product grid,
+   a dark AI/LLM panel, and developer resources. The full-reference search lives in the header.
+   Reuses the 404 tokens (--gd404-blue #0054FA / --gd404-link #558FFF); the `.gd-home ` prefix
+   raises specificity over the theme's `h1..h6{display:flex}` and `.gdoc-page h2` so headings
+   render as designed. */
 .gd-home { max-width: 75rem; margin: 0 auto; padding-bottom: 3rem; }
 
 /* Full-width gradient band behind the hero (matches the design), replacing the theme's
@@ -628,7 +629,7 @@ body .gdoc-feedback { margin: 2.75rem 0; padding: 1.05rem 1.4rem; box-shadow: no
 .gd-home .gd-home__title { display: block; margin: 0 0 1rem; font-size: 2.6rem; line-height: 1.08; font-weight: 800; letter-spacing: -.03em; text-align: center; }
 .gd-home__lead { color: var(--gd-muted-2); font-size: 1.1rem; line-height: 1.6; margin: 0 auto 1.75rem; max-width: 38rem; }
 
-/* Hero search (mirrors the 404 search component) */
+/* Hero search — a product filter for the grid below (mirrors docs.groupdocs.com) */
 .gd-home__search { max-width: 38rem; margin: 0 auto; position: relative; }
 .gd-home__searchbar {
     display: flex; align-items: center; gap: .5rem;
@@ -639,10 +640,14 @@ body .gdoc-feedback { margin: 2.75rem 0; padding: 1.05rem 1.4rem; box-shadow: no
 .gd-home__searchbar:focus-within { border-color: var(--gd404-link); box-shadow: 0 0 0 4px rgba(85, 143, 255, .15); }
 .gd-home__search-icon { color: var(--gd-muted); flex: none; }
 .gd-home__input { flex: 1; border: none; outline: none; background: transparent; font-family: inherit; font-size: 1rem; color: var(--body-font-color, #0f1727); padding: .45rem 0; }
+.gd-home__clear { flex: none; display: flex; align-items: center; justify-content: center; width: 1.9rem; height: 1.9rem; border: none; border-radius: 8px; background: var(--gd-surface-2); color: var(--gd-muted-2); cursor: pointer; }
+.gd-home__clear[hidden] { display: none; } /* display:flex above would otherwise defeat the hidden attribute */
+.gd-home__clear:hover { color: var(--body-font-color, #0f1727); }
 .gd-home__search-btn { flex: none; border: none; cursor: pointer; background: var(--gd404-blue); color: #fff; font-family: inherit; font-size: .95rem; font-weight: 600; padding: .6rem 1.3rem; border-radius: 9px; transition: background-color .15s ease; }
 .gd-home__search-btn:hover { background: #003fbd; }
 
-/* Search results dropdown */
+/* Result-row styles — now used only by the header search (partials/header-search.html); the home
+   hero no longer renders a results dropdown (.gd-home__results is retained for that header engine). */
 .gd-home__results { position: absolute; left: 0; right: 0; top: calc(100% + .5rem); z-index: 20; background: var(--gd-surface); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 16px 40px rgba(15, 23, 39, .14); overflow: hidden; max-height: 26rem; overflow-y: auto; text-align: left; }
 .gd-home__result { display: flex; align-items: center; gap: .75rem; padding: .7rem 1rem; text-decoration: none; border-left: 3px solid transparent; cursor: pointer; }
 .gd-home__result.is-active { background: var(--gd-hover); border-left-color: var(--gd404-link); }
@@ -687,6 +692,11 @@ body .gdoc-feedback { margin: 2.75rem 0; padding: 1.05rem 1.4rem; box-shadow: no
 .gd-home__pill { display: inline-flex; align-items: center; gap: .4rem; font-size: .75rem; font-weight: 600; color: var(--gd-muted-3); background: var(--gd-surface-2); border: 1px solid var(--border-color); border-radius: 7px; padding: .25rem .6rem; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
 .gd-home__pill-dot { width: .45rem; height: .45rem; border-radius: 50%; flex: none; }
 .gd-home__pill.is-match { background: #eaf1ff; border-color: #cdddff; color: #1d4ed8; }
+
+/* Empty state — shown when the hero filter + platform segment leave no products */
+.gd-home__empty { grid-column: 1 / -1; text-align: center; border: 1px dashed var(--border-color); border-radius: 15px; padding: 2.5rem 1rem; }
+.gd-home__empty-title { font-size: 1rem; font-weight: 600; color: var(--body-font-color, #0f1727); margin: 0 0 .3rem; }
+.gd-home__empty-hint { font-size: .88rem; color: var(--gd-muted); margin: 0; }
 
 /* AI / LLM panel — dark */
 /* "For AI agents" panel — shared by the home + 404 pages (markup in full-width.html / layouts/404.html).

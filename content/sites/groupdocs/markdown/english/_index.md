@@ -17,6 +17,12 @@ platforms:
     key: net
     ref: "/net/"
     install: "dotnet add package GroupDocs.Markdown"
+  - name: "Java"
+    version: "26.5.0"
+    versionUrl: "https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-markdown/26.5/"
+    key: java
+    ref: "/java/"
+    install: "com.groupdocs:groupdocs-markdown"
   - name: "Python via .NET"
     version: "26.3.0"
     versionUrl: "https://pypi.org/project/groupdocs-markdown-net/26.3.0/"

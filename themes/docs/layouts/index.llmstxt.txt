@@ -4,7 +4,7 @@
          each platform's namespaces (.Sections), since all content is section bundles;
        - the SITE-ROOT build's home has no sections -> a directory of every product, each with
          its full-reference / section-index / Markdown links. The site-wide combined
-         /llms-full.txt is built from source by build_llms_full.py (not by Hugo). */ -}}
+         /llms-full.txt is built from source by scripts/build_llms_full.py (not by Hugo). */ -}}
 # {{ .Site.Title }}
 {{ with (.Site.Params.description | default .Description) }}
 > {{ . }}

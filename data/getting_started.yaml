@@ -455,6 +455,16 @@ markdown:
 
       // Export to Markdown
       converter.Convert("business-plan.md");
+  java:
+    lang: java
+    code: |
+      import com.groupdocs.markdown.MarkdownConverter;
+
+      // Load the source document
+      MarkdownConverter converter = new MarkdownConverter("business-plan.pdf");
+
+      // Export to Markdown
+      converter.convert("business-plan.md");
   python:
     lang: python
     code: |

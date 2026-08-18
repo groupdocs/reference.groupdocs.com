@@ -3,7 +3,7 @@ title: MailMessageViewInfo
 second_title: GroupDocs.Viewer for .NET API Reference
 description: Represents a view information about one email message
 type: docs
-weight: 940
+weight: 930
 url: /net/groupdocs.viewer.results/mailmessageviewinfo/
 ---
 ## MailMessageViewInfo class

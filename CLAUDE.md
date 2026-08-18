@@ -24,8 +24,8 @@ obvious from the code.
 - **`main` → staging/QA → reference2.groupdocs.com** · **`production` → prod → reference.groupdocs.com**.
 - Workflows (`.github/workflows/`):
   - `deploy_product.yml` — reusable build+deploy for one product (inputs: `product_family`, `environment`,
-    `invalidate_paths`, `max_deletes`). Post-build order: **build → `resolve_md_links.py` →
-    `move_md_to_ugly_urls.sh` → (non-home) copy `public/index.md` to bucket-root `/<product>.md` + `rm public/index.md`
+    `invalidate_paths`, `max_deletes`). Post-build order: **build → `scripts/resolve_md_links.py` →
+    `scripts/move_md_to_ugly_urls.sh` → (non-home) copy `public/index.md` to bucket-root `/<product>.md` + `rm public/index.md`
     → `hugo deploy` → CloudFront invalidate**.
   - `deploy_<product>.yml` (×15) — triggers on `content/sites/groupdocs/<product>/**` push; calls the reusable one.
   - `deploy_home.yml` — `content/sites/groupdocs/home/**`; invalidates `/index.html /index.md /llms.txt /llms-full.txt /404.html`; `maxDeletes 0`.
@@ -90,32 +90,34 @@ obvious from the code.
   build's `llms.txt` lists its platforms/namespaces. `index.llmsfull.txt` — a **product** build inlines
   all its pages into `/<product>/llms-full.txt`. The **site-root** build no longer emits `llms-full.txt`.
 - **Combined `/llms-full.txt`** (bucket root): the entire reference for all 15 products in one compacted,
-  well-structured file, built from source by `build_llms_full.py` (no Hugo — each product is a separate
+  well-structured file, built from source by `scripts/build_llms_full.py` (no Hugo — each product is a separate
   build, so Hugo can't aggregate). It strips nav boilerplate (`See Also`, `Learn more`, internal link
   URLs, front matter, anchors, Java separators) and keeps signatures + summaries + member/parameter
   tables. Produced & deployed by the `deploy_all` aggregates job and `refresh_search_index.yml`.
 - **Search index** `/search-index.json` (bucket root, ~37k entries, all products) powers the **404 live search**.
-  Built by `build_search_index.py --source content/sites/groupdocs` (parses front matter `title`+`url`, no Hugo).
+  Built by `scripts/build_search_index.py --source content/sites/groupdocs` (parses front matter `title`+`url`, no Hugo).
 - Serving: `.md`/`.txt`/`.html` get `charset=utf-8` via `[[deployment.matchers]]`; CloudFront auto-gzips.
 
-## Scripts (repo root)
-- `move_md_to_ugly_urls.sh [dir]` — `public/<path>/index.md` → `public/<path>.md` (`-mindepth 2`, skips build-root index.md).
-- `resolve_md_links.py <dir> --base-url <BASE>` — resolve relative `.md` links to absolute (per page URL);
+## Scripts (in `scripts/`; `build-local.sh` + `config-local.toml` stay in repo root)
+- `scripts/move_md_to_ugly_urls.sh [dir]` — `public/<path>/index.md` → `public/<path>.md` (`-mindepth 2`, skips build-root index.md).
+- `scripts/resolve_md_links.py <dir> --base-url <BASE>` — resolve relative `.md` links to absolute (per page URL);
   `surrogateescape` for non-UTF-8 bytes. Must run **before** the ugly-URL rename.
-- `build_search_index.py --source content/sites/groupdocs --out search-index.json` — combined index (source mode).
-- `build_llms_full.py --source content/sites/groupdocs --base-url <BASE> --out llms-full.txt` — combined,
+- `scripts/build_search_index.py --source content/sites/groupdocs --out search-index.json` — combined index (source mode).
+- `scripts/build_llms_full.py --source content/sites/groupdocs --base-url <BASE> --out llms-full.txt` — combined,
   compacted whole-reference file (source mode; `--only a,b` limits products for fast local preview).
+- `scripts/update_versions.py --out <path>` — fetch/transform the SDK version feed into `data/versions.json` (used by `update_versions.yml`).
+- `scripts/build_refs.cmd` — legacy Windows dev convenience (`hugo server` on the home config); not used by CI.
 - `build-local.sh [products…]` — builds home + listed products into `./public-local/` (runs resolver + ugly rename +
-  family-md-to-root + search index). Default product: annotation.
-- `serve-local.py [port]` — static server for `./public-local` that sends `charset=utf-8` for text (plain
+  family-md-to-root + search index). **Stays in repo root.** Default product: annotation.
+- `scripts/serve-local.py [port]` — static server for `./public-local` that sends `charset=utf-8` for text (plain
   `python -m http.server` omits it → `—`/`→` render as mojibake). **Use this for local preview**, default port 1313.
-- `config-local.toml` — home-only local config used by `build-local.sh`.
+- `config-local.toml` — home-only local config used by `build-local.sh` (repo root).
 
 ## Local preview
 `hugo server` panics on this content (Hugo 0.101 concurrency bug). Instead:
 ```
 ./build-local.sh annotation conversion   # build home + listed products
-python serve-local.py 1313               # serve ./public-local with UTF-8
+python scripts/serve-local.py 1313       # serve ./public-local with UTF-8
 ```
 404 lives at `/404.html`; the search box only covers the products you built locally.
 

@@ -1,4 +1,4 @@
-# Redirect rules for reference2.groupdocs.com (staging) — nginx-style, consumed by the edge layer.
+# Redirect rules for reference2.groupdocs.com (staging) - nginx-style, consumed by the edge layer.
 #
 # [2026-06-18] Site consolidated to English-only. Every product was previously built
 # per-locale and served at /<product>/<locale>/... (English at /<product>/...).

@@ -10,9 +10,9 @@ url: /java/com.groupdocs.conversion.options.load/pdfloadoptions/
 java.lang.Object, [com.groupdocs.conversion.contracts.ValueObject](../../com.groupdocs.conversion.contracts/valueobject), [com.groupdocs.conversion.options.load.LoadOptions](../../com.groupdocs.conversion.options.load/loadoptions)
 
 **All Implemented Interfaces:**
-java.io.Serializable, [com.groupdocs.conversion.options.load.IPageNumberingLoadOptions](../../com.groupdocs.conversion.options.load/ipagenumberingloadoptions), [com.groupdocs.conversion.contracts.IDocumentsContainerLoadOptions](../../com.groupdocs.conversion.contracts/idocumentscontainerloadoptions)
+java.io.Serializable, [com.groupdocs.conversion.options.load.IPageNumberingLoadOptions](../../com.groupdocs.conversion.options.load/ipagenumberingloadoptions)
 ```
-public final class PdfLoadOptions extends LoadOptions implements Serializable, IPageNumberingLoadOptions, IDocumentsContainerLoadOptions
+public final class PdfLoadOptions extends LoadOptions implements Serializable, IPageNumberingLoadOptions
 ```
 
 Options for loading Pdf documents.
@@ -52,27 +52,15 @@ Options for loading Pdf documents.
  |
 | [setFlattenAllFields(boolean value)](#setFlattenAllFields-boolean-) | Flatten all the fields of the PDF form.
  |
-| [getResetFontFolders()](#getResetFontFolders--) | Reset font folders before loading document.
+| [getResetFontFolders()](#getResetFontFolders--) | Reset font folders before loading document
  |
 | [setResetFontFolders(boolean resetFontFolders)](#setResetFontFolders-boolean-) |  |
 | [isPageNumbering()](#isPageNumbering--) | Enable or disable generation of page numbering in converted document.
  |
 | [setPageNumbering(boolean isPageNumbering)](#setPageNumbering-boolean-) |  |
-| [isRemoveJavascript()](#isRemoveJavascript--) | Gets the Remove JavaScript flag.
+| [isRemoveJavascript()](#isRemoveJavascript--) | Gets the Remove JavaScript flag
  |
-| [setRemoveJavascript(boolean removeJavascript)](#setRemoveJavascript-boolean-) | Sets the Remove JavaScript flag.
- |
-| [isConvertOwner()](#isConvertOwner--) | Specifies whether the owner document should be converted.
- |
-| [setConvertOwner(boolean convertOwner)](#setConvertOwner-boolean-) | Specifies whether the owner document should be converted.
- |
-| [isConvertOwned()](#isConvertOwned--) | Specifies whether owned documents should be converted.
- |
-| [setConvertOwned(boolean convertOwned)](#setConvertOwned-boolean-) | Specifies whether owned documents should be converted.
- |
-| [getDepth()](#getDepth--) | Maximum depth for processing owned documents.
- |
-| [setDepth(int depth)](#setDepth-int-) | Maximum depth for processing owned documents.
+| [setRemoveJavascript(boolean removeJavascript)](#setRemoveJavascript-boolean-) | Sets the Remove JavaScript flag
  |
 ### PdfLoadOptions() {#PdfLoadOptions--}
 ```
@@ -150,8 +138,7 @@ public final String getDefaultFont()
 ```
 
 
-Default font for Pdf document.
-The following font will be used if a font is missing.
+Default font for Pdf document. The following font will be used if a font is missing.
 
 
 **Returns:**
@@ -162,8 +149,7 @@ public final void setDefaultFont(String value)
 ```
 
 
-Default font for Pdf document.
-The following font will be used if a font is missing.
+Default font for Pdf document. The following font will be used if a font is missing.
 
 
 **Parameters:**
@@ -252,7 +238,7 @@ public boolean getResetFontFolders()
 ```
 
 
-Reset font folders before loading document.
+Reset font folders before loading document
 
 
 **Returns:**
@@ -276,7 +262,7 @@ public boolean isPageNumbering()
 ```
 
 
-Enable or disable generation of page numbering in converted document. Default: false.
+Enable or disable generation of page numbering in converted document. Default: false
 
 
 **Returns:**
@@ -300,7 +286,7 @@ public boolean isRemoveJavascript()
 ```
 
 
-Gets the Remove JavaScript flag.
+Gets the Remove JavaScript flag
 
 
 **Returns:**
@@ -311,110 +297,11 @@ public void setRemoveJavascript(boolean removeJavascript)
 ```
 
 
-Sets the Remove JavaScript flag.
+Sets the Remove JavaScript flag
 
 
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
 | removeJavascript | boolean |  |
-
-### isConvertOwner() {#isConvertOwner--}
-```
-public boolean isConvertOwner()
-```
-
-
-Specifies whether the owner document should be converted.
-
-Default is 
-true
-.
-
-
-**Returns:**
-boolean
-### setConvertOwner(boolean convertOwner) {#setConvertOwner-boolean-}
-```
-public void setConvertOwner(boolean convertOwner)
-```
-
-
-Specifies whether the owner document should be converted.
-
-Default is 
-true
-.
-
-
-**Parameters:**
-| Parameter | Type | Description |
-| --- | --- | --- |
-| convertOwner | boolean |  |
-
-### isConvertOwned() {#isConvertOwned--}
-```
-public boolean isConvertOwned()
-```
-
-
-Specifies whether owned documents should be converted.
-
-Default is 
-false
-.
-
-
-**Returns:**
-boolean
-### setConvertOwned(boolean convertOwned) {#setConvertOwned-boolean-}
-```
-public void setConvertOwned(boolean convertOwned)
-```
-
-
-Specifies whether owned documents should be converted.
-
-Default is 
-false
-.
-
-
-**Parameters:**
-| Parameter | Type | Description |
-| --- | --- | --- |
-| convertOwned | boolean |  |
-
-### getDepth() {#getDepth--}
-```
-public int getDepth()
-```
-
-
-Maximum depth for processing owned documents.
-
-Default is 
-2
-.
-
-
-**Returns:**
-int
-### setDepth(int depth) {#setDepth-int-}
-```
-public void setDepth(int depth)
-```
-
-
-Maximum depth for processing owned documents.
-
-Default is 
-2
-.
-
-
-**Parameters:**
-| Parameter | Type | Description |
-| --- | --- | --- |
-| depth | int |  |
 
