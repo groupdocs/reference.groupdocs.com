@@ -13,7 +13,6 @@ public class PresentationHyperlinkPossibleWatermark extends HyperlinkPossibleWat
 ```
 
 Represents possible hyperlink watermark in a PowerPoint document.
-
 ## Constructors
 
 | Constructor | Description |
@@ -23,10 +22,8 @@ Represents possible hyperlink watermark in a PowerPoint document.
 
 | Method | Description |
 | --- | --- |
-| [getText()](#getText--) | Gets the url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`.
- |
-| [setText(String value)](#setText-java.lang.String-) | Sets the url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`.
- |
+| [getText()](#getText--) | Gets the url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`. |
+| [setText(String value)](#setText-java.lang.String-) | Sets the url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`. |
 | [remove()](#remove--) |  |
 ### PresentationHyperlinkPossibleWatermark(PossibleWatermark parentWatermark, IPresentationHyperlinkContainer hyperlinkContainer, int actionType) {#PresentationHyperlinkPossibleWatermark-com.groupdocs.watermark.search.PossibleWatermark-com.groupdocs.watermark.contents.IPresentationHyperlinkContainer-int-}
 ```
@@ -51,10 +48,8 @@ public String getText()
 
 Gets the url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`.
 
-
 **Returns:**
 java.lang.String - The url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`.
-
 ### setText(String value) {#setText-java.lang.String-}
 ```
 public void setText(String value)
@@ -63,12 +58,10 @@ public void setText(String value)
 
 Sets the url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| value | java.lang.String | The url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`.
- |
+| value | java.lang.String | The url of this `[HyperlinkPossibleWatermark](../../com.groupdocs.watermark.search/hyperlinkpossiblewatermark)`. |
 
 ### remove() {#remove--}
 ```

@@ -13,7 +13,6 @@ public class SpreadsheetChartBackgroundPossibleWatermark extends TwoDObjectPossi
 ```
 
 Represents possible image watermark in Excel chart background.
-
 ## Constructors
 
 | Constructor | Description |
@@ -23,12 +22,9 @@ Represents possible image watermark in Excel chart background.
 
 | Method | Description |
 | --- | --- |
-| [getParent()](#getParent--) | Gets the parent of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`.
- |
-| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)` in degrees.
- |
-| [getUnitOfMeasurement()](#getUnitOfMeasurement--) | Gets the `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`.
- |
+| [getParent()](#getParent--) | Gets the parent of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`. |
+| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)` in degrees. |
+| [getUnitOfMeasurement()](#getUnitOfMeasurement--) | Gets the `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`. |
 | [getImageInternally()](#getImageInternally--) |  |
 | [remove()](#remove--) |  |
 ### SpreadsheetChartBackgroundPossibleWatermark(SpreadsheetChart chart) {#SpreadsheetChartBackgroundPossibleWatermark-com.groupdocs.watermark.contents.SpreadsheetChart-}
@@ -52,10 +48,8 @@ public ContentPart getParent()
 
 Gets the parent of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`.
 
-
 **Returns:**
 [ContentPart](../../com.groupdocs.watermark.contents/contentpart) - The parent of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`.
-
 ### getRotateAngle() {#getRotateAngle--}
 ```
 public double getRotateAngle()
@@ -64,10 +58,8 @@ public double getRotateAngle()
 
 Gets the rotate angle of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)` in degrees.
 
-
 **Returns:**
 double - The value is always 0 for this type of possible watermark.
-
 ### getUnitOfMeasurement() {#getUnitOfMeasurement--}
 ```
 public int getUnitOfMeasurement()
@@ -76,10 +68,8 @@ public int getUnitOfMeasurement()
 
 Gets the `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`.
 
-
 **Returns:**
 int - The `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[SpreadsheetChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/spreadsheetchartbackgroundpossiblewatermark)`.
-
 ### getImageInternally() {#getImageInternally--}
 ```
 public WatermarkableImage getImageInternally()

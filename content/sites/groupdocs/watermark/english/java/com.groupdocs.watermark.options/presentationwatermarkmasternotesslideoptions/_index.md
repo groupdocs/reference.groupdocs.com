@@ -16,16 +16,17 @@ Represents options when adding watermark to a Presentation document master notes
 
 **Learn more:**
 
-* [Add watermarks to presentation documents](../https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+presentation+documents)
+ *  [Add watermarks to presentation documents][]
 
 See the usage examples in `[PresentationWatermarkBaseSlideOptions](../../com.groupdocs.watermark.options/presentationwatermarkbaseslideoptions)`.
 
+
+[Add watermarks to presentation documents]: https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+presentation+documents
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [PresentationWatermarkMasterNotesSlideOptions()](#PresentationWatermarkMasterNotesSlideOptions--) | Initializes a new instance of the `[PresentationWatermarkMasterNotesSlideOptions](../../com.groupdocs.watermark.options/presentationwatermarkmasternotesslideoptions)` class.
- |
+| [PresentationWatermarkMasterNotesSlideOptions()](#PresentationWatermarkMasterNotesSlideOptions--) | Initializes a new instance of the `[PresentationWatermarkMasterNotesSlideOptions](../../com.groupdocs.watermark.options/presentationwatermarkmasternotesslideoptions)` class. |
 ### PresentationWatermarkMasterNotesSlideOptions() {#PresentationWatermarkMasterNotesSlideOptions--}
 ```
 public PresentationWatermarkMasterNotesSlideOptions()
@@ -33,5 +34,4 @@ public PresentationWatermarkMasterNotesSlideOptions()
 
 
 Initializes a new instance of the `[PresentationWatermarkMasterNotesSlideOptions](../../com.groupdocs.watermark.options/presentationwatermarkmasternotesslideoptions)` class.
-
 

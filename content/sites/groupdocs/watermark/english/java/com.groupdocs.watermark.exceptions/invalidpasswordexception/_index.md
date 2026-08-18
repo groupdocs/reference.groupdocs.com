@@ -13,13 +13,11 @@ public class InvalidPasswordException extends WatermarkException
 ```
 
 The exception that is thrown when supplied password is incorrect.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [InvalidPasswordException()](#InvalidPasswordException--) | Initializes a new instance of the `[InvalidPasswordException](../../com.groupdocs.watermark.exceptions/invalidpasswordexception)` class.
- |
+| [InvalidPasswordException()](#InvalidPasswordException--) | Initializes a new instance of the `[InvalidPasswordException](../../com.groupdocs.watermark.exceptions/invalidpasswordexception)` class. |
 ### InvalidPasswordException() {#InvalidPasswordException--}
 ```
 public InvalidPasswordException()
@@ -27,5 +25,4 @@ public InvalidPasswordException()
 
 
 Initializes a new instance of the `[InvalidPasswordException](../../com.groupdocs.watermark.exceptions/invalidpasswordexception)` class.
-
 

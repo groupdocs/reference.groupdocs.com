@@ -13,13 +13,11 @@ public final class IsImageSearchCriteria extends SearchCriteria
 ```
 
 Represents search criteria for filtering image watermarks only.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [IsImageSearchCriteria()](#IsImageSearchCriteria--) | Initializes a new instance of the `[IsImageSearchCriteria](../../com.groupdocs.watermark.search/isimagesearchcriteria)` class.
- |
+| [IsImageSearchCriteria()](#IsImageSearchCriteria--) | Initializes a new instance of the `[IsImageSearchCriteria](../../com.groupdocs.watermark.search/isimagesearchcriteria)` class. |
 ## Methods
 
 | Method | Description |
@@ -33,7 +31,6 @@ public IsImageSearchCriteria()
 
 
 Initializes a new instance of the `[IsImageSearchCriteria](../../com.groupdocs.watermark.search/isimagesearchcriteria)` class.
-
 
 ### isSatisfiedBy(PossibleWatermark candidate) {#isSatisfiedBy-com.groupdocs.watermark.search.PossibleWatermark-}
 ```

@@ -13,13 +13,11 @@ public final class EmailLoadOptions extends LoadOptions
 ```
 
 Represents the document loading options for an email message.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [EmailLoadOptions()](#EmailLoadOptions--) | Initializes a new instance of the `[EmailLoadOptions](../../com.groupdocs.watermark.options/emailloadoptions)` class.
- |
+| [EmailLoadOptions()](#EmailLoadOptions--) | Initializes a new instance of the `[EmailLoadOptions](../../com.groupdocs.watermark.options/emailloadoptions)` class. |
 ### EmailLoadOptions() {#EmailLoadOptions--}
 ```
 public EmailLoadOptions()
@@ -27,5 +25,4 @@ public EmailLoadOptions()
 
 
 Initializes a new instance of the `[EmailLoadOptions](../../com.groupdocs.watermark.options/emailloadoptions)` class.
-
 

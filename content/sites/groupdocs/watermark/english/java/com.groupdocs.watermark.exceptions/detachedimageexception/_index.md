@@ -13,13 +13,11 @@ public class DetachedImageException extends WatermarkException
 ```
 
 The exception that is thrown when manipulating detached image.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [DetachedImageException()](#DetachedImageException--) | Initializes a new instance of the `[DetachedImageException](../../com.groupdocs.watermark.exceptions/detachedimageexception)` class.
- |
+| [DetachedImageException()](#DetachedImageException--) | Initializes a new instance of the `[DetachedImageException](../../com.groupdocs.watermark.exceptions/detachedimageexception)` class. |
 ### DetachedImageException() {#DetachedImageException--}
 ```
 public DetachedImageException()
@@ -27,5 +25,4 @@ public DetachedImageException()
 
 
 Initializes a new instance of the `[DetachedImageException](../../com.groupdocs.watermark.exceptions/detachedimageexception)` class.
-
 

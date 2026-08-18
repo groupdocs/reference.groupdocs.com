@@ -11,7 +11,7 @@ url: /java/com.groupdocs.watermark/
 
 | Class | Description |
 | --- | --- |
-| [PagesSelector](../com.groupdocs.watermark/pagesselector) | <br /> |
+| [PagesSelector](../com.groupdocs.watermark/pagesselector) |  |
 | [PagesSetup](../com.groupdocs.watermark/pagessetup) | Represents the setup for pages. |
 | [PresentationPreviewOptions](../com.groupdocs.watermark/presentationpreviewoptions) | Provides options to sets requirements and stream delegates for preview generation of Presentation document. |
 | [Watermark](../com.groupdocs.watermark/watermark) | Represents a watermark to be added to a document. |

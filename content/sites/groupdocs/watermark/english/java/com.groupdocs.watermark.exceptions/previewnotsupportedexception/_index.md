@@ -13,13 +13,11 @@ public class PreviewNotSupportedException extends WatermarkException
 ```
 
 The exception that is thrown when a preview image cannot be generated for the content.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [PreviewNotSupportedException()](#PreviewNotSupportedException--) | Initializes a new instance of the `[PreviewNotSupportedException](../../com.groupdocs.watermark.exceptions/previewnotsupportedexception)` class.
- |
+| [PreviewNotSupportedException()](#PreviewNotSupportedException--) | Initializes a new instance of the `[PreviewNotSupportedException](../../com.groupdocs.watermark.exceptions/previewnotsupportedexception)` class. |
 ### PreviewNotSupportedException() {#PreviewNotSupportedException--}
 ```
 public PreviewNotSupportedException()
@@ -27,5 +25,4 @@ public PreviewNotSupportedException()
 
 
 Initializes a new instance of the `[PreviewNotSupportedException](../../com.groupdocs.watermark.exceptions/previewnotsupportedexception)` class.
-
 

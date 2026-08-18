@@ -13,7 +13,6 @@ public class PdfAnnotationPossibleWatermark extends ShapePossibleWatermark<PdfAn
 ```
 
 Represents possible annotation watermark in a pdf document.
-
 ## Constructors
 
 | Constructor | Description |
@@ -23,8 +22,7 @@ Represents possible annotation watermark in a pdf document.
 
 | Method | Description |
 | --- | --- |
-| [getParent()](#getParent--) | Gets the parent of this `[PdfAnnotationPossibleWatermark](../../com.groupdocs.watermark.search/pdfannotationpossiblewatermark)`.
- |
+| [getParent()](#getParent--) | Gets the parent of this `[PdfAnnotationPossibleWatermark](../../com.groupdocs.watermark.search/pdfannotationpossiblewatermark)`. |
 ### PdfAnnotationPossibleWatermark(PdfAnnotation annotation, PdfAnnotationCollection annotationCollection) {#PdfAnnotationPossibleWatermark-com.groupdocs.watermark.contents.PdfAnnotation-com.groupdocs.watermark.contents.PdfAnnotationCollection-}
 ```
 public PdfAnnotationPossibleWatermark(PdfAnnotation annotation, PdfAnnotationCollection annotationCollection)
@@ -47,7 +45,5 @@ public ContentPart getParent()
 
 Gets the parent of this `[PdfAnnotationPossibleWatermark](../../com.groupdocs.watermark.search/pdfannotationpossiblewatermark)`.
 
-
 **Returns:**
 [ContentPart](../../com.groupdocs.watermark.contents/contentpart) - The parent of this `[PdfAnnotationPossibleWatermark](../../com.groupdocs.watermark.search/pdfannotationpossiblewatermark)`.
-

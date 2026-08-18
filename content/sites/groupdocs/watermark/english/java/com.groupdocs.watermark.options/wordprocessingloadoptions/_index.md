@@ -13,15 +13,12 @@ public final class WordProcessingLoadOptions extends LoadOptions
 ```
 
 Represents document loading options for a Word document.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [WordProcessingLoadOptions()](#WordProcessingLoadOptions--) | Initializes a new instance of the `[WordProcessingLoadOptions](../../com.groupdocs.watermark.options/wordprocessingloadoptions)` class.
- |
-| [WordProcessingLoadOptions(String password)](#WordProcessingLoadOptions-java.lang.String-) | Initializes a new instance of the `[WordProcessingLoadOptions](../../com.groupdocs.watermark.options/wordprocessingloadoptions)` class with a specified password.
- |
+| [WordProcessingLoadOptions()](#WordProcessingLoadOptions--) | Initializes a new instance of the `[WordProcessingLoadOptions](../../com.groupdocs.watermark.options/wordprocessingloadoptions)` class. |
+| [WordProcessingLoadOptions(String password)](#WordProcessingLoadOptions-java.lang.String-) | Initializes a new instance of the `[WordProcessingLoadOptions](../../com.groupdocs.watermark.options/wordprocessingloadoptions)` class with a specified password. |
 ### WordProcessingLoadOptions() {#WordProcessingLoadOptions--}
 ```
 public WordProcessingLoadOptions()
@@ -29,7 +26,6 @@ public WordProcessingLoadOptions()
 
 
 Initializes a new instance of the `[WordProcessingLoadOptions](../../com.groupdocs.watermark.options/wordprocessingloadoptions)` class.
-
 
 ### WordProcessingLoadOptions(String password) {#WordProcessingLoadOptions-java.lang.String-}
 ```
@@ -39,10 +35,8 @@ public WordProcessingLoadOptions(String password)
 
 Initializes a new instance of the `[WordProcessingLoadOptions](../../com.groupdocs.watermark.options/wordprocessingloadoptions)` class with a specified password.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| password | java.lang.String | The password for opening an encrypted content.
- |
+| password | java.lang.String | The password for opening an encrypted content. |
 

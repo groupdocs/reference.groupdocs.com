@@ -19,17 +19,17 @@ Represents an Excel document where a watermark can be placed.
 
 **Learn more:**
 
-* [Add watermarks to spreadsheet documents](../https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+spreadsheet+documents)
-* [Shapes in spreadsheet document](../https://docs.groupdocs.com/display/watermarkjava/Shapes+in+spreadsheet+document)
-* [Working with spreadsheet document attachments](../https://docs.groupdocs.com/display/watermarkjava/Working+with+spreadsheet+document+attachments)
-* [Working with worksheet backgrounds](../https://docs.groupdocs.com/display/watermarkjava/Working+with+worksheet+backgrounds)
-* [Working with worksheet headers and footers](../https://docs.groupdocs.com/display/watermarkjava/Working+with+worksheet+headers+and+footers)
+ *  [Add watermarks to spreadsheet documents][]
+ *  [Shapes in spreadsheet document][]
+ *  [Working with spreadsheet document attachments][]
+ *  [Working with worksheet backgrounds][]
+ *  [Working with worksheet headers and footers][]
 
 The following example demonstrates how to load and save Excel content of any supported type.
->
-> ````
+
 > ```
->
+> ```
+> 
 >    SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
 >    Watermarker watermarker = new Watermarker("D:\\input.xls", loadOptions);
 >  
@@ -40,72 +40,44 @@ The following example demonstrates how to load and save Excel content of any sup
 >    watermarker.close();
 >  
 > ```
-> ````
+> ```
 
 
+[Add watermarks to spreadsheet documents]: https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+spreadsheet+documents
+[Shapes in spreadsheet document]: https://docs.groupdocs.com/display/watermarkjava/Shapes+in+spreadsheet+document
+[Working with spreadsheet document attachments]: https://docs.groupdocs.com/display/watermarkjava/Working+with+spreadsheet+document+attachments
+[Working with worksheet backgrounds]: https://docs.groupdocs.com/display/watermarkjava/Working+with+worksheet+backgrounds
+[Working with worksheet headers and footers]: https://docs.groupdocs.com/display/watermarkjava/Working+with+worksheet+headers+and+footers
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [SpreadsheetContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo fileFormatInfo, SpreadsheetLoadOptions spreadsheetLoadOptions, WatermarkerSettings watermarkerSettings)](#SpreadsheetContent-com.groupdocs.watermark.internal.StreamContainer-com.groupdocs.watermark.internal.StrategyManager-java.lang.Integer--com.aspose.cells.FileFormatInfo-com.groupdocs.watermark.options.SpreadsheetLoadOptions-com.groupdocs.watermark.WatermarkerSettings-) | <br />
-
- |
+| [SpreadsheetContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo fileFormatInfo, SpreadsheetLoadOptions spreadsheetLoadOptions, WatermarkerSettings watermarkerSettings)](#SpreadsheetContent-com.groupdocs.watermark.internal.StreamContainer-com.groupdocs.watermark.internal.StrategyManager-java.lang.Integer--com.aspose.cells.FileFormatInfo-com.groupdocs.watermark.options.SpreadsheetLoadOptions-com.groupdocs.watermark.WatermarkerSettings-) |  |
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getWorksheets()](#getWorksheets--) | Gets the collection of all worksheets of this `[SpreadsheetContent](../../com.groupdocs.watermark.contents/spreadsheetcontent)`.
- |
-| [getAsposeCellsWorkbook()](#getAsposeCellsWorkbook--) | <br />
-
- |
-| [addWatermark(Watermark watermark, SpreadsheetShapeSettings shapeSettings, ISpreadsheetWatermarkEffects effects)](#addWatermark-com.groupdocs.watermark.Watermark-com.groupdocs.watermark.options.SpreadsheetShapeSettings-com.groupdocs.watermark.options.ISpreadsheetWatermarkEffects-) | <br />
-
- |
-| [addWatermarkAsBackground(Watermark watermark, int backgroundWidth, int backgroundHeight)](#addWatermarkAsBackground-com.groupdocs.watermark.Watermark-int-int-) | <br />
-
- |
-| [addModernWordArtWatermark(TextWatermark watermark, SpreadsheetShapeSettings shapeSettings)](#addModernWordArtWatermark-com.groupdocs.watermark.watermarks.TextWatermark-com.groupdocs.watermark.options.SpreadsheetShapeSettings-) | <br />
-
- |
-| [addWatermarkIntoHeaderFooter(Watermark watermark)](#addWatermarkIntoHeaderFooter-com.groupdocs.watermark.Watermark-) | <br />
-
- |
-| [encrypt(String password)](#encrypt-java.lang.String-) | Encrypts the content.
- |
-| [decrypt()](#decrypt--) | Decrypts the document.
- |
-| [performSave(String filePath)](#performSave-java.lang.String-) | <br />
-
- |
-| [performSave(String filePath, SaveOptions saveOptions)](#performSave-java.lang.String-com.groupdocs.watermark.options.SaveOptions-) | <br />
-
- |
-| [performSave(OutputStream stream)](#performSave-java.io.OutputStream-) | <br />
-
- |
-| [performSave(OutputStream stream, SaveOptions saveOptions)](#performSave-java.io.OutputStream-com.groupdocs.watermark.options.SaveOptions-) | <br />
-
- |
-| [getDocumentInfo()](#getDocumentInfo--) | <br />
-
- |
-| [getFileType()](#getFileType--) | <br />
-
- |
-| [add(Watermark watermark, WatermarkOptions options)](#add-com.groupdocs.watermark.Watermark-com.groupdocs.watermark.options.WatermarkOptions-) | <br />
-
- |
-| [generatePreview(PreviewOptions previewOptions)](#generatePreview-com.groupdocs.watermark.options.PreviewOptions-) | <br />
-
- |
+| [getWorksheets()](#getWorksheets--) | Gets the collection of all worksheets of this `[SpreadsheetContent](../../com.groupdocs.watermark.contents/spreadsheetcontent)`. |
+| [getAsposeCellsWorkbook()](#getAsposeCellsWorkbook--) |  |
+| [addWatermark(Watermark watermark, SpreadsheetShapeSettings shapeSettings, ISpreadsheetWatermarkEffects effects)](#addWatermark-com.groupdocs.watermark.Watermark-com.groupdocs.watermark.options.SpreadsheetShapeSettings-com.groupdocs.watermark.options.ISpreadsheetWatermarkEffects-) |  |
+| [addWatermarkAsBackground(Watermark watermark, int backgroundWidth, int backgroundHeight)](#addWatermarkAsBackground-com.groupdocs.watermark.Watermark-int-int-) |  |
+| [addModernWordArtWatermark(TextWatermark watermark, SpreadsheetShapeSettings shapeSettings)](#addModernWordArtWatermark-com.groupdocs.watermark.watermarks.TextWatermark-com.groupdocs.watermark.options.SpreadsheetShapeSettings-) |  |
+| [addWatermarkIntoHeaderFooter(Watermark watermark)](#addWatermarkIntoHeaderFooter-com.groupdocs.watermark.Watermark-) |  |
+| [encrypt(String password)](#encrypt-java.lang.String-) | Encrypts the content. |
+| [decrypt()](#decrypt--) | Decrypts the document. |
+| [performSave(String filePath)](#performSave-java.lang.String-) |  |
+| [performSave(String filePath, SaveOptions saveOptions)](#performSave-java.lang.String-com.groupdocs.watermark.options.SaveOptions-) |  |
+| [performSave(OutputStream stream)](#performSave-java.io.OutputStream-) |  |
+| [performSave(OutputStream stream, SaveOptions saveOptions)](#performSave-java.io.OutputStream-com.groupdocs.watermark.options.SaveOptions-) |  |
+| [getDocumentInfo()](#getDocumentInfo--) |  |
+| [getFileType()](#getFileType--) |  |
+| [add(Watermark watermark, WatermarkOptions options)](#add-com.groupdocs.watermark.Watermark-com.groupdocs.watermark.options.WatermarkOptions-) |  |
+| [generatePreview(PreviewOptions previewOptions)](#generatePreview-com.groupdocs.watermark.options.PreviewOptions-) |  |
 ### SpreadsheetContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo fileFormatInfo, SpreadsheetLoadOptions spreadsheetLoadOptions, WatermarkerSettings watermarkerSettings) {#SpreadsheetContent-com.groupdocs.watermark.internal.StreamContainer-com.groupdocs.watermark.internal.StrategyManager-java.lang.Integer--com.aspose.cells.FileFormatInfo-com.groupdocs.watermark.options.SpreadsheetLoadOptions-com.groupdocs.watermark.WatermarkerSettings-}
 ```
 public SpreadsheetContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo fileFormatInfo, SpreadsheetLoadOptions spreadsheetLoadOptions, WatermarkerSettings watermarkerSettings)
 ```
 
-
-<br />
 
 
 
@@ -126,17 +98,13 @@ public final SpreadsheetWorksheetCollection getWorksheets()
 
 Gets the collection of all worksheets of this `[SpreadsheetContent](../../com.groupdocs.watermark.contents/spreadsheetcontent)`.
 
-
 **Returns:**
 [SpreadsheetWorksheetCollection](../../com.groupdocs.watermark.contents/spreadsheetworksheetcollection) - The collection of all worksheets of this `[SpreadsheetContent](../../com.groupdocs.watermark.contents/spreadsheetcontent)`.
-
 ### getAsposeCellsWorkbook() {#getAsposeCellsWorkbook--}
 ```
 public final Workbook getAsposeCellsWorkbook()
 ```
 
-
-<br />
 
 
 
@@ -147,8 +115,6 @@ com.aspose.cells.Workbook
 public final void addWatermark(Watermark watermark, SpreadsheetShapeSettings shapeSettings, ISpreadsheetWatermarkEffects effects)
 ```
 
-
-<br />
 
 
 
@@ -165,8 +131,6 @@ public final void addWatermarkAsBackground(Watermark watermark, int backgroundWi
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -182,8 +146,6 @@ public final void addModernWordArtWatermark(TextWatermark watermark, Spreadsheet
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -197,8 +159,6 @@ public final void addModernWordArtWatermark(TextWatermark watermark, Spreadsheet
 public final void addWatermarkIntoHeaderFooter(Watermark watermark)
 ```
 
-
-<br />
 
 
 
@@ -215,12 +175,10 @@ public final void encrypt(String password)
 
 Encrypts the content.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| password | java.lang.String | The password that will be required to open the document.
- |
+| password | java.lang.String | The password that will be required to open the document. |
 
 ### decrypt() {#decrypt--}
 ```
@@ -230,14 +188,11 @@ public final void decrypt()
 
 Decrypts the document.
 
-
 ### performSave(String filePath) {#performSave-java.lang.String-}
 ```
 public void performSave(String filePath)
 ```
 
-
-<br />
 
 
 
@@ -251,8 +206,6 @@ public void performSave(String filePath)
 public void performSave(String filePath, SaveOptions saveOptions)
 ```
 
-
-<br />
 
 
 
@@ -268,8 +221,6 @@ public void performSave(OutputStream stream)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -282,8 +233,6 @@ public void performSave(OutputStream stream)
 public void performSave(OutputStream stream, SaveOptions saveOptions)
 ```
 
-
-<br />
 
 
 
@@ -299,8 +248,6 @@ public IDocumentInfo getDocumentInfo()
 ```
 
 
-<br />
-
 
 
 **Returns:**
@@ -311,8 +258,6 @@ public FileType getFileType()
 ```
 
 
-<br />
-
 
 
 **Returns:**
@@ -322,8 +267,6 @@ public FileType getFileType()
 public void add(Watermark watermark, WatermarkOptions options)
 ```
 
-
-<br />
 
 
 
@@ -338,8 +281,6 @@ public void add(Watermark watermark, WatermarkOptions options)
 public void generatePreview(PreviewOptions previewOptions)
 ```
 
-
-<br />
 
 
 

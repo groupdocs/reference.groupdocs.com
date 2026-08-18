@@ -13,16 +13,12 @@ public abstract class MultiframeImageContent extends ImageContent
 ```
 
 Represents a multiframe image where a watermark can be placed.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getFrames()](#getFrames--) | Gets the collection of all frames of the image.
- |
-| [getDocumentInfo()](#getDocumentInfo--) | <br />
-
- |
+| [getFrames()](#getFrames--) | Gets the collection of all frames of the image. |
+| [getDocumentInfo()](#getDocumentInfo--) |  |
 ### getFrames() {#getFrames--}
 ```
 public final ImageFrameCollection getFrames()
@@ -31,17 +27,13 @@ public final ImageFrameCollection getFrames()
 
 Gets the collection of all frames of the image.
 
-
 **Returns:**
 [ImageFrameCollection](../../com.groupdocs.watermark.contents/imageframecollection) - The collection of image frames.
-
 ### getDocumentInfo() {#getDocumentInfo--}
 ```
 public IDocumentInfo getDocumentInfo()
 ```
 
-
-<br />
 
 
 

@@ -13,15 +13,12 @@ public final class EmailBodyType
 ```
 
 Represents a content type of an email message body.
-
 ## Fields
 
 | Field | Description |
 | --- | --- |
-| [PlainText](#PlainText) | Plain text body.
- |
-| [Html](#Html) | Html-formatted body.
- |
+| [PlainText](#PlainText) | Plain text body. |
+| [Html](#Html) | Html-formatted body. |
 ### PlainText {#PlainText}
 ```
 public static final int PlainText
@@ -30,7 +27,6 @@ public static final int PlainText
 
 Plain text body.
 
-
 ### Html {#Html}
 ```
 public static final int Html
@@ -38,5 +34,4 @@ public static final int Html
 
 
 Html-formatted body.
-
 

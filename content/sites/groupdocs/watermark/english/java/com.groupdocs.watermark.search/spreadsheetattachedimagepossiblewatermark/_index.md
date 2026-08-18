@@ -13,7 +13,6 @@ public class SpreadsheetAttachedImagePossibleWatermark extends FloatingAttachedI
 ```
 
 Represents possible image watermark in Excel document attachment.
-
 ## Constructors
 
 | Constructor | Description |

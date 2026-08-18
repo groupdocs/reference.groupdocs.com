@@ -13,7 +13,6 @@ public class WordProcessingShapePossibleWatermark extends ShapePossibleWatermark
 ```
 
 Represents possible shape watermark in a Word document.
-
 ## Constructors
 
 | Constructor | Description |
@@ -23,8 +22,7 @@ Represents possible shape watermark in a Word document.
 
 | Method | Description |
 | --- | --- |
-| [getParent()](#getParent--) | Gets the parent of this `[WordProcessingShapePossibleWatermark](../../com.groupdocs.watermark.search/wordprocessingshapepossiblewatermark)`.
- |
+| [getParent()](#getParent--) | Gets the parent of this `[WordProcessingShapePossibleWatermark](../../com.groupdocs.watermark.search/wordprocessingshapepossiblewatermark)`. |
 | [getShape()](#getShape--) |  |
 ### WordProcessingShapePossibleWatermark(WordProcessingShape shape, WordProcessingShapeCollection shapeCollection) {#WordProcessingShapePossibleWatermark-com.groupdocs.watermark.contents.WordProcessingShape-com.groupdocs.watermark.contents.WordProcessingShapeCollection-}
 ```
@@ -48,10 +46,8 @@ public ContentPart getParent()
 
 Gets the parent of this `[WordProcessingShapePossibleWatermark](../../com.groupdocs.watermark.search/wordprocessingshapepossiblewatermark)`.
 
-
 **Returns:**
 [ContentPart](../../com.groupdocs.watermark.contents/contentpart) - The parent of this `[WordProcessingShapePossibleWatermark](../../com.groupdocs.watermark.search/wordprocessingshapepossiblewatermark)`.
-
 ### getShape() {#getShape--}
 ```
 public final WordProcessingShape getShape()

@@ -13,21 +13,16 @@ public class PdfXForm extends PdfXObject
 ```
 
 Represents an XForm in a pdf content.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getOuterForm()](#getOuterForm--) | <br />
-
- |
+| [getOuterForm()](#getOuterForm--) |  |
 ### getOuterForm() {#getOuterForm--}
 ```
 public XForm getOuterForm()
 ```
 
-
-<br />
 
 
 

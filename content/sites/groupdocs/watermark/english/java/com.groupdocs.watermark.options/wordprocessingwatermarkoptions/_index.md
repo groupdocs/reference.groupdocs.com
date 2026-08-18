@@ -13,4 +13,3 @@ public abstract class WordProcessingWatermarkOptions extends WatermarkOptions
 ```
 
 Base class for watermark adding options to a Word document.
-

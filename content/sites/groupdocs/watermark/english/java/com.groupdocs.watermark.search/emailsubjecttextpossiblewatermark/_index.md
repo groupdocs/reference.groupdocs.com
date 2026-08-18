@@ -13,7 +13,6 @@ public class EmailSubjectTextPossibleWatermark extends EmailTextPossibleWatermar
 ```
 
 Represents possible watermark in email message subject.
-
 ## Constructors
 
 | Constructor | Description |

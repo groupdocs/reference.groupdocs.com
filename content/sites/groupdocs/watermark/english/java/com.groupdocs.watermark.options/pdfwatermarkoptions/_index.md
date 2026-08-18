@@ -13,4 +13,3 @@ public abstract class PdfWatermarkOptions extends WatermarkOptions
 ```
 
 Base class for watermark adding options to a pdf document.
-

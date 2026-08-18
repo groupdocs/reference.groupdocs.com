@@ -15,4 +15,3 @@ public class SpreadsheetWorksheetCollection extends ReadOnlyListBase<Spreadsheet
 Represents a collection of worksheets in an Excel document.
 
 This collection contains the items of `[SpreadsheetWorksheet](../../com.groupdocs.watermark.contents/spreadsheetworksheet)` type.
-

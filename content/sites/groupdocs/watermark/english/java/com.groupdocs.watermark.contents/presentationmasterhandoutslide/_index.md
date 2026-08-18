@@ -13,4 +13,3 @@ public class PresentationMasterHandoutSlide extends PresentationBaseSlide
 ```
 
 Represents a master handout slide in a PowerPoint content.
-

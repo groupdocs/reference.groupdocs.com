@@ -13,24 +13,17 @@ public class PresentationMasterNotesSlide extends PresentationBaseSlide
 ```
 
 Represents a master slide for all notes slides in a PowerPoint document.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getWidth()](#getWidth--) | <br />
-
- |
-| [getHeight()](#getHeight--) | <br />
-
- |
+| [getWidth()](#getWidth--) |  |
+| [getHeight()](#getHeight--) |  |
 ### getWidth() {#getWidth--}
 ```
 public double getWidth()
 ```
 
-
-<br />
 
 
 
@@ -41,8 +34,6 @@ double
 public double getHeight()
 ```
 
-
-<br />
 
 
 

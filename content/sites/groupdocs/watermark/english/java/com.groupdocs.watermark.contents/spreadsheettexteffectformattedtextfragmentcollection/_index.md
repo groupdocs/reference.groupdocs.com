@@ -15,30 +15,19 @@ public class SpreadsheetTextEffectFormattedTextFragmentCollection extends Format
 Represents a collection of formatted text fragments in an Excel document WordArt shape.
 
 This collection contains the items of `[SpreadsheetTextEffectFormattedTextFragment](../../com.groupdocs.watermark.contents/spreadsheettexteffectformattedtextfragment)` type.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getText()](#getText--) | <br />
-
- |
-| [removeFromDocument(FormattedTextFragment item)](#removeFromDocument-com.groupdocs.watermark.search.FormattedTextFragment-) | <br />
-
- |
-| [createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)](#createInDocument-int-java.lang.String-com.groupdocs.watermark.watermarks.Font-com.groupdocs.watermark.watermarks.Color-com.groupdocs.watermark.watermarks.Color-) | <br />
-
- |
-| [setText(String text)](#setText-java.lang.String-) | <br />
-
- |
+| [getText()](#getText--) |  |
+| [removeFromDocument(FormattedTextFragment item)](#removeFromDocument-com.groupdocs.watermark.search.FormattedTextFragment-) |  |
+| [createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)](#createInDocument-int-java.lang.String-com.groupdocs.watermark.watermarks.Font-com.groupdocs.watermark.watermarks.Color-com.groupdocs.watermark.watermarks.Color-) |  |
+| [setText(String text)](#setText-java.lang.String-) |  |
 ### getText() {#getText--}
 ```
 public String getText()
 ```
 
-
-<br />
 
 
 
@@ -49,8 +38,6 @@ java.lang.String
 public void removeFromDocument(FormattedTextFragment item)
 ```
 
-
-<br />
 
 
 
@@ -64,8 +51,6 @@ public void removeFromDocument(FormattedTextFragment item)
 public FormattedTextFragment createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)
 ```
 
-
-<br />
 
 
 
@@ -85,8 +70,6 @@ public FormattedTextFragment createInDocument(int index, String text, Font font,
 public void setText(String text)
 ```
 
-
-<br />
 
 
 

@@ -15,4 +15,3 @@ public class ImageFrameCollection extends ReadOnlyListBase<ImageFrame>
 Represents a collection of frames in multiframe image.
 
 This collection contains the items of `[ImageFrame](../../com.groupdocs.watermark.contents/imageframe)` type.
-

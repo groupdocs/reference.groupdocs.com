@@ -19,36 +19,35 @@ Represents an image watermark.
 
 **Learn more:**
 
-* [Adding image watermarks](../https://docs.groupdocs.com/display/watermarkjava/Adding+image+watermarks)
+ *  [Adding image watermarks][]
 
 The following example demonstrates how to add image watermark to a document of any supported type.
->
-> ````
+
 > ```
->
+> ```
+> 
 >    Watermarker watermarker = new Watermarker("C:\\test.some_ext");
 >    ImageWatermark watermark = new ImageWatermark("C:\\watermark.png");
->
+> 
 >    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
 >    watermark.setVerticalAlignment(VerticalAlignment.Center);
 >    watermarker.add(watermark);
->
+> 
 >    watermarker.save("C:\\modified_test.some_ext");
 >    watermark.close();
 >    watermarker.close();
 >  
 > ```
-> ````
+> ```
 
 
+[Adding image watermarks]: https://docs.groupdocs.com/display/watermarkjava/Adding+image+watermarks
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [ImageWatermark(String filePath)](#ImageWatermark-java.lang.String-) | Initializes a new instance of the `[ImageWatermark](../../com.groupdocs.watermark.watermarks/imagewatermark)` class with a specified file path.
- |
-| [ImageWatermark(InputStream stream)](#ImageWatermark-java.io.InputStream-) | Initializes a new instance of the `[ImageWatermark](../../com.groupdocs.watermark.watermarks/imagewatermark)` class with a specified stream.
- |
+| [ImageWatermark(String filePath)](#ImageWatermark-java.lang.String-) | Initializes a new instance of the `[ImageWatermark](../../com.groupdocs.watermark.watermarks/imagewatermark)` class with a specified file path. |
+| [ImageWatermark(InputStream stream)](#ImageWatermark-java.io.InputStream-) | Initializes a new instance of the `[ImageWatermark](../../com.groupdocs.watermark.watermarks/imagewatermark)` class with a specified stream. |
 | [ImageWatermark(System.IO.Stream stream)](#ImageWatermark-com.aspose.ms.System.IO.Stream-) |  |
 ## Methods
 
@@ -63,8 +62,7 @@ The following example demonstrates how to add image watermark to a document of a
 | [deepClone()](#deepClone--) |  |
 | [hasSameValues(Watermark watermark)](#hasSameValues-com.groupdocs.watermark.Watermark-) |  |
 | [createGeometry(ContentPartGeometry parent)](#createGeometry-com.groupdocs.watermark.internal.ContentPartGeometry-) |  |
-| [close()](#close--) | Disposes the current instance.
- |
+| [close()](#close--) | Disposes the current instance. |
 ### ImageWatermark(String filePath) {#ImageWatermark-java.lang.String-}
 ```
 public ImageWatermark(String filePath)
@@ -73,12 +71,10 @@ public ImageWatermark(String filePath)
 
 Initializes a new instance of the `[ImageWatermark](../../com.groupdocs.watermark.watermarks/imagewatermark)` class with a specified file path.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| filePath | java.lang.String | The path to the image that will be used as watermark.
- |
+| filePath | java.lang.String | The path to the image that will be used as watermark. |
 
 ### ImageWatermark(InputStream stream) {#ImageWatermark-java.io.InputStream-}
 ```
@@ -88,12 +84,10 @@ public ImageWatermark(InputStream stream)
 
 Initializes a new instance of the `[ImageWatermark](../../com.groupdocs.watermark.watermarks/imagewatermark)` class with a specified stream.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| stream | java.io.InputStream | The stream containing the image that will be used as watermark.
- |
+| stream | java.io.InputStream | The stream containing the image that will be used as watermark. |
 
 ### ImageWatermark(System.IO.Stream stream) {#ImageWatermark-com.aspose.ms.System.IO.Stream-}
 ```
@@ -213,5 +207,4 @@ public final void close()
 
 
 Disposes the current instance.
-
 

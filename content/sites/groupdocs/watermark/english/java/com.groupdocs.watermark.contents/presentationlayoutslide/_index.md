@@ -13,13 +13,11 @@ public class PresentationLayoutSlide extends PresentationBaseSlide
 ```
 
 Represents a PowerPoint content layout slide.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getMasterSlide()](#getMasterSlide--) | Gets the master slide for this `[PresentationLayoutSlide](../../com.groupdocs.watermark.contents/presentationlayoutslide)`.
- |
+| [getMasterSlide()](#getMasterSlide--) | Gets the master slide for this `[PresentationLayoutSlide](../../com.groupdocs.watermark.contents/presentationlayoutslide)`. |
 ### getMasterSlide() {#getMasterSlide--}
 ```
 public final PresentationMasterSlide getMasterSlide()
@@ -28,7 +26,5 @@ public final PresentationMasterSlide getMasterSlide()
 
 Gets the master slide for this `[PresentationLayoutSlide](../../com.groupdocs.watermark.contents/presentationlayoutslide)`.
 
-
 **Returns:**
 [PresentationMasterSlide](../../com.groupdocs.watermark.contents/presentationmasterslide) - The master slide for this `[PresentationLayoutSlide](../../com.groupdocs.watermark.contents/presentationlayoutslide)`.
-

@@ -15,7 +15,6 @@ public class WordProcessingTextFormattedTextFragmentCollection extends WordProce
 Represents a collection of formatted text fragments in a Word document main text.
 
 This collection contains the items of `[WordProcessingTextFormattedTextFragment](../../com.groupdocs.watermark.contents/wordprocessingtextformattedtextfragment)` type.
-
 ## Constructors
 
 | Constructor | Description |
@@ -60,8 +59,6 @@ public void setText(String text)
 public void removeFromDocument(FormattedTextFragment item)
 ```
 
-
-<br />
 
 
 

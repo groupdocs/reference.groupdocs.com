@@ -13,20 +13,16 @@ public class PdfWatermarkableImage extends WatermarkableImage
 ```
 
 Represents an image inside a Pdf document.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [PdfWatermarkableImage(byte[] imageData)](#PdfWatermarkableImage-byte---) | Initializes a new instance of the `[PdfWatermarkableImage](../../com.groupdocs.watermark.contents/pdfwatermarkableimage)` class using specified image data.
- |
+| [PdfWatermarkableImage(byte[] imageData)](#PdfWatermarkableImage-byte---) | Initializes a new instance of the `[PdfWatermarkableImage](../../com.groupdocs.watermark.contents/pdfwatermarkableimage)` class using specified image data. |
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [fetchOrCreate(XImageCollection imageCollection, String nameInCollection, PdfContent content)](#fetchOrCreate-com.aspose.pdf.XImageCollection-java.lang.String-com.groupdocs.watermark.contents.PdfContent-) | <br />
-
- |
+| [fetchOrCreate(XImageCollection imageCollection, String nameInCollection, PdfContent content)](#fetchOrCreate-com.aspose.pdf.XImageCollection-java.lang.String-com.groupdocs.watermark.contents.PdfContent-) |  |
 ### PdfWatermarkableImage(byte[] imageData) {#PdfWatermarkableImage-byte---}
 ```
 public PdfWatermarkableImage(byte[] imageData)
@@ -35,20 +31,16 @@ public PdfWatermarkableImage(byte[] imageData)
 
 Initializes a new instance of the `[PdfWatermarkableImage](../../com.groupdocs.watermark.contents/pdfwatermarkableimage)` class using specified image data.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| imageData | byte[] | The array of unsigned bytes from which to create the `[PdfWatermarkableImage](../../com.groupdocs.watermark.contents/pdfwatermarkableimage)`.
- |
+| imageData | byte[] | The array of unsigned bytes from which to create the `[PdfWatermarkableImage](../../com.groupdocs.watermark.contents/pdfwatermarkableimage)`. |
 
 ### fetchOrCreate(XImageCollection imageCollection, String nameInCollection, PdfContent content) {#fetchOrCreate-com.aspose.pdf.XImageCollection-java.lang.String-com.groupdocs.watermark.contents.PdfContent-}
 ```
 public static PdfWatermarkableImage fetchOrCreate(XImageCollection imageCollection, String nameInCollection, PdfContent content)
 ```
 
-
-<br />
 
 
 

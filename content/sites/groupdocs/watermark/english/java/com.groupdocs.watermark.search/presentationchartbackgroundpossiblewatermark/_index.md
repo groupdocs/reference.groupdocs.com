@@ -13,7 +13,6 @@ public class PresentationChartBackgroundPossibleWatermark extends TwoDObjectPoss
 ```
 
 Represents possible background watermark in a PowerPoint chart.
-
 ## Constructors
 
 | Constructor | Description |
@@ -23,12 +22,9 @@ Represents possible background watermark in a PowerPoint chart.
 
 | Method | Description |
 | --- | --- |
-| [getParent()](#getParent--) | Gets the parent of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`.
- |
-| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)` in degrees.
- |
-| [getUnitOfMeasurement()](#getUnitOfMeasurement--) | Gets the `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`.
- |
+| [getParent()](#getParent--) | Gets the parent of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`. |
+| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)` in degrees. |
+| [getUnitOfMeasurement()](#getUnitOfMeasurement--) | Gets the `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`. |
 | [getImageInternally()](#getImageInternally--) |  |
 | [remove()](#remove--) |  |
 ### PresentationChartBackgroundPossibleWatermark(PresentationChart chart) {#PresentationChartBackgroundPossibleWatermark-com.groupdocs.watermark.contents.PresentationChart-}
@@ -52,10 +48,8 @@ public ContentPart getParent()
 
 Gets the parent of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`.
 
-
 **Returns:**
 [ContentPart](../../com.groupdocs.watermark.contents/contentpart) - The parent of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`.
-
 ### getRotateAngle() {#getRotateAngle--}
 ```
 public double getRotateAngle()
@@ -64,10 +58,8 @@ public double getRotateAngle()
 
 Gets the rotate angle of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)` in degrees.
 
-
 **Returns:**
 double - The rotate angle of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)` in degrees.
-
 ### getUnitOfMeasurement() {#getUnitOfMeasurement--}
 ```
 public int getUnitOfMeasurement()
@@ -76,10 +68,8 @@ public int getUnitOfMeasurement()
 
 Gets the `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`.
 
-
 **Returns:**
 int - The `[UnitOfMeasurement](../../com.groupdocs.watermark.common/unitofmeasurement)` of this `[PresentationChartBackgroundPossibleWatermark](../../com.groupdocs.watermark.search/presentationchartbackgroundpossiblewatermark)`.
-
 ### getImageInternally() {#getImageInternally--}
 ```
 public WatermarkableImage getImageInternally()

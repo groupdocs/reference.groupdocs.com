@@ -15,37 +15,24 @@ public class SpreadsheetCellFormattedTextFragmentCollection extends FormattedTex
 Represents a collection of formatted text fragments in an Excel document cell.
 
 This collection contains the items of `[SpreadsheetCellFormattedTextFragment](../../com.groupdocs.watermark.contents/spreadsheetcellformattedtextfragment)` type.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [SpreadsheetCellFormattedTextFragmentCollection(Cell cell)](#SpreadsheetCellFormattedTextFragmentCollection-com.aspose.cells.Cell-) | <br />
-
- |
+| [SpreadsheetCellFormattedTextFragmentCollection(Cell cell)](#SpreadsheetCellFormattedTextFragmentCollection-com.aspose.cells.Cell-) |  |
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getText()](#getText--) | <br />
-
- |
-| [removeFromDocument(FormattedTextFragment item)](#removeFromDocument-com.groupdocs.watermark.search.FormattedTextFragment-) | <br />
-
- |
-| [createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)](#createInDocument-int-java.lang.String-com.groupdocs.watermark.watermarks.Font-com.groupdocs.watermark.watermarks.Color-com.groupdocs.watermark.watermarks.Color-) | <br />
-
- |
-| [setText(String text)](#setText-java.lang.String-) | <br />
-
- |
+| [getText()](#getText--) |  |
+| [removeFromDocument(FormattedTextFragment item)](#removeFromDocument-com.groupdocs.watermark.search.FormattedTextFragment-) |  |
+| [createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)](#createInDocument-int-java.lang.String-com.groupdocs.watermark.watermarks.Font-com.groupdocs.watermark.watermarks.Color-com.groupdocs.watermark.watermarks.Color-) |  |
+| [setText(String text)](#setText-java.lang.String-) |  |
 ### SpreadsheetCellFormattedTextFragmentCollection(Cell cell) {#SpreadsheetCellFormattedTextFragmentCollection-com.aspose.cells.Cell-}
 ```
 public SpreadsheetCellFormattedTextFragmentCollection(Cell cell)
 ```
 
-
-<br />
 
 
 
@@ -60,8 +47,6 @@ public String getText()
 ```
 
 
-<br />
-
 
 
 **Returns:**
@@ -71,8 +56,6 @@ java.lang.String
 public void removeFromDocument(FormattedTextFragment item)
 ```
 
-
-<br />
 
 
 
@@ -86,8 +69,6 @@ public void removeFromDocument(FormattedTextFragment item)
 public FormattedTextFragment createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)
 ```
 
-
-<br />
 
 
 
@@ -107,8 +88,6 @@ public FormattedTextFragment createInDocument(int index, String text, Font font,
 public void setText(String text)
 ```
 
-
-<br />
 
 
 

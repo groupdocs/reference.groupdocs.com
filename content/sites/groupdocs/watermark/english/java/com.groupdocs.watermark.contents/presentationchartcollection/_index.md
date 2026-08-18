@@ -15,4 +15,3 @@ public class PresentationChartCollection extends ReadOnlyListBase<PresentationCh
 Represents a collection of charts in a PowerPoint document.
 
 This collection contains the items of `[PresentationChart](../../com.groupdocs.watermark.contents/presentationchart)` type.
-

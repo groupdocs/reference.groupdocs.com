@@ -15,4 +15,3 @@ public class EmailAddressCollection extends ReadOnlyListBase<EmailAddress>
 Represents a collection of addresses in an email message.
 
 This collection contains the items of `[EmailAddress](../../com.groupdocs.watermark.contents/emailaddress)` type.
-

@@ -15,7 +15,6 @@ public class WordProcessingWordArtShapeFormattedTextFragmentCollection extends W
 Represents a collection of formatted text fragments in a Word document WordArt shape.
 
 This collection contains the items of `[WordProcessingWordArtShapeFormattedTextFragment](../../com.groupdocs.watermark.contents/wordprocessingwordartshapeformattedtextfragment)` type.
-
 ## Methods
 
 | Method | Description |
@@ -39,8 +38,6 @@ java.lang.String
 public void removeFromDocument(FormattedTextFragment item)
 ```
 
-
-<br />
 
 
 

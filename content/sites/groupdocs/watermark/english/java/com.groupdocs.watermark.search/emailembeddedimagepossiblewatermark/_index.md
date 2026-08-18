@@ -13,7 +13,6 @@ public class EmailEmbeddedImagePossibleWatermark extends AttachedImagePossibleWa
 ```
 
 Represents possible image watermark embedded to email message body.
-
 ## Constructors
 
 | Constructor | Description |

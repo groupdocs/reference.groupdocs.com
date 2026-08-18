@@ -15,34 +15,23 @@ public class PdfTextFormattedTextFragmentCollection extends PdfFormattedTextFrag
 Represents a collection of formatted text fragments in a pdf content main text.
 
 This collection contains the items of `[PdfFormattedTextFragment](../../com.groupdocs.watermark.contents/pdfformattedtextfragment)` type.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [PdfTextFormattedTextFragmentCollection(TextFragment textFragment)](#PdfTextFormattedTextFragmentCollection-com.aspose.pdf.TextFragment-) | <br />
-
- |
+| [PdfTextFormattedTextFragmentCollection(TextFragment textFragment)](#PdfTextFormattedTextFragmentCollection-com.aspose.pdf.TextFragment-) |  |
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [setText(String text)](#setText-java.lang.String-) | <br />
-
- |
-| [removeFromDocument(FormattedTextFragment item)](#removeFromDocument-com.groupdocs.watermark.search.FormattedTextFragment-) | <br />
-
- |
-| [createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)](#createInDocument-int-java.lang.String-com.groupdocs.watermark.watermarks.Font-com.groupdocs.watermark.watermarks.Color-com.groupdocs.watermark.watermarks.Color-) | <br />
-
- |
+| [setText(String text)](#setText-java.lang.String-) |  |
+| [removeFromDocument(FormattedTextFragment item)](#removeFromDocument-com.groupdocs.watermark.search.FormattedTextFragment-) |  |
+| [createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)](#createInDocument-int-java.lang.String-com.groupdocs.watermark.watermarks.Font-com.groupdocs.watermark.watermarks.Color-com.groupdocs.watermark.watermarks.Color-) |  |
 ### PdfTextFormattedTextFragmentCollection(TextFragment textFragment) {#PdfTextFormattedTextFragmentCollection-com.aspose.pdf.TextFragment-}
 ```
 public PdfTextFormattedTextFragmentCollection(TextFragment textFragment)
 ```
 
-
-<br />
 
 
 
@@ -57,8 +46,6 @@ public void setText(String text)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -72,8 +59,6 @@ public void removeFromDocument(FormattedTextFragment item)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -86,8 +71,6 @@ public void removeFromDocument(FormattedTextFragment item)
 public FormattedTextFragment createInDocument(int index, String text, Font font, Color foregroundColor, Color backgroundColor)
 ```
 
-
-<br />
 
 
 

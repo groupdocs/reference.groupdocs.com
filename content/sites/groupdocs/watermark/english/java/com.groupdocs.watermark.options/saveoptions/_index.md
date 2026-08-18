@@ -13,13 +13,11 @@ public class SaveOptions
 ```
 
 Represents document saving options when saving a document.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [SaveOptions()](#SaveOptions--) | Initializes a new instance of the `[SaveOptions](../../com.groupdocs.watermark.options/saveoptions)` class.
- |
+| [SaveOptions()](#SaveOptions--) | Initializes a new instance of the `[SaveOptions](../../com.groupdocs.watermark.options/saveoptions)` class. |
 ### SaveOptions() {#SaveOptions--}
 ```
 public SaveOptions()
@@ -27,5 +25,4 @@ public SaveOptions()
 
 
 Initializes a new instance of the `[SaveOptions](../../com.groupdocs.watermark.options/saveoptions)` class.
-
 

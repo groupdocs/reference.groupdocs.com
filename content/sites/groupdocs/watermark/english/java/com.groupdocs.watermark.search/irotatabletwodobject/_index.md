@@ -13,13 +13,11 @@ public interface IRotatableTwoDObject extends ITwoDObject
 ```
 
 Represents any rotatable two dimensional object in a content structure.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of the object in degrees.
- |
+| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of the object in degrees. |
 ### getRotateAngle() {#getRotateAngle--}
 ```
 public abstract double getRotateAngle()
@@ -28,7 +26,5 @@ public abstract double getRotateAngle()
 
 Gets the rotate angle of the object in degrees.
 
-
 **Returns:**
 double - The rotate angle of the object in degrees.
-

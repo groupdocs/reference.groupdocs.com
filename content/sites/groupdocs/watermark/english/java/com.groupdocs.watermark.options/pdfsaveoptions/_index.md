@@ -13,13 +13,11 @@ public final class PdfSaveOptions extends SaveOptions
 ```
 
 Represents document saving options when saving a pdf document.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [PdfSaveOptions()](#PdfSaveOptions--) | Initializes a new instance of the `[PdfSaveOptions](../../com.groupdocs.watermark.options/pdfsaveoptions)` class.
- |
+| [PdfSaveOptions()](#PdfSaveOptions--) | Initializes a new instance of the `[PdfSaveOptions](../../com.groupdocs.watermark.options/pdfsaveoptions)` class. |
 ### PdfSaveOptions() {#PdfSaveOptions--}
 ```
 public PdfSaveOptions()
@@ -27,5 +25,4 @@ public PdfSaveOptions()
 
 
 Initializes a new instance of the `[PdfSaveOptions](../../com.groupdocs.watermark.options/pdfsaveoptions)` class.
-
 

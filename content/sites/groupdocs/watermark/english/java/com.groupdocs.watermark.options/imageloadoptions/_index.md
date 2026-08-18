@@ -13,13 +13,11 @@ public class ImageLoadOptions extends LoadOptions
 ```
 
 Represents image loading options when loading an image.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [ImageLoadOptions()](#ImageLoadOptions--) | Initializes a new instance of the `[ImageLoadOptions](../../com.groupdocs.watermark.options/imageloadoptions)` class.
- |
+| [ImageLoadOptions()](#ImageLoadOptions--) | Initializes a new instance of the `[ImageLoadOptions](../../com.groupdocs.watermark.options/imageloadoptions)` class. |
 ### ImageLoadOptions() {#ImageLoadOptions--}
 ```
 public ImageLoadOptions()
@@ -27,5 +25,4 @@ public ImageLoadOptions()
 
 
 Initializes a new instance of the `[ImageLoadOptions](../../com.groupdocs.watermark.options/imageloadoptions)` class.
-
 

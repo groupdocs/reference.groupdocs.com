@@ -13,21 +13,16 @@ public class PresentationChart extends PresentationBaseShape
 ```
 
 Represents a chart in a PowerPoint document.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getImageForSearch()](#getImageForSearch--) | <br />
-
- |
+| [getImageForSearch()](#getImageForSearch--) |  |
 ### getImageForSearch() {#getImageForSearch--}
 ```
 public WatermarkableImage getImageForSearch()
 ```
 
-
-<br />
 
 
 

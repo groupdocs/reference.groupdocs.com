@@ -16,18 +16,18 @@ Represents options when adding shape watermark to a Word document section.
 
 **Learn more:**
 
-* [Add watermarks to word processing documents](../https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+word+processing+documents)
+ *  [Add watermarks to word processing documents][]
 
 The following example demonstrates how to add a watermark to a particular section of a Word document.
->
-> ````
+
 > ```
->
+> ```
+> 
 >    WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
 >    Watermarker watermarker = new Watermarker("D:\\test.doc", loadOptions);
->
+> 
 >    TextWatermark watermark = new TextWatermark("Test", new Font("Arial", 14));
->
+> 
 >    WordProcessingWatermarkSectionOptions options = new WordProcessingWatermarkSectionOptions();
 >    options.setSectionIndex(0);
 >    
@@ -35,23 +35,21 @@ The following example demonstrates how to add a watermark to a particular sectio
 >    watermarker.close();
 >  
 > ```
-> ````
+> ```
 
 
+[Add watermarks to word processing documents]: https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+word+processing+documents
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [WordProcessingWatermarkSectionOptions()](#WordProcessingWatermarkSectionOptions--) | Initializes a new instance of the `[WordProcessingWatermarkSectionOptions](../../com.groupdocs.watermark.options/wordprocessingwatermarksectionoptions)` class.
- |
+| [WordProcessingWatermarkSectionOptions()](#WordProcessingWatermarkSectionOptions--) | Initializes a new instance of the `[WordProcessingWatermarkSectionOptions](../../com.groupdocs.watermark.options/wordprocessingwatermarksectionoptions)` class. |
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getSectionIndex()](#getSectionIndex--) | Gets the index of a section to add the watermark to.
- |
-| [setSectionIndex(int value)](#setSectionIndex-int-) | Sets the index of a section to add the watermark to.
- |
+| [getSectionIndex()](#getSectionIndex--) | Gets the index of a section to add the watermark to. |
+| [setSectionIndex(int value)](#setSectionIndex-int-) | Sets the index of a section to add the watermark to. |
 ### WordProcessingWatermarkSectionOptions() {#WordProcessingWatermarkSectionOptions--}
 ```
 public WordProcessingWatermarkSectionOptions()
@@ -59,7 +57,6 @@ public WordProcessingWatermarkSectionOptions()
 
 
 Initializes a new instance of the `[WordProcessingWatermarkSectionOptions](../../com.groupdocs.watermark.options/wordprocessingwatermarksectionoptions)` class.
-
 
 ### getSectionIndex() {#getSectionIndex--}
 ```
@@ -69,19 +66,12 @@ public final int getSectionIndex()
 
 Gets the index of a section to add the watermark to.
 
-
 **Returns:**
 int - The index of a section to add the watermark to.
 
-<br />
+--------------------
 
-*** ** * ** ***
-
--1 means all sections.
-
-<br />
-
-
+\-1 means all sections.
 ### setSectionIndex(int value) {#setSectionIndex-int-}
 ```
 public final void setSectionIndex(int value)
@@ -90,19 +80,12 @@ public final void setSectionIndex(int value)
 
 Sets the index of a section to add the watermark to.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
 | value | int | The index of a section to add the watermark to.
 
-<br />
+--------------------
 
-*** ** * ** ***
-
--1 means all sections.
-
-<br />
-
- |
+\-1 means all sections. |
 

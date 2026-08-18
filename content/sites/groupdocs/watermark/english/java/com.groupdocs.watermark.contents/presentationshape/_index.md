@@ -16,42 +16,23 @@ public class PresentationShape extends PresentationBaseShape implements IRotatab
 ```
 
 Represents a drawing shape in a PowerPoint document.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees.
- |
-| [setRotateAngle(double value)](#setRotateAngle-double-) | Sets the rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees.
- |
-| [getText()](#getText--) | Gets the text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
- |
-| [setText(String value)](#setText-java.lang.String-) | Sets the text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
- |
-| [getFormattedTextFragments()](#getFormattedTextFragments--) | Gets the collection of formatted text fragments of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
- |
-| [getShapeType()](#getShapeType--) | Gets the shape geometry preset type.
- |
-| [getImage()](#getImage--) | Gets the image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
- |
-| [setImage(PresentationWatermarkableImage value)](#setImage-com.groupdocs.watermark.contents.PresentationWatermarkableImage-) | Sets the image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
- |
-| [getImageForSearch()](#getImageForSearch--) | <br />
-
- |
-| [setFoundWatermarkImage(byte[] imageData)](#setFoundWatermarkImage-byte---) | <br />
-
- |
-| [getFormattedTextFragmentsForSearch()](#getFormattedTextFragmentsForSearch--) | <br />
-
- |
-| [getTextForSearch()](#getTextForSearch--) | <br />
-
- |
-| [setFoundWatermarkText(String value)](#setFoundWatermarkText-java.lang.String-) | <br />
-
- |
+| [getRotateAngle()](#getRotateAngle--) | Gets the rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees. |
+| [setRotateAngle(double value)](#setRotateAngle-double-) | Sets the rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees. |
+| [getText()](#getText--) | Gets the text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`. |
+| [setText(String value)](#setText-java.lang.String-) | Sets the text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`. |
+| [getFormattedTextFragments()](#getFormattedTextFragments--) | Gets the collection of formatted text fragments of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`. |
+| [getShapeType()](#getShapeType--) | Gets the shape geometry preset type. |
+| [getImage()](#getImage--) | Gets the image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`. |
+| [setImage(PresentationWatermarkableImage value)](#setImage-com.groupdocs.watermark.contents.PresentationWatermarkableImage-) | Sets the image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`. |
+| [getImageForSearch()](#getImageForSearch--) |  |
+| [setFoundWatermarkImage(byte[] imageData)](#setFoundWatermarkImage-byte---) |  |
+| [getFormattedTextFragmentsForSearch()](#getFormattedTextFragmentsForSearch--) |  |
+| [getTextForSearch()](#getTextForSearch--) |  |
+| [setFoundWatermarkText(String value)](#setFoundWatermarkText-java.lang.String-) |  |
 ### getRotateAngle() {#getRotateAngle--}
 ```
 public final double getRotateAngle()
@@ -60,10 +41,8 @@ public final double getRotateAngle()
 
 Gets the rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees.
 
-
 **Returns:**
 double - The rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees.
-
 ### setRotateAngle(double value) {#setRotateAngle-double-}
 ```
 public final void setRotateAngle(double value)
@@ -72,12 +51,10 @@ public final void setRotateAngle(double value)
 
 Sets the rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| value | double | The rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees.
- |
+| value | double | The rotate angle of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` in degrees. |
 
 ### getText() {#getText--}
 ```
@@ -87,10 +64,8 @@ public final String getText()
 
 Gets the text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
 
-
 **Returns:**
 java.lang.String - The text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
-
 ### setText(String value) {#setText-java.lang.String-}
 ```
 public final void setText(String value)
@@ -99,12 +74,10 @@ public final void setText(String value)
 
 Sets the text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| value | java.lang.String | The text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
- |
+| value | java.lang.String | The text of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`. |
 
 ### getFormattedTextFragments() {#getFormattedTextFragments--}
 ```
@@ -114,10 +87,8 @@ public final FormattedTextFragmentCollection getFormattedTextFragments()
 
 Gets the collection of formatted text fragments of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
 
-
 **Returns:**
 [FormattedTextFragmentCollection](../../com.groupdocs.watermark.search/formattedtextfragmentcollection) - The collection of formatted text fragments of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
-
 ### getShapeType() {#getShapeType--}
 ```
 public final int getShapeType()
@@ -126,10 +97,8 @@ public final int getShapeType()
 
 Gets the shape geometry preset type.
 
-
 **Returns:**
 int - The geometry preset type.
-
 ### getImage() {#getImage--}
 ```
 public final PresentationWatermarkableImage getImage()
@@ -138,10 +107,8 @@ public final PresentationWatermarkableImage getImage()
 
 Gets the image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
 
-
 **Returns:**
 [PresentationWatermarkableImage](../../com.groupdocs.watermark.contents/presentationwatermarkableimage) - The image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` or null if the shape has no image.
-
 ### setImage(PresentationWatermarkableImage value) {#setImage-com.groupdocs.watermark.contents.PresentationWatermarkableImage-}
 ```
 public final void setImage(PresentationWatermarkableImage value)
@@ -150,20 +117,16 @@ public final void setImage(PresentationWatermarkableImage value)
 
 Sets the image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)`.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
-| value | [PresentationWatermarkableImage](../../com.groupdocs.watermark.contents/presentationwatermarkableimage) | The image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` or null if the image should be removed.
- |
+| value | [PresentationWatermarkableImage](../../com.groupdocs.watermark.contents/presentationwatermarkableimage) | The image of this `[PresentationShape](../../com.groupdocs.watermark.contents/presentationshape)` or null if the image should be removed. |
 
 ### getImageForSearch() {#getImageForSearch--}
 ```
 public WatermarkableImage getImageForSearch()
 ```
 
-
-<br />
 
 
 
@@ -174,8 +137,6 @@ public WatermarkableImage getImageForSearch()
 public void setFoundWatermarkImage(byte[] imageData)
 ```
 
-
-<br />
 
 
 
@@ -190,8 +151,6 @@ public FormattedTextFragmentCollection getFormattedTextFragmentsForSearch()
 ```
 
 
-<br />
-
 
 
 **Returns:**
@@ -202,8 +161,6 @@ public String getTextForSearch()
 ```
 
 
-<br />
-
 
 
 **Returns:**
@@ -213,8 +170,6 @@ java.lang.String
 public void setFoundWatermarkText(String value)
 ```
 
-
-<br />
 
 
 

@@ -13,24 +13,17 @@ public class PresentationNotesSlide extends PresentationBaseSlide
 ```
 
 Represents a PowerPoint document notes slide.
-
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getWidth()](#getWidth--) | <br />
-
- |
-| [getHeight()](#getHeight--) | <br />
-
- |
+| [getWidth()](#getWidth--) |  |
+| [getHeight()](#getHeight--) |  |
 ### getWidth() {#getWidth--}
 ```
 public double getWidth()
 ```
 
-
-<br />
 
 
 
@@ -41,8 +34,6 @@ double
 public double getHeight()
 ```
 
-
-<br />
 
 
 

@@ -11,10 +11,6 @@ java.lang.Object
 ```
 public class ImageUtils
 ```
-
-<br />
-
-
 ## Constructors
 
 | Constructor | Description |

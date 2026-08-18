@@ -13,19 +13,14 @@ public final class PdfCryptoAlgorithm
 ```
 
 Represent type of cryptographic algorithm that used in encryption routine.
-
 ## Fields
 
 | Field | Description |
 | --- | --- |
-| [RC4x40](#RC4x40) | RC4 with key length 40.
- |
-| [RC4x128](#RC4x128) | RC4 with key length 128.
- |
-| [AESx128](#AESx128) | AES with key length 128.
- |
-| [AESx256](#AESx256) | AES with key length 256.
- |
+| [RC4x40](#RC4x40) | RC4 with key length 40. |
+| [RC4x128](#RC4x128) | RC4 with key length 128. |
+| [AESx128](#AESx128) | AES with key length 128. |
+| [AESx256](#AESx256) | AES with key length 256. |
 ### RC4x40 {#RC4x40}
 ```
 public static final int RC4x40
@@ -33,7 +28,6 @@ public static final int RC4x40
 
 
 RC4 with key length 40.
-
 
 ### RC4x128 {#RC4x128}
 ```
@@ -43,7 +37,6 @@ public static final int RC4x128
 
 RC4 with key length 128.
 
-
 ### AESx128 {#AESx128}
 ```
 public static final int AESx128
@@ -52,7 +45,6 @@ public static final int AESx128
 
 AES with key length 128.
 
-
 ### AESx256 {#AESx256}
 ```
 public static final int AESx256
@@ -60,5 +52,4 @@ public static final int AESx256
 
 
 AES with key length 256.
-
 

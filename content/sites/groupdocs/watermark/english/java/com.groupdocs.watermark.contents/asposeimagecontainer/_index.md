@@ -11,37 +11,21 @@ java.lang.Object, [com.groupdocs.watermark.contents.ContentPart](../../com.group
 ```
 public class AsposeImageContainer extends ContentPart
 ```
-
-<br />
-
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [AsposeImageContainer(byte[] data)](#AsposeImageContainer-byte---) | <br />
-
- |
-| [AsposeImageContainer(System.IO.Stream stream)](#AsposeImageContainer-com.aspose.ms.System.IO.Stream-) | <br />
-
- |
-| [AsposeImageContainer(Image image)](#AsposeImageContainer-com.aspose.imaging.Image-) | <br />
-
- |
-| [AsposeImageContainer(int width, int height)](#AsposeImageContainer-int-int-) | <br />
-
- |
-| [AsposeImageContainer(String filePath)](#AsposeImageContainer-java.lang.String-) | <br />
-
- |
+| [AsposeImageContainer(byte[] data)](#AsposeImageContainer-byte---) |  |
+| [AsposeImageContainer(System.IO.Stream stream)](#AsposeImageContainer-com.aspose.ms.System.IO.Stream-) |  |
+| [AsposeImageContainer(Image image)](#AsposeImageContainer-com.aspose.imaging.Image-) |  |
+| [AsposeImageContainer(int width, int height)](#AsposeImageContainer-int-int-) |  |
+| [AsposeImageContainer(String filePath)](#AsposeImageContainer-java.lang.String-) |  |
 ## Methods
 
 | Method | Description |
 | --- | --- |
 | [getAsposeImage()](#getAsposeImage--) |  |
-| [replaceImage(Image newImage)](#replaceImage-com.aspose.imaging.Image-) | <br />
-
- |
+| [replaceImage(Image newImage)](#replaceImage-com.aspose.imaging.Image-) |  |
 | [getStreamContainer()](#getStreamContainer--) |  |
 | [getAsTiffImage()](#getAsTiffImage--) |  |
 | [getAsTiffFrame()](#getAsTiffFrame--) |  |
@@ -56,15 +40,10 @@ public class AsposeImageContainer extends ContentPart
 | [getWidth()](#getWidth--) |  |
 | [getHeight()](#getHeight--) |  |
 | [getDisposed()](#getDisposed--) |  |
-| [dispose()](#dispose--) | Disposes the current instance.
- |
-| [getFileFormat(System.IO.Stream stream)](#getFileFormat-com.aspose.ms.System.IO.Stream-) | <br />
-
- |
+| [dispose()](#dispose--) | Disposes the current instance. |
+| [getFileFormat(System.IO.Stream stream)](#getFileFormat-com.aspose.ms.System.IO.Stream-) |  |
 | [getFileFormat(byte[] imageData)](#getFileFormat-byte---) |  |
-| [checkWatermarkingLicenseRestrictions(Watermark watermark)](#checkWatermarkingLicenseRestrictions-com.groupdocs.watermark.Watermark-) | <br />
-
- |
+| [checkWatermarkingLicenseRestrictions(Watermark watermark)](#checkWatermarkingLicenseRestrictions-com.groupdocs.watermark.Watermark-) |  |
 | [save()](#save--) |  |
 | [save(String filePath, boolean overwrite)](#save-java.lang.String-boolean-) |  |
 | [save(OutputStream stream)](#save-java.io.OutputStream-) |  |
@@ -74,8 +53,6 @@ public class AsposeImageContainer extends ContentPart
 public AsposeImageContainer(byte[] data)
 ```
 
-
-<br />
 
 
 
@@ -90,8 +67,6 @@ public AsposeImageContainer(System.IO.Stream stream)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -104,8 +79,6 @@ public AsposeImageContainer(System.IO.Stream stream)
 public AsposeImageContainer(Image image)
 ```
 
-
-<br />
 
 
 
@@ -120,8 +93,6 @@ public AsposeImageContainer(int width, int height)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -135,8 +106,6 @@ public AsposeImageContainer(int width, int height)
 public AsposeImageContainer(String filePath)
 ```
 
-
-<br />
 
 
 
@@ -160,8 +129,6 @@ com.aspose.imaging.Image
 public final void replaceImage(Image newImage)
 ```
 
-
-<br />
 
 
 
@@ -318,14 +285,11 @@ public final void dispose()
 
 Disposes the current instance.
 
-
 ### getFileFormat(System.IO.Stream stream) {#getFileFormat-com.aspose.ms.System.IO.Stream-}
 ```
 public static long getFileFormat(System.IO.Stream stream)
 ```
 
-
-<br />
 
 
 
@@ -356,8 +320,6 @@ long
 public void checkWatermarkingLicenseRestrictions(Watermark watermark)
 ```
 
-
-<br />
 
 
 

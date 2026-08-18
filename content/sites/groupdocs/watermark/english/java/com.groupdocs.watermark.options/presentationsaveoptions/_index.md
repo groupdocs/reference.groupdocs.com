@@ -13,13 +13,11 @@ public final class PresentationSaveOptions extends SaveOptions
 ```
 
 Represents document saving options when saving a Presentation document.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [PresentationSaveOptions()](#PresentationSaveOptions--) | Initializes a new instance of the `[PresentationSaveOptions](../../com.groupdocs.watermark.options/presentationsaveoptions)` class.
- |
+| [PresentationSaveOptions()](#PresentationSaveOptions--) | Initializes a new instance of the `[PresentationSaveOptions](../../com.groupdocs.watermark.options/presentationsaveoptions)` class. |
 ### PresentationSaveOptions() {#PresentationSaveOptions--}
 ```
 public PresentationSaveOptions()
@@ -27,5 +25,4 @@ public PresentationSaveOptions()
 
 
 Initializes a new instance of the `[PresentationSaveOptions](../../com.groupdocs.watermark.options/presentationsaveoptions)` class.
-
 

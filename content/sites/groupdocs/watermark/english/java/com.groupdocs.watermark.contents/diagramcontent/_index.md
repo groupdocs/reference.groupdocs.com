@@ -16,73 +16,42 @@ Represents a Visio document.
 
 **Learn more:**
 
-* [Add watermarks to diagram documents](../https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+diagram+documents)
-* [Existing objects in diagram document](../https://docs.groupdocs.com/display/watermarkjava/Existing+objects+in+diagram+document)
+ *  [Add watermarks to diagram documents][]
+ *  [Existing objects in diagram document][]
 
+
+[Add watermarks to diagram documents]: https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+diagram+documents
+[Existing objects in diagram document]: https://docs.groupdocs.com/display/watermarkjava/Existing+objects+in+diagram+document
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [DiagramContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo formatInfo, DiagramLoadOptions diagramLoadOptions, WatermarkerSettings watermarkerSettings)](#DiagramContent-com.groupdocs.watermark.internal.StreamContainer-com.groupdocs.watermark.internal.StrategyManager-java.lang.Integer--com.aspose.diagram.FileFormatInfo-com.groupdocs.watermark.options.DiagramLoadOptions-com.groupdocs.watermark.WatermarkerSettings-) | <br />
-
- |
+| [DiagramContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo formatInfo, DiagramLoadOptions diagramLoadOptions, WatermarkerSettings watermarkerSettings)](#DiagramContent-com.groupdocs.watermark.internal.StreamContainer-com.groupdocs.watermark.internal.StrategyManager-java.lang.Integer--com.aspose.diagram.FileFormatInfo-com.groupdocs.watermark.options.DiagramLoadOptions-com.groupdocs.watermark.WatermarkerSettings-) |  |
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getPages()](#getPages--) | Gets the collection of all pages of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent)`.
- |
-| [getHeaderFooter()](#getHeaderFooter--) | Gets the header and footer of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent)`.
- |
-| [getAsposeDiagram()](#getAsposeDiagram--) | <br />
-
- |
-| [addWatermark(Watermark watermark, int watermarkPlacementType, DiagramShapeSettings shapeSettings)](#addWatermark-com.groupdocs.watermark.Watermark-int-com.groupdocs.watermark.internal.DiagramShapeSettings-) | <br />
-
- |
-| [performSave(String filePath)](#performSave-java.lang.String-) | <br />
-
- |
-| [performSave(String filePath, SaveOptions saveOptions)](#performSave-java.lang.String-com.groupdocs.watermark.options.SaveOptions-) | <br />
-
- |
-| [performSave(OutputStream stream)](#performSave-java.io.OutputStream-) | <br />
-
- |
-| [performSave(OutputStream stream, SaveOptions saveOptions)](#performSave-java.io.OutputStream-com.groupdocs.watermark.options.SaveOptions-) | <br />
-
- |
-| [add(Watermark watermark, WatermarkOptions options)](#add-com.groupdocs.watermark.Watermark-com.groupdocs.watermark.options.WatermarkOptions-) | <br />
-
- |
-| [generatePreview(PreviewOptions previewOptions)](#generatePreview-com.groupdocs.watermark.options.PreviewOptions-) | <br />
-
- |
-| [afterWatermarkAdding()](#afterWatermarkAdding--) | <br />
-
- |
-| [getDocumentInfo()](#getDocumentInfo--) | <br />
-
- |
-| [getFileType()](#getFileType--) | <br />
-
- |
-| [getFontIdByName(String fontName)](#getFontIdByName-java.lang.String-) | <br />
-
- |
-| [addFont(String fontName)](#addFont-java.lang.String-) | <br />
-
- |
-| [isNewFormat()](#isNewFormat--) | <br />
-
- |
+| [getPages()](#getPages--) | Gets the collection of all pages of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent)`. |
+| [getHeaderFooter()](#getHeaderFooter--) | Gets the header and footer of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent)`. |
+| [getAsposeDiagram()](#getAsposeDiagram--) |  |
+| [addWatermark(Watermark watermark, int watermarkPlacementType, DiagramShapeSettings shapeSettings)](#addWatermark-com.groupdocs.watermark.Watermark-int-com.groupdocs.watermark.internal.DiagramShapeSettings-) |  |
+| [performSave(String filePath)](#performSave-java.lang.String-) |  |
+| [performSave(String filePath, SaveOptions saveOptions)](#performSave-java.lang.String-com.groupdocs.watermark.options.SaveOptions-) |  |
+| [performSave(OutputStream stream)](#performSave-java.io.OutputStream-) |  |
+| [performSave(OutputStream stream, SaveOptions saveOptions)](#performSave-java.io.OutputStream-com.groupdocs.watermark.options.SaveOptions-) |  |
+| [add(Watermark watermark, WatermarkOptions options)](#add-com.groupdocs.watermark.Watermark-com.groupdocs.watermark.options.WatermarkOptions-) |  |
+| [generatePreview(PreviewOptions previewOptions)](#generatePreview-com.groupdocs.watermark.options.PreviewOptions-) |  |
+| [afterWatermarkAdding()](#afterWatermarkAdding--) |  |
+| [getDocumentInfo()](#getDocumentInfo--) |  |
+| [getFileType()](#getFileType--) |  |
+| [getFontIdByName(String fontName)](#getFontIdByName-java.lang.String-) |  |
+| [addFont(String fontName)](#addFont-java.lang.String-) |  |
+| [isNewFormat()](#isNewFormat--) |  |
 ### DiagramContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo formatInfo, DiagramLoadOptions diagramLoadOptions, WatermarkerSettings watermarkerSettings) {#DiagramContent-com.groupdocs.watermark.internal.StreamContainer-com.groupdocs.watermark.internal.StrategyManager-java.lang.Integer--com.aspose.diagram.FileFormatInfo-com.groupdocs.watermark.options.DiagramLoadOptions-com.groupdocs.watermark.WatermarkerSettings-}
 ```
 public DiagramContent(StreamContainer stream, StrategyManager<Integer> strategyManager, FileFormatInfo formatInfo, DiagramLoadOptions diagramLoadOptions, WatermarkerSettings watermarkerSettings)
 ```
 
-
-<br />
 
 
 
@@ -103,10 +72,8 @@ public final DiagramPageCollection getPages()
 
 Gets the collection of all pages of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent)`.
 
-
 **Returns:**
 [DiagramPageCollection](../../com.groupdocs.watermark.contents/diagrampagecollection) - The collection of all pages of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent).`
-
 ### getHeaderFooter() {#getHeaderFooter--}
 ```
 public final DiagramHeaderFooter getHeaderFooter()
@@ -115,17 +82,13 @@ public final DiagramHeaderFooter getHeaderFooter()
 
 Gets the header and footer of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent)`.
 
-
 **Returns:**
 [DiagramHeaderFooter](../../com.groupdocs.watermark.contents/diagramheaderfooter) - The header and footer of this `[DiagramContent](../../com.groupdocs.watermark.contents/diagramcontent).`
-
 ### getAsposeDiagram() {#getAsposeDiagram--}
 ```
 public final Diagram getAsposeDiagram()
 ```
 
-
-<br />
 
 
 
@@ -136,8 +99,6 @@ com.aspose.diagram.Diagram
 public final void addWatermark(Watermark watermark, int watermarkPlacementType, DiagramShapeSettings shapeSettings)
 ```
 
-
-<br />
 
 
 
@@ -154,8 +115,6 @@ public void performSave(String filePath)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -168,8 +127,6 @@ public void performSave(String filePath)
 public void performSave(String filePath, SaveOptions saveOptions)
 ```
 
-
-<br />
 
 
 
@@ -185,8 +142,6 @@ public void performSave(OutputStream stream)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -199,8 +154,6 @@ public void performSave(OutputStream stream)
 public void performSave(OutputStream stream, SaveOptions saveOptions)
 ```
 
-
-<br />
 
 
 
@@ -216,8 +169,6 @@ public void add(Watermark watermark, WatermarkOptions options)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -232,8 +183,6 @@ public void generatePreview(PreviewOptions previewOptions)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -247,8 +196,6 @@ public void afterWatermarkAdding()
 ```
 
 
-<br />
-
 
 
 ### getDocumentInfo() {#getDocumentInfo--}
@@ -256,8 +203,6 @@ public void afterWatermarkAdding()
 public IDocumentInfo getDocumentInfo()
 ```
 
-
-<br />
 
 
 
@@ -269,8 +214,6 @@ public FileType getFileType()
 ```
 
 
-<br />
-
 
 
 **Returns:**
@@ -280,8 +223,6 @@ public FileType getFileType()
 public final int getFontIdByName(String fontName)
 ```
 
-
-<br />
 
 
 
@@ -298,8 +239,6 @@ public final int addFont(String fontName)
 ```
 
 
-<br />
-
 
 
 **Parameters:**
@@ -314,8 +253,6 @@ int
 public final boolean isNewFormat()
 ```
 
-
-<br />
 
 
 

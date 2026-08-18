@@ -13,13 +13,11 @@ public final class SpreadsheetSaveOptions extends SaveOptions
 ```
 
 Represents document saving options when saving a Spreadsheet document.
-
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [SpreadsheetSaveOptions()](#SpreadsheetSaveOptions--) | Initializes a new instance of the `[SpreadsheetSaveOptions](../../com.groupdocs.watermark.options/spreadsheetsaveoptions)` class.
- |
+| [SpreadsheetSaveOptions()](#SpreadsheetSaveOptions--) | Initializes a new instance of the `[SpreadsheetSaveOptions](../../com.groupdocs.watermark.options/spreadsheetsaveoptions)` class. |
 ### SpreadsheetSaveOptions() {#SpreadsheetSaveOptions--}
 ```
 public SpreadsheetSaveOptions()
@@ -27,5 +25,4 @@ public SpreadsheetSaveOptions()
 
 
 Initializes a new instance of the `[SpreadsheetSaveOptions](../../com.groupdocs.watermark.options/spreadsheetsaveoptions)` class.
-
 

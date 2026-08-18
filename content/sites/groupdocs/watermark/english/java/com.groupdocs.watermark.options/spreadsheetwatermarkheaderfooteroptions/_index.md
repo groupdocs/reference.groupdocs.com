@@ -16,18 +16,18 @@ Represents options when adding the watermark to a Spreadsheet header/footer.
 
 **Learn more:**
 
-* [Add watermarks to spreadsheet documents](../https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+spreadsheet+documents)
+ *  [Add watermarks to spreadsheet documents][]
 
 The following example demonstrates how to add a text watermark into Excel worksheet header.
->
-> ````
+
 > ```
->
+> ```
+> 
 >    SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
 >    Watermarker watermarker = new Watermarker("D:\\test.xls", loadOptions);
->
+> 
 >    TextWatermark watermark = new TextWatermark("Test", new Font("Arial", 14));
->
+> 
 >    SpreadsheetWatermarkHeaderFooterOptions options = new SpreadsheetWatermarkHeaderFooterOptions();
 >    options.setWorksheetIndex(0);
 >    
@@ -35,23 +35,21 @@ The following example demonstrates how to add a text watermark into Excel worksh
 >    watermarker.close();
 >  
 > ```
-> ````
+> ```
 
 
+[Add watermarks to spreadsheet documents]: https://docs.groupdocs.com/display/watermarkjava/Add+watermarks+to+spreadsheet+documents
 ## Constructors
 
 | Constructor | Description |
 | --- | --- |
-| [SpreadsheetWatermarkHeaderFooterOptions()](#SpreadsheetWatermarkHeaderFooterOptions--) | Initializes a new instance of the `[SpreadsheetWatermarkHeaderFooterOptions](../../com.groupdocs.watermark.options/spreadsheetwatermarkheaderfooteroptions)` class.
- |
+| [SpreadsheetWatermarkHeaderFooterOptions()](#SpreadsheetWatermarkHeaderFooterOptions--) | Initializes a new instance of the `[SpreadsheetWatermarkHeaderFooterOptions](../../com.groupdocs.watermark.options/spreadsheetwatermarkheaderfooteroptions)` class. |
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| [getWorksheetIndex()](#getWorksheetIndex--) | Gets the index of worksheet to add the watermark to.
- |
-| [setWorksheetIndex(int value)](#setWorksheetIndex-int-) | Sets the index of worksheet to add the watermark to.
- |
+| [getWorksheetIndex()](#getWorksheetIndex--) | Gets the index of worksheet to add the watermark to. |
+| [setWorksheetIndex(int value)](#setWorksheetIndex-int-) | Sets the index of worksheet to add the watermark to. |
 ### SpreadsheetWatermarkHeaderFooterOptions() {#SpreadsheetWatermarkHeaderFooterOptions--}
 ```
 public SpreadsheetWatermarkHeaderFooterOptions()
@@ -59,7 +57,6 @@ public SpreadsheetWatermarkHeaderFooterOptions()
 
 
 Initializes a new instance of the `[SpreadsheetWatermarkHeaderFooterOptions](../../com.groupdocs.watermark.options/spreadsheetwatermarkheaderfooteroptions)` class.
-
 
 ### getWorksheetIndex() {#getWorksheetIndex--}
 ```
@@ -69,19 +66,12 @@ public final int getWorksheetIndex()
 
 Gets the index of worksheet to add the watermark to.
 
-
 **Returns:**
 int - The index of worksheet to add the watermark to.
 
-<br />
+--------------------
 
-*** ** * ** ***
-
--1 means every worksheet.
-
-<br />
-
-
+\-1 means every worksheet.
 ### setWorksheetIndex(int value) {#setWorksheetIndex-int-}
 ```
 public final void setWorksheetIndex(int value)
@@ -90,19 +80,12 @@ public final void setWorksheetIndex(int value)
 
 Sets the index of worksheet to add the watermark to.
 
-
 **Parameters:**
 | Parameter | Type | Description |
 | --- | --- | --- |
 | value | int | The index of worksheet to add the watermark to.
 
-<br />
+--------------------
 
-*** ** * ** ***
-
--1 means every worksheet.
-
-<br />
-
- |
+\-1 means every worksheet. |
 
