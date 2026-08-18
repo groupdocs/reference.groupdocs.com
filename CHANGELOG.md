@@ -10,6 +10,16 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **GroupDocs.Markdown for Java** — the Markdown product now ships a Java API reference at
+  `/markdown/java/` (3 packages, 28 types), leaving no product without a Java reference. Visibility took two
+  declarations, since neither the family page nor the home grid discovers platforms from the content tree:
+  a `java` entry in the product repo's `english/_index.md` `platforms[]` (drives the platform card, the
+  sidebar variant, the "3 platforms" meta and the `Browse API reference` link) and `java` in the `markdown`
+  block of **`data/products.toml`** (home-page platform pill and "Java" filter, 404 directory, root `llms.txt`).
+  The Java tab now shows real code rather than the Maven coordinate: **`data/getting_started.yaml`**
+  `markdown.java`, compile-verified by **`examples/getting-started/markdown/java/`** (`mvn compile` against
+  `com.groupdocs:groupdocs-markdown:26.5`). The search index, the per-product `llms.txt` and the sidebar pick
+  the pages up on their own — no config, layout or script change was needed.
 - **Broken-link redirects (API URL-scheme migration)** — restored 301s for **1,456** legacy API URLs that
   began 404-ing after the June-2026 "Simplify CI" change (`855972156b`) stripped the redirect config down
   to locale-only. The 404s are old URL schemes for pages that still exist at the canonical
