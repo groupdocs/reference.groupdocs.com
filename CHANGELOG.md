@@ -195,6 +195,27 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **Retired locale URLs land on their English pages again.** The site went English-only in June 2026
+  (`855972156b` deleted 161,395 localized pages), but the locale-strip rules only ever lived in a file that
+  had been moved out from under Lambda@Edge, so `/annotation/ru/net/...` and its siblings have been 404-ing
+  ever since - confirmed against the live site. One rule in `<host>.redirects.txt` now strips the locale
+  segment: `/annotation/ru/net/` -> `/annotation/net/`, `/annotation/ru/` -> `/annotation/`. The locale sits
+  **second**, after the product family, unlike products.groupdocs.com where it is the first segment. Both
+  segments are enumerated rather than matched as `[^/]+`, so the rule cannot reach a path that merely looks
+  locale-shaped, and it is placed first so a localized URL is normalized before any legacy pattern can chew on
+  it. Exactly **15** locales ever existed here - `ar de el es fr hi id it ja ko nl ru sv tr zh`, and only for
+  the **.NET** platform - verified against the pre-consolidation trees of the `GroupDocs.<Product>-References`
+  repos. `cs hu pl pt th vi zh-hant` were listed in the old copy of the rules but never had content here and
+  are not carried over.
+- **Five API pages were silently dropped from every sync by `.gitignore`.** The file is a stock Node/JS
+  template, and two of its unanchored rules also matched real reference paths: `resources/` swallowed
+  `parser/net/groupdocs.parser/resources/` (the `Resources` class and its `StoragePath` property) and
+  `coverage` swallowed the `Coverage` property pages of `EpubPackage`, `DublinCorePackage` and
+  `XmpDublinCorePackage` under metadata. The product-repo sync runs `git add -A`, which honours
+  `.gitignore`, so these five pages never reached the site and 404'd in production. Both rules are now
+  anchored to the repo root (`/resources/`, `/coverage/`), which still ignores Hugo's `resources/_gen`
+  cache while leaving `content/` untouched. Re-including them by negation is not possible — git cannot
+  re-include a path whose parent directory is excluded — so anchoring is the fix.
 - **Stacked install code blocks → platform tabs** on the Watermark Python-via-.NET *Installation* guide
   (`watermark/python-net/guides/installation/`). The PyPI install, pre-downloaded-wheel install, and Linux/macOS
   prerequisites were each authored as consecutive fenced code blocks that rendered as separate boxes stacked one
