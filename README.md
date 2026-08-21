@@ -115,8 +115,12 @@ Page redirects live in `redirects/redirects.map` and are published as **S3 per-o
 (`x-amz-website-redirect-location`, served via the bucket's static-website endpoint through CloudFront)
 by `scripts/deploy_redirects.sh` — run the manual **Deploy Redirects** workflow (QA first, then prod).
 Regenerate the broken-link batch with `scripts/gen_redirects_map.py` (reads a 404 crawl + the content
-tree, every target verified). The old `redirects/*.redirects.txt` nginx files are VM-era leftovers, not
-consumed by the S3+CloudFront stack.
+tree, every target verified).
+
+**Rewrite rules** are a separate, older mechanism: `<host>.redirects.txt` at the **repo root** is read by
+the **Lambda@Edge** function on the domain's CloudFront distribution, with `<host>.ignore_list.txt` listing
+paths no rule may touch. The path and name are part of that contract - moving these files into `redirects/`
+in July 2026 is what stopped the rules from being applied. Edit them in place; there is nothing to build.
 
 ## Common tasks
 
@@ -138,8 +142,9 @@ build-local.sh, config-local.toml   local combined preview (kept in repo root)
 scripts/                            build/deploy + preview helpers: resolve_md_links.py,
                                     move_md_to_ugly_urls.sh, build_search_index.py,
                                     build_llms_full.py, update_versions.py, serve-local.py, build_refs.cmd
+<host>.redirects.txt                rewrite rules applied by Lambda@Edge (repo root; the path is a contract)
+<host>.ignore_list.txt              paths no rule may redirect (live pages a rule would otherwise match)
 redirects/redirects.map             page redirects -> S3 per-object 301s (deploy_redirects.sh)
-redirects/*.redirects.txt           VM-era nginx rules (vestigial; not consumed by S3+CloudFront)
 scripts/gen_redirects_map.py        build redirects.map from a 404 crawl + content tree
 scripts/deploy_redirects.sh         publish redirects.map as S3 per-object 301s + CloudFront invalidation
 .github/workflows/                  deploy_product.yml (reusable) + per-product runners + deploy_all.yml

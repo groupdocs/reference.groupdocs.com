@@ -147,6 +147,14 @@ python scripts/serve-local.py 1313       # serve ./public-local with UTF-8
 (Keep a Changelog format: Added / Changed / Fixed) in the same commit.** Skip purely local/throwaway changes.
 
 ## Known gotchas / open items
+- **`<host>.redirects.txt` and `<host>.ignore_list.txt` must stay at the repo root.** The Lambda@Edge
+  function on the CloudFront distribution reads them from there by name, so the path is a contract, not a
+  layout choice — moving them into `redirects/` in July 2026 silently stopped every rewrite rule from being
+  applied. They are plain data: edit and commit, nothing builds or deploys them from this repo. ⚠️ The rules
+  run on **every** request, and several collapse a trailing `/index/`, `/fields/`, `/properties/` or
+  `/events/` segment onto its parent — segments that are real class names today (`GroupDocs.Search.Index`).
+  Anything a rule matches that is a live page must be listed in `<host>.ignore_list.txt`; re-check that list
+  when the content tree changes materially.
 - Git shows `LF will be replaced by CRLF` warnings on Windows — harmless.
 - `/search-index.json` is produced only by `deploy_all` + `refresh_search_index` (source-based; no per-product artifacts).
 - Per-product `llms-full.txt` dev-guide links can double the product segment (`/annotation/annotation/...`) —

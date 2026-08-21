@@ -10,6 +10,26 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **The legacy rewrite ruleset is restored to the repo root**, where the distribution's Lambda@Edge function
+  reads it. `reference.groupdocs.com.redirects.txt` (with a `reference2.` staging twin) again carries the 57
+  rules infra maintained from 2022 to 2025 - the legacy API URL schemes: `/net/<product>/...`,
+  `/productfamily/<product>`, pre-`com.` Java packages, `.../methods/<n>` anchors, `/tutorials/*`, `/admin*`.
+  They were lost when `main`'s history was rewritten for the June-2026 modernization (`855972156b` re-created
+  the file with locale rules only), and `57e0f07ad3` then moved it into `redirects/` - which is what stopped
+  the rules from being applied at all, since **the file's path and name are part of the Lambda@Edge contract**.
+  Recovered from `origin/bunny.net-migration` and repaired on the way in: **4 rules ended `$permanent;`** and
+  had therefore never applied, one had a tab where a space belonged, one target had a doubled slash. Two of
+  the 59 were dropped deliberately - an unanchored `/tutorials/` rule that shadowed the next rule and threw
+  the path away, and a `webdocumentoptions` rule that would now redirect seven live pages away. The stale
+  `redirects/*.redirects.txt` copies are deleted so there is one source of truth again.
+- **`<host>.ignore_list.txt` is restored and extended.** The rules run on every request, and several collapse
+  a trailing `/index/`, `/fields/`, `/properties/` or `/events/` segment onto its parent - segments that are
+  real class names today. The original file's two entries exempted `/search/net/groupdocs.search/index/`, the
+  `GroupDocs.Search.Index` class; matching all 57 rules against the 30,256 live page URLs in
+  `content/sites/groupdocs` finds **23** such collisions now (search, parser, redaction, metadata, viewer),
+  each listed in both its trailing-slash and no-slash form. ⚠️ It is a snapshot: any new page whose last
+  segment is `index`, `fields`, `properties`, `events` or `constructors` is a candidate, so re-check it when
+  the content tree changes materially.
 - **GroupDocs.Markdown for Java** — the Markdown product now ships a Java API reference at
   `/markdown/java/` (3 packages, 28 types), leaving no product without a Java reference. Visibility took two
   declarations, since neither the family page nor the home grid discovers platforms from the content tree:
