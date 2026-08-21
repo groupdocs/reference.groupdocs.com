@@ -21,9 +21,9 @@ Output formats:
       (x-amz-website-redirect-location -> HTTP 301) by scripts/deploy_redirects.sh.
       reference.groupdocs.com is S3 static-website hosting + CloudFront, so the website
       endpoint honors per-object redirects. (Same file also fits Ceph if it ever migrates.)
-  --format nginx: exact-match `rewrite ... permanent;` rules spliced into an existing
-      redirects/*.redirects.txt — ONLY for a legacy nginx edge (the reference .txt files
-      are VM-era leftovers and are NOT consumed by S3+CloudFront; kept for reference).
+  --format nginx: exact-match `rewrite ... permanent;` rules for splicing into the repo-root
+      <host>.redirects.txt, which IS live — the distribution's Lambda@Edge function applies it.
+      Prefer --format map for bulk exact URLs; keep that file for patterns.
 
 Usage:
     python scripts/gen_redirects_map.py \

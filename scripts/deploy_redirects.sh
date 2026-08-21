@@ -6,8 +6,9 @@
 #
 # reference.groupdocs.com is AWS S3 (static-website hosting) + CloudFront. Confirmed:
 # the bucket's ...s3-website-us-west-2.amazonaws.com endpoint returns 200 and honours
-# per-object website redirects. (The old redirects/*.redirects.txt nginx files are VM-era
-# leftovers and are NOT consumed by this stack.)
+# per-object website redirects. Separate mechanism, do not confuse the two: the rewrite rules in
+# <host>.redirects.txt at the repo root are applied by the distribution's Lambda@Edge function,
+# which reads that file directly. This script does not touch them.
 #
 # Per-entry "type" in redirects.map:
 #   permanent  301 via per-object redirect (default).

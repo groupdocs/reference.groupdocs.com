@@ -1,0 +1,82 @@
+# Redirect rules for reference2.groupdocs.com (staging). One `rewrite <pattern> <target> permanent;` per
+# line, FIRST MATCH WINS (top to bottom). Applied by the Lambda@Edge function on the domain's
+# CloudFront distribution, which reads this file from the repo root - so the PATH AND NAME OF
+# THIS FILE ARE PART OF THE CONTRACT. Do not move or rename it. (It was moved to redirects/ in
+# July 2026 and the rules stopped being applied; that is what this restores.)
+#
+# Provenance: maintained by infra from 2022-10 to 2025-03, then lost when `main`'s history was
+# rewritten for the June-2026 modernization - 855972156b re-created the file with locale rules
+# only, dropping all 59 legacy rules. Recovered from
+#   git show origin/bunny.net-migration:reference.groupdocs.com.redirects.txt
+# and repaired on the way in:
+#   * 4 rules ended `$permanent;` (stray `$`) and so had never applied  -> `permanent;`
+#   * 1 rule had a TAB between `rewrite` and its pattern                -> single space
+#   * 1 watermark target had a doubled slash (`groupdocs.com//watermark`) -> single slash
+# Two of the 59 recovered rules were dropped deliberately:
+#   * `rewrite /tutorials/ https://tutorials.groupdocs.com/ permanent;` - unanchored and first,
+#     so it shadowed the next rule and threw the path away. The anchored rule below covers it.
+#   * `rewrite ^/viewer/net/groupdocs.viewer.options/webdocumentoptions(.*) ...` - obsolete;
+#     `WebDocumentOptions` exists again (7 live pages) and the rule would redirect them away.
+#
+# ⚠️ These rules run on every request to the domain. Several of them collapse a trailing member
+# segment (`/index/`, `/fields/`, `/properties/`, `/events/`) onto its parent, and some of those
+# segments are real class names today - `GroupDocs.Search.Index` above all. Anything a rule would
+# match but that is a LIVE page belongs in reference2.groupdocs.com.ignore_list.txt.
+#
+rewrite ^/tutorials/(.*) https://tutorials.groupdocs.com/$1 permanent;
+rewrite ^/annotation/java/com.groupdocs.annotation.common.exception.class-use/AnnotatorException https://reference2.groupdocs.com/annotation/java/com.groupdocs.annotation.exceptions/annotatorexception/ permanent;
+rewrite ^/watermark/net/groupdocs.watermark.common.removeonlylistbase/1(.*) https://reference2.groupdocs.com/watermark/net/groupdocs.watermark.common/removeonlylistbase-1/ permanent;
+rewrite ^/annotation/java/com.groupdocs.annotation.common.license/package-frame https://reference2.groupdocs.com/annotation/java/com.groupdocs.annotation.license/ permanent;
+rewrite ^/annotation/java/com.groupdocs.annotation.domain/PageData https://reference2.groupdocs.com/annotation/java/ permanent;
+rewrite ^/annotation/java/com.groupdocs.annotation.handler/package-frame https://reference2.groupdocs.com/annotation/java/ permanent;
+rewrite ^/annotation/net/groupdocs.annotation.legacy.domain/annotationtype https://reference2.groupdocs.com/annotation/net/ permanent;
+rewrite ^/comparison/java/com.groupdocs.comparison/metered https://reference2.groupdocs.com/comparison/java/ permanent;
+rewrite ^/comparison/java/groupdocs.comparison/metered https://reference2.groupdocs.com/comparison/java/ permanent;
+rewrite ^/conversion/net/groupdocs.conversion.options.save/imagesaveoptions/properties/psdoptions https://reference2.groupdocs.com/conversion/net/ permanent;
+rewrite ^/metadata/java/com.groupdocs.metadata/Mp3Format https://reference2.groupdocs.com/metadata/java/ permanent;
+rewrite ^/viewer/java/com.groupdocs.viewer.domain/PageData https://reference2.groupdocs.com/viewer/java/ permanent;
+rewrite ^/viewer/net/groupdocs.viewer.legacy.domain/pagedata https://reference2.groupdocs.com/viewer/net permanent;
+rewrite ^/watermark/java/com.groupdocs.watermark/TextFormattingSearchCriteria https://reference2.groupdocs.com/watermark/java/com.groupdocs.watermark.legacy/textformattingsearchcriteria/ permanent;
+rewrite ^/comparison/java/com.groupdocs.comparison.class-use/package-summary https://reference2.groupdocs.com/comparison/java/com.groupdocs.comparison/ permanent;
+rewrite ^/conversion/java/com.groupdocs.conversion.options.load.class-use/package-summary https://reference2.groupdocs.com/conversion/java/com.groupdocs.conversion.options.load/ permanent;
+rewrite ^/editor/net/groupdocs.editor.htmlcss.resourcess https://reference2.groupdocs.com/editor/net/groupdocs.editor.htmlcss.resources/ permanent;
+rewrite ^/merger/java/com.groupdocs.merger.domain.options/PageSplitMode https://reference2.groupdocs.com/merger/java/com.groupdocs.merger.domain.options/splitmode/ permanent;
+rewrite ^/merger/java/com.groupdocs.merger.domain.options/PageSplitOptions https://reference2.groupdocs.com/merger/java/com.groupdocs.merger.domain.options/splitoptions/ permanent;
+rewrite ^/parser/net/groupdocs.parser.formatters.documentpartformatter/1/methods/gettext/index https://reference2.groupdocs.com/parser/net permanent;
+rewrite ^/viewer/net/groupdocs.viewer.converter.options/emailfield/fields/email https://reference2.groupdocs.com/viewer/net/groupdocs.viewer.options/field/email/ permanent;
+rewrite ^/conversion/java/groupdocs.conversion.filetypes/spreadsheetfiletype https://reference2.groupdocs.com/conversion/java/com.groupdocs.conversion.filetypes/ permanent;
+rewrite ^/annotation/net/groupdocs.annotation.models.annotationmodels/searchtextannotation https://reference2.groupdocs.com/annotation/net/groupdocs.annotation.models/ permanent;
+rewrite ^/conversion/net/groupdocs.conversion.options.convert.convertoptions/1/constructors/1 https://reference2.groupdocs.com/conversion/net/groupdocs.conversion.options.convert/convertoptions/ permanent;
+rewrite ^/conversion/net/groupdocs.conversion.options.load/xmlloadoptions/properties/format https://reference2.groupdocs.com/conversion/net/groupdocs.conversion.options.load/dataloadoptions/format/ permanent;
+rewrite ^/annotation/net/com.groupdocs.annotation(.*) https://reference2.groupdocs.com/annotation/net/groupdocs.annotation$1 permanent;
+rewrite ^/assembly/java/groupdocs.assembly(.*) https://reference2.groupdocs.com/assembly/java/com.groupdocs.assembly$1 permanent;
+rewrite ^/merger/java/groupdocs.merger(.*) https://reference2.groupdocs.com/merger/java/com.groupdocs.merger$1 permanent;
+rewrite ^/conversion/java/groupdocs.conversion(.*) https://reference2.groupdocs.com/conversion/java/com.groupdocs.conversion$1 permanent;
+rewrite ^/watermark/java/com.groupdocs.watermark.legacy(.*) https://reference2.groupdocs.com/watermark/java/com.groupdocs.watermark/ permanent;
+rewrite ^/watermark/java/com.groupdocs.watermark/(Document|DocumentPart|RemoveOnlyListBase) https://reference2.groupdocs.com/watermark/java/com.groupdocs.watermark/ permanent;
+rewrite ^/(net|java)/(viewer|annotation|conversion|comparison|signature|assembly|metadata|search|parser|watermark|editor|merger|redaction|classification)(.*) https://reference2.groupdocs.com/$2/$1$3 permanent;
+rewrite ^/java/(.*?/)(.*?/)(.*?/)([a-zA-Z0-9_]+) https://reference2.groupdocs.com/$1java/$2$4 permanent;
+rewrite ^/productfamily/([_0-9a-z-]+) https://reference2.groupdocs.com/$1 permanent;
+rewrite ^/(.*)/index/?$ https://reference2.groupdocs.com/$1 permanent;
+rewrite ^/(.*)/(methods|constructors|properties|fields|events)/?$ https://reference2.groupdocs.com/$1 permanent;
+rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference2.groupdocs.com/$1/$2.$3/$4/$5#$5_$6 permanent;
+rewrite ^/net/(.*?)/([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference2.groupdocs.com/$1/net/$2.$3/$4/$5#$5_$6 permanent;
+rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference2.groupdocs.com/$1/$2.$3.$4/$5/$6#$6_$7 permanent;
+rewrite ^/net/(.*?)/([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference2.groupdocs.com/$1/net/$2.$3.$4/$5/$6#$6_$7 permanent;
+rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference2.groupdocs.com/$1/$2.$3.$4.$5/$6/$7#$7_$8 permanent;
+rewrite ^/net/(.*?)/([^.]+).([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/methods/([0-9]+) https://reference2.groupdocs.com/$1/net/$2.$3.$4.$5/$6/$7#$7_$8 permanent;
+rewrite ^/(.*?/net)/(.*?)/methods/(.*) https://reference2.groupdocs.com/$1/$2/$3#$3 permanent;
+rewrite ^/net/(.*?)/(.*?)/methods/(.*) https://reference2.groupdocs.com/$1/net/$2/$3#$3 permanent;
+rewrite ^/(.*?/net)/([^.]+).([^.]+)/(.*)/fields/(.*) https://reference2.groupdocs.com/$1/$2.$3/$4/$5 permanent;
+rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+)/(.*)/fields/(.*) https://reference2.groupdocs.com/$1/$2.$3.$4/$5/$6 permanent;
+rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/fields/(.*) https://reference2.groupdocs.com/$1/$2.$3.$4/$5/$6_$7 permanent;
+rewrite ^/(.*?/net)/([^.]+).([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/fields/(.*) https://reference2.groupdocs.com/$1/$2.$3.$4/$5/$6_$7_$8 permanent;
+rewrite ^/net/(.*?)/([^.]+).([^.]+).([^.]+).([^.]+).([^.]+)/(.*)/fields/(.*) https://reference2.groupdocs.com/$1/net/$2.$3.$4/$5/$6_$7_$8 permanent;
+rewrite ^/(.*?/net)/(.*?)/(.*?)/(?:constructors)/(main) https://reference2.groupdocs.com/$1/$2/$3/$3#constructor permanent;
+rewrite ^/net/(.*?)/(.*?)/(.*?)/(?:constructors)/(main) https://reference2.groupdocs.com/$1/net/$2/$3/$3#constructor permanent;
+rewrite ^/(.*?/net)/(.*?)/(.*?)/(?:constructors)/(\d+) https://reference2.groupdocs.com/$1/$2/$3/$3#constructor_$4 permanent;
+rewrite ^/net/(.*?)/(.*?)/(.*?)/(?:constructors)/(\d+) https://reference2.groupdocs.com/$1/net/$2/$3/$3#constructor_$4 permanent;
+rewrite ^/(.*?/net)/(.*?)/(?:properties|methods|constructors|fields|events)/(.*) https://reference2.groupdocs.com/$1/$2/$3/ permanent;
+rewrite ^/net/(.*?)/(.*?)/(?:properties|methods|constructors|fields|events)/(.*) https://reference2.groupdocs.com/$1/net/$2/$3/ permanent;
+rewrite ^/(.*)/package-summary https://reference2.groupdocs.com/$1/ permanent;
+rewrite ^/admin(.*) https://reference3.groupdocs.com/admin$1 permanent;

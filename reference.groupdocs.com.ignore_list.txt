@@ -1,0 +1,64 @@
+# Paths that must NEVER be redirected, one per line, even when a rule in
+# reference.groupdocs.com.redirects.txt matches them. Read by the same Lambda@Edge function.
+#
+# Why this file exists: several legacy rules collapse a trailing member segment (`/index/`,
+# `/fields/`, `/properties/`, `/events/`) onto its parent, because those segments used to be
+# URL scaffolding. Some of them are real class names today - `GroupDocs.Search.Index` is the
+# Search product's flagship type - so without an exemption the rule that was written to rescue
+# a dead URL redirects a LIVE page instead, and browsers cache that 301.
+#
+# The first two entries are the original list, restored verbatim from
+#   git show origin/bunny.net-migration:reference.groupdocs.com.ignore_list.txt
+# The rest were found by matching all 57 rules against the 30,256 live page URLs in
+# content/sites/groupdocs (`url:` front matter, product prefix included): 23 pages collide.
+# Both the trailing-slash and no-slash form of each is listed, following the original's example.
+#
+# ⚠️ This list is a SNAPSHOT. Every new API page whose last segment is `index`, `fields`,
+# `properties`, `events` or `constructors` is a candidate. Re-derive it whenever the content
+# tree changes materially, or a page will silently start redirecting to its parent.
+/search/net/groupdocs.search/index/
+/search/net/groupdocs.search/index
+/metadata/net/groupdocs.metadata.formats.document/pdfinspectionpackage/fields/
+/metadata/net/groupdocs.metadata.formats.document/pdfinspectionpackage/fields
+/metadata/net/groupdocs.metadata.formats.document/wordprocessinginspectionpackage/fields/
+/metadata/net/groupdocs.metadata.formats.document/wordprocessinginspectionpackage/fields
+/metadata/net/groupdocs.metadata.formats.threed.gltf/gltfpropertytable/properties/
+/metadata/net/groupdocs.metadata.formats.threed.gltf/gltfpropertytable/properties
+/parser/net/groupdocs.parser.data/page/index/
+/parser/net/groupdocs.parser.data/page/index
+/parser/net/groupdocs.parser.data/worksheetinfo/index/
+/parser/net/groupdocs.parser.data/worksheetinfo/index
+/parser/python-net/groupdocs.parser.data/page/index/
+/parser/python-net/groupdocs.parser.data/page/index
+/parser/python-net/groupdocs.parser.data/worksheetinfo/index/
+/parser/python-net/groupdocs.parser.data/worksheetinfo/index
+/redaction/net/groupdocs.redaction.redactions/pagerangefilter/index/
+/redaction/net/groupdocs.redaction.redactions/pagerangefilter/index
+/redaction/net/groupdocs.redaction.redactions/removepageredaction/index/
+/redaction/net/groupdocs.redaction.redactions/removepageredaction/index
+/redaction/net/groupdocs.redaction.redactions/textreplacement/index/
+/redaction/net/groupdocs.redaction.redactions/textreplacement/index
+/redaction/python-net/groupdocs.redaction.redactions/pagerangefilter/index/
+/redaction/python-net/groupdocs.redaction.redactions/pagerangefilter/index
+/redaction/python-net/groupdocs.redaction.redactions/removepageredaction/index/
+/redaction/python-net/groupdocs.redaction.redactions/removepageredaction/index
+/redaction/python-net/groupdocs.redaction.redactions/textreplacement/index/
+/redaction/python-net/groupdocs.redaction.redactions/textreplacement/index
+/search/java/com.groupdocs.search/index/
+/search/java/com.groupdocs.search/index
+/search/net/groupdocs.search/index/events/
+/search/net/groupdocs.search/index/events
+/search/net/groupdocs.search/index/index/
+/search/net/groupdocs.search/index/index
+/search/net/groupdocs.search/indexrepository/events/
+/search/net/groupdocs.search/indexrepository/events
+/search/net/groupdocs.search.common/documentimage/fields/
+/search/net/groupdocs.search.common/documentimage/fields
+/search/net/groupdocs.search.common/extractediteminfo/fields/
+/search/net/groupdocs.search.common/extractediteminfo/fields
+/search/net/groupdocs.search.common/imageframe/index/
+/search/net/groupdocs.search.common/imageframe/index
+/search/net/groupdocs.search.scaling/searchnetworknode/events/
+/search/net/groupdocs.search.scaling/searchnetworknode/events
+/viewer/net/groupdocs.viewer/filetype/properties/
+/viewer/net/groupdocs.viewer/filetype/properties
