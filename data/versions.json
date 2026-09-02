@@ -279,11 +279,11 @@
     }
   },
   "watermark": {
-    "latest": "26.6.0",
+    "latest": "26.9.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/watermark/release-notes/",
-        "version": "26.4.0"
+        "version": "26.9.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/watermark/release-notes/",
