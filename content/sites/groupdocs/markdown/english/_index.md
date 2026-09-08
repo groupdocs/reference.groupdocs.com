@@ -1,7 +1,7 @@
 ---
 title: "GroupDocs.Markdown"
 linktitle: "GroupDocs.Markdown"
-description: "GroupDocs.Markdown API reference for .NET, Java, Node.js, and Python — Export PDF, Word, Excel, and other formats to clean Markdown."
+description: "GroupDocs.Markdown API reference for .NET, Java, Node.js, and Python — Export PDF, Word, Excel, and other formats to clean Markdown"
 keywords: "GroupDocs.Markdown, markdown API, API reference, .NET, Java, Python, document processing"
 additionalTitle: "GroupDocs API References"
 type: docs
