@@ -17,11 +17,11 @@
     }
   },
   "assembly": {
-    "latest": "26.8.0",
+    "latest": "26.9.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/assembly/release-notes/",
-        "version": "26.8.0"
+        "version": "26.9.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/assembly/release-notes/",
@@ -262,7 +262,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/viewer/release-notes/",
-        "version": "26.5.0"
+        "version": "26.9.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/viewer/release-notes/",
