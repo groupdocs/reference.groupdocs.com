@@ -127,7 +127,7 @@
     }
   },
   "merger": {
-    "latest": "26.7.0",
+    "latest": "26.9.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/merger/release-notes/",
@@ -135,7 +135,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/merger/release-notes/",
-        "version": "26.7.0"
+        "version": "26.9.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/merger/release-notes/",
@@ -190,7 +190,7 @@
     }
   },
   "redaction": {
-    "latest": "26.7.0",
+    "latest": "26.9.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/redaction/release-notes/",
@@ -198,7 +198,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/redaction/release-notes/",
-        "version": "26.7.0"
+        "version": "26.9.0"
       },
       "python": {
         "url": "https://releases.groupdocs.com/redaction/release-notes/",
