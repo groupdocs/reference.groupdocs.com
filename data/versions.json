@@ -76,7 +76,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/conversion/release-notes/",
-        "version": "26.8.0"
+        "version": "26.9.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/conversion/release-notes/",
@@ -224,7 +224,7 @@
     }
   },
   "signature": {
-    "latest": "26.6.0",
+    "latest": "26.9.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
@@ -232,7 +232,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
-        "version": "26.6.0"
+        "version": "26.9.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
