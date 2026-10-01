@@ -1,0 +1,15 @@
+---
+title: "ILinkAnnotation"
+second_title: "GroupDocs.Annotation for Java API リファレンス"
+description: "リンク注釈のプロパティを定義します"
+type: docs
+weight: 16
+url: /ja/java/com.groupdocs.annotation.models.annotationmodels.interfaces.annotations/ilinkannotation/
+---
+**All Implemented Interfaces:**
+[com.groupdocs.annotation.models.annotationmodels.interfaces.properties.IFontColor](../../com.groupdocs.annotation.models.annotationmodels.interfaces.properties/ifontcolor), [com.groupdocs.annotation.models.annotationmodels.interfaces.properties.IBackgroundColor](../../com.groupdocs.annotation.models.annotationmodels.interfaces.properties/ibackgroundcolor), [com.groupdocs.annotation.models.annotationmodels.interfaces.properties.IOpacity](../../com.groupdocs.annotation.models.annotationmodels.interfaces.properties/iopacity), [com.groupdocs.annotation.models.annotationmodels.interfaces.properties.IPoints](../../com.groupdocs.annotation.models.annotationmodels.interfaces.properties/ipoints), [com.groupdocs.annotation.models.annotationmodels.interfaces.properties.IUrl](../../com.groupdocs.annotation.models.annotationmodels.interfaces.properties/iurl)
+```
+public interface ILinkAnnotation extends IFontColor, IBackgroundColor, IOpacity, IPoints, IUrl
+```
+
+リンク注釈のプロパティを定義します
