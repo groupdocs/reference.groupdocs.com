@@ -224,7 +224,7 @@
     }
   },
   "signature": {
-    "latest": "26.9.0",
+    "latest": "26.10.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
@@ -240,7 +240,7 @@
       },
       "python": {
         "url": "https://releases.groupdocs.com/signature/release-notes/",
-        "version": "26.1.0"
+        "version": "26.10.0"
       }
     }
   },
