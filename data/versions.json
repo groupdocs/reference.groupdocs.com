@@ -3,15 +3,15 @@
     "latest": "26.6.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/annotation/release-notes/",
+        "url": "https://releases.groupdocs.com/annotation/java/release-notes/",
         "version": "25.6.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/annotation/release-notes/",
+        "url": "https://releases.groupdocs.com/annotation/net/release-notes/",
         "version": "26.6.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/annotation/release-notes/",
+        "url": "https://releases.groupdocs.com/annotation/python-net/release-notes/",
         "version": "26.6.0"
       }
     }
@@ -20,19 +20,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/assembly/release-notes/",
+        "url": "https://releases.groupdocs.com/assembly/java/release-notes/",
         "version": "26.9.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/assembly/release-notes/",
+        "url": "https://releases.groupdocs.com/assembly/net/release-notes/",
         "version": "26.7.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/assembly/release-notes/",
+        "url": "https://releases.groupdocs.com/assembly/nodejs-java/release-notes/",
         "version": "26.9.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/assembly/release-notes/",
+        "url": "https://releases.groupdocs.com/assembly/python-net/release-notes/",
         "version": "25.5.1"
       }
     }
@@ -41,7 +41,7 @@
     "latest": "21.1.0",
     "platforms": {
       "net": {
-        "url": "https://releases.groupdocs.com/classification/release-notes/",
+        "url": "https://releases.groupdocs.com/classification/net/release-notes/",
         "version": "21.1.0"
       }
     }
@@ -50,19 +50,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "url": "https://releases.groupdocs.com/comparison/java/release-notes/",
         "version": "26.9.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "url": "https://releases.groupdocs.com/comparison/net/release-notes/",
         "version": "26.9.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "url": "https://releases.groupdocs.com/comparison/nodejs-java/release-notes/",
         "version": "26.8.2"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/comparison/release-notes/",
+        "url": "https://releases.groupdocs.com/comparison/python-net/release-notes/",
         "version": "26.5.0"
       }
     }
@@ -71,19 +71,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "url": "https://releases.groupdocs.com/conversion/java/release-notes/",
         "version": "26.9.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "url": "https://releases.groupdocs.com/conversion/net/release-notes/",
         "version": "26.9.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "url": "https://releases.groupdocs.com/conversion/nodejs-java/release-notes/",
         "version": "25.11.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/conversion/release-notes/",
+        "url": "https://releases.groupdocs.com/conversion/python-net/release-notes/",
         "version": "26.9.0"
       }
     }
@@ -92,19 +92,19 @@
     "latest": "26.7.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "url": "https://releases.groupdocs.com/editor/java/release-notes/",
         "version": "26.7.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "url": "https://releases.groupdocs.com/editor/net/release-notes/",
         "version": "26.6.1"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "url": "https://releases.groupdocs.com/editor/nodejs-java/release-notes/",
         "version": "26.7.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/editor/release-notes/",
+        "url": "https://releases.groupdocs.com/editor/python-net/release-notes/",
         "version": "26.5.0"
       }
     }
@@ -113,15 +113,15 @@
     "latest": "26.5.1",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/markdown/release-notes/",
+        "url": "https://releases.groupdocs.com/markdown/java/release-notes/",
         "version": "26.5.1"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/markdown/release-notes/",
+        "url": "https://releases.groupdocs.com/markdown/net/release-notes/",
         "version": "26.3.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/markdown/release-notes/",
+        "url": "https://releases.groupdocs.com/markdown/python-net/release-notes/",
         "version": "26.3.0"
       }
     }
@@ -130,19 +130,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "url": "https://releases.groupdocs.com/merger/java/release-notes/",
         "version": "26.4.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "url": "https://releases.groupdocs.com/merger/net/release-notes/",
         "version": "26.9.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "url": "https://releases.groupdocs.com/merger/nodejs-java/release-notes/",
         "version": "24.12.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/merger/release-notes/",
+        "url": "https://releases.groupdocs.com/merger/python-net/release-notes/",
         "version": "26.6.0"
       }
     }
@@ -151,19 +151,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "url": "https://releases.groupdocs.com/metadata/java/release-notes/",
         "version": "26.7.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "url": "https://releases.groupdocs.com/metadata/net/release-notes/",
         "version": "26.8.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "url": "https://releases.groupdocs.com/metadata/nodejs-java/release-notes/",
         "version": "26.7.1"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/metadata/release-notes/",
+        "url": "https://releases.groupdocs.com/metadata/python-net/release-notes/",
         "version": "26.9.0"
       }
     }
@@ -172,19 +172,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/parser/release-notes/",
+        "url": "https://releases.groupdocs.com/parser/java/release-notes/",
         "version": "26.9.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/parser/release-notes/",
+        "url": "https://releases.groupdocs.com/parser/net/release-notes/",
         "version": "26.8.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/parser/release-notes/",
+        "url": "https://releases.groupdocs.com/parser/nodejs-java/release-notes/",
         "version": "26.9.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/parser/release-notes/",
+        "url": "https://releases.groupdocs.com/parser/python-net/release-notes/",
         "version": "25.12.0"
       }
     }
@@ -193,15 +193,15 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/redaction/release-notes/",
+        "url": "https://releases.groupdocs.com/redaction/java/release-notes/",
         "version": "26.7.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/redaction/release-notes/",
+        "url": "https://releases.groupdocs.com/redaction/net/release-notes/",
         "version": "26.9.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/redaction/release-notes/",
+        "url": "https://releases.groupdocs.com/redaction/python-net/release-notes/",
         "version": "26.6.0"
       }
     }
@@ -210,15 +210,15 @@
     "latest": "26.9.1",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/search/release-notes/",
+        "url": "https://releases.groupdocs.com/search/java/release-notes/",
         "version": "26.9.1"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/search/release-notes/",
+        "url": "https://releases.groupdocs.com/search/net/release-notes/",
         "version": "26.8.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/search/release-notes/",
+        "url": "https://releases.groupdocs.com/search/nodejs-java/release-notes/",
         "version": "26.9.1"
       }
     }
@@ -227,19 +227,19 @@
     "latest": "26.10.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "url": "https://releases.groupdocs.com/signature/java/release-notes/",
         "version": "26.5.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "url": "https://releases.groupdocs.com/signature/net/release-notes/",
         "version": "26.9.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "url": "https://releases.groupdocs.com/signature/nodejs-java/release-notes/",
         "version": "24.12.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/signature/release-notes/",
+        "url": "https://releases.groupdocs.com/signature/python-net/release-notes/",
         "version": "26.10.0"
       }
     }
@@ -248,19 +248,19 @@
     "latest": "26.8.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "url": "https://releases.groupdocs.com/total/java/release-notes/",
         "version": "26.8.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "url": "https://releases.groupdocs.com/total/net/release-notes/",
         "version": "26.6.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "url": "https://releases.groupdocs.com/total/nodejs-java/release-notes/",
         "version": "26.8.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/total/release-notes/",
+        "url": "https://releases.groupdocs.com/total/python-net/release-notes/",
         "version": "26.3.0"
       }
     }
@@ -269,19 +269,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "url": "https://releases.groupdocs.com/viewer/java/release-notes/",
         "version": "26.9.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "url": "https://releases.groupdocs.com/viewer/net/release-notes/",
         "version": "26.9.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "url": "https://releases.groupdocs.com/viewer/nodejs-java/release-notes/",
         "version": "26.9.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/viewer/release-notes/",
+        "url": "https://releases.groupdocs.com/viewer/python-net/release-notes/",
         "version": "26.9.0"
       }
     }
@@ -290,19 +290,19 @@
     "latest": "26.9.0",
     "platforms": {
       "java": {
-        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "url": "https://releases.groupdocs.com/watermark/java/release-notes/",
         "version": "26.9.0"
       },
       "net": {
-        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "url": "https://releases.groupdocs.com/watermark/net/release-notes/",
         "version": "26.9.0"
       },
       "node": {
-        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "url": "https://releases.groupdocs.com/watermark/nodejs-java/release-notes/",
         "version": "26.9.0"
       },
       "python": {
-        "url": "https://releases.groupdocs.com/watermark/release-notes/",
+        "url": "https://releases.groupdocs.com/watermark/python-net/release-notes/",
         "version": "26.6.0"
       }
     }
