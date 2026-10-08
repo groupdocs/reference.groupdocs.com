@@ -15,5 +15,6 @@ public class Example {
 
         // Sign document and save to file
         signature.sign("signed.pdf", options);
+        signature.dispose();
     }
 }

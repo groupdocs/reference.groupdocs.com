@@ -284,6 +284,7 @@ signature:
 
       // Sign document and save to file
       signature.sign("signed.pdf", options);
+      signature.dispose();
   nodejs:
     lang: javascript
     code: |
@@ -297,24 +298,31 @@ signature:
 
       // Sign the document and save to file
       signature.sign("signed.pdf", options);
-      signature.close();
+      signature.dispose();
   python:
     lang: python
     code: |
+      from groupdocs.pydrawing import Color
       from groupdocs.signature import Signature
       from groupdocs.signature.options import TextSignOptions
-      from groupdocs.pydrawing import Color
 
-      # Select PDF document
-      with Signature("sample.pdf") as signature:
-          # Provide text
-          options = TextSignOptions("John Smith")
 
-          # Set color
-          options.fore_color = Color.red
+      def sign_with_text():
+          # Select PDF document
+          with Signature("sample.pdf") as signature:
 
-          # Sign document and save to file
-          signature.sign("signed.pdf", options)
+              # Provide text
+              options = TextSignOptions("John Smith")
+
+              # Set color
+              options.fore_color = Color.red
+
+              # Sign document and save to file
+              signature.sign("signed.pdf", options)
+
+
+      if __name__ == "__main__":
+          sign_with_text()
 merger:
   net:
     lang: csharp

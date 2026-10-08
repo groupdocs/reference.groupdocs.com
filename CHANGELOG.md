@@ -207,6 +207,10 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **GroupDocs.Signature family page: the Node.js tab called `signature.close()`**, which the Java/Node.js
+  `Signature` class does not have; it now calls `dispose()`, and the Java tab does too. The Python tab is
+  now the products page hero snippet, re-verified against `groupdocs-signature-net` 26.10.0, and the .NET
+  harness builds against GroupDocs.Signature 26.9.0 (it pinned 26.2.0).
 - **Retired locale URLs land on their English pages again.** The site went English-only in June 2026
   (`855972156b` deleted 161,395 localized pages), but the locale-strip rules only ever lived in a file that
   had been moved out from under Lambda@Edge, so `/annotation/ru/net/...` and its siblings have been 404-ing
