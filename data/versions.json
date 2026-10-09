@@ -190,15 +190,19 @@
     }
   },
   "redaction": {
-    "latest": "26.9.0",
+    "latest": "26.10.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/redaction/java/release-notes/",
-        "version": "26.7.0"
+        "version": "26.10.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/redaction/net/release-notes/",
         "version": "26.9.0"
+      },
+      "node": {
+        "url": "https://releases.groupdocs.com/redaction/nodejs-java/release-notes/",
+        "version": "26.10.0"
       },
       "python": {
         "url": "https://releases.groupdocs.com/redaction/python-net/release-notes/",
