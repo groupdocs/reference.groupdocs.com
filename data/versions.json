@@ -47,11 +47,11 @@
     }
   },
   "comparison": {
-    "latest": "26.9.0",
+    "latest": "26.10.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/comparison/java/release-notes/",
-        "version": "26.9.0"
+        "version": "26.10.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/comparison/net/release-notes/",
