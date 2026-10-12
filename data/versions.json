@@ -59,7 +59,7 @@
       },
       "node": {
         "url": "https://releases.groupdocs.com/comparison/nodejs-java/release-notes/",
-        "version": "26.8.2"
+        "version": "26.10.0"
       },
       "python": {
         "url": "https://releases.groupdocs.com/comparison/python-net/release-notes/",
@@ -211,7 +211,7 @@
     }
   },
   "search": {
-    "latest": "26.9.1",
+    "latest": "26.10.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/search/java/release-notes/",
@@ -219,7 +219,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/search/net/release-notes/",
-        "version": "26.8.0"
+        "version": "26.10.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/search/nodejs-java/release-notes/",
