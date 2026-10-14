@@ -17,11 +17,11 @@
     }
   },
   "assembly": {
-    "latest": "26.10.0",
+    "latest": "26.10.1",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/assembly/java/release-notes/",
-        "version": "26.10.0"
+        "version": "26.10.1"
       },
       "net": {
         "url": "https://releases.groupdocs.com/assembly/net/release-notes/",
