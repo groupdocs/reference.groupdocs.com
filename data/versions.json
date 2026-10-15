@@ -29,7 +29,7 @@
       },
       "node": {
         "url": "https://releases.groupdocs.com/assembly/nodejs-java/release-notes/",
-        "version": "26.10.0"
+        "version": "26.10.1"
       },
       "python": {
         "url": "https://releases.groupdocs.com/assembly/python-net/release-notes/",
@@ -249,11 +249,11 @@
     }
   },
   "total": {
-    "latest": "26.8.0",
+    "latest": "26.10.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/total/java/release-notes/",
-        "version": "26.8.0"
+        "version": "26.10.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/total/net/release-notes/",
@@ -291,7 +291,7 @@
     }
   },
   "watermark": {
-    "latest": "26.9.0",
+    "latest": "26.10.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/watermark/java/release-notes/",
@@ -307,7 +307,7 @@
       },
       "python": {
         "url": "https://releases.groupdocs.com/watermark/python-net/release-notes/",
-        "version": "26.6.0"
+        "version": "26.10.0"
       }
     }
   }
