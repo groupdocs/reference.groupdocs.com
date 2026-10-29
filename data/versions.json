@@ -55,7 +55,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/comparison/net/release-notes/",
-        "version": "26.9.0"
+        "version": "26.10.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/comparison/nodejs-java/release-notes/",
@@ -169,11 +169,11 @@
     }
   },
   "parser": {
-    "latest": "26.9.0",
+    "latest": "26.10.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/parser/java/release-notes/",
-        "version": "26.9.0"
+        "version": "26.10.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/parser/net/release-notes/",
