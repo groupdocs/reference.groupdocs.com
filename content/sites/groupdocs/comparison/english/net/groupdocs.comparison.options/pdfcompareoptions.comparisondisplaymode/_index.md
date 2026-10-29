@@ -3,7 +3,7 @@ title: PdfCompareOptions.ComparisonDisplayMode
 second_title: GroupDocs.Comparison for .NET API Reference
 description: Controls how Pdf comparison result document is laid out.
 type: docs
-weight: 370
+weight: 400
 url: /net/groupdocs.comparison.options/pdfcompareoptions.comparisondisplaymode/
 ---
 ## PdfCompareOptions.ComparisonDisplayMode enumeration

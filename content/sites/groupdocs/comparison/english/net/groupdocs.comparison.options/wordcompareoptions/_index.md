@@ -3,7 +3,7 @@ title: WordCompareOptions
 second_title: GroupDocs.Comparison for .NET API Reference
 description: Word document specific compare options. Inherits common options from CompareOptions./compareoptions.
 type: docs
-weight: 440
+weight: 470
 url: /net/groupdocs.comparison.options/wordcompareoptions/
 ---
 ## WordCompareOptions class
@@ -46,6 +46,7 @@ public class WordCompareOptions : CompareOptions
 | [MarkChangedContent](../../groupdocs.comparison.options/compareoptions/markchangedcontent) { get; set; } | Indicates whether to use frames for shapes in Word Processing and for rectangles in Image documents. |
 | [MarkLineBreaks](../../groupdocs.comparison.options/wordcompareoptions/marklinebreaks) { get; set; } | Gets or sets whether paragraph (line) breaks that differ between documents are visually marked in the result. |
 | [MarkNestedContent](../../groupdocs.comparison.options/compareoptions/marknestedcontent) { get; set; } | Gets or sets a value indicating whether to mark the children of the deleted or inserted element as deleted or inserted. |
+| [Ocr](../../groupdocs.comparison.options/compareoptions/ocr) { get; set; } | Gets or sets settings for comparing documents by their recognised text. |
 | [OriginalSize](../../groupdocs.comparison.options/compareoptions/originalsize) { get; set; } | Get or sets the original sizes of compared documents. |
 | [PaperSize](../../groupdocs.comparison.options/compareoptions/papersize) { get; set; } | Gets or sets the result document paper size. |
 | [PasswordSaveOption](../../groupdocs.comparison.options/compareoptions/passwordsaveoption) { get; set; } | Gets or sets the password save option. |

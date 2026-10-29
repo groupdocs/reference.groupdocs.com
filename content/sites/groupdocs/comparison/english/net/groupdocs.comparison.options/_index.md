@@ -19,6 +19,7 @@ The namespace provides classes that allows to specify additional options for doc
 | [GetChangeOptions](./getchangeoptions) | The option allows to filter changes by type. |
 | [IgnoreChangeSensitivitySettings](./ignorechangesensitivitysettings) | The option allows to ignore changes by similarity percentage. |
 | [LoadOptions](./loadoptions) | Allows to specify additional options when loading a document. |
+| [OcrOptions](./ocroptions) | Options for comparing images by the text recognized in them instead of by their pixels. |
 | [OriginalSize](./originalsize) | Represents original page size. Used only for comparing image with different formats. |
 | [PagesSetup](./pagessetup) | Specifies which pages to include in the comparison. |
 | [PdfCompareOptions](./pdfcompareoptions) | PDF document specific compare options. Inherits common options from [`CompareOptions`](../groupdocs.comparison.options/compareoptions). |
@@ -40,6 +41,8 @@ The namespace provides classes that allows to specify additional options for doc
 | [FolderComparisonExtension](./foldercomparisonextension) | Folder extensions. |
 | [ImagesInheritance](./imagesinheritance) | Source of images inheritance when image comparison is disabled. |
 | [MetadataType](./metadatatype) | Determines from where result document will take metadata information |
+| [OcrDisplayMode](./ocrdisplaymode) | Controls how the result of comparing recognized text is laid out. |
+| [OcrLanguage](./ocrlanguage) | Defines the languages used for optical character recognition (OCR). |
 | [PaperSize](./papersize) | The option to set the Paper size of the result document after comparison. |
 | [PasswordSaveOption](./passwordsaveoption) | Specifies the password save option. |
 | [PreviewFormats](./previewformats) | Document preview supported formats. |

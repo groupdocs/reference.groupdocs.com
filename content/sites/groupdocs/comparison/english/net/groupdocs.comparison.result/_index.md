@@ -14,6 +14,7 @@ The namespace provides classes which represents the comparison results.
 | --- | --- |
 | [ChangeInfo](./changeinfo) | Represents information about change. |
 | [FileType](./filetype) | Represents file type. Provides methods to obtain list of all file types supported by GroupDocs.Comparison, detect file type by extension etc. |
+| [OcrChangeInfo](./ocrchangeinfo) | Represents information about a change found by comparing recognized text. |
 | [PageInfo](./pageinfo) | Represents information about page's size and number. |
 | [StyleChangeInfo](./stylechangeinfo) | Represents information about style change. |
 ## Structures

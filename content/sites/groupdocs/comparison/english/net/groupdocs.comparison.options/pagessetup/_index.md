@@ -3,7 +3,7 @@ title: PagesSetup
 second_title: GroupDocs.Comparison for .NET API Reference
 description: Specifies which pages to include in the comparison.
 type: docs
-weight: 330
+weight: 360
 url: /net/groupdocs.comparison.options/pagessetup/
 ---
 ## PagesSetup class

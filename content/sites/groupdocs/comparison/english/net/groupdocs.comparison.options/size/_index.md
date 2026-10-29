@@ -3,7 +3,7 @@ title: Size
 second_title: GroupDocs.Comparison for .NET API Reference
 description: Document size.
 type: docs
-weight: 420
+weight: 450
 url: /net/groupdocs.comparison.options/size/
 ---
 ## Size class

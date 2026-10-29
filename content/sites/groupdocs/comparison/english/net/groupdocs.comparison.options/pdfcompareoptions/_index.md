@@ -3,7 +3,7 @@ title: PdfCompareOptions
 second_title: GroupDocs.Comparison for .NET API Reference
 description: PDF document specific compare options. Inherits common options from CompareOptions./compareoptions.
 type: docs
-weight: 360
+weight: 390
 url: /net/groupdocs.comparison.options/pdfcompareoptions/
 ---
 ## PdfCompareOptions class
@@ -44,6 +44,7 @@ public class PdfCompareOptions : CompareOptions
 | [InsertedItemStyle](../../groupdocs.comparison.options/compareoptions/inserteditemstyle) { get; set; } | Describes style for inserted components. |
 | [MarkChangedContent](../../groupdocs.comparison.options/compareoptions/markchangedcontent) { get; set; } | Indicates whether to use frames for shapes in Word Processing and for rectangles in Image documents. |
 | [MarkNestedContent](../../groupdocs.comparison.options/compareoptions/marknestedcontent) { get; set; } | Gets or sets a value indicating whether to mark the children of the deleted or inserted element as deleted or inserted. |
+| [Ocr](../../groupdocs.comparison.options/compareoptions/ocr) { get; set; } | Gets or sets settings for comparing documents by their recognised text. |
 | [OriginalSize](../../groupdocs.comparison.options/compareoptions/originalsize) { get; set; } | Get or sets the original sizes of compared documents. |
 | [PagesSetup](../../groupdocs.comparison.options/pdfcompareoptions/pagessetup) { get; set; } | Gets or sets the page range to compare. When null, all pages are compared. |
 | [PaperSize](../../groupdocs.comparison.options/compareoptions/papersize) { get; set; } | Gets or sets the result document paper size. |
