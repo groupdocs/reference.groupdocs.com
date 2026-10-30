@@ -10,6 +10,11 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Added
+- **GroupDocs.Search for Python via .NET joins the family page and the getting-started tabs.** `data/products.toml`
+  lists `python-net` among Search's platforms. `data/getting_started.yaml` gets a Python tab, which is the
+  products.groupdocs.com hero character for character, and `examples/getting-started/search/python/example.py`
+  is its harness. It runs on `groupdocs-search-net` 26.10.0: on a one-line document it finds 1 document and 3
+  occurrences.
 - **The legacy rewrite ruleset is restored to the repo root**, where the distribution's Lambda@Edge function
   reads it. `reference.groupdocs.com.redirects.txt` (with a `reference2.` staging twin) again carries the 57
   rules infra maintained from 2022 to 2025 - the legacy API URL schemes: `/net/<product>/...`,

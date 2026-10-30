@@ -91,7 +91,7 @@ url         = "/search"
 icon        = "search"
 weight      = 9
 description = "Index and full-text search with fuzzy, synonym, regex, and faceted queries."
-platforms   = ["net", "java"]
+platforms   = ["net", "java", "python-net"]
 
 [[product]]
 key         = "parser"
