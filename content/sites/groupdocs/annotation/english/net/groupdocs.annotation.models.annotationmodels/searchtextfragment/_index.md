@@ -1,11 +1,12 @@
 ---
-title: Class SearchTextFragment
+title: SearchTextFragment
 second_title: GroupDocs.Annotation for .NET API Reference
-description: GroupDocs.Annotation.Models.AnnotationModels.SearchTextFragment class. Represents searchText annotation properties
+description: Represents searchText annotation properties
 type: docs
-weight: 700
+weight: 760
 url: /net/groupdocs.annotation.models.annotationmodels/searchtextfragment/
 ---
+
 ## SearchTextFragment class
 
 Represents searchText annotation properties
@@ -19,37 +20,37 @@ public class SearchTextFragment : AnnotationBase, IEquatable<SearchTextFragment>
 
 | Name | Description |
 | --- | --- |
-| [SearchTextFragment](searchtextfragment/)() | Initializes new instance of `SearchTextFragment` class. |
+| [SearchTextFragment](searchtextfragment)() | Initializes new instance of [`SearchTextFragment`](../searchtextfragment) class. |
 
 ## Properties
 
 | Name | Description |
 | --- | --- |
-| [BackgroundColor](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/backgroundcolor/) { get; set; } | Gets or sets text background color |
-| [CreatedOn](../../groupdocs.annotation.models.annotationmodels/annotationbase/createdon/) { get; set; } | Gets or sets annotation creation date |
-| [FontColor](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/fontcolor/) { get; set; } | Gets or sets text color |
-| [FontFamily](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/fontfamily/) { get; set; } | Gets or sets text font family |
-| [FontSize](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/fontsize/) { get; set; } | Gets or sets text size |
-| [Id](../../groupdocs.annotation.models.annotationmodels/annotationbase/id/) { get; set; } | Gets or sets annotation unique identifier. This field is auto-incremented. |
-| [Message](../../groupdocs.annotation.models.annotationmodels/annotationbase/message/) { get; set; } | Gets or sets annotation message |
-| [PageNumber](../../groupdocs.annotation.models.annotationmodels/annotationbase/pagenumber/) { get; set; } | Page number where the annotation should be located |
-| [Replies](../../groupdocs.annotation.models.annotationmodels/annotationbase/replies/) { get; set; } | The list of replies (comments) attached to the annotation |
-| [StateBeforeAnnotation](../../groupdocs.annotation.models.annotationmodels/annotationbase/statebeforeannotation/) { get; set; } | Stores the previous state of the text. State that was before annotating |
-| [Text](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/text/) { get; set; } | Gets or sets that need to be found |
-| [Type](../../groupdocs.annotation.models.annotationmodels/annotationbase/type/) { get; set; } | Gets or sets annotation type |
-| [User](../../groupdocs.annotation.models.annotationmodels/annotationbase/user/) { get; set; } | Gets or sets annotation author |
+| [BackgroundColor](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/backgroundcolor) { get; set; } | Gets or sets text background color |
+| [CreatedOn](../../groupdocs.annotation.models.annotationmodels/annotationbase/createdon) { get; set; } | Gets or sets annotation creation date |
+| [FontColor](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/fontcolor) { get; set; } | Gets or sets text color |
+| [FontFamily](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/fontfamily) { get; set; } | Gets or sets text font family |
+| [FontSize](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/fontsize) { get; set; } | Gets or sets text size |
+| [Id](../../groupdocs.annotation.models.annotationmodels/annotationbase/id) { get; set; } | Gets or sets annotation unique identifier. This field is auto-incremented. |
+| [Message](../../groupdocs.annotation.models.annotationmodels/annotationbase/message) { get; set; } | Gets or sets annotation message |
+| [PageNumber](../../groupdocs.annotation.models.annotationmodels/annotationbase/pagenumber) { get; set; } | Page number where the annotation should be located |
+| [Replies](../../groupdocs.annotation.models.annotationmodels/annotationbase/replies) { get; set; } | The list of replies (comments) attached to the annotation |
+| [StateBeforeAnnotation](../../groupdocs.annotation.models.annotationmodels/annotationbase/statebeforeannotation) { get; set; } | Stores the previous state of the text. State that was before annotating |
+| [Text](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/text) { get; set; } | Gets or sets that need to be found |
+| [Type](../../groupdocs.annotation.models.annotationmodels/annotationbase/type) { get; set; } | Gets or sets annotation type |
+| [User](../../groupdocs.annotation.models.annotationmodels/annotationbase/user) { get; set; } | Gets or sets annotation author |
 
 ## Methods
 
 | Name | Description |
 | --- | --- |
-| override [Clone](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/clone/)() | Returns new instance with the same values |
-| [Equals](../../groupdocs.annotation.models.annotationmodels/annotationbase/equals/)(AnnotationBase) | Compares Base Annotations using IEquatable Equals method |
-| override [Equals](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/equals/#equals_2)(object) | Compares search text annotation using standard object Equals method |
-| [Equals](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/equals/#equals_1)(SearchTextFragment) | Compares search text annotation using IEquatable Equals method |
-| override [GetHashCode](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/gethashcode/)() | Returns HashCode of SearchText Annotation |
+| override [Clone](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/clone)() | Returns new instance with the same values |
+| [Equals](../../groupdocs.annotation.models.annotationmodels/annotationbase/equals)(AnnotationBase) | Compares Base Annotations using IEquatable Equals method |
+| override [Equals](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/equals#equals_2)(object) | Compares search text annotation using standard object Equals method |
+| [Equals](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/equals#equals_1)(SearchTextFragment) | Compares search text annotation using IEquatable Equals method |
+| override [GetHashCode](../../groupdocs.annotation.models.annotationmodels/searchtextfragment/gethashcode)() | Returns HashCode of SearchText Annotation |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -58,9 +59,9 @@ public class SearchTextFragment : AnnotationBase, IEquatable<SearchTextFragment>
 
 ### See Also
 
-* class [AnnotationBase](../annotationbase/)
-* interface [ISerachTextFragment](../../groupdocs.annotation.models.annotationmodels.interfaces.annotations/iserachtextfragment/)
-* namespace [GroupDocs.Annotation.Models.AnnotationModels](../../groupdocs.annotation.models.annotationmodels/)
+* class [AnnotationBase](../annotationbase)
+* interface [ISerachTextFragment](../../groupdocs.annotation.models.annotationmodels.interfaces.annotations/iserachtextfragment)
+* namespace [GroupDocs.Annotation.Models.AnnotationModels](../../groupdocs.annotation.models.annotationmodels)
 * assembly [GroupDocs.Annotation](../../)
 
-
+<!-- DO NOT EDIT: generated by xmldocmd for GroupDocs.Annotation.dll -->

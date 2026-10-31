@@ -1,11 +1,12 @@
 ---
-title: Class DistanceAnnotation
+title: DistanceAnnotation
 second_title: GroupDocs.Annotation for .NET API Reference
-description: GroupDocs.Annotation.Models.AnnotationModels.DistanceAnnotation class. Represents distance annotation properties
+description: Represents distance annotation properties
 type: docs
-weight: 230
+weight: 670
 url: /net/groupdocs.annotation.models.annotationmodels/distanceannotation/
 ---
+
 ## DistanceAnnotation class
 
 Represents distance annotation properties
@@ -19,37 +20,37 @@ public class DistanceAnnotation : AnnotationBase, IDistanceAnnotation,
 
 | Name | Description |
 | --- | --- |
-| [DistanceAnnotation](distanceannotation/)() | Initializes new instance of `DistanceAnnotation` class. |
+| [DistanceAnnotation](distanceannotation)() | Initializes new instance of [`DistanceAnnotation`](../distanceannotation) class. |
 
 ## Properties
 
 | Name | Description |
 | --- | --- |
-| [Box](../../groupdocs.annotation.models.annotationmodels/distanceannotation/box/) { get; set; } | Gets or sets distance annotation position |
-| [CreatedOn](../../groupdocs.annotation.models.annotationmodels/annotationbase/createdon/) { get; set; } | Gets or sets annotation creation date |
-| [Id](../../groupdocs.annotation.models.annotationmodels/annotationbase/id/) { get; set; } | Gets or sets annotation unique identifier. This field is auto-incremented. |
-| [Message](../../groupdocs.annotation.models.annotationmodels/annotationbase/message/) { get; set; } | Gets or sets annotation message |
-| [Opacity](../../groupdocs.annotation.models.annotationmodels/distanceannotation/opacity/) { get; set; } | Gets or sets distance annotatio opacity |
-| [PageNumber](../../groupdocs.annotation.models.annotationmodels/annotationbase/pagenumber/) { get; set; } | Page number where the annotation should be located |
-| [PenColor](../../groupdocs.annotation.models.annotationmodels/distanceannotation/pencolor/) { get; set; } | Gets or sets distance annotatio pen color |
-| [PenStyle](../../groupdocs.annotation.models.annotationmodels/distanceannotation/penstyle/) { get; set; } | Gets or sets distance annotatio pen style |
-| [PenWidth](../../groupdocs.annotation.models.annotationmodels/distanceannotation/penwidth/) { get; set; } | Gets or sets distance annotatio pen width |
-| [Replies](../../groupdocs.annotation.models.annotationmodels/annotationbase/replies/) { get; set; } | The list of replies (comments) attached to the annotation |
-| [StateBeforeAnnotation](../../groupdocs.annotation.models.annotationmodels/annotationbase/statebeforeannotation/) { get; set; } | Stores the previous state of the text. State that was before annotating |
-| [Type](../../groupdocs.annotation.models.annotationmodels/annotationbase/type/) { get; set; } | Gets or sets annotation type |
-| [User](../../groupdocs.annotation.models.annotationmodels/annotationbase/user/) { get; set; } | Gets or sets annotation author |
+| [Box](../../groupdocs.annotation.models.annotationmodels/distanceannotation/box) { get; set; } | Gets or sets distance annotation position |
+| [CreatedOn](../../groupdocs.annotation.models.annotationmodels/annotationbase/createdon) { get; set; } | Gets or sets annotation creation date |
+| [Id](../../groupdocs.annotation.models.annotationmodels/annotationbase/id) { get; set; } | Gets or sets annotation unique identifier. This field is auto-incremented. |
+| [Message](../../groupdocs.annotation.models.annotationmodels/annotationbase/message) { get; set; } | Gets or sets annotation message |
+| [Opacity](../../groupdocs.annotation.models.annotationmodels/distanceannotation/opacity) { get; set; } | Gets or sets distance annotatio opacity |
+| [PageNumber](../../groupdocs.annotation.models.annotationmodels/annotationbase/pagenumber) { get; set; } | Page number where the annotation should be located |
+| [PenColor](../../groupdocs.annotation.models.annotationmodels/distanceannotation/pencolor) { get; set; } | Gets or sets distance annotatio pen color |
+| [PenStyle](../../groupdocs.annotation.models.annotationmodels/distanceannotation/penstyle) { get; set; } | Gets or sets distance annotatio pen style |
+| [PenWidth](../../groupdocs.annotation.models.annotationmodels/distanceannotation/penwidth) { get; set; } | Gets or sets distance annotatio pen width |
+| [Replies](../../groupdocs.annotation.models.annotationmodels/annotationbase/replies) { get; set; } | The list of replies (comments) attached to the annotation |
+| [StateBeforeAnnotation](../../groupdocs.annotation.models.annotationmodels/annotationbase/statebeforeannotation) { get; set; } | Stores the previous state of the text. State that was before annotating |
+| [Type](../../groupdocs.annotation.models.annotationmodels/annotationbase/type) { get; set; } | Gets or sets annotation type |
+| [User](../../groupdocs.annotation.models.annotationmodels/annotationbase/user) { get; set; } | Gets or sets annotation author |
 
 ## Methods
 
 | Name | Description |
 | --- | --- |
-| override [Clone](../../groupdocs.annotation.models.annotationmodels/distanceannotation/clone/)() | Returns new instance with the same values |
-| [Equals](../../groupdocs.annotation.models.annotationmodels/annotationbase/equals/)(AnnotationBase) | Compares Base Annotations using IEquatable Equals method |
-| [Equals](../../groupdocs.annotation.models.annotationmodels/distanceannotation/equals/#equals_1)(DistanceAnnotation) | Compares distance annotation using IEquatable Equals method |
-| override [Equals](../../groupdocs.annotation.models.annotationmodels/distanceannotation/equals/#equals_2)(object) | Compares distance annotation using standard object Equals method |
-| override [GetHashCode](../../groupdocs.annotation.models.annotationmodels/distanceannotation/gethashcode/)() | Returns HashCode of the distance annotation |
+| override [Clone](../../groupdocs.annotation.models.annotationmodels/distanceannotation/clone)() | Returns new instance with the same values |
+| [Equals](../../groupdocs.annotation.models.annotationmodels/annotationbase/equals)(AnnotationBase) | Compares Base Annotations using IEquatable Equals method |
+| [Equals](../../groupdocs.annotation.models.annotationmodels/distanceannotation/equals#equals_1)(DistanceAnnotation) | Compares distance annotation using IEquatable Equals method |
+| override [Equals](../../groupdocs.annotation.models.annotationmodels/distanceannotation/equals#equals_2)(object) | Compares distance annotation using standard object Equals method |
+| override [GetHashCode](../../groupdocs.annotation.models.annotationmodels/distanceannotation/gethashcode)() | Returns HashCode of the distance annotation |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -58,9 +59,9 @@ public class DistanceAnnotation : AnnotationBase, IDistanceAnnotation,
 
 ### See Also
 
-* class [AnnotationBase](../annotationbase/)
-* interface [IDistanceAnnotation](../../groupdocs.annotation.models.annotationmodels.interfaces.annotations/idistanceannotation/)
-* namespace [GroupDocs.Annotation.Models.AnnotationModels](../../groupdocs.annotation.models.annotationmodels/)
+* class [AnnotationBase](../annotationbase)
+* interface [IDistanceAnnotation](../../groupdocs.annotation.models.annotationmodels.interfaces.annotations/idistanceannotation)
+* namespace [GroupDocs.Annotation.Models.AnnotationModels](../../groupdocs.annotation.models.annotationmodels)
 * assembly [GroupDocs.Annotation](../../)
 
-
+<!-- DO NOT EDIT: generated by xmldocmd for GroupDocs.Annotation.dll -->

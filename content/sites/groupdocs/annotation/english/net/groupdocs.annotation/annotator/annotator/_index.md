@@ -1,11 +1,12 @@
 ---
-title: Annotator.Annotator
+title: Annotator
 second_title: GroupDocs.Annotation for .NET API Reference
-description: Annotator constructor. Initialise annotator class which accept document path
+description: Initialise annotator class which accept document path
 type: docs
 weight: 10
 url: /net/groupdocs.annotation/annotator/annotator/
 ---
+
 ## Annotator(string) {#constructor_4}
 
 Initialise annotator class which accept document path
@@ -18,7 +19,7 @@ public Annotator(string filePath)
 | --- | --- | --- |
 | filePath | String | File path |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -27,8 +28,8 @@ public Annotator(string filePath)
 
 ### See Also
 
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
 ---
@@ -46,7 +47,7 @@ public Annotator(string filePath, LoadOptions loadOptions)
 | filePath | String | File path |
 | loadOptions | LoadOptions | Load options |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -57,9 +58,9 @@ public Annotator(string filePath, LoadOptions loadOptions)
 
 ### See Also
 
-* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions/)
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
 ---
@@ -77,7 +78,7 @@ public Annotator(string filePath, AnnotatorSettings settings)
 | filePath | String | File path |
 | settings | AnnotatorSettings | Annotator settings |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -86,9 +87,9 @@ public Annotator(string filePath, AnnotatorSettings settings)
 
 ### See Also
 
-* class [AnnotatorSettings](../../annotatorsettings/)
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [AnnotatorSettings](../../annotatorsettings)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
 ---
@@ -107,7 +108,7 @@ public Annotator(string filePath, LoadOptions loadOptions, AnnotatorSettings set
 | loadOptions | LoadOptions | Load options |
 | settings | AnnotatorSettings | Annotator settings |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -118,10 +119,10 @@ public Annotator(string filePath, LoadOptions loadOptions, AnnotatorSettings set
 
 ### See Also
 
-* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions/)
-* class [AnnotatorSettings](../../annotatorsettings/)
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions)
+* class [AnnotatorSettings](../../annotatorsettings)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
 ---
@@ -138,7 +139,7 @@ public Annotator(Stream document)
 | --- | --- | --- |
 | document | Stream | Document stream |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -147,8 +148,8 @@ public Annotator(Stream document)
 
 ### See Also
 
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
 ---
@@ -166,7 +167,7 @@ public Annotator(Stream document, LoadOptions loadOptions)
 | document | Stream | Document stream |
 | loadOptions | LoadOptions | Load options |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -177,9 +178,9 @@ public Annotator(Stream document, LoadOptions loadOptions)
 
 ### See Also
 
-* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions/)
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
 ---
@@ -197,7 +198,7 @@ public Annotator(Stream document, AnnotatorSettings settings)
 | document | Stream | Document stream |
 | settings | AnnotatorSettings | Annotator settings |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -206,9 +207,9 @@ public Annotator(Stream document, AnnotatorSettings settings)
 
 ### See Also
 
-* class [AnnotatorSettings](../../annotatorsettings/)
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [AnnotatorSettings](../../annotatorsettings)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
 ---
@@ -227,7 +228,7 @@ public Annotator(Stream document, LoadOptions loadOptions, AnnotatorSettings set
 | loadOptions | LoadOptions | Load options |
 | settings | AnnotatorSettings | Annotator settings |
 
-## Remarks
+### Remarks
 
 **Learn more**
 
@@ -238,10 +239,10 @@ public Annotator(Stream document, LoadOptions loadOptions, AnnotatorSettings set
 
 ### See Also
 
-* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions/)
-* class [AnnotatorSettings](../../annotatorsettings/)
-* class [Annotator](../)
-* namespace [GroupDocs.Annotation](../../annotator/)
+* class [LoadOptions](../../../groupdocs.annotation.options/loadoptions)
+* class [AnnotatorSettings](../../annotatorsettings)
+* class [Annotator](../../annotator)
+* namespace [GroupDocs.Annotation](../../../groupdocs.annotation)
 * assembly [GroupDocs.Annotation](../../../)
 
-
+<!-- DO NOT EDIT: generated by xmldocmd for GroupDocs.Annotation.dll -->
