@@ -6,7 +6,7 @@ url: /net/
 description: GroupDocs.Annotation for .NET API References contain examples, code snippets, and API documentation. It provides namespaces, classes, interfaces, and other API details.
 is_root: true
 version: "26.10"
-staged_at: "2026-10-31T11:58:12Z"
+staged_at: "2026-11-01T00:13:46Z"
 ---
 
 ## Namespaces
