@@ -7,6 +7,7 @@ weight: 17
 url: /java/com.groupdocs.comparison.license/
 ---
 
+
 Provides classes for working with GroupDocs.Comparison license.
 
 

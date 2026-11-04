@@ -6,6 +6,7 @@ type: docs
 weight: 10
 url: /java/com.groupdocs.comparison.logging/comparisonlogger/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

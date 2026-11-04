@@ -6,6 +6,7 @@ type: docs
 weight: 12
 url: /java/com.groupdocs.comparison.options.enums/metadatatype/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

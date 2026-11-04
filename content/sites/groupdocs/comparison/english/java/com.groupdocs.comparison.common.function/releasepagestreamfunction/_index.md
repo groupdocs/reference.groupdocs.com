@@ -5,7 +5,8 @@ description: Functional interface that is used to close output stream that was u
 type: docs
 weight: 11
 url: /java/com.groupdocs.comparison.common.function/releasepagestreamfunction/
----```
+---
+```
 public interface ReleasePageStreamFunction
 ```
 

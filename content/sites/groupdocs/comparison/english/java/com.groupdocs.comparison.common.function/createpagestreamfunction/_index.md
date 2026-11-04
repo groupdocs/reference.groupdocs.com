@@ -5,7 +5,8 @@ description: Functional interface that is used to create output stream used by C
 type: docs
 weight: 10
 url: /java/com.groupdocs.comparison.common.function/createpagestreamfunction/
----```
+---
+```
 public interface CreatePageStreamFunction
 ```
 

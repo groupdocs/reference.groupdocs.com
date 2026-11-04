@@ -7,6 +7,7 @@ weight: 24
 url: /java/com.groupdocs.comparison.options.style/
 ---
 
+
 Provides classes and options for styling and configuring the visual appearance of the document comparison output in GroupDocs.Comparison.
 
 

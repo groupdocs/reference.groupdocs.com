@@ -6,6 +6,7 @@ type: docs
 weight: 13
 url: /java/com.groupdocs.comparison.words.revision/revisionaction/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

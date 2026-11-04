@@ -7,6 +7,7 @@ weight: 14
 url: /java/com.groupdocs.comparison.common.exceptions/
 ---
 
+
 Provides exceptions which can be thrown during comparison process in GroupDocs.Comparison.
 
 The main exception classes in this package are:

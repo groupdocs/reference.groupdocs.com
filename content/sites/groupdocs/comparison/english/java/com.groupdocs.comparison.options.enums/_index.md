@@ -7,6 +7,7 @@ weight: 21
 url: /java/com.groupdocs.comparison.options.enums/
 ---
 
+
 Provides enumerations for various options and settings in GroupDocs.Comparison.
 
 

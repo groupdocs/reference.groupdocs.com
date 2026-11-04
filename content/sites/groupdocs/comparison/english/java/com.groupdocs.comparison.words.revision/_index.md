@@ -7,6 +7,7 @@ weight: 27
 url: /java/com.groupdocs.comparison.words.revision/
 ---
 
+
 Provides classes and interfaces for representing revisions and tracked changes in Word documents during the comparison process in GroupDocs.Comparison for Java.
 
 

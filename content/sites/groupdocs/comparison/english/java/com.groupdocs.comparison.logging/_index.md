@@ -7,6 +7,7 @@ weight: 19
 url: /java/com.groupdocs.comparison.logging/
 ---
 
+
 Provides classes and interfaces for logging in GroupDocs.Comparison. The logging functionality allows you to record and monitor various events and messages during the execution of the comparison process.
 
 The main classes and interfaces in this package are:

@@ -6,6 +6,7 @@ type: docs
 weight: 11
 url: /java/com.groupdocs.comparison.options/compareoptions/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```
@@ -53,6 +54,10 @@ Example usage:
 
 | Method | Description |
 | --- | --- |
+| [getOcr()](#getOcr--) | Gets settings for comparing images by their recognized text.
+ |
+| [setOcr(OcrOptions value)](#setOcr-com.groupdocs.comparison.options.OcrOptions-) | Sets settings for comparing images by their recognized text.
+ |
 | [getIgnoreChangeSettings()](#getIgnoreChangeSettings--) | Get settings to ignore changes based on similarity.
  |
 | [setIgnoreChangeSettings(IgnoreChangeSensitivitySettings ignoreChangeSettings)](#setIgnoreChangeSettings-com.groupdocs.comparison.options.IgnoreChangeSensitivitySettings-) | Sets settings to ignore changes based on similarity.
@@ -196,6 +201,33 @@ Initializes a new instance of the CompareOptions class with settings for differe
 public IgnoreChangeSensitivitySettings ignoreChangeSettings
 ```
 
+
+### getOcr() {#getOcr--}
+```
+public OcrOptions getOcr()
+```
+
+
+Gets settings for comparing images by their recognized text.
+
+
+**Returns:**
+com.groupdocs.comparison.options.OcrOptions - Recognition settings, or  null .
+
+### setOcr(OcrOptions value) {#setOcr-com.groupdocs.comparison.options.OcrOptions-}
+```
+public void setOcr(OcrOptions value)
+```
+
+
+Sets settings for comparing images by their recognized text.
+
+
+**Parameters:**
+| Parameter | Type | Description |
+| --- | --- | --- |
+| value | com.groupdocs.comparison.options.OcrOptions | Recognition settings, or  null  to compare images by their pixels.
+ |
 
 ### getIgnoreChangeSettings() {#getIgnoreChangeSettings--}
 ```

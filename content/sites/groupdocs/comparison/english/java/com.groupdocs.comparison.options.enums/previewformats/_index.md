@@ -6,6 +6,7 @@ type: docs
 weight: 15
 url: /java/com.groupdocs.comparison.options.enums/previewformats/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

@@ -7,6 +7,7 @@ weight: 15
 url: /java/com.groupdocs.comparison.common.function/
 ---
 
+
 Provides functional interfaces that allow accessing pages data during the document comparison process.
 
 The functional interfaces in this package are used to access data of pages when performing document comparison using GroupDocs.Comparison.

@@ -7,6 +7,7 @@ weight: 22
 url: /java/com.groupdocs.comparison.options.load/
 ---
 
+
 Provides classes and options for configuring loading documents in GroupDocs.Comparison.
 
 

@@ -7,6 +7,7 @@ weight: 20
 url: /java/com.groupdocs.comparison.options/
 ---
 
+
 Provides classes and interfaces for configuring various options and settings related to document comparison. These options include comparison settings, load options, save options, style settings, and more. Use these classes to customize the behavior and appearance of the document comparison process.
 
 Key classes in this package:

@@ -6,6 +6,7 @@ type: docs
 weight: 10
 url: /java/com.groupdocs.comparison.localization/supportedlocales/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

@@ -7,6 +7,7 @@ weight: 12
 url: /java/com.groupdocs.comparison.common/
 ---
 
+
 Provides utility classes with methods that can be useful when using the GroupDocs.Comparison API.
 
 

@@ -7,6 +7,7 @@ weight: 18
 url: /java/com.groupdocs.comparison.localization/
 ---
 
+
 Provides classes and interfaces for localization in GroupDocs.Comparison. The localization functionality allows you to customize the text and messages displayed in the comparison process based on different languages or regional preferences.
 
 The main classes and interfaces in this package are:

@@ -6,6 +6,7 @@ type: docs
 weight: 11
 url: /java/com.groupdocs.comparison.words.revision/revisionhandler/
 ---
+
 **Inheritance:**
 java.lang.Object
 

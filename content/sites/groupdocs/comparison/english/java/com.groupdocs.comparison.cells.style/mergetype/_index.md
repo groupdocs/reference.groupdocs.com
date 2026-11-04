@@ -6,6 +6,7 @@ type: docs
 weight: 10
 url: /java/com.groupdocs.comparison.cells.style/mergetype/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

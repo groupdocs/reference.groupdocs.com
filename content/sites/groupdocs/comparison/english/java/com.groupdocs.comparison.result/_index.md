@@ -7,6 +7,7 @@ weight: 25
 url: /java/com.groupdocs.comparison.result/
 ---
 
+
 Provides classes and interfaces for working with the result of document comparison. The comparison result includes information about changes, revisions, differences, and other comparison-related data.
 
 Key classes in this package:

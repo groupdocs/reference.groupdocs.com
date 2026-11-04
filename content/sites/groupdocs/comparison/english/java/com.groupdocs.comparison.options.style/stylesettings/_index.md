@@ -6,6 +6,7 @@ type: docs
 weight: 12
 url: /java/com.groupdocs.comparison.options.style/stylesettings/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

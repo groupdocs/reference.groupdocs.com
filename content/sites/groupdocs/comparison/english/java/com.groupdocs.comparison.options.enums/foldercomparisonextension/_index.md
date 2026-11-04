@@ -6,6 +6,7 @@ type: docs
 weight: 11
 url: /java/com.groupdocs.comparison.options.enums/foldercomparisonextension/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

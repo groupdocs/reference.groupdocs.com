@@ -7,6 +7,7 @@ weight: 16
 url: /java/com.groupdocs.comparison.interfaces/
 ---
 
+
 Provides interfaces that define contracts for various components and functionalities in GroupDocs.Comparison.
 
 The main interfaces in this package are:

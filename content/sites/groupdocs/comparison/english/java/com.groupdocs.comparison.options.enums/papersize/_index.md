@@ -6,6 +6,7 @@ type: docs
 weight: 13
 url: /java/com.groupdocs.comparison.options.enums/papersize/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

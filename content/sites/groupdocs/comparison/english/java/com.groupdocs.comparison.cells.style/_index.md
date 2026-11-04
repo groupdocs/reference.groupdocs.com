@@ -7,6 +7,7 @@ weight: 11
 url: /java/com.groupdocs.comparison.cells.style/
 ---
 
+
 Provides classes for working with component styles in Cells format files.
 
 
