@@ -212,6 +212,15 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **Seven GroupDocs.Search for Python via .NET reference pages redirected to their parent**, the `Index` class
+  page among them: `/search/python-net/groupdocs.search/index/` answered 301 to `/search/python-net/groupdocs.search`.
+  The legacy rules that collapse a trailing `/index/`, `/events/` or `/fields/` segment matched them, as they
+  match the .NET twins already in the ignore lists. Both ignore lists now carry the seven pages, in both forms:
+  `index/`, `index/events/`, `indexrepository/events/`, `common/documentimage/fields/`,
+  `common/extractediteminfo/fields/`, `common/imageframe/index/` and `scaling/searchnetworknode/events/`. Matching
+  every rule against the 1,284 Search python-net page URLs now finds none redirected. Other products' python-net
+  pages collide too and are not listed yet: Metadata `pdfinspectionpackage/fields/`,
+  `wordprocessinginspectionpackage/fields/` and `gltfpropertytable/properties/`, Viewer `filetype/properties/`.
 - **GroupDocs.Signature family page: the Node.js tab called `signature.close()`**, which the Java/Node.js
   `Signature` class does not have; it now calls `dispose()`, and the Java tab does too. The Python tab is
   now the products page hero snippet, re-verified against `groupdocs-signature-net` 26.10.0, and the .NET
