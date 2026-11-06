@@ -17,7 +17,7 @@
     }
   },
   "assembly": {
-    "latest": "26.10.1",
+    "latest": "26.11.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/assembly/java/release-notes/",
@@ -33,7 +33,7 @@
       },
       "python": {
         "url": "https://releases.groupdocs.com/assembly/python-net/release-notes/",
-        "version": "25.5.1"
+        "version": "26.11.0"
       }
     }
   },
