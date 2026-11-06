@@ -1,23 +1,18 @@
-# GroupDocs.Assembly for Python via .NET — getting started (verification harness).
+# GroupDocs.Assembly for Python via .NET - getting started (verification harness).
 # Source: products/content/assembly/python-net/_index.en.md
-import groupdocs.assembly as ga
+from groupdocs.assembly import DataSourceInfo, DocumentAssembler
 
-def run():
-    # Path to the main template
-    template = "chart_template.docx"
+# Chart data: one dict per manager
+managers = [
+    {"Manager": "Mei", "Total_Contract_Price": 230000},
+    {"Manager": "Daniel", "Total_Contract_Price": 120000},
+    {"Manager": "Sofia", "Total_Contract_Price": 80000},
+]
 
-    # Retrieve managers' productivity data from the source
-    data_table = ga.data.DocumentTable("Managers.json", 1)
+# Set chart colors using another DataSourceInfo
+color = DataSourceInfo("Coral", "color")
 
-    # Create an instance of DataSourceInfo with the data
-    data = ga.DataSourceInfo(data_table, "managers")
-
-    # Set chart colors using another DataSourceInfo
-    design = ga.DataSourceInfo("red", "color")
-
-    # Fill the template with data and save it to the output
-    asm = ga.DocumentAssembler()
-    asm.assemble_document(template, "result.docx",
-        data, design)
-run()
-
+# Fill the template with data and save it to the output
+DocumentAssembler().assemble_document(
+    "dynamic-chart-series-color.docx", "chart-report.docx",
+    [DataSourceInfo(managers, "managers"), color])

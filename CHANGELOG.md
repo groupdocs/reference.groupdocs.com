@@ -212,6 +212,12 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **The GroupDocs.Assembly Python getting-started tab runs on 26.11.0.** It held the pre-26.11 code:
+  `import groupdocs.assembly as ga` and a `DocumentTable` loaded from `Managers.json`, which is not a
+  document. The tab is now the products.groupdocs.com hero, character for character: three dicts fill the
+  chart of `dynamic-chart-series-color.docx`. `examples/getting-started/assembly/python/example.py` is its
+  harness, and it runs on `groupdocs-assembly-net` 26.11.0: the chart gets the three managers, coloured
+  Coral.
 - **Seven GroupDocs.Search for Python via .NET reference pages redirected to their parent**, the `Index` class
   page among them: `/search/python-net/groupdocs.search/index/` answered 301 to `/search/python-net/groupdocs.search`.
   The legacy rules that collapse a trailing `/index/`, `/events/` or `/fields/` segment matched them, as they
