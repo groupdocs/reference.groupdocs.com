@@ -253,7 +253,7 @@
     }
   },
   "total": {
-    "latest": "26.10.0",
+    "latest": "26.11.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/total/java/release-notes/",
@@ -269,7 +269,7 @@
       },
       "python": {
         "url": "https://releases.groupdocs.com/total/python-net/release-notes/",
-        "version": "26.3.0"
+        "version": "26.11.0"
       }
     }
   },
