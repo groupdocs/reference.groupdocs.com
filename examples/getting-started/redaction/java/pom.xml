@@ -12,6 +12,6 @@
     <repository><id>repository.groupdocs.com</id><url>https://repository.groupdocs.com/repo/</url></repository>
   </repositories>
   <dependencies>
-    <dependency><groupId>com.groupdocs</groupId><artifactId>groupdocs-redaction</artifactId><version>25.12</version></dependency>
+    <dependency><groupId>com.groupdocs</groupId><artifactId>groupdocs-redaction</artifactId><version>26.10</version></dependency>
   </dependencies>
 </project>

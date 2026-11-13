@@ -866,7 +866,7 @@ redaction:
 
       # Adjust the redaction parameters
       repl_opt = ReplacementOptions("[redacted]")
-      red = ExactPhraseRedaction("Data", repl_opt)
+      red = ExactPhraseRedaction("Emily Johnson", repl_opt)
 
       # Load your file into the Redactor instance
       with Redactor("sample.pdf") as redactor:

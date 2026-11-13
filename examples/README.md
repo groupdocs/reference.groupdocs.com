@@ -58,5 +58,7 @@ proven conversion/viewer node-java pattern (`groupdocs.<ClassName>`, camelCase m
 Java harness compiles.
 
 The other products' .NET/Java/Python are verified the same way. No Node.js tab for: annotation,
-assembly, classification, markdown, parser, redaction (no npm package); and comparison, search,
+assembly, classification, markdown, parser (no npm package); and comparison, redaction, search,
 watermark (npm package exists, but the site has no Node.js API-reference content for them yet).
+Redaction's were re-verified 2026-11-13: .NET 26.10.0, Java 26.10 and `groupdocs-redaction-net` 26.11.0, whose
+snippet redacts "Emily Johnson" in the Docs' `sample.pdf`.

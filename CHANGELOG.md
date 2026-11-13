@@ -9,6 +9,13 @@ tags), so changes accumulate under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Changed
+- **GroupDocs.Redaction's getting-started tabs follow its 26.11 release.** The Python tab redacts "Emily Johnson", the
+  customer of the Docs' new sample set, instead of "Data", and stays the products.groupdocs.com hero character for
+  character. The harness `examples/getting-started/redaction/` pins .NET 26.10.0 (it floated on `*`) and Java 26.10
+  (was 25.12): `dotnet build` and `mvn compile` pass. The README's footnote moves Redaction from "no npm package" to
+  "no Node.js API reference yet": npm has `@groupdocs/groupdocs.redaction` 26.10.0.
+
 ### Added
 - **GroupDocs.Search for Python via .NET joins the family page and the getting-started tabs.** `data/products.toml`
   lists `python-net` among Search's platforms. `data/getting_started.yaml` gets a Python tab, which is the
