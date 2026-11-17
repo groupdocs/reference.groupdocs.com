@@ -25,7 +25,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/assembly/net/release-notes/",
-        "version": "26.7.0"
+        "version": "26.11.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/assembly/nodejs-java/release-notes/",
@@ -72,7 +72,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/conversion/java/release-notes/",
-        "version": "26.10.0"
+        "version": "26.9.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/conversion/net/release-notes/",
@@ -190,11 +190,11 @@
     }
   },
   "redaction": {
-    "latest": "26.10.0",
+    "latest": "26.11.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/redaction/java/release-notes/",
-        "version": "26.7.0"
+        "version": "26.11.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/redaction/net/release-notes/",
@@ -211,7 +211,7 @@
     }
   },
   "search": {
-    "latest": "26.10.0",
+    "latest": "26.11.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/search/java/release-notes/",
@@ -219,7 +219,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/search/net/release-notes/",
-        "version": "26.10.0"
+        "version": "26.11.0"
       },
       "node": {
         "url": "https://releases.groupdocs.com/search/nodejs-java/release-notes/",
