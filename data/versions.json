@@ -21,7 +21,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/assembly/java/release-notes/",
-        "version": "26.10.1"
+        "version": "26.8.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/assembly/net/release-notes/",
@@ -51,7 +51,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/comparison/java/release-notes/",
-        "version": "26.11.0"
+        "version": "26.8.2"
       },
       "net": {
         "url": "https://releases.groupdocs.com/comparison/net/release-notes/",
@@ -152,7 +152,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/metadata/java/release-notes/",
-        "version": "26.7.0"
+        "version": "26.1.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/metadata/net/release-notes/",
@@ -173,7 +173,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/parser/java/release-notes/",
-        "version": "26.4.0"
+        "version": "26.5.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/parser/net/release-notes/",
@@ -215,7 +215,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/search/java/release-notes/",
-        "version": "26.9.1"
+        "version": "26.6.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/search/net/release-notes/",
@@ -236,7 +236,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/signature/java/release-notes/",
-        "version": "26.10.0"
+        "version": "26.5.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/signature/net/release-notes/",
@@ -299,7 +299,7 @@
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/watermark/java/release-notes/",
-        "version": "26.9.0"
+        "version": "26.4.0"
       },
       "net": {
         "url": "https://releases.groupdocs.com/watermark/net/release-notes/",
