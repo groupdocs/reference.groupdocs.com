@@ -5,7 +5,8 @@ description:
 type: docs
 weight: 39
 url: /java/com.groupdocs.assembly/idocumenttableloadhandler/
----```
+---
+```
 public interface IDocumentTableLoadHandler
 ```
 ## Methods

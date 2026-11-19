@@ -6,6 +6,7 @@ type: docs
 weight: 27
 url: /java/com.groupdocs.assembly/fontsettings/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

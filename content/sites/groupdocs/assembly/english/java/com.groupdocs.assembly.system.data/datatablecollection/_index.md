@@ -6,6 +6,7 @@ type: docs
 weight: 26
 url: /java/com.groupdocs.assembly.system.data/datatablecollection/
 ---
+
 **Inheritance:**
 java.lang.Object
 

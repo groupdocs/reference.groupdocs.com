@@ -6,6 +6,7 @@ type: docs
 weight: 12
 url: /java/com.groupdocs.assembly.system.data/constraintexception/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Throwable, java.lang.Exception, java.lang.RuntimeException, java.lang.IllegalStateException
 ```

@@ -6,6 +6,7 @@ type: docs
 weight: 29
 url: /java/com.groupdocs.assembly.system.data/foreignkeyconstraint/
 ---
+
 **Inheritance:**
 java.lang.Object, [com.groupdocs.assembly.system.data.Constraint](../../com.groupdocs.assembly.system.data/constraint)
 ```

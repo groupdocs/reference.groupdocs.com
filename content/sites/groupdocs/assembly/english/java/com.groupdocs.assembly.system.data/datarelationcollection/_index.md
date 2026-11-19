@@ -6,6 +6,7 @@ type: docs
 weight: 19
 url: /java/com.groupdocs.assembly.system.data/datarelationcollection/
 ---
+
 **Inheritance:**
 java.lang.Object
 

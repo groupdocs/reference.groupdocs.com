@@ -6,6 +6,7 @@ type: docs
 weight: 32
 url: /java/com.groupdocs.assembly.system.data/uniqueconstraint/
 ---
+
 **Inheritance:**
 java.lang.Object, [com.groupdocs.assembly.system.data.Constraint](../../com.groupdocs.assembly.system.data/constraint)
 ```

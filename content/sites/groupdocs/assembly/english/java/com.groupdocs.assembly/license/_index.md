@@ -6,6 +6,7 @@ type: docs
 weight: 32
 url: /java/com.groupdocs.assembly/license/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

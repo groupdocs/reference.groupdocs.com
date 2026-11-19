@@ -6,6 +6,7 @@ type: docs
 weight: 36
 url: /java/com.groupdocs.assembly/xmldataloadoptions/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

@@ -6,6 +6,7 @@ type: docs
 weight: 13
 url: /java/com.groupdocs.assembly.system.data/dbnull/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

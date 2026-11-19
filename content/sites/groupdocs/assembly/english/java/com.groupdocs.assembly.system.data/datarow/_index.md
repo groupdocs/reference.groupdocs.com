@@ -6,6 +6,7 @@ type: docs
 weight: 20
 url: /java/com.groupdocs.assembly.system.data/datarow/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

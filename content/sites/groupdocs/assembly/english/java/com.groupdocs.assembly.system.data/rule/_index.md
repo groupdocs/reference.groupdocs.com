@@ -6,6 +6,7 @@ type: docs
 weight: 36
 url: /java/com.groupdocs.assembly.system.data/rule/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

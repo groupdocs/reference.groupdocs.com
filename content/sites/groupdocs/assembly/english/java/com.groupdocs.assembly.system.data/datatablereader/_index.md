@@ -6,6 +6,7 @@ type: docs
 weight: 27
 url: /java/com.groupdocs.assembly.system.data/datatablereader/
 ---
+
 **Inheritance:**
 java.lang.Object, [com.groupdocs.assembly.system.data.common.DbDataReader](../../com.groupdocs.assembly.system.data.common/dbdatareader)
 ```

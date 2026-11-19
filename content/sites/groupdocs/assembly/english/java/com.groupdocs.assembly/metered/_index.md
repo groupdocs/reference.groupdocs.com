@@ -6,6 +6,7 @@ type: docs
 weight: 34
 url: /java/com.groupdocs.assembly/metered/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

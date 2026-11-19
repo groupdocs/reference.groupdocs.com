@@ -6,6 +6,7 @@ type: docs
 weight: 10
 url: /java/com.groupdocs.assembly.system.drawing/graphicsunit/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

@@ -6,6 +6,7 @@ type: docs
 weight: 34
 url: /java/com.groupdocs.assembly.system.data/idatareader/
 ---
+
 **All Implemented Interfaces:**
 [com.groupdocs.assembly.system.data.IDataRecord](../../com.groupdocs.assembly.system.data/idatarecord)
 ```

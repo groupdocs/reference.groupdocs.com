@@ -6,6 +6,7 @@ type: docs
 weight: 37
 url: /java/com.groupdocs.assembly.system.data/xmlreadmode/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

@@ -6,6 +6,7 @@ type: docs
 weight: 10
 url: /java/com.groupdocs.assembly.system.data/constraint/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

@@ -6,6 +6,7 @@ type: docs
 weight: 30
 url: /java/com.groupdocs.assembly/jsonsimplevalueparsemode/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

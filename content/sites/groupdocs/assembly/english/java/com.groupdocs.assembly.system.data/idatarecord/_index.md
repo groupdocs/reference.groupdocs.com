@@ -5,7 +5,8 @@ description:
 type: docs
 weight: 35
 url: /java/com.groupdocs.assembly.system.data/idatarecord/
----```
+---
+```
 public interface IDataRecord
 ```
 ## Methods

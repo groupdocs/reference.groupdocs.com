@@ -6,6 +6,7 @@ type: docs
 weight: 15
 url: /java/com.groupdocs.assembly/documentassemblyoptions/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

@@ -6,6 +6,7 @@ type: docs
 weight: 40
 url: /java/com.groupdocs.assembly/searchoption/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Enum
 ```

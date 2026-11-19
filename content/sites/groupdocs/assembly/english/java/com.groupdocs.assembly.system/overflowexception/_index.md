@@ -6,6 +6,7 @@ type: docs
 weight: 10
 url: /java/com.groupdocs.assembly.system/overflowexception/
 ---
+
 **Inheritance:**
 java.lang.Object, java.lang.Throwable, java.lang.Exception, java.lang.RuntimeException, java.lang.ArithmeticException
 ```

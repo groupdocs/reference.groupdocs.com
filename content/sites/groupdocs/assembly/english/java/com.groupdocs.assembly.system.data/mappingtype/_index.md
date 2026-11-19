@@ -6,6 +6,7 @@ type: docs
 weight: 31
 url: /java/com.groupdocs.assembly.system.data/mappingtype/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

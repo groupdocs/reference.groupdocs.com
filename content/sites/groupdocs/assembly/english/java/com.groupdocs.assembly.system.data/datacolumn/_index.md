@@ -6,6 +6,7 @@ type: docs
 weight: 14
 url: /java/com.groupdocs.assembly.system.data/datacolumn/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```

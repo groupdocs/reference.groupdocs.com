@@ -6,6 +6,7 @@ type: docs
 weight: 21
 url: /java/com.groupdocs.assembly/documenttableoptions/
 ---
+
 **Inheritance:**
 java.lang.Object
 

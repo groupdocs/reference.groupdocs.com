@@ -6,6 +6,7 @@ type: docs
 weight: 37
 url: /java/com.groupdocs.assembly/xmldatasource/
 ---
+
 **Inheritance:**
 java.lang.Object
 

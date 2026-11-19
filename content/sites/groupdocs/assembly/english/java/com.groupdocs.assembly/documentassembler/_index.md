@@ -6,6 +6,7 @@ type: docs
 weight: 14
 url: /java/com.groupdocs.assembly/documentassembler/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```
@@ -24,6 +25,8 @@ public class DocumentAssembler
 | [assembleDocument(String sourcePath, String targetPath, LoadSaveOptions loadSaveOptions, DataSourceInfo[] dataSourceInfos)](#assembleDocument-java.lang.String-java.lang.String-com.groupdocs.assembly.LoadSaveOptions-com.groupdocs.assembly.DataSourceInfo...-) |  |
 | [assembleDocument(InputStream sourceStream, OutputStream targetStream, DataSourceInfo[] dataSourceInfos)](#assembleDocument-java.io.InputStream-java.io.OutputStream-com.groupdocs.assembly.DataSourceInfo...-) |  |
 | [assembleDocument(InputStream sourceStream, OutputStream targetStream, LoadSaveOptions loadSaveOptions, DataSourceInfo[] dataSourceInfos)](#assembleDocument-java.io.InputStream-java.io.OutputStream-com.groupdocs.assembly.LoadSaveOptions-com.groupdocs.assembly.DataSourceInfo...-) |  |
+| [generatePreview(String documentPath, PreviewOptions previewOptions)](#generatePreview-java.lang.String-com.groupdocs.assembly.PreviewOptions-) |  |
+| [generatePreview(InputStream documentStream, PreviewOptions previewOptions)](#generatePreview-java.io.InputStream-com.groupdocs.assembly.PreviewOptions-) |  |
 | [getOptions()](#getOptions--) |  |
 | [setOptions(int value)](#setOptions-int-) |  |
 | [getBarcodeSettings()](#getBarcodeSettings--) |  |
@@ -106,6 +109,34 @@ public boolean assembleDocument(InputStream sourceStream, OutputStream targetStr
 
 **Returns:**
 boolean
+### generatePreview(String documentPath, PreviewOptions previewOptions) {#generatePreview-java.lang.String-com.groupdocs.assembly.PreviewOptions-}
+```
+public void generatePreview(String documentPath, PreviewOptions previewOptions)
+```
+
+
+
+
+**Parameters:**
+| Parameter | Type | Description |
+| --- | --- | --- |
+| documentPath | java.lang.String |  |
+| previewOptions | [PreviewOptions](../../com.groupdocs.assembly/previewoptions) |  |
+
+### generatePreview(InputStream documentStream, PreviewOptions previewOptions) {#generatePreview-java.io.InputStream-com.groupdocs.assembly.PreviewOptions-}
+```
+public void generatePreview(InputStream documentStream, PreviewOptions previewOptions)
+```
+
+
+
+
+**Parameters:**
+| Parameter | Type | Description |
+| --- | --- | --- |
+| documentStream | java.io.InputStream |  |
+| previewOptions | [PreviewOptions](../../com.groupdocs.assembly/previewoptions) |  |
+
 ### getOptions() {#getOptions--}
 ```
 public int getOptions()

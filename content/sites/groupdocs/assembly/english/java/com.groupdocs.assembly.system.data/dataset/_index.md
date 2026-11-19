@@ -6,6 +6,7 @@ type: docs
 weight: 24
 url: /java/com.groupdocs.assembly.system.data/dataset/
 ---
+
 **Inheritance:**
 java.lang.Object
 ```
