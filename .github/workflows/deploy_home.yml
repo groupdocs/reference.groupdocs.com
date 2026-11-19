@@ -35,7 +35,7 @@ jobs:
       product_family: home
       environment: staging
       # Home publishes the bucket-root files; invalidate the Markdown/llms/404 outputs
-      # too, not just the HTML (otherwise CloudFront serves a stale /index.md,
+      # too, not just the HTML (otherwise the CDN serves a stale /index.md,
       # /llms.txt, /404.html ...).
       invalidate_paths: '/index.html /index.md /llms.txt /llms-full.txt /404.html'
       max_deletes: '0'
@@ -52,7 +52,7 @@ jobs:
       product_family: home
       environment: production
       # Home publishes the bucket-root files; invalidate the Markdown/llms/404 outputs
-      # too, not just the HTML (otherwise CloudFront serves a stale /index.md,
+      # too, not just the HTML (otherwise the CDN serves a stale /index.md,
       # /llms.txt, /404.html ...).
       invalidate_paths: '/index.html /index.md /llms.txt /llms-full.txt /404.html'
       max_deletes: '0'

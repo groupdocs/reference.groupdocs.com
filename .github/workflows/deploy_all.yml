@@ -42,8 +42,8 @@ jobs:
     with:
       product_family: home
       environment: ${{ matrix.environment }}
-      # Home publishes the bucket-root files; invalidate the Markdown/llms/404 outputs too,
-      # not just the HTML (otherwise CloudFront serves a stale /index.md, /llms.txt, /404.html …).
+      # Home publishes the bucket-root files; purge the Markdown/llms/404 outputs too,
+      # not just the HTML (otherwise the CDN serves a stale /index.md, /llms.txt, /404.html …).
       invalidate_paths: '/index.html /index.md /llms.txt /llms-full.txt /404.html'
       max_deletes: '0'
     secrets: inherit
@@ -97,13 +97,21 @@ jobs:
         run: python3 scripts/build_search_index.py --source content/sites/groupdocs --out search-index.json
 
       - name: Deploy search-index.json to bucket root
+        # Production = Ceph S3 (behind BunnyCDN); staging = AWS S3 (behind CloudFront).
         run: |
-          BUCKET=${{ env.ENVIRONMENT == 'production' && 'reference.groupdocs.com' || 'reference2.groupdocs.com' }}
-          aws s3 cp search-index.json "s3://$BUCKET/search-index.json" \
-            --content-type "application/json; charset=utf-8" --region us-west-2
+          if [ "$ENVIRONMENT" = "production" ]; then
+            export AWS_ENDPOINT_URL="https://s3-admin.dynabic.com"
+            aws s3 cp search-index.json "s3://reference-groupdocs-com/search-index.json" \
+              --content-type "application/json; charset=utf-8" \
+              --endpoint-url https://s3.dynabic.com --acl public-read
+          else
+            aws s3 cp search-index.json "s3://reference2.groupdocs.com/search-index.json" \
+              --content-type "application/json; charset=utf-8" --region us-west-2
+          fi
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+          AWS_ACCESS_KEY_ID: ${{ env.ENVIRONMENT == 'production' && secrets.CEPH_S3_LIVE_ACCESS_KEY || secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ env.ENVIRONMENT == 'production' && secrets.CEPH_S3_LIVE_SECRET_KEY || secrets.SECRET_ACCESS }}
+          AWS_DEFAULT_REGION: us-east-1
 
       - name: Build llms-full.txt from source
         run: |
@@ -112,18 +120,36 @@ jobs:
 
       - name: Deploy llms-full.txt to bucket root
         run: |
-          BUCKET=${{ env.ENVIRONMENT == 'production' && 'reference.groupdocs.com' || 'reference2.groupdocs.com' }}
-          aws s3 cp llms-full.txt "s3://$BUCKET/llms-full.txt" \
-            --content-type "text/plain; charset=utf-8" --region us-west-2
+          if [ "$ENVIRONMENT" = "production" ]; then
+            export AWS_ENDPOINT_URL="https://s3-admin.dynabic.com"
+            aws s3 cp llms-full.txt "s3://reference-groupdocs-com/llms-full.txt" \
+              --content-type "text/plain; charset=utf-8" \
+              --endpoint-url https://s3.dynabic.com --acl public-read
+          else
+            aws s3 cp llms-full.txt "s3://reference2.groupdocs.com/llms-full.txt" \
+              --content-type "text/plain; charset=utf-8" --region us-west-2
+          fi
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+          AWS_ACCESS_KEY_ID: ${{ env.ENVIRONMENT == 'production' && secrets.CEPH_S3_LIVE_ACCESS_KEY || secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ env.ENVIRONMENT == 'production' && secrets.CEPH_S3_LIVE_SECRET_KEY || secrets.SECRET_ACCESS }}
+          AWS_DEFAULT_REGION: us-east-1
 
-      - name: Invalidate CloudFront
+      - name: Invalidate CloudFront (staging)
+        if: ${{ env.ENVIRONMENT != 'production' }}
         uses: chetan/invalidate-cloudfront-action@v2
         env:
-          DISTRIBUTION: ${{ env.ENVIRONMENT == 'production' && secrets.AWS_DISTRIBUTION_PROD || secrets.AWS_DISTRIBUTION }}
+          DISTRIBUTION: ${{ secrets.AWS_DISTRIBUTION }}
           PATHS: '/search-index.json /llms-full.txt'
           AWS_REGION: 'us-west-2'
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS }}
+
+      - name: Purge BunnyCDN Cache (production)
+        if: ${{ env.ENVIRONMENT == 'production' }}
+        run: |
+          for p in /search-index.json /llms-full.txt; do
+            curl -siG \
+              -H "X-Api-Key: ${{ secrets.BUNNY_API_KEY }}" \
+              --data-urlencode "url=https://reference.groupdocs.com$p" \
+              "https://api.dynabic.com/bn/purge?async=true"
+          done
