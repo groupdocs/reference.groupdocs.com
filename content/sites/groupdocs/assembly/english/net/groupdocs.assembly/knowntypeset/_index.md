@@ -3,7 +3,7 @@ title: KnownTypeSet
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents an unordered set that is a collection of unique items containing Type objects which fully or partially qualified names can be used within document templates to invoke the corresponding types static members perform type casts etc.
 type: docs
-weight: 60
+weight: 100
 url: /net/groupdocs.assembly/knowntypeset/
 ---
 ## KnownTypeSet class

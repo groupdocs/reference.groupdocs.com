@@ -3,7 +3,7 @@ title: DocumentTableRelation
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents a parentchild relationship between two DocumentTable./documenttable objects.
 type: docs
-weight: 180
+weight: 300
 url: /net/groupdocs.assembly.data/documenttablerelation/
 ---
 ## DocumentTableRelation class

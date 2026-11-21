@@ -3,7 +3,7 @@ title: JsonDataSource
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides access to data of a JSON file or stream to be used while assembling a document.
 type: docs
-weight: 230
+weight: 350
 url: /net/groupdocs.assembly.data/jsondatasource/
 ---
 ## JsonDataSource class
@@ -19,15 +19,19 @@ public class JsonDataSource
 | Name | Description |
 | --- | --- |
 | [JsonDataSource](jsondatasource#constructor)(Stream) | Creates a new data source with data from a JSON stream using default options for parsing JSON data. |
-| [JsonDataSource](jsondatasource#constructor_2)(string) | Creates a new data source with data from a JSON file using default options for parsing JSON data. |
+| [JsonDataSource](jsondatasource#constructor_4)(string) | Creates a new data source with data from a JSON file using default options for parsing JSON data. |
 | [JsonDataSource](jsondatasource#constructor_1)(Stream, JsonDataLoadOptions) | Creates a new data source with data from a JSON stream using the specified options for parsing JSON data. |
-| [JsonDataSource](jsondatasource#constructor_3)(string, JsonDataLoadOptions) | Creates a new data source with data from a JSON file using the specified options for parsing JSON data. |
+| [JsonDataSource](jsondatasource#constructor_2)(Stream, Stream) | Creates a new data source with data from a JSON stream using a JSON Schema stream and default options for parsing JSON data. |
+| [JsonDataSource](jsondatasource#constructor_5)(string, JsonDataLoadOptions) | Creates a new data source with data from a JSON file using the specified options for parsing JSON data. |
+| [JsonDataSource](jsondatasource#constructor_6)(string, string) | Creates a new data source with data from a JSON file using a JSON Schema file and default options for parsing JSON data. |
+| [JsonDataSource](jsondatasource#constructor_3)(Stream, Stream, JsonDataLoadOptions) | Creates a new data source with data from a JSON stream using a JSON Schema stream and the specified options for parsing JSON data. |
+| [JsonDataSource](jsondatasource#constructor_7)(string, string, JsonDataLoadOptions) | Creates a new data source with data from a JSON file using a JSON Schema file and the specified options for parsing JSON data. |
 
 ### Remarks
 
 To access data of the corresponding file or stream while assembling a document, pass an instance of this class as a data source to one of [`DocumentAssembler`](../../groupdocs.assembly/documentassembler).AssembleDocument overloads.
 
-In template documents, if a top-level JSON element is an array, a [`JsonDataSource`](../jsondatasource) instance should be treated in the same way as if it was a DataTable instance. If a top-level JSON element is an object, a [`JsonDataSource`](../jsondatasource) instance should be treated in the same way as if it was a DataRow instance. For more information, see template syntax reference (https://docs.groupdocs.com/display/assemblynet/Template+Syntax+-+Part+1+of+2#TemplateSyntax-Part1of2-UsingDataSources).
+In template documents, if a top-level JSON element is an array, a [`JsonDataSource`](../jsondatasource) instance should be treated in the same way as if it was a DataTable instance. If a top-level JSON element is an object, a [`JsonDataSource`](../jsondatasource) instance should be treated in the same way as if it was a DataRow instance. For more information, see template syntax reference (https://docs.groupdocs.com/display/assemblynet/Template+Syntax+-+Part+1+of+2#TemplateSyntax-Part1of2-UsingDataSources) .
 
 In template documents, you can work with typed values of JSON elements. For convenience, the engine replaces the set of JSON simple types with the following one:
 

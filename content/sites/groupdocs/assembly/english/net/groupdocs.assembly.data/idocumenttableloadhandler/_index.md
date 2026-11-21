@@ -3,7 +3,7 @@ title: IDocumentTableLoadHandler
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Overrides default loading of DocumentTable./documenttable objects while creating a DocumentTableSet./documenttableset instance.
 type: docs
-weight: 210
+weight: 330
 url: /net/groupdocs.assembly.data/idocumenttableloadhandler/
 ---
 ## IDocumentTableLoadHandler interface

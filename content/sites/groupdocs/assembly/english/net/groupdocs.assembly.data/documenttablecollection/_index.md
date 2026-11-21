@@ -3,7 +3,7 @@ title: DocumentTableCollection
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents a readonly collection of DocumentTable./documenttable objects of a particular DocumentTableSet./documenttableset instance.
 type: docs
-weight: 130
+weight: 250
 url: /net/groupdocs.assembly.data/documenttablecollection/
 ---
 ## DocumentTableCollection class

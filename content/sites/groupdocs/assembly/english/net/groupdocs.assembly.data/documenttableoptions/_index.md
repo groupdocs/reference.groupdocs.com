@@ -3,7 +3,7 @@ title: DocumentTableOptions
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides a set of options to control extraction of data from a document table.
 type: docs
-weight: 170
+weight: 290
 url: /net/groupdocs.assembly.data/documenttableoptions/
 ---
 ## DocumentTableOptions class

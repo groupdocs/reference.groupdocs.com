@@ -3,7 +3,7 @@ title: DocumentTableSet
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides access to data of multiple tables or spreadsheets located in an external document to be used while assembling a document. Also enables to define parentchild relations for the document tables thus simplifying access to related data within template documents.
 type: docs
-weight: 200
+weight: 320
 url: /net/groupdocs.assembly.data/documenttableset/
 ---
 ## DocumentTableSet class

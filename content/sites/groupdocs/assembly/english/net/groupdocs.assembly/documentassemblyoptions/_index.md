@@ -3,7 +3,7 @@ title: DocumentAssemblyOptions
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Specifies options controlling behavior of DocumentAssembler./documentassembler while assembling a document.
 type: docs
-weight: 50
+weight: 90
 url: /net/groupdocs.assembly/documentassemblyoptions/
 ---
 ## DocumentAssemblyOptions enumeration

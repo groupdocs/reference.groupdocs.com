@@ -3,7 +3,7 @@ title: DocumentAssembler
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides routines to populate template documents with data and a set of settings to control these routines.
 type: docs
-weight: 40
+weight: 80
 url: /net/groupdocs.assembly/documentassembler/
 ---
 ## DocumentAssembler class
@@ -37,6 +37,8 @@ public class DocumentAssembler
 | [AssembleDocument](../../groupdocs.assembly/documentassembler/assembledocument#assembledocument_2)(string, string, params DataSourceInfo[]) | Loads a template document from the specified source path, populates the template document with data from the specified single or multiple sources, and stores the result document to the target path using default [`LoadSaveOptions`](../loadsaveoptions). |
 | [AssembleDocument](../../groupdocs.assembly/documentassembler/assembledocument#assembledocument_1)(Stream, Stream, LoadSaveOptions, params DataSourceInfo[]) | Loads a template document from the specified source stream, populates the template document with data from the specified single or multiple sources, and stores the result document to the target stream using the given [`LoadSaveOptions`](../loadsaveoptions). |
 | [AssembleDocument](../../groupdocs.assembly/documentassembler/assembledocument#assembledocument_3)(string, string, LoadSaveOptions, params DataSourceInfo[]) | Loads a template document from the specified source path, populates the template document with data from the specified single or multiple sources, and stores the result document to the target path using the given [`LoadSaveOptions`](../loadsaveoptions). |
+| [GeneratePreview](../../groupdocs.assembly/documentassembler/generatepreview#generatepreview)(Stream, PreviewOptions) | Generates previews of pages of the document loaded from the specified stream. |
+| [GeneratePreview](../../groupdocs.assembly/documentassembler/generatepreview#generatepreview_1)(string, PreviewOptions) | Generates previews of pages of the document loaded from the specified file. |
 
 ### See Also
 

@@ -3,7 +3,7 @@ title: LoadSaveOptions
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Specifies additional options for loading and saving of a document to be assembled.
 type: docs
-weight: 80
+weight: 130
 url: /net/groupdocs.assembly/loadsaveoptions/
 ---
 ## LoadSaveOptions class
@@ -25,9 +25,14 @@ public class LoadSaveOptions
 
 | Name | Description |
 | --- | --- |
+| [ExternalResourceHandler](../../groupdocs.assembly/loadsaveoptions/externalresourcehandler) { get; set; } | Gets or sets a handler called for every external resource before it is loaded. The default value is null. |
+| [OoxmlCompliance](../../groupdocs.assembly/loadsaveoptions/ooxmlcompliance) { get; set; } | Gets or sets the OOXML compliance level to use when saving Word documents to OOXML formats (DOCX, DOCM, DOTX, DOTM, etc.). The default value is null, which means the compliance level will be determined automatically: - If the original document was in Transitional format, it will be preserved - Otherwise, Strict compliance will be used |
 | [ResourceLoadBaseUri](../../groupdocs.assembly/loadsaveoptions/resourceloadbaseuri) { get; set; } | Gets or sets a base URI to resolve external resource files' relative URIs to absolute ones while loading an HTML template document to be assembled and saved to a non-HTML format. The default value is an empty string. |
 | [ResourceSaveFolder](../../groupdocs.assembly/loadsaveoptions/resourcesavefolder) { get; set; } | Gets or sets a path to a folder to store external resource files while an assembled document loaded from a non-HTML format is being saved to HTML. The default value is an empty string. |
 | [SaveFormat](../../groupdocs.assembly/loadsaveoptions/saveformat) { get; set; } | Gets or sets a file format to save an assembled document to. Unspecified is the default. |
+| [SkipExternalResources](../../groupdocs.assembly/loadsaveoptions/skipexternalresources) { get; set; } | Gets or sets a value indicating whether external resources are skipped while assembling a document, so that no network request is made for them. The default value is true. |
+| [TrustTemplateResources](../../groupdocs.assembly/loadsaveoptions/trusttemplateresources) { get; set; } | Gets or sets a value indicating whether external resources referenced by the template document itself are trusted, i.e. loaded even when [`SkipExternalResources`](./skipexternalresources) is true. The default value is true. |
+| [WhitelistedResources](../../groupdocs.assembly/loadsaveoptions/whitelistedresources) { get; set; } | Gets or sets external resources allowed to be loaded when [`SkipExternalResources`](./skipexternalresources) is true. The default value is an empty list. |
 
 ### See Also
 

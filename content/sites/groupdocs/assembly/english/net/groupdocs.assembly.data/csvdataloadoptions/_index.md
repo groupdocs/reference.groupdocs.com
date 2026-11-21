@@ -3,7 +3,7 @@ title: CsvDataLoadOptions
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents options for parsing CSV data.
 type: docs
-weight: 100
+weight: 220
 url: /net/groupdocs.assembly.data/csvdataloadoptions/
 ---
 ## CsvDataLoadOptions class

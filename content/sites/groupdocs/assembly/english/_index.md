@@ -12,8 +12,8 @@ lead: "Generate documents and reports from templates and data using LINQ syntax.
 
 platforms:
   - name: ".NET"
-    version: "26.7.0"
-    versionUrl: "https://www.nuget.org/packages/groupdocs.assembly/26.7.0"
+    version: "26.11.0"
+    versionUrl: "https://www.nuget.org/packages/groupdocs.assembly/26.11.0"
     key: net
     ref: "/net/"
     install: "dotnet add package GroupDocs.Assembly"

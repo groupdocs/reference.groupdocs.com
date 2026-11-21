@@ -3,7 +3,7 @@ title: JsonSimpleValueParseMode
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Specifies a mode for parsing JSON simple values null boolean number integer and string while loading JSON. Such a mode does not affect parsing of datetime values.
 type: docs
-weight: 240
+weight: 360
 url: /net/groupdocs.assembly.data/jsonsimplevalueparsemode/
 ---
 ## JsonSimpleValueParseMode enumeration

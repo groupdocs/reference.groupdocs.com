@@ -3,7 +3,7 @@ title: JsonDataLoadOptions
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents options for parsing JSON data.
 type: docs
-weight: 220
+weight: 340
 url: /net/groupdocs.assembly.data/jsondataloadoptions/
 ---
 ## JsonDataLoadOptions class

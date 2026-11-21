@@ -3,7 +3,7 @@ title: DocumentTableRelationCollection
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents the collection of DocumentTableRelation./documenttablerelation objects of a single DocumentTableSet./documenttableset instance.
 type: docs
-weight: 190
+weight: 310
 url: /net/groupdocs.assembly.data/documenttablerelationcollection/
 ---
 ## DocumentTableRelationCollection class

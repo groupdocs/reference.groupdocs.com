@@ -3,7 +3,7 @@ title: Metered
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides methods to work with metered licensing.
 type: docs
-weight: 90
+weight: 210
 url: /net/groupdocs.assembly/metered/
 ---
 ## Metered class

@@ -3,7 +3,7 @@ title: DocumentTableLoadArgs
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides data for the Handle./idocumenttableloadhandler/handle method.
 type: docs
-weight: 160
+weight: 280
 url: /net/groupdocs.assembly.data/documenttableloadargs/
 ---
 ## DocumentTableLoadArgs class

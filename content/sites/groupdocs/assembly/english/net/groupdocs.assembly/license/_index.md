@@ -3,7 +3,7 @@ title: License
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides methods to license the component.
 type: docs
-weight: 70
+weight: 120
 url: /net/groupdocs.assembly/license/
 ---
 ## License class

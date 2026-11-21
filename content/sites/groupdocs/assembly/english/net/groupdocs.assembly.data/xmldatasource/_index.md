@@ -3,7 +3,7 @@ title: XmlDataSource
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides access to data of an XML file or stream to be used while assembling a document.
 type: docs
-weight: 260
+weight: 380
 url: /net/groupdocs.assembly.data/xmldatasource/
 ---
 ## XmlDataSource class
@@ -31,7 +31,7 @@ public class XmlDataSource
 
 To access data of the corresponding file or stream while assembling a document, pass an instance of this class as a data source to one of [`DocumentAssembler`](../../groupdocs.assembly/documentassembler).AssembleDocument overloads.
 
-In template documents, if a top-level XML element contains only a list of elements of the same type, an [`XmlDataSource`](../xmldatasource) instance should be treated in the same way as if it was a DataTable instance. Otherwise, an [`XmlDataSource`](../xmldatasource) instance should be treated in the same way as if it was a DataRow instance. For more information, see template syntax reference (https://docs.groupdocs.com/display/assemblynet/Template+Syntax+-+Part+1+of+2#TemplateSyntax-Part1of2-UsingDataSources).
+In template documents, if a top-level XML element contains only a list of elements of the same type, an [`XmlDataSource`](../xmldatasource) instance should be treated in the same way as if it was a DataTable instance. Otherwise, an [`XmlDataSource`](../xmldatasource) instance should be treated in the same way as if it was a DataRow instance. For more information, see template syntax reference (https://docs.groupdocs.com/display/assemblynet/Template+Syntax+-+Part+1+of+2#TemplateSyntax-Part1of2-UsingDataSources) .
 
 When XML Schema Definition is passed to a constructor of this class, data types of values of simple XML elements and attributes are determined according to the schema. So in template documents, you can work with typed values rather than just strings.
 

@@ -3,7 +3,7 @@ title: DocumentTable
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Provides access to data of a single table or spreadsheet located in an external document to be used while assembling a document.
 type: docs
-weight: 120
+weight: 240
 url: /net/groupdocs.assembly.data/documenttable/
 ---
 ## DocumentTable class

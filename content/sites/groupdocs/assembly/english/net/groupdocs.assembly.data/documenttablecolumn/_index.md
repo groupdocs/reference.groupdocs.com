@@ -3,7 +3,7 @@ title: DocumentTableColumn
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents a single column of a particular DocumentTable./documenttable object.
 type: docs
-weight: 140
+weight: 260
 url: /net/groupdocs.assembly.data/documenttablecolumn/
 ---
 ## DocumentTableColumn class

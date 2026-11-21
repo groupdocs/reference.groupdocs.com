@@ -3,7 +3,7 @@ title: XmlDataLoadOptions
 second_title: GroupDocs.Assembly for .NET API Reference
 description: Represents options for XML data loading.
 type: docs
-weight: 250
+weight: 370
 url: /net/groupdocs.assembly.data/xmldataloadoptions/
 ---
 ## XmlDataLoadOptions class
