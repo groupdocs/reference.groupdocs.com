@@ -295,7 +295,7 @@
     }
   },
   "watermark": {
-    "latest": "26.11.0",
+    "latest": "26.11.1",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/watermark/java/release-notes/",
@@ -303,7 +303,7 @@
       },
       "net": {
         "url": "https://releases.groupdocs.com/watermark/net/release-notes/",
-        "version": "26.11.0"
+        "version": "26.11.1"
       },
       "node": {
         "url": "https://releases.groupdocs.com/watermark/nodejs-java/release-notes/",
