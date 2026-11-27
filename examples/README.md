@@ -37,7 +37,7 @@ examples/getting-started/<product>/
 |-------------|:----:|:----:|:------:|:-------:|
 | conversion  |  ✓   |  ✓   |   ✓    |   ✓³    |
 | annotation  |  ✓   |  ✓   |  n/a¹  |  n/a⁴   |
-| viewer      |  ✓   |  ✓   |   ✓    |   ✓³    |
+| viewer      |  ✓   |  ✓   |   ✓⁶   |   ✓³    |
 | signature   |  ✓   |  ✓   |   ✓²   |  der⁵   |
 
 ✓ compile-verified against the real SDK.
@@ -56,6 +56,11 @@ environment (no usable prebuilt), so they can't be locally compile-run. The deri
 proven conversion/viewer node-java pattern (`groupdocs.<ClassName>`, camelCase methods, explicit
 `.close()`). Signature's `Signature` class has no `close()`; its snippet calls `.dispose()`, which the
 Java harness compiles.
+⁶ re-verified 2026-11-26 against `groupdocs-viewer-net` 26.11.0, with .NET 26.10.0 and Java 26.9. The snippet is
+the products page hero of 26.11 (a `render_pdf_to_html()` function); licensed, it renders a 4-page PDF to four
+HTML pages. The .NET harness builds and runs. The Node.js snippet was checked, not run: `node --check` passes,
+and `@groupdocs/groupdocs.viewer` 26.9.0 exports `Viewer` and `HtmlViewOptions` from its 26.9 jar, which has
+every member the snippet calls (`Viewer(String)`, `HtmlViewOptions.forEmbeddedResources()`, `view`, `close`).
 
 The other products' .NET/Java/Python are verified the same way. No Node.js tab for: annotation,
 assembly, classification, markdown, parser (no npm package); and comparison, redaction, search,

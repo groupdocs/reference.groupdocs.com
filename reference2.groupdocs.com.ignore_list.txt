@@ -76,3 +76,5 @@
 /search/python-net/groupdocs.search.scaling/searchnetworknode/events
 /viewer/net/groupdocs.viewer/filetype/properties/
 /viewer/net/groupdocs.viewer/filetype/properties
+/viewer/python-net/groupdocs.viewer/filetype/properties/
+/viewer/python-net/groupdocs.viewer/filetype/properties

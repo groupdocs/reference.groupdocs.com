@@ -10,6 +10,13 @@ tags), so changes accumulate under **[Unreleased]**.
 ## [Unreleased]
 
 ### Changed
+- **GroupDocs.Viewer's getting-started tabs follow its 26.11 release.** The Python tab is the products.groupdocs.com
+  hero of 26.11 character for character: the same PDF-to-HTML render, now inside a `render_pdf_to_html()` function
+  with a `__main__` guard. Its harness `examples/getting-started/viewer/python/example.py` runs on
+  `groupdocs-viewer-net` 26.11.0: licensed, a 4-page PDF gives `page_1.html` to `page_4.html`. The harness pins
+  .NET 26.10.0 (was 26.4.0; the csproj loses its BOM) and Java 26.9 (was 26.5): `dotnet build` and `mvn compile`
+  pass. The .NET, Java and Node.js tabs keep their code. The Node.js one passes `node --check`, and the 26.9 jar
+  that `@groupdocs/groupdocs.viewer` 26.9.0 loads has every member it calls.
 - **GroupDocs.Redaction's getting-started tabs follow its 26.11 release.** The Python tab redacts "Emily Johnson", the
   customer of the Docs' new sample set, instead of "Data", and stays the products.groupdocs.com hero character for
   character. The harness `examples/getting-started/redaction/` pins .NET 26.10.0 (it floated on `*`) and Java 26.10
@@ -219,6 +226,13 @@ tags), so changes accumulate under **[Unreleased]**.
   `/search-index.json` and `/llms-full.txt` on content pushes.
 
 ### Fixed
+- **The GroupDocs.Viewer for Python via .NET `FileType.PROPERTIES` page redirected to its parent**:
+  `/viewer/python-net/groupdocs.viewer/filetype/properties/` answered 301 to
+  `/viewer/python-net/groupdocs.viewer/filetype`, with and without its trailing slash. The legacy rule that
+  collapses a trailing `/properties/` segment matched it, as it matches the .NET twin already in the ignore lists.
+  Both ignore lists now carry the page, in both forms. Matching every rule against the `url:` front matter of the
+  26.11 Python tree, 1,111 pages with the Developer Guide, finds no other; Viewer's .NET, Java and Node.js trees
+  have none either.
 - **The GroupDocs.Assembly Python getting-started tab runs on 26.11.0.** It held the pre-26.11 code:
   `import groupdocs.assembly as ga` and a `DocumentTable` loaded from `Managers.json`, which is not a
   document. The tab is now the products.groupdocs.com hero, character for character: three dicts fill the
