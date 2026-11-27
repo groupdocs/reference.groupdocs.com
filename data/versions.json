@@ -274,7 +274,7 @@
     }
   },
   "viewer": {
-    "latest": "26.10.0",
+    "latest": "26.11.0",
     "platforms": {
       "java": {
         "url": "https://releases.groupdocs.com/viewer/java/release-notes/",
@@ -290,7 +290,7 @@
       },
       "python": {
         "url": "https://releases.groupdocs.com/viewer/python-net/release-notes/",
-        "version": "26.9.0"
+        "version": "26.11.0"
       }
     }
   },
